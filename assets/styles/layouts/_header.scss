@@ -1,19 +1,62 @@
-@use '../abstracts/variables' as *;
-@use '../abstracts/mixins' as *;
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
 
 .header {
-    padding: 1.5rem;
-    background: $color-bg-main;
-    z-index: 5;
+  @include grid($desktop-cols: 2, $desktop-areas: "sidebar header");
+  width: 100%;
+  background: $color-bg-main;
+  z-index: 5;
+  grid-area: header;
+  padding: 0 0.5rem;
 }
-.bottom-nav {
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 7.2rem;
-    background: $mobile-menu-bg-color;
-    @include laptop {
-        display: none;
+.header-wrapper {
+  width: 100%;
+  width: clamp-calc(39rem, 165rem);
+  display: none;
+
+  @include laptop {
+    @include flex(center, space-between, row);
+    .navigation {
+      & .top-nav-ul {
+        @include flex(center, flex-start, row, 2rem);
+      }
+      & a,
+      & form {
+        @include flex(center, flex-start, row, 2rem);
+
+        font-family: $font-satoshi;
+        font-size: 1.4rem;
+        color: $color-primary;
+      }
+      & input {
+        border: none;
+        outline: none;
+        background: $color-bg-secondary;
+        padding: 1rem;
+        border-radius: 1rem;
+      }
     }
+    .side-nav ul {
+      @include flex(center, center, row, 1.3rem);
+    }
+  }
+}
+
+.mobile-nav {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 1.6rem;
+  background: $mobile-menu-bg-color;
+  @include flex(center, space-around, row, 3.1rem);
+  & a {
+    @include flex(center, center, column, 0.2rem);
+    font-family: $font-satoshi;
+    font-size: 1.4rem;
+    color: $color-primary;
+  }
+  @include laptop {
+    display: none;
+  }
 }
