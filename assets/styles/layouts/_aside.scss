@@ -1,0 +1,12 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.sidebar {
+    display: none;
+    @include laptop {
+        display: block;
+        grid-area: sidebar;
+        background: $color-bg-main;
+        padding: 1.5rem;
+    }
+}

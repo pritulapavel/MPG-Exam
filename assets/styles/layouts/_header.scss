@@ -1,0 +1,19 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.header {
+    padding: 1.5rem;
+    background: $color-bg-main;
+    z-index: 5;
+}
+.bottom-nav {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 7.2rem;
+    background: $mobile-menu-bg-color;
+    @include laptop {
+        display: none;
+    }
+}
