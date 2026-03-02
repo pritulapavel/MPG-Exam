@@ -20,12 +20,20 @@
       & .top-nav-ul {
         @include flex(center, flex-start, row, 2rem);
       }
-      & a {
+      & a,
+      & form {
         @include flex(center, flex-start, row, 2rem);
 
         font-family: $font-satoshi;
         font-size: 1.4rem;
         color: $color-primary;
+      }
+      & input {
+        border: none;
+        outline: none;
+        background: $color-bg-secondary;
+        padding: 1rem;
+        border-radius: 1rem;
       }
     }
     .side-nav ul {
