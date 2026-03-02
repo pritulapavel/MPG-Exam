@@ -12,15 +12,16 @@ body {
 }
 
 body {
-  font-family: $font-satoshi;
-  color: $color-primary;
-  font-size: 1.6rem;
-  overflow-x: hidden;
+    font-family: $font-satoshi;
+    color: $color-primary;
+    font-size: 1.6rem;
 }
 
-ul li {
-  list-style: none;
+ul, li {
+    list-style: none;
 }
+
 a {
-  text-decoration: none;
+    text-decoration: none;
+    color: $color-primary;
 }

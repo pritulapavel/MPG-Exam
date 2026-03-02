@@ -2,20 +2,23 @@
 @use "../abstracts/mixins" as *;
 
 .app {
-  height: 100dvh;
-  display: grid;
-  grid-template-rows: auto 1fr;
-  background-color: $color-bg-main;
-  overflow: hidden;
-  @include laptop {
-    grid-template-columns: 26rem 1fr;
-    grid-template-rows: 5.4rem 1fr 8.1rem;
+    height: 100dvh;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    background-color: $color-bg-main;
+    overflow: hidden;
+    @include laptop {
+        grid-template-columns: 26rem 1fr;
+        grid-template-rows: 5.4rem 1fr 8.1rem;
+        padding: 1.5rem;
+        column-gap: 1rem;
+        row-gap: 1rem;
 
-    grid-template-areas:
-      "sidebar header"
-      "sidebar main"
-      "sidebar player";
-  }
+        grid-template-areas:
+        "sidebar header"
+        "sidebar main"
+        "sidebar player";
+    }
 }
 .main {
   overflow-y: auto;
