@@ -8,6 +8,18 @@
   z-index: 5;
   grid-area: header;
   padding: 0 0.5rem;
+  @media (min-width: 992px) {
+    .header {
+      grid-template-columns: 1fr;
+      grid-template-areas: "header";
+    }
+  }
+
+  .header-wrapper {
+    width: 100%;
+    /* width: clamp(39rem, -7rem + 143.75vw, 200rem); */
+    display: none;
+  }
 }
 .header-wrapper {
   width: 100%;
