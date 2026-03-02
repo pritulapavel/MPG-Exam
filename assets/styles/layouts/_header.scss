@@ -1,19 +1,56 @@
-@use '../abstracts/variables' as *;
-@use '../abstracts/mixins' as *;
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
 
 .header {
-    padding: 1.5rem;
-    background: $color-bg-main;
-    z-index: 5;
-}
-.bottom-nav {
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 7.2rem;
-    background: $mobile-menu-bg-color;
-    @include laptop {
-        display: none;
+  width: clamp-calc(39rem, 190rem);
+  padding: 1.5rem;
+  background: $color-bg-main;
+  z-index: 5;
+  .header-wrapper {
+    width: 100%;
+    @include flex(center, space-between, row);
+    .nav-container {
+      display: none;
+      @include desktop {
+        display: block;
+        width: 100%;
+        @include flex(center, space-between, row);
+        @include desktop;
+        & .top-nav-ul {
+          @include flex(center, flex-start, row, 12.86rem);
+          list-style: none;
+
+          & li {
+            @include flex(center, flex-start, row, 1rem);
+            &:first-child {
+              white-space: nowrap;
+            }
+          }
+        }
+        & .right-nav {
+          @include flex(center, flex-start, row, 1.3rem);
+        }
+      }
     }
+  }
+}
+
+.bottom-nav {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 7.2rem;
+  background: $mobile-menu-bg-color;
+  padding: 1.6rem 2.85rem 0 1.6rem;
+  @include laptop {
+    display: none;
+  }
+  & ul {
+    @include flex(center, space-around, row, 3.1rem);
+    list-style: none;
+    & li {
+      @include flex(center, center, column, 0.3rem);
+    }
+  }
 }
