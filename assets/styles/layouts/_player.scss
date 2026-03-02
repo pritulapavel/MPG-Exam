@@ -1,0 +1,26 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.mini-player {
+    position: fixed;
+    left: 1.6rem;
+    right: 1.6rem;
+    bottom: 7.2rem;
+    height: 6.4rem;
+    border-radius: 1.6rem;
+    background: $color-bg-secondary;
+    z-index: 10;
+    @include laptop {
+        display: none;
+    }
+}
+.player {
+    display: none;
+    @include laptop {
+        display: block;
+        grid-area: player;
+        background: $color-bg-secondary;
+        padding: 1.5rem;
+        border-radius: $border-radius-default;
+    }
+}

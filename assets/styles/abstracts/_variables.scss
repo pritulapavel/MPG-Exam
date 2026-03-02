@@ -1,11 +1,18 @@
 /* Colors */
 
 $color-bg-main: #060606;
-
+$color-bg-secondary: #333842; 
+$color-primary: #898989; 
+$mobile-menu-bg-color: linear-gradient(180deg, rgba(17, 17, 17, 0.85) 0%, #111111 42.62%);
+$main-section-border: 1px solid #202020;
 
 
 
 
 /* Fonts */
-
 $font-satoshi: 'Satoshi', sans-serif;
+
+
+/* Border radius */
+
+$border-radius-default: 1rem;
