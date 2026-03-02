@@ -2,6 +2,8 @@
 @use '../abstracts/mixins' as *;
 
 .mini-player {
+    @include flex(center, space-between, row);
+    padding: 0 1.6rem;
     position: fixed;
     left: 1.6rem;
     right: 1.6rem;
@@ -10,10 +12,89 @@
     border-radius: 1.6rem;
     background: $color-bg-secondary;
     z-index: 10;
+
     @include laptop {
         display: none;
     }
+
+    .mini-player-wrapper {
+        @include flex(center, flex-start, row, 1rem);
+        flex: 1;
+
+        img {
+            width: 43px;
+            height: 43px;
+            border-radius: 3px;
+        }
+
+        .music-title-author-wrapper {
+            @include flex(flex-start, flex-start, column, 0.2rem);
+            max-width: 150px;
+            overflow: hidden;
+            white-space: nowrap;
+
+            .scrolling-text {
+                font-family: $font-satoshi;
+                font-weight: 400;
+                display: inline-block;
+                padding-left: 0;
+                animation: marquee 8s linear infinite alternate;
+                text-decoration: none;
+                color: #FFFFFF;
+            }
+
+            .scrolling-text-band {
+                font-family: $font-satoshi;
+                font-weight: 400;
+                display: inline-block;
+                padding-left: 0;
+                text-decoration: none;
+                color: $color-primary;
+            }
+
+            @keyframes marquee {
+                0% {
+                    transform: translateX(0);
+                }
+
+                100% {
+                    transform: translateX(-50%);
+                }
+            }
+        }
+    }
+
+    .mini-player-icons {
+        @include flex(center, center, row, 10px);
+
+        img {
+            cursor: pointer;
+        }
+    }
+
+    .music-progress-bar {
+        position: absolute;
+        bottom: 2px;
+        left: 18px;
+        right: 18px;
+        height: 2px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 2px;
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 45%;
+            background-color: white;
+            border-radius: 2px;
+            box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+        }
+    }
 }
+
 .player {
     display: none;
     @include laptop {
