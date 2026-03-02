@@ -2,55 +2,53 @@
 @use "../abstracts/mixins" as *;
 
 .header {
-  width: clamp-calc(39rem, 190rem);
-  padding: 1.5rem;
+  @include grid($desktop-cols: 2, $desktop-areas: "sidebar header");
+  width: 100%;
   background: $color-bg-main;
   z-index: 5;
-  .header-wrapper {
-    width: 100%;
-    @include flex(center, space-between, row);
-    .nav-container {
-      display: none;
-      @include desktop {
-        display: block;
-        width: 100%;
-        @include flex(center, space-between, row);
-        @include desktop;
-        & .top-nav-ul {
-          @include flex(center, flex-start, row, 12.86rem);
-          list-style: none;
+  grid-area: header;
+  padding: 0 0.5rem;
+}
+.header-wrapper {
+  width: 100%;
+  width: clamp-calc(39rem, 165rem);
+  display: none;
 
-          & li {
-            @include flex(center, flex-start, row, 1rem);
-            &:first-child {
-              white-space: nowrap;
-            }
-          }
-        }
-        & .right-nav {
-          @include flex(center, flex-start, row, 1.3rem);
-        }
+  @include laptop {
+    @include flex(center, space-between, row);
+    .navigation {
+      & .top-nav-ul {
+        @include flex(center, flex-start, row, 2rem);
       }
+      & a {
+        @include flex(center, flex-start, row, 2rem);
+
+        font-family: $font-satoshi;
+        font-size: 1.4rem;
+        color: $color-primary;
+      }
+    }
+    .side-nav ul {
+      @include flex(center, center, row, 1.3rem);
     }
   }
 }
 
-.bottom-nav {
+.mobile-nav {
   position: fixed;
   left: 0;
   right: 0;
   bottom: 0;
-  height: 7.2rem;
+  padding: 1.6rem;
   background: $mobile-menu-bg-color;
-  padding: 1.6rem 2.85rem 0 1.6rem;
+  @include flex(center, space-around, row, 3.1rem);
+  & a {
+    @include flex(center, center, column, 0.2rem);
+    font-family: $font-satoshi;
+    font-size: 1.4rem;
+    color: $color-primary;
+  }
   @include laptop {
     display: none;
-  }
-  & ul {
-    @include flex(center, space-around, row, 3.1rem);
-    list-style: none;
-    & li {
-      @include flex(center, center, column, 0.3rem);
-    }
   }
 }

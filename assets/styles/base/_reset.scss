@@ -15,4 +15,12 @@ body {
   font-family: $font-satoshi;
   color: $color-primary;
   font-size: 1.6rem;
+  overflow-x: hidden;
+}
+
+ul li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
 }
