@@ -9,7 +9,18 @@
   grid-area: header;
   @include flex(center, center, row);
 }
+@media (min-width: 992px) {
+  .header {
+    grid-template-columns: 1fr;
+    grid-template-areas: "header";
+  }
+}
 
+.header-wrapper {
+  width: 100%;
+  /* width: clamp(39rem, -7rem + 143.75vw, 200rem); */
+  display: none;
+}
 .header-wrapper {
   width: 100%;
   width: clamp-calc(39rem, 165rem);
@@ -24,18 +35,10 @@
       & .img-div {
         padding: 1rem;
       }
-
-      & a:hover {
-        color: $primary-navigation-hover;
-        & img {
-          filter: brightness(0) invert(1);
-        }
-      }
       & a,
       & .search-wrapper,
       & form {
         @include flex(center, flex-start, row, 2rem);
-
         font-family: $font-satoshi;
         font-size: 1.4rem;
         color: $color-primary;
@@ -124,38 +127,54 @@
     & a {
       @include flex(center, center, row);
       padding: 0.8rem;
-      &:hover {
-        & img {
-          filter: brightness(0) invert(1);
-          transition: 0.3s linear;
-        }
-      }
-    }
-    & .nohover &a:hover {
-      & img {
-        filter: none;
-      }
     }
   }
 
   // Hovers:
-
-  .mobile-nav {
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    padding: 1.6rem;
-    background: $mobile-menu-bg-color;
-    @include flex(center, space-around, row, 3.1rem);
-    & a {
-      @include flex(center, center, column, 0.2rem);
-      font-family: $font-satoshi;
-      font-size: 1.4rem;
-      color: $color-primary;
+  // top left navigation hovers:
+  .navigation {
+  }
+  //  right navigation hover
+  .side-nav {
+    & li:not(:last-child) a:hover img {
+      filter: brightness(0) invert(1);
     }
-    @include laptop {
-      display: none;
+  }
+  // bottom  header fixed in bottom on mobile + tablet
+}
+.mobile-nav {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 1.6rem;
+  background: $mobile-nav-bg-color;
+  @include flex(center, space-around, row, 3.1rem);
+  & a {
+    @include flex(center, center, column, 0.2rem);
+    font-family: $font-satoshi;
+    font-size: 1.4rem;
+    color: $color-primary;
+  }
+  @include laptop {
+    display: none;
+  }
+  & .img-div {
+    padding: 1rem;
+    @include flex(center, center, row);
+  }
+}
+// Mobile navigation hovers
+.mobile-nav {
+  & a {
+    & img:hover {
+      filter: brightness(0) invert(1);
+      transition: 0.3s ease;
+    }
+
+    & span:hover {
+      color: $primary-navigation-hover;
+      transition: 0.3s ease;
     }
   }
 }
