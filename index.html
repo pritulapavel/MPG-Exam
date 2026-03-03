@@ -39,12 +39,12 @@
             </li>
             <li>
               <form action="">
-                <a href="#">
-                  <div class="img-div">
+                <div class="img-div search-wrapper">
+                  <label for="search">
                     <img src="./assets/img/icons/search.svg" alt="Search" />
-                  </div>
-                </a>
-                <input type="search" placeholder="Search" />
+                  </label>
+                  <input id="search" type="search" placeholder="Search" />
+                </div>
               </form>
             </li>
           </ul>
@@ -53,12 +53,10 @@
           <ul class="top-nav-ul">
             <li>
               <a href="#">
-                <div class="img-div">
-                  <img
-                    src="./assets/img/icons/notification.svg"
-                    alt="Notifications"
-                  />
-                </div>
+                <img
+                  src="./assets/img/icons/notification.svg"
+                  alt="Notifications"
+                />
               </a>
             </li>
             <li>
@@ -76,9 +74,10 @@
                 <img src="./assets/img/icons/settings.svg" alt="Settings" />
               </a>
             </li>
-            <li>
-              <a href="#"></a>
-              <img src="./assets/img/icons/user.svg" alt="Profile" />
+            <li class="no-hover">
+              <a href="#">
+                <img src="./assets/img/icons/user.svg" alt="Profile" />
+              </a>
             </li>
           </ul>
         </nav>
@@ -93,7 +92,7 @@
     </main>
     <div class="mini-player">Mini Player</div>
     <footer class="player">Player</footer>
-    <nav class="mobile-nav">
+    <!-- <nav class="mobile-nav">
       <a href="#" class="nav-item">
         <img src="./assets/img/icons/home.svg" alt="Home" />
         Home
@@ -114,6 +113,6 @@
         <img src="./assets/img/icons/me.svg" alt="My Profile" />
         Me
       </a>
-    </nav>
+    </nav> -->
   </body>
 </html>
