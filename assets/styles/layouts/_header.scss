@@ -23,7 +23,7 @@
 }
 .header-wrapper {
   width: 100%;
-  width: clamp-calc(39rem, 165rem);
+  //width: clamp-calc(39rem, 165rem);
   display: none;
 
   @include laptop {
@@ -49,7 +49,7 @@
         position: relative;
 
         //  put the search icon inside of search wrapper & input
-        & label {
+        & label { 
           &:hover {
             & img {
               filter: brightness(0) invert(1);

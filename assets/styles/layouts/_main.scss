@@ -5,6 +5,7 @@
     height: 100dvh;
     display: grid;
     grid-template-rows: auto 1fr;
+    grid-template-columns: 1fr;
     background-color: $color-bg-main;
     overflow: hidden;
     @include laptop {
@@ -30,5 +31,54 @@
     padding-bottom: 2.4rem;
     border: $main-section-border;
     border-radius: $border-radius-default;
+  }
+
+  .made-for-you {
+    @include flex(null, null, column, 2.8rem);
+  }
+  .main-inner {
+    @include flex(null, null, column, 3rem);
+  }
+  &::-webkit-scrollbar {
+      width: 6px;
+  }
+  &::-webkit-scrollbar-track {
+      background: transparent; 
+  }
+  &::-webkit-scrollbar-thumb {
+      background-color: rgba(255, 255, 255, 0.3);
+      border-radius: 3px;
+  }
+}
+
+.content-wrapper {
+    @include flex(null,null, column, 2rem);
+}
+.filters-wrapper {
+	@include flex(center, space-between, null, null);
+  .filters-nav {
+    & ul {
+      @include flex(center, null, row, 1rem);
+      li {
+        padding: 0.8rem 1rem;
+        background-color: $color-bg-primary;
+        border-radius: $border-radius-btn-mob;
+        color: $color-hover-text;
+
+        &:hover {
+          background-color: $color-hover-bg;
+          border-radius: $border-radius-default;
+          color: $color-hover-text;
+          cursor: pointer;
+        }
+        
+      }
+      & .active {
+          background-color: #E0E0E0; 
+          color: #111111;
+          font-weight: 600;
+          font-size: 1.4rem;
+        }
+    }
   }
 }
