@@ -82,46 +82,121 @@
         </nav>
       </div>
     </header>
-    <aside class="sidebar">Sidebar</aside>
+    <aside class="sidebar">
+        <div class="sidebar-heading">
+            <a href="#"><img src="./assets/img/icons/library.svg" class="icon library" alt="Library icon"> My Library</a>
+        </div>
+        <nav class="sidebar-menu">
+            <ul>
+                <li>
+                    <details class="nav__dropdown">
+                        <summary class="nav__link"><img src="./assets/img/icons/pin.svg" class="icon" alt="Library icon"> Pins</summary>
+                        <ul class="nav__sub">
+                            <li><a href="#">Albums</a></li>
+                            <li><a href="#">Artists</a></li>
+                            <li><a href="#">Playlists</a></li>
+                        </ul>
+                    </details>
+                </li>
+                <li>
+                    <details class="nav__dropdown">
+                        <summary class="nav__link"><img src="./assets/img/icons/playlist.svg" class="icon" alt="Library icon"> Playlists</summary>
+                        <ul class="nav__sub">
+                            <li><a href="#">Albums</a></li>
+                            <li><a href="#">Artists</a></li>
+                            <li><a href="#">Playlists</a></li>
+                        </ul>
+                    </details>
+                </li>
+                <li>
+                    <img src="./assets/img/icons/hearth.svg" class="icon" alt="Library icon">
+                    <span>Liked Songs</span>
+                </li>
+                <li>
+                    <img src="./assets/img/icons/bookmark.svg" class="icon" alt="Library icon">
+                    <span>Saves</span>
+                </li>
+                <li>
+                    <img src="./assets/img/icons/albom.svg" class="icon" alt="Library icon">
+                    <span>Albums</span>
+                </li>
+                <li>
+                    <img src="./assets/img/icons/folder.svg" class="icon" alt="Library icon">
+                    <span>Folders</span>
+                </li>
+                <li>
+                    <img src="./assets/img/icons/podcast.svg" class="icon" alt="Library icon">
+                    <span>Podcasts</span>
+                </li>
+                <li>
+                    <img src="./assets/img/icons/audiobook.svg" class="icon" alt="Library icon">
+                    <span>Audiobooks</span>
+                </li>
+                <li>
+                    <img src="./assets/img/icons/artists.svg" class="icon" alt="Library icon">
+                    <span>Artists</span>
+                </li>
+            </ul>
+        </nav>
+    </aside>
     <main class="main">
       <div class="main-inner">
         <section class="section">Sections here</section>
         <section class="section">Sections here</section>
       </div>
     </main>
-    <!-- <div class="mini-player">Mini Player</div> -->
-    <footer class="player">Player</footer>
-    <nav class="mobile-nav">
-      <a href="#" class="nav-item">
-        <div class="img-div">
-          <img src="./assets/img/icons/home-inactive.svg" alt="Home" />
+    <footer class="player">
+        <div class="player-wrapper">
+            <img src="./assets/img/alboms/albom_1.png" alt="Draft Punk">
+
+            <div class="music-title-author-wrapper">
+                <a href="#" class="scrolling-text">Get Lucky (feat. Pharrell Williams and Nile Rodgers)</a>
+                <a href="#" class="scrolling-text-band">Draft Punk</a>
+            </div>
         </div>
-        <span>Home</span>
-      </a>
-      <a href="#" class="nav-item">
-        <div class="img-div">
-          <img src="./assets/img/icons/discover.svg" alt="Discover" />
+
+        <div class="player-icons">
+            <img src="./assets/img/icons/player/add_playlist.svg" alt="add_playlist" class="add_playlist">
+            <img src="./assets/img/icons/player/play.svg" alt="play" class="play">
         </div>
-        <span>Discover</span>
-      </a>
-      <a href="#" class="nav-item">
-        <div class="img-div">
-          <img src="./assets/img/icons/search.svg" alt="Search" />
+
+        <div class="music-progress-bar"></div>
+
+        <div class="advanced-player">
+            <div class="advanced-player-wrapper">
+                <div class="stop-button-wrapper">
+                    <img src="./assets/img/icons/player/pause.svg" alt="pause" class="pause">
+                </div>
+                <img src="./assets/img/icons/player/prev.svg" alt="prev">
+                <img src="./assets/img/icons/player/next.svg" alt="next">
+                <img src="./assets/img/icons/player/shuffle.svg" alt="shuffle">
+                <img src="./assets/img/icons/player/repeat.svg" alt="repeat">
+            </div>
+
+            <div class="advanced-player-music-time-line">
+                <p>2:23</p>
+                <div class="advanced-music-progress-bar"></div>
+                <p>4:46</p>
+            </div>
+
+            <img src="./assets/img/icons/player/volume.svg" alt="volume">
         </div>
-        <span>Search</span>
-      </a>
-      <a href="#" class="nav-item">
-        <div class="img-div">
-          <img src="./assets/img/icons/library.svg" alt="Library" />
+
+        <div class="advanced-player-icons">
+            <div class="wrapper-icons">
+                <img src="./assets/img/icons/hearth.svg" alt="heart icon">
+                <img src="./assets/img/icons/player/add_playlist.svg" alt="add play list icon">
+            </div>
+            <img src="./assets/img/icons/player/list.svg" alt="list icon">
+            <img src="./assets/img/icons/player/devices.svg" alt="devices icon">
+            <img src="./assets/img/icons/dots.svg" alt="dots icon">
+            <hr>
+            <img src="./assets/img/icons/player/player_blue_icon.svg" alt="blue icon">
+            <img src="./assets/img/icons/player/order.svg" alt="order icon">
         </div>
-        <span>Library</span>
-      </a>
-      <a href="#" class="nav-item">
-        <div class="img-div">
-          <img src="./assets/img/icons/me.svg" alt="My Profile" />
-        </div>
-        <span>Me</span>
-      </a>
+    </footer>
+    <nav class="bottom-nav">
+        Bottom Nav mobile
     </nav>
   </body>
 </html>
