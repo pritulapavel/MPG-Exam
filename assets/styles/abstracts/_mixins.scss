@@ -18,7 +18,14 @@
 }
 
 // grid mixin
-@mixin grid($mobile-cols: 1, $desktop-cols: null, $rows: auto, $gap: null, $mobile-areas: null, $desktop-areas: null) {
+@mixin grid(
+  $mobile-cols: 1,
+  $desktop-cols: null,
+  $rows: auto,
+  $gap: null,
+  $mobile-areas: null,
+  $desktop-areas: null
+) {
   display: grid;
   @if $rows != null {
     grid-template-rows: $rows;

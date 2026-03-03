@@ -7,7 +7,7 @@
 		@include flex(null, null, column, 2rem);
 		grid-area: sidebar;
 		background: $color-bg-main;
-		padding: 0.5rem 1.5rem;
+		padding: 1.5rem;
 		border-radius: $border-radius-default;
 	}
 	a {
@@ -26,9 +26,6 @@
         ul {
             @include flex(null, null, column, 1.5rem);
         }
-		.nav__sub {
-			 @include flex(null, null, column, 0);
-		}
 		& li {
 			@include flex(center, null, null, 1.5rem);
 			font-size: 1.4rem;
