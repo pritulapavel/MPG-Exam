@@ -23,7 +23,7 @@
 }
 .header-wrapper {
   width: 100%;
-  width: clamp-calc(39rem, 165rem);
+  width: clamp-calc(39rem, 200rem);
   display: none;
 
   @include laptop {
