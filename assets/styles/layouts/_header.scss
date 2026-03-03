@@ -4,23 +4,12 @@
 .header {
   @include grid($desktop-cols: 2, $desktop-areas: "sidebar header");
   width: 100%;
-  background: $color-bg-main;
+  background-color: $color-bg-main;
   z-index: 5;
   grid-area: header;
-  padding: 0 0.5rem;
-  @media (min-width: 992px) {
-    .header {
-      grid-template-columns: 1fr;
-      grid-template-areas: "header";
-    }
-  }
-
-  .header-wrapper {
-    width: 100%;
-    /* width: clamp(39rem, -7rem + 143.75vw, 200rem); */
-    display: none;
-  }
+  @include flex(center, center, row);
 }
+
 .header-wrapper {
   width: 100%;
   width: clamp-calc(39rem, 165rem);
@@ -31,6 +20,9 @@
     .navigation {
       & .top-nav-ul {
         @include flex(center, flex-start, row, 2rem);
+      }
+      & .img-div {
+        padding: 1rem;
       }
       & a,
       & form {
@@ -43,14 +35,30 @@
       & input {
         border: none;
         outline: none;
-        background: $color-bg-secondary;
+        background: transparent;
         padding: 1rem;
         border-radius: 1rem;
+
+        input::placeholder {
+          font-family: $font-satoshi;
+          font-size: 1.4rem;
+          color: $color-primary;
+        }
       }
     }
-    .side-nav ul {
-      @include flex(center, center, row, 1.3rem);
+  }
+
+  .side-nav ul {
+    @include flex(center, center, row, 1.3rem);
+    & a {
+      padding: 0.8rem;
     }
+  }
+}
+// Hovers:
+.navigation {
+  & a:hover {
+    color: $primary-navigation-hover;
   }
 }
 
