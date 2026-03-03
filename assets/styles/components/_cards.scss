@@ -1,0 +1,21 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.card {
+	@include flex(null, center, column, 0.8rem);
+	border-radius: $border-radius-btn-mob;
+	flex-shrink: 0;
+	& h3 {
+		@include flex(null, space-between, null, null);
+		font-size: 1.4rem;
+	}
+	& p {
+		font-size: 1.2rem;
+		line-height: 1.6rem;
+		letter-spacing: 0.03em;
+	}
+  & .cover-photo {
+    border-top: 3px solid red;
+    border-radius: 8px;
+  }
+}
