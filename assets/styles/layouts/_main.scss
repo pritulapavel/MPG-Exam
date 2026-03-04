@@ -16,9 +16,9 @@
         row-gap: 1rem;
 
         grid-template-areas:
-        "sidebar header"
-        "sidebar main"
-        "sidebar player";
+        "sidebar header header"
+        "sidebar main aside"
+        "sidebar player player";
     }
 }
 .main {
@@ -27,7 +27,6 @@
   padding-bottom: 16rem;
   @include laptop {
     grid-area: main;
-    padding: 2.4rem;
     padding-bottom: 2.4rem;
     border: $main-section-border;
     border-radius: $border-radius-default;
@@ -35,9 +34,6 @@
 
   .section-wrapper {
     @include flex(null, null, column, 2.8rem);
-  }
-  .main-inner {
-    @include flex(null, null, column, 3rem);
   }
   &::-webkit-scrollbar {
       width: 6px;
@@ -49,6 +45,12 @@
       background-color: $scrollbar-bg;
       border-radius: 3px;
   }
+}
+
+.main-inner {
+  @include flex(null, null, column, 3rem);
+  width: 100%;
+  padding: 2.4rem;
 }
 
 .content-wrapper {
@@ -103,5 +105,21 @@
           font-size: 1.4rem;
         }
     }
+  }
+}
+
+.activity {
+  border: 1px solid #202020;
+  border-radius: 1rem;
+  grid-area: aside;
+  display: none;
+
+  @include laptop {
+    @include flex(null, null, row, 1rem);
+    width: 35.8rem;
+  }
+
+  & h4 {
+    color: $color-hover-text;
   }
 }
