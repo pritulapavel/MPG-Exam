@@ -33,7 +33,7 @@
     border-radius: $border-radius-default;
   }
 
-  .made-for-you {
+  .section-wrapper {
     @include flex(null, null, column, 2.8rem);
   }
   .main-inner {
@@ -53,6 +53,29 @@
 
 .content-wrapper {
     @include flex(null,null, column, 2rem);
+}
+
+.section-content {
+	display: grid;
+	grid-auto-flow: column;
+	grid-auto-columns: 17.1rem;
+	gap: 1.1rem;
+	height: max-content;
+  padding-bottom: 4rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  &::-webkit-scrollbar {
+      height: 6px; 
+  }
+  &::-webkit-scrollbar-track {
+      background: transparent; 
+  }
+  &::-webkit-scrollbar-thumb {
+      background-color: rgba(255, 255, 255, 0.3);
+      border-radius: 3px;
+  }
 }
 .filters-wrapper {
 	@include flex(center, space-between, null, null);
