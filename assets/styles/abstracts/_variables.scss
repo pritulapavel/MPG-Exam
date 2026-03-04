@@ -1,6 +1,21 @@
 /* Colors */
 
 $color-bg-main: #060606;
+$color-bg-secondary: #333842;
+$color-primary: #898989;
+$mobile-menu-bg-color: linear-gradient(
+  180deg,
+  rgba(17, 17, 17, 0.85) 0%,
+  #111111 42.62%
+);
+$main-section-border: 1px solid #202020;
+$primary-navigation-hover: #e0e0e0;
+$mobile-nav-bg-color: linear-gradient(
+  to bottom,
+  rgba(17, 17, 17, 0) 0%,
+  rgba(17, 17, 17, 0.5) 50%,
+  #111111 100%
+);
 $color-bg-secondary: #333842; 
 $color-bg-primary: #111111; 
 $color-primary: #898989; 
@@ -10,12 +25,14 @@ $color-hover-text: #E0E0E0;
 $main-section-border: 1px solid #202020;
 $main-green-color: #1ED760;
 
+$color-card-span-red: #CE6E9A;
+
 
 
 /* Fonts */
-$font-satoshi: 'Satoshi', sans-serif;
-
+$font-satoshi: "Satoshi", sans-serif;
 
 /* Border radius */
 
 $border-radius-default: 1rem;
+$border-radius-btn-mob: 0.8rem;
