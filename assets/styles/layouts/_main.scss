@@ -109,6 +109,9 @@
 }
 
 .activity {
+  .activity-content {
+    @include flex(flex-start, null, column, 2.4rem);
+  }
   border: 1px solid #202020;
   border-radius: 1rem;
   grid-area: aside;
@@ -121,5 +124,35 @@
 
   & h4 {
     color: $color-hover-text;
+  }
+  .activity-details {
+    @include flex(center, space-between, null, 1rem);
+    .activity-summary {
+      @include flex(null, null, column, null);
+      .title {
+        font-size: 1.2rem;
+        line-height: 1.6rem;
+        letter-spacing: 0.03em;
+      }
+      .description {
+        @include flex(center, space-between, null, null);
+        .activity-time {
+          @include flex(center, null, null, null);
+          width: 3rem;
+          height: 3rem;
+        }
+      }
+      .artist-information {
+        font-size: 1.4rem;
+        line-height: 1.9rem;
+        letter-spacing: 0.03em;
+        .album {
+          color: $color-hover-text;
+        }
+        .artist::before {
+          content: "• ";
+        }
+      }
+    }
   }
 }

@@ -1,0 +1,39 @@
+@use '../abstracts/variables' as *; 
+@use '../abstracts/mixins' as *; 
+@use '../animations/animation' as *;
+
+.now {
+  position: relative;
+  width: 3rem;
+  height: 3rem;
+}
+
+.now::before,
+.now::after,
+.now span.now-bar {
+  content: "";
+  position: absolute;
+  bottom: 6px;
+  left: 6px;
+  width: 3px;
+  background: #1db954;
+  border-radius: 2px;
+  animation: nowBounce 1s infinite ease-in-out;
+}
+
+.now::before {
+  height: 6px;
+  animation-delay: 0s;
+}
+
+.now span.now-bar {
+  left: 11px;
+  height: 10px;
+  animation-delay: 0.2s;
+}
+
+.now::after {
+  left: 16px;
+  height: 8px;
+  animation-delay: 0.4s;
+}
