@@ -1,0 +1,10 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+@use "../layouts/header" as *;
+// Display none for player on mobile & tablet screen screen
+.player {
+  display: none;
+  @include laptop {
+    display: flex;
+  }
+}
