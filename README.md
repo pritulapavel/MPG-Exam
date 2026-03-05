@@ -110,7 +110,7 @@ A modern, responsive **Spotify-inspired user interface layout** built with **HTM
 # Preview
 
 Add a screenshot or GIF of the project here.
-
+ 
 ```
 /assets/preview.png
 ```
