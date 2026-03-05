@@ -93,3 +93,301 @@ git pull origin main
 > “Code is like humor. When you have to explain it, it’s bad.” – Keep your code functional but understandable for the team.
 
 ---
+
+
+NEW README FILE CONTENT BELOW ↓
+
+
+---
+
+
+# Spotify UI Layout Clone
+
+A modern, responsive **Spotify-inspired user interface layout** built with **HTML, SCSS, and vanilla JavaScript**. This project focuses on clean architecture, scalable styling, and responsive UI patterns commonly used in professional front‑end development.
+
+---
+
+# Preview
+
+Add a screenshot or GIF of the project here.
+
+```
+/assets/preview.png
+```
+
+---
+
+# Live Demo
+
+If deployed, add a link here.
+
+```
+•LINK_HERE_AFTER_FINISH•
+```
+
+---
+
+# Features
+
+• Fully responsive layout
+
+• Sidebar, header and music player layout
+
+• Grid and flexbox based UI architecture
+
+• Interactive UI components
+
+• Dynamic UI effects using JavaScript
+
+• SCSS architecture using partials
+
+• Modern CSS practices
+
+• Clean semantic HTML
+
+---
+
+# Tech Stack
+
+| Technology  | Purpose                            |
+| ----------- | ---------------------------------- |
+| HTML5       | Semantic structure                 |
+| SCSS (Sass) | Scalable styling architecture      |
+| JavaScript  | UI interaction and dynamic styling |
+| CSS Grid    | Page layout                        |
+| Flexbox     | Component layout                   |
+
+---
+
+# Project Structure
+
+```
+project
+│
+├─ assets
+│   ├─ img
+│   │   ├─ covers
+│   │   └─ icons
+│   │
+│   └─ styles
+│       ├─ abstracts
+│       │   ├─ _variables.scss
+│       │   └─ _mixins.scss
+│       │   └─ ...
+│       │
+│       ├─ base
+│       │   └─ _reset.scss
+│       │   └─ ...
+│       │
+│       ├─ components
+│       │   ├─ _card.scss
+│       │   └─ _buttons.scss
+│       │   └─ ...
+│       │
+│       ├─ layout
+│       │   ├─ _header.scss
+│       │   ├─ _sidebar.scss
+│       │   └─ _main.scss
+│       │   └─ ...
+│       │
+│       └─ styles.scss
+│
+│
+├─ index.html
+└─ README.md
+```
+
+---
+
+# SCSS Architecture
+
+The styling system follows a modular **SCSS architecture** inspired by the **7‑1 pattern**.
+
+### abstracts
+
+Contains project variables and mixins.
+
+```
+_variables.scss
+_mixins.scss
+```
+
+### base
+
+Global styles such as reset, typography and base rules.
+
+### components
+
+Reusable UI components.
+
+Examples:
+
+• cards
+
+• buttons
+
+• player controls
+
+### layout
+
+Major layout sections.
+
+Examples:
+
+• header
+
+• sidebar
+
+• main content
+
+---
+
+# Responsive Design
+
+The layout adapts across multiple breakpoints using SCSS mixins.
+
+Example:
+
+```
+@include tablet {
+  // tablet styles
+}
+
+@include laptop {
+  // desktop styles
+}
+```
+
+Mobile‑first strategy is used throughout the project.
+
+---
+
+# JavaScript Functionality
+
+JavaScript is used for lightweight UI enhancements.
+
+Examples include:
+
+• Dynamic styling
+
+• Image‑based color extraction
+
+• UI state toggling
+
+Example snippet:
+
+```
+document.querySelectorAll('.stack').forEach((card) => {
+  const img = card.querySelector('.card-image').src;
+  card.style.setProperty('--img-stack', `url(${img})`);
+});
+```
+
+This allows cards to dynamically reuse their cover image in CSS effects.
+
+---
+
+# CSS Techniques Used
+
+The project demonstrates several advanced CSS techniques:
+
+• CSS custom properties
+
+• pseudo‑elements
+
+• responsive grid layout
+
+• flexbox alignment patterns
+
+• dynamic hover effects
+
+• CSS animations
+
+• reusable utility mixins
+
+---
+
+# Example Component
+
+### Card Stack Effect
+
+A visual stack effect is created using pseudo‑elements.
+
+```
+.card.stack::before
+.card.stack::after
+```
+
+These layers simulate stacked album covers while keeping the main image interactive.
+
+---
+
+# Development Setup
+
+Clone the repository:
+
+```
+git clone https://github.com/pritulapavel/MPG-Exam.git
+```
+
+Open the project folder:
+
+```
+cd project-name
+```
+
+Compile SCSS if needed using your preferred tool (Sass CLI, Vite, etc).
+
+---
+
+# Best Practices Used
+
+• semantic HTML
+
+• scalable SCSS architecture
+
+• reusable mixins
+
+• component‑based styling
+
+• responsive layout strategy
+
+• clean and maintainable code
+
+---
+
+# Future Improvements
+
+Potential improvements for the project:
+
+• add real audio player functionality
+
+• integrate Spotify API
+
+• implement theme switching
+
+• add playlist management
+
+• add animations for player interactions
+
+---
+
+# Authors
+
+Developed by:
+
+**Mariam Tchelidze** **Giorgi Kravchenko** **Pavle Pritula**
+
+---
+
+# License
+
+This project is created for **educational and portfolio purposes**.
+
+---
+
+# Acknowledgements
+
+Design inspiration comes from the Spotify interface.
+
+This project is not affiliated with Spotify.
