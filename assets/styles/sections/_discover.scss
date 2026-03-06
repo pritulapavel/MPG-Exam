@@ -213,13 +213,18 @@
   }
 }
 // Desktop version of Discover page
-
-// Desktop Navigation
 .filters-nav nav {
+  width: 86vw;
+  position: fixed;
+  left: 28.9rem;
+  top: 7rem;
+  z-index: 25;
   @include flex(center, flex-start, row, 1rem);
-  padding: 1.5rem 2.5rem;
-
+  padding: 1.5rem 0;
+  background-color: $color-bg-main;
+  border-radius: 1rem 1rem 0 0;
   & ul {
+    padding: 0 2.5rem;
     @include flex(center, flex-start, row, 1rem);
     & a {
       padding: 0.8rem 1.5rem;
@@ -241,14 +246,26 @@
       }
     }
   }
+  transition: transform 0.3s ease;
+  &.hide {
+    transform: translateY(-100%);
+  }
 }
+
+// Desktop Navigation
+
 .section-wrapper-discover {
-  padding: 12.5rem 22.1rem;
+  position: relative;
+  background-color: rgba(223, 114, 47, 0.12);
   width: 100%;
-  @include flex(center, center);
+
+  padding: 12.5rem 22.1rem;
+
+  @include flex(center, center, column, 5rem);
 
   .content-container {
-    @include flex(center, space-between, row, 5rem);
+    width: 100%;
+    @include flex(center, center, row, 8rem);
 
     .song-container {
       border-radius: 1rem;
@@ -300,5 +317,24 @@
       background-color: $main-green-color;
       border-radius: 5rem;
     }
+    & a {
+      @include flex(center, center, row, 1.185rem);
+    }
+  }
+
+  & .genres {
+    @include flex(center, flex-start, row, 1rem);
+
+    & span {
+      padding: 0.8rem 1.3rem;
+      font-family: "Satoshi";
+      font-size: 1rem;
+      white-space: nowrap;
+      color: $color-primary;
+      border-radius: 4.4rem;
+      border: 2px solid rgba(137, 137, 137, 0.1);
+      background: transparent;
+    }
   }
 }
+// Desktop container  Background
