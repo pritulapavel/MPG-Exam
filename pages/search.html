@@ -1,11 +1,721 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="MPG Team" />
+    <meta
+      name="description"
+      content="This is Georgian Spotify Template created by MPG Team"
+    />
+    <link rel="stylesheet" href="../assets/styles/style.css" />
+    <title>Georgian Spotify - Project by MPG Team</title>
+  </head>
+  <body class="app">
+    <header class="header">
+      <div class="header-wrapper">
+        <!-- desktop -->
+        <nav class="navigation">
+          <ul class="top-nav-ul left-ul">
+            <li>
+              <a href="#">
+                <div class="img-div">
+                  <img
+                    src="../assets/img/icons/home-inactive.svg"
+                    alt="Home page"
+                  />
+                </div>
+                Home
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <div class="img-div">
+                  <img src="../assets/img/icons/discover.svg" alt="Discover" />
+                </div>
+
+                <span>Discover</span>
+              </a>
+            </li>
+            <li>
+              <form action="">
+                <div class="img-div search-wrapper">
+                  <label for="search">
+                    <img src="../assets/img/icons/search.svg" alt="Search" />
+                  </label>
+                  <input id="search" type="search" placeholder="Search" />
+                </div>
+              </form>
+            </li>
+          </ul>
+        </nav>
+        <nav class="side-nav top-nav">
+          <ul class="top-nav-ul">
+            <li>
+              <a href="#">
+                <img
+                  src="../assets/img/icons/notification.svg"
+                  alt="Notifications"
+                />
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="../assets/img/icons/lock.svg" alt="Lock" />
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="../assets/img/icons/users.svg" alt="Profile" />
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="../assets/img/icons/settings.svg" alt="Settings" />
+              </a>
+            </li>
+            <li class="no-hover">
+              <a href="#">
+                <img src="../assets/img/icons/user.svg" alt="Profile" />
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <!-- Mobile navigation -->
+      <nav class="mobile-nav">
+        <a href="#" class="nav-item">
+          <div class="img-div">
+            <img src="../assets/img/icons/home-inactive.svg" alt="Home" />
+          </div>
+          Home
+        </a>
+        <a href="#" class="nav-item">
+          <div class="img-div">
+            <img src="../assets/img/icons/discover.svg" alt="Discover" />
+          </div>
+          Discover
+        </a>
+        <a href="#" class="nav-item">
+          <div class="img-div">
+            <img src="../assets/img/icons/search.svg" alt="Search" />
+          </div>
+          Search
+        </a>
+        <a href="#" class="nav-item">
+          <div class="img-div">
+            <img src="../assets/img/icons/library.svg" alt="Library" />
+          </div>
+          Library
+        </a>
+        <a href="#" class="nav-item">
+          <div class="img-div">
+            <img src="../assets/img/icons/me.svg" alt="My Profile" />
+          </div>
+          Me
+        </a>
+      </nav>
+    </header>
+    <aside class="sidebar">
+      <div class="sidebar-heading">
+        <a href="#"
+          ><img
+            src="../assets/img/icons/library.svg"
+            class="icon library"
+            alt="Library icon"
+          />
+          My Library</a
+        >
+      </div>
+      <nav class="sidebar-menu">
+        <ul>
+          <li>
+            <details class="nav__dropdown">
+              <summary class="nav__link">
+                <img
+                  src="../assets/img/icons/pin.svg"
+                  class="icon"
+                  alt="Library icon"
+                />
+                Pins
+              </summary>
+              <ul class="nav__sub">
+                <li><a href="#">Albums</a></li>
+                <li><a href="#">Artists</a></li>
+                <li><a href="#">Playlists</a></li>
+              </ul>
+            </details>
+          </li>
+          <li>
+            <details class="nav__dropdown">
+              <summary class="nav__link">
+                <img
+                  src="../assets/img/icons/playlist.svg"
+                  class="icon"
+                  alt="Library icon"
+                />
+                Playlists
+              </summary>
+              <ul class="nav__sub">
+                <li><a href="#">Albums</a></li>
+                <li><a href="#">Artists</a></li>
+                <li><a href="#">Playlists</a></li>
+              </ul>
+            </details>
+          </li>
+          <li>
+            <img
+              src="../assets/img/icons/hearth.svg"
+              class="icon"
+              alt="Library icon"
+            />
+            <span>Liked Songs</span>
+          </li>
+          <li>
+            <img
+              src="../assets/img/icons/bookmark.svg"
+              class="icon"
+              alt="Library icon"
+            />
+            <span>Saves</span>
+          </li>
+          <li>
+            <img
+              src="../assets/img/icons/albom.svg"
+              class="icon"
+              alt="Library icon"
+            />
+            <span>Albums</span>
+          </li>
+          <li>
+            <img
+              src="../assets/img/icons/folder.svg"
+              class="icon"
+              alt="Library icon"
+            />
+            <span>Folders</span>
+          </li>
+          <li>
+            <img
+              src="../assets/img/icons/podcast.svg"
+              class="icon"
+              alt="Library icon"
+            />
+            <span>Podcasts</span>
+          </li>
+          <li>
+            <img
+              src="../assets/img/icons/audiobook.svg"
+              class="icon"
+              alt="Library icon"
+            />
+            <span>Audiobooks</span>
+          </li>
+          <li>
+            <img
+              src="../assets/img/icons/artists.svg"
+              class="icon"
+              alt="Library icon"
+            />
+            <span>Artists</span>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+    <main class="main">
+		<div class="main-inner">
+			<section class="search-wrapper">
+				<div class="content-wrapper">
+					<div class="search">
+						<div class="search-input">
+							<label for="search"><img class="search-icon" src="../assets/img/icons/search.svg" alt="search icon"></label>
+							<input id="search" type="text" name="search" placeholder="What do you want to play?">
+						</div>
+						<div class="search-upload"><img src="../assets/img/icons/camera.svg" /></div>
+					</div>
+				</div>
+			</section>
+			<section class="recent-wrapper">
+				<div class="content-wrapper">
+					<div class="section-title">
+						<h2>Recent searches </h2>
+						<div class="slide-controls">
+							<a href="#"><img src="../assets/img/icons/dots.svg" alt=""></a>
+						</div>
+					</div>
+					<div class="section-content">
+						<article class="card artists">
+							<a href="#" class="close"><img src="../assets/img/icons/close.svg" alt=""></a>
+							<figure>
+								<img src="../assets/img/artists/artist_1.png" class="card-image circle" alt="Cover image 7" />
+							</figure>
+							<span class="artist-name">Guns N’ Roses</span>
+						</article>
+						<article class="card stack">
+							<a href="#" class="close"><img src="../assets/img/icons/close.svg" alt=""></a>
+							<figure class="card__cover">
+								<img src="../assets/img/covers/cover_1.png" class="card-image" alt="Cover image 1" />
+							</figure>
+							<h3>Discover weekly <span class="red">50</span></h3>
+							<p>Your weekly mixtape of fresh music.</p>
+						</article>
+						<article class="card stack">
+							<a href="#" class="close"><img src="../assets/img/icons/close.svg" alt=""></a>
+							<figure>
+								<img src="../assets/img/covers/cover_2.png" class="card-image" alt="Cover image 1" />
+							</figure>
+							<h3>Discrover weekly <span class="red">50</span></h3>
+							<p>Your weekly mixtape of fresh music.</p>
+						</article>
+					</div>
+				</div>
+			</section>
+			<section class="section-wrapper">
+				<div class="content-wrapper">
+					<div class="section-title">
+						<h2>Browse all </h2>
+					</div>
+					<div class="section-title">
+						<h2>Discover </h2>
+						<div class="slide-controls">
+							<a href="#"><img src="../assets/img/icons/arrows/arrow-left-big.svg" alt=""></a>
+							<a href="#"><img src="../assets/img/icons/arrows/arrow-right-big.svg" alt=""></a>
+						</div>
+					</div>
+					<div class="section-content">
+						<article class="browse-card">
+							<span class="browse-name">Guns N’ Roses</span>
+							<figure>
+								<img src="../assets/img/albums/album_7.png" class="card-image circle" alt="Cover image 7" />
+							</figure>
+						</article>
+						<article class="browse-card">
+							<span class="browse-name">New Releases</span>
+							<figure>
+								<img src="../assets/img/albums/album_8.png" class="card-image circle" alt="Cover image 7" />
+							</figure>
+						</article>
+						<article class="browse-card">
+							<span class="browse-name">Spotify Classics</span>
+							<figure>
+								<img src="../assets/img/albums/album_9.png" class="card-image circle" alt="Cover image 7" />
+							</figure>
+						</article>
+						<article class="browse-card">
+							<span class="browse-name">Charts</span>
+							<figure>
+								<img src="../assets/img/albums/album_10.png" class="card-image circle" alt="Cover image 7" />
+							</figure>
+						</article>
+						<article class="browse-card">
+							<span class="browse-name">Trending</span>
+							<figure>
+								<img src="../assets/img/albums/album_11.png" class="card-image circle" alt="Cover image 7" />
+							</figure>
+						</article>
+						<article class="browse-card">
+							<span class="browse-name">Discover</span>
+							<figure>
+								<img src="../assets/img/albums/album_12.png" class="card-image circle" alt="Cover image 7" />
+							</figure>
+						</article>
+						<article class="browse-card">
+							<span class="browse-name">Spotify Singles</span>
+							<figure>
+								<img src="../assets/img/albums/album_13.png" class="card-image circle" alt="Cover image 7" />
+							</figure>
+						</article>
+						<article class="browse-card">
+							<span class="browse-name">Decades</span>
+							<figure>
+								<img src="../assets/img/albums/album_14.png" class="card-image circle" alt="Cover image 7" />
+							</figure>
+						</article>
+					</div>
+				</div>
+			</section>
+			<section class="section-wrapper">
+				<div class="content-wrapper">
+					<div class="section-title">
+						<h2>Genres </h2>
+						<div class="slide-controls">
+							<a href="#"><img src="../assets/img/icons/arrows/arrow-left-big.svg" alt=""></a>
+							<a href="#"><img src="../assets/img/icons/arrows/arrow-right-big.svg" alt=""></a>
+						</div>
+					</div>
+					<div class="section-content">
+						<article class="browse-card">
+							<span class="browse-name">Pop</span>
+							<figure>
+								<img src="../assets/img/albums/album_15.png" class="card-image circle" alt="Cover image 7" />
+							</figure>
+						</article>
+						<article class="browse-card">
+							<span class="browse-name">Country</span>
+							<figure>
+								<img src="../assets/img/albums/album_16.png" class="card-image circle" alt="Cover image 7" />
+							</figure>
+						</article>
+						<article class="browse-card">
+							<span class="browse-name">Hip-Hop</span>
+							<figure>
+								<img src="../assets/img/albums/album_17.png" class="card-image circle" alt="Cover image 7" />
+							</figure>
+						</article>
+						<article class="browse-card">
+							<span class="browse-name">Rock</span>
+							<figure>
+								<img src="../assets/img/albums/album_18.png" class="card-image circle" alt="Cover image 7" />
+							</figure>
+						</article>
+						<article class="browse-card">
+							<span class="browse-name">Indie</span>
+							<figure>
+								<img src="../assets/img/albums/album_19.png" class="card-image circle" alt="Cover image 7" />
+							</figure>
+						</article>
+						<article class="browse-card">
+							<span class="browse-name">Punk</span>
+							<figure>
+								<img src="../assets/img/albums/album_20.png" class="card-image circle" alt="Cover image 7" />
+							</figure>
+						</article>
+						<article class="browse-card">
+							<span class="browse-name">Metal</span>
+							<figure>
+								<img src="../assets/img/albums/album_21.png" class="card-image circle" alt="Cover image 7" />
+							</figure>
+						</article>
+						<article class="browse-card">
+							<span class="browse-name">Instrumental</span>
+							<figure>
+								<img src="../assets/img/albums/album_22.png" class="card-image circle" alt="Cover image 7" />
+							</figure>
+						</article>
+					</div>
+				</div>
+			</section>
+			<section class="section-wrapper">
+				<div class="content-wrapper">
+					<div class="section-title">
+						<h2>Mood & Activity </h2>
+						<div class="slide-controls">
+							<a href="#"><img src="../assets/img/icons/arrows/arrow-left-big.svg" alt=""></a>
+							<a href="#"><img src="../assets/img/icons/arrows/arrow-right-big.svg" alt=""></a>
+						</div>
+					</div>
+					<div class="section-content">
+						<article class="browse-card">
+							<span class="browse-name">In the car</span>
+							<figure>
+								<img src="../assets/img/albums/album_23.png" class="card-image circle" alt="Cover image 7" />
+							</figure>
+						</article>
+						<article class="browse-card">
+							<span class="browse-name">Mood</span>
+							<figure>
+								<img src="../assets/img/albums/album_24.png" class="card-image circle" alt="Cover image 7" />
+							</figure>
+						</article>
+						<article class="browse-card">
+							<span class="browse-name">Workout</span>
+							<figure>
+								<img src="../assets/img/albums/album_25.png" class="card-image circle" alt="Cover image 7" />
+							</figure>
+						</article>
+						<article class="browse-card">
+							<span class="browse-name">Chill</span>
+							<figure>
+								<img src="../assets/img/albums/album_26.png" class="card-image circle" alt="Cover image 7" />
+							</figure>
+						</article>
+						<article class="browse-card">
+							<span class="browse-name">Sleep</span>
+							<figure>
+								<img src="../assets/img/albums/album_27.png" class="card-image circle" alt="Cover image 7" />
+							</figure>
+						</article>
+						<article class="browse-card">
+							<span class="browse-name">Party</span>
+							<figure>
+								<img src="../assets/img/albums/album_28.png" class="card-image circle" alt="Cover image 7" />
+							</figure>
+						</article>
+						<article class="browse-card">
+							<span class="browse-name">At Home</span>
+							<figure>
+								<img src="../assets/img/albums/album_29.png" class="card-image circle" alt="Cover image 7" />
+							</figure>
+						</article>
+						<article class="browse-card">
+							<span class="browse-name">Focus</span>
+							<figure>
+								<img src="../assets/img/albums/album_30.png" class="card-image circle" alt="Cover image 7" />
+							</figure>
+						</article>
+					</div>
+				</div>
+			</section>
+			<section class="section-wrapper">
+				<div class="content-wrapper">
+					<div class="section-title">
+						<h2>Entertainment </h2>
+						<div class="slide-controls">
+							<a href="#"><img src="../assets/img/icons/arrows/arrow-left-big.svg" alt=""></a>
+							<a href="#"><img src="../assets/img/icons/arrows/arrow-right-big.svg" alt=""></a>
+						</div>
+					</div>
+					<div class="section-content">
+						<article class="browse-card">
+							<span class="browse-name">Netflix</span>
+							<figure>
+								<img src="../assets/img/albums/album_31.png" class="card-image circle" alt="Cover image 7" />
+							</figure>
+						</article>
+						<article class="browse-card">
+							<span class="browse-name">Anime</span>
+							<figure>
+								<img src="../assets/img/albums/album_32.png" class="card-image circle" alt="Cover image 7" />
+							</figure>
+						</article>
+						<article class="browse-card">
+							<span class="browse-name">Disney</span>
+							<figure>
+								<img src="../assets/img/albums/album_33.png" class="card-image circle" alt="Cover image 7" />
+							</figure>
+						</article>
+						<article class="browse-card">
+							<span class="browse-name">Gaming</span>
+							<figure>
+								<img src="../assets/img/albums/album_34.png" class="card-image circle" alt="Cover image 7" />
+							</figure>
+						</article>
+					</div>
+				</div>
+			</section>
+			<section class="section-wrapper">
+				<div class="content-wrapper">
+					<div class="section-title">
+						<h2>Podcasts </h2>
+						<div class="slide-controls">
+							<a href="#"><img src="../assets/img/icons/arrows/arrow-left-big.svg" alt=""></a>
+							<a href="#"><img src="../assets/img/icons/arrows/arrow-right-big.svg" alt=""></a>
+						</div>
+					</div>
+					<div class="section-content">
+						<article class="browse-card">
+							<span class="browse-name">Podcasts</span>
+							<figure>
+								<img src="../assets/img/albums/album_35.png" class="card-image circle" alt="Cover image 7" />
+							</figure>
+						</article>
+						<article class="browse-card">
+							<span class="browse-name">Podcast Charts</span>
+							<figure>
+								<img src="../assets/img/albums/album_36.png" class="card-image circle" alt="Cover image 7" />
+							</figure>
+						</article>
+						<article class="browse-card">
+							<span class="browse-name">Podcast New Releases</span>
+							<figure>
+								<img src="../assets/img/albums/album_37.png" class="card-image circle" alt="Cover image 7" />
+							</figure>
+						</article>
+						<article class="browse-card">
+							<span class="browse-name">Video</span>
+							<figure>
+								<img src="../assets/img/albums/album_38.png" class="card-image circle" alt="Cover image 7" />
+							</figure>
+						</article>
+					</div>
+				</div>
+			</section>
+			<section class="section-wrapper">
+				<div class="content-wrapper">
+					<div class="section-title">
+						<h2>Audiobooks </h2>
+						<div class="slide-controls">
+							<a href="#"><img src="../assets/img/icons/arrows/arrow-left-big.svg" alt=""></a>
+							<a href="#"><img src="../assets/img/icons/arrows/arrow-right-big.svg" alt=""></a>
+						</div>
+					</div>
+					<div class="section-content">
+						<article class="browse-card">
+							<span class="browse-name">Audiobooks</span>
+							<figure>
+								<img src="../assets/img/albums/album_39.png" class="card-image circle" alt="Cover image 7" />
+							</figure>
+						</article>
+						<article class="browse-card">
+							<span class="browse-name">Sci-Fi & Fantasy Essentials</span>
+							<figure>
+								<img src="../assets/img/albums/album_40.png" class="card-image circle" alt="Cover image 7" />
+							</figure>
+						</article>
+						<article class="browse-card">
+							<span class="browse-name">Fiction & Literature</span>
+							<figure>
+								<img src="../assets/img/albums/album_41.png" class="card-image circle" alt="Cover image 7" />
+							</figure>
+						</article>
+						<article class="browse-card">
+							<span class="browse-name">Mystery & Thriller</span>
+							<figure>
+								<img src="../assets/img/albums/album_42.png" class="card-image circle" alt="Cover image 7" />
+							</figure>
+						</article>
+						<article class="browse-card">
+							<span class="browse-name">Self-Help</span>
+							<figure>
+								<img src="../assets/img/albums/album_43.png" class="card-image circle" alt="Cover image 7" />
+							</figure>
+						</article>
+					</div>
+				</div>
+			</section>
+		</div>
+	</main>
+	<aside class="activity">
+		<div class="main-inner">
+			<section class="section-wrapper">
+				<div class="content-wrapper">
+					<div class="section-title">
+						<h4>Made For You </h4>
+						<div class="slide-controls">
+							<a href="#"><img src="../assets/img/icons/add_friend.svg" alt=""></a>
+							<a href="#"><img src="../assets/img/icons/close.svg" alt=""></a>
+						</div>
+					</div>
+					<div class="activity-content">
+						<div class="activity-details">
+							<div class="activity-icon"><img src="../assets/img/users/user_1.png" alt=""></div>
+							<div class="activity-summary">
+								<span class="title">FriendlyMusicListener</span>
+								<div class="description">
+									<div class="activity-time now">
+										<span class="now-bar"></span>
+									</div>
+									<div class="artist-information">
+										<span class="album">Goosebumps </span>
+										<span class="artist">Travis Scott</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="activity-details">
+							<div class="activity-icon"><img src="../assets/img/users/user_2.png" alt=""></div>
+							<div class="activity-summary">
+								<span class="title">AverageMusicEnjoyer</span>
+								<div class="description">
+									<div class="activity-time now">
+										<span class="now-bar"></span>
+									</div>
+									<div class="artist-information">
+										<span class="album">Get Lucky </span>
+										<span class="artist">Daft Punk</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="activity-details">
+							<div class="activity-icon"><img src="../assets/img/users/user_3.png" alt=""></div>
+							<div class="activity-summary">
+								<span class="title">MusicEnthusiast</span>
+								<div class="description">
+									<div class="activity-time">
+										<span>1h</span>
+									</div>
+									<div class="artist-information">
+										<span class="album">would he </span>
+										<span class="artist">joji</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="activity-details">
+							<div class="activity-icon"><img src="../assets/img/users/user_4.png" alt=""></div>
+							<div class="activity-summary">
+								<span class="title">IListenToMusic56</span>
+								<div class="description">
+									<div class="activity-time">
+										<span>6h</span>
+									</div>
+									<div class="artist-information">
+										<span class="album">Rockstar </span>
+										<span class="artist">Post Malone</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</aside>
+    <footer class="player">
+      <div class="player-wrapper">
+        <img src="../assets/img/albums/album_1.png" alt="Draft Punk" />
+
+        <div class="music-title-author-wrapper">
+          <a href="#" class="scrolling-text"
+            >Get Lucky (feat. Pharrell Williams and Nile Rodgers)</a
+          >
+          <a href="#" class="scrolling-text-band">Draft Punk</a>
+        </div>
+      </div>
+
+      <div class="player-icons">
+        <img
+          src="../assets/img/icons/player/add_playlist.svg"
+          alt="add_playlist"
+          class="add_playlist"
+        />
+        <img src="../assets/img/icons/player/play.svg" alt="play" class="play" />
+      </div>
+
+      <div class="music-progress-bar"></div>
+
+      <div class="advanced-player">
+        <div class="advanced-player-wrapper">
+          <div class="stop-button-wrapper">
+            <img
+              src="../assets/img/icons/player/pause.svg"
+              alt="pause"
+              class="pause"
+            />
+          </div>
+          <img src="../assets/img/icons/player/prev.svg" alt="prev" />
+          <img src="../assets/img/icons/player/next.svg" alt="next" />
+          <img src="../assets/img/icons/player/shuffle.svg" alt="shuffle" />
+          <img src="../assets/img/icons/player/repeat.svg" alt="repeat" />
+        </div>
+
+        <div class="advanced-player-music-time-line">
+          <p>2:23</p>
+          <div class="advanced-music-progress-bar"></div>
+          <p>4:46</p>
+        </div>
+
+        <img src="../assets/img/icons/player/volume.svg" alt="volume" />
+      </div>
+
+      <div class="advanced-player-icons">
+        <div class="wrapper-icons">
+          <img src="../assets/img/icons/hearth.svg" alt="heart icon" />
+          <img
+            src="../assets/img/icons/player/add_playlist.svg"
+            alt="add play list icon"
+          />
+        </div>
+        <img src="../assets/img/icons/player/list.svg" alt="list icon" />
+        <img src="../assets/img/icons/player/devices.svg" alt="devices icon" />
+        <img src="../assets/img/icons/dots.svg" alt="dots icon" />
+        <hr />
+        <img
+          src="../assets/img/icons/player/player_blue_icon.svg"
+          alt="blue icon"
+        />
+        <img src="../assets/img/icons/player/order.svg" alt="order icon" />
+      </div>
+    </footer>
+  </body>
+  <script src="../assets/js/main.js"></script>
 </html>

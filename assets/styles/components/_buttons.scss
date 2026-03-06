@@ -37,3 +37,17 @@
   height: 0.8rem;
   animation-delay: 0.4s;
 }
+
+.close {
+    @include flex(center, center, null, null);
+    position: absolute;
+    z-index: 99999999;
+    top: 1rem;
+    right: 1rem;
+    background-color: $color-bg-primary;
+    padding: 1rem;
+    border-radius: 50%;
+    &:hover img {
+      filter: brightness(0) invert(1); 
+    }
+}
