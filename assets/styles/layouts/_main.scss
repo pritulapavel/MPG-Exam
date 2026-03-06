@@ -35,6 +35,9 @@
   .section-wrapper {
     @include flex(null, null, column, 2.8rem);
   }
+  .library-wrapper {
+    @include flex(null, null, column, 0.8rem);
+  }
   .recent-wrapper {
     display: none;
     @include tablet {
