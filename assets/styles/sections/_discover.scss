@@ -1,16 +1,7 @@
 @use "../abstracts/variables" as *;
 @use "../abstracts/mixins" as *;
 
-// Styles for  changing layout strusture (that aren't compatible for this page
-.hide-mob,
-.filters-nav {
-  display: none;
-  @include laptop {
-    display: flex;
-  }
-}
 .main {
-  // overflow-y: auto;
   // Scroll controller
   scroll-snap-type: y mandatory;
 }
