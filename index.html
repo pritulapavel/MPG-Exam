@@ -802,10 +802,5 @@
       </div>
     </footer>
   </body>
-  <script>
-	document.querySelectorAll('.stack').forEach((card, i) => { //ვეძებთ კლასს .stack, ვანიჭებთ card ცვლადს და loop ში ვაგრძელებთ
-		const img = card.querySelector('.card-image').src; // ვპოულობთ .stack კონტეინერის შიგნით .card-image კლასს და ვწერთ ცვლადში img
-		card.style.setProperty('--img-stack', `url(${img})`); // ვიღებთ img დან src და setProperty-თ ქარდს style პარამეტრით ვუმატებთ css ცვლადს --img-stack
-	});
-  </script>
+  <script src="./assets/js/main.js"></script>
 </html>

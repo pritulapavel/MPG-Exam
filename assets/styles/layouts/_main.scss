@@ -23,7 +23,7 @@
 }
 .main {
   overflow-y: auto;
-  padding: 1.6rem;
+  padding: 1.5rem;
   padding-bottom: 16rem;
   @include laptop {
     grid-area: main;
@@ -34,6 +34,12 @@
 
   .section-wrapper {
     @include flex(null, null, column, 2.8rem);
+  }
+  .recent-wrapper {
+    display: none;
+    @include tablet {
+      @include flex(null, null, column, 2.8rem);
+    }
   }
   &::-webkit-scrollbar {
       width: 6px;
@@ -50,7 +56,9 @@
 .main-inner {
   @include flex(null, null, column, 3rem);
   width: 100%;
-  padding: 2.4rem;
+  @include tablet {
+    padding: 2.4rem;
+  }
 }
 
 .content-wrapper {
@@ -81,29 +89,25 @@
 }
 .filters-wrapper {
 	@include flex(center, space-between, null, null);
-  .filters-nav {
-    & ul {
-      @include flex(center, null, row, 1rem);
-      li {
-        padding: 0.8rem 1rem;
-        background-color: $color-bg-primary;
-        border-radius: $border-radius-btn-mob;
-        color: $color-hover-text;
+  .filters-nav ul {
+    @include flex(center, null, row, 1rem);
+    li {
+      padding: 0.8rem 1rem;
+      background-color: $color-bg-primary;
+      border-radius: $border-radius-btn-mob;
+      color: $color-hover-text;
 
-        &:hover {
-          background-color: $color-hover-bg;
-          border-radius: $border-radius-default;
-          color: $color-hover-text;
-          cursor: pointer;
-        }
-        
+      &:hover {
+        background-color: $color-hover-bg;
+        color: $color-hover-text;
+        cursor: pointer;
       }
-      & .active {
-          background-color: $color-hover-text; 
-          color: $color-bg-primary;
-          font-weight: 600;
-          font-size: 1.4rem;
-        }
+    }
+    & .active {
+      background-color: $color-hover-text; 
+      color: $color-bg-primary;
+      font-weight: 600;
+      font-size: 1.4rem;
     }
   }
 }
