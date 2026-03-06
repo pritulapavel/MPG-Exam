@@ -1,9 +1,8 @@
 @use "../abstracts/variables" as *;
 @use "../abstracts/mixins" as *;
-@use "../layouts/header" as *;
 
 // Styles for  changing layout strusture (that aren't compatible for this page
-.player,
+.hide-mob,
 .filters-nav {
   display: none;
   @include laptop {
@@ -15,10 +14,14 @@
 }
 .main {
   padding: 0;
+  // Scroll controller
+  scroll-snap-type: y mandatory;
 }
 .main-inner {
   padding: 0;
 }
+
+// my page styles
 .mobile-filter-wrapper {
   position: sticky;
   top: 0;
@@ -34,13 +37,18 @@
     @include flex(center, flex-start, row);
     overflow-x: auto;
     scroll-behavior: smooth;
-    padding-inline: 2rem;
+    padding: 2rem;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 20;
     background: linear-gradient(to right, rgba(17, 17, 17, 1) 0%, rgba(17, 17, 17, 0) 100%);
+    transition: transform 0.3s ease;
+
+    &.hide {
+      transform: translateY(-100%);
+    }
   }
   & ul {
     @include flex(center, flex-start, row, 4rem);
@@ -81,14 +89,22 @@
       border-radius: 0.2rem;
     }
   }
+  @include laptop {
+    display: none;
+  }
 }
 // main content wrapper for horizontal and vertical scroll
 .mobile-wrapper {
+  padding-bottom: 2rem;
   margin-top: 1.1rem;
   @include flex(center, center, column, 1.1rem);
   background-color: $color-bg-main;
   .content-wrapper {
     background-color: $color-hover-bg;
+
+    // Scrolling type
+    scroll-snap-align: start;
+
     border-radius: 1rem;
     padding: 0 2.179rem 0 1.4rem;
     // სიგანე და სიმაღლე ჩავასწორო
@@ -119,44 +135,134 @@
     .relative {
       position: relative;
       & .add-symbol {
-        padding: 0 0.842rem;
+        padding: 0.3rem;
+        @include flex(center, center, row);
         position: absolute;
         background-color: $primary-navigation-hover;
         border-radius: 5rem;
-        bottom: 2rem;
+        bottom: 2.3rem;
       }
     }
   }
+  @include laptop {
+    display: none;
+  }
+}
+.bottom-container {
+  position: absolute;
+  bottom: 0;
+  @include flex(flex-start, flex-start, column, 1.1rem);
 
-  .bottom-container {
-    position: absolute;
-    bottom: 0;
-    @include flex(flex-start, flex-start, column, 1.1rem);
+  .genre {
+    @include flex(center, flex-start, row, 1rem);
+  }
+  .music {
+    @include flex(center, flex-start, row, 1.1rem);
 
-    .genre {
-      @include flex(center, flex-start, row, 1rem);
+    & img {
+      width: clamp-calc(5.1rem, 6.1rem);
+      height: clamp-calc(5.1rem, 6.1rem);
+      border-radius: 0.3rem;
     }
-    .music {
-      @include flex(center, flex-start, row, 1.1rem);
-
-      & img {
-        width: clamp-calc(5.1rem, 6.1rem);
-        height: clamp-calc(5.1rem, 6.1rem);
-        border-radius: 0.3rem;
+    .description {
+      @include flex(flex-start, center, column, 0.3rem);
+      & h6 {
+        font-family: "Satoshi";
+        font-size: clamp-calc(1.4rem, 1.8rem);
+        color: $primary-navigation-hover;
       }
-      .description {
-        @include flex(flex-start, center, column, 0.3rem);
-        & h6 {
-          font-family: "Satoshi";
-          font-size: clamp-calc(1.4rem, 1.8rem);
-          color: $primary-navigation-hover;
-        }
-        & span {
-          font-family: "Satoshi";
-          font-size: clamp-calc(1.4rem, 1.8rem);
-          color: $color-primary;
-        }
+      & span {
+        font-family: "Satoshi";
+        font-size: clamp-calc(1.4rem, 1.8rem);
+        color: $color-primary;
       }
     }
+  }
+  @include laptop {
+    display: none;
+  }
+}
+//  bottom lines for quantity of scrolling stories:
+.scrolls {
+  padding-bottom: 1.4rem;
+  @include flex(center, space-between, row, 0.7rem);
+  display: flex;
+  width: 95vw;
+  // padding: 10px 0;
+
+  .scroll-bar {
+    flex: 1;
+    height: 0.6rem;
+    background: rgba(219, 219, 219, 0.15);
+    border-radius: 1rem;
+    overflow: hidden;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      width: 0%;
+      background: $color-primary;
+      border-radius: 1rem;
+    }
+    @include laptop {
+      display: none;
+    }
+  }
+  @include laptop {
+    display: none;
+  }
+}
+
+// Animation for filling the  story scroll
+.scroll-bar.active::after {
+  animation: fillBar 5s linear forwards;
+}
+
+@keyframes fillBar {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+// Desktop version of Discover page
+
+// Desktop Navigation
+.filters-nav nav {
+  @include flex(center, flex-start, row, 1rem);
+  padding: 1.5rem 2.5rem;
+
+  & ul {
+    @include flex(center, flex-start, row, 1rem);
+    & a {
+      padding: 0.8rem 1.5rem;
+      border-radius: 0.8rem;
+      background-color: rgba(32, 32, 32, 0.5);
+      color: $primary-navigation-hover;
+      font-family: "Satoshi";
+      font-size: 1.4rem;
+      text-decoration: none;
+      text-transform: capitalize;
+      transition: 0.3s ease;
+      &:hover {
+        color: $color-bg-primary;
+        background-color: #e0e0e0;
+      }
+      &.active {
+        color: $color-bg-primary;
+        background-color: #e0e0e0;
+      }
+    }
+  }
+}
+.section-wrapper-discover {
+  width: 100%;
+  @include flex(center, center);
+
+  .content-container {
+    @include flex(center, space-between, row, 5rem);
   }
 }

@@ -173,13 +173,11 @@
     <main class="main">
       <div class="main-inner">
         <header class="discover-filters-wrapper">
-          <!-- Desktop nav bar -->
+          <!-- Discover Desktop nav bar -->
           <div class="filters-nav">
-            <nav>
+            <nav class="discover-nav">
               <ul>
-                <li><a href="#">Audio Books</a></li>
-                <li><a href="#">Podcast</a></li>
-                <li><a href="#" class="active-underlined">Music</a></li>
+                <li><a href="#" class="active">Music</a></li>
                 <li><a href="#">EDM</a></li>
                 <li><a href="#">Indie</a></li>
                 <li><a href="#">Pop</a></li>
@@ -188,6 +186,8 @@
                 <li><a href="#">Country</a></li>
                 <li><a href="#">R&B</a></li>
                 <li><a href="#">Hip-Hop</a></li>
+                <li><a href="#">Podcast</a></li>
+                <li><a href="#">Audio Books</a></li>
               </ul>
             </nav>
           </div>
@@ -210,6 +210,15 @@
             </nav>
           </div>
         </header>
+
+        <!-- Desktop wrapper -->
+        <section class="section-wrapper-discover">
+          <div class="content-container">
+            <div class="song-container"></div>
+            <div class="description-container"></div>
+          </div>
+        </section>
+        <!-- Mobile container for -->
         <section class="mobile-wrapper">
           <div class="content-wrapper">
             <aside class="right-fixed">
@@ -256,9 +265,116 @@
                   <span>Spotify</span>
                 </div>
               </div>
+              <div class="scrolls">
+                <div class="scroll-bar"></div>
+                <div class="scroll-bar"></div>
+                <div class="scroll-bar"></div>
+                <div class="scroll-bar"></div>
+              </div>
             </div>
-
-            <div class="scrolls"></div>
+          </div>
+          <div class="content-wrapper">
+            <aside class="right-fixed">
+              <div class="block relative">
+                <img class="main-img" src=".././assets/img/discover/daft-punk.svg" alt="Album img" />
+                <a class="add-symbol" href="#">
+                  <img src="../assets/img/icons/plus.svg" alt="Add" />
+                </a>
+                <span>8 M</span>
+              </div>
+              <div class="block">
+                <a href="#" class="icon-parent">
+                  <img src="../assets/img/icons/bookmark.svg" alt="Save" />
+                </a>
+                <span>500 K</span>
+              </div>
+              <div class="block">
+                <a href="#" class="icon-parent">
+                  <img src="../assets/img/icons/add.svg" alt="Add Music" />
+                </a>
+              </div>
+              <div class="block">
+                <a href="#" class="icon-parent">
+                  <img src="../assets/img/icons/upload.svg" alt="Upload" />
+                </a>
+              </div>
+              <div class="block">
+                <a href="#" class="icon-parent">
+                  <img src="../assets/img/icons/dots.svg" alt="See more" />
+                </a>
+              </div>
+            </aside>
+            <div class="bottom-container">
+              <div class="genre">
+                <span>Rock</span>
+                <span>Alt Rock</span>
+              </div>
+              <div class="music">
+                <a href="#">
+                  <img src="../assets/img/covers/small_cover.png" alt="Album" />
+                </a>
+                <div class="description">
+                  <h6>Get Lucky</h6>
+                  <span>Duft Punk</span>
+                </div>
+              </div>
+              <div class="scrolls">
+                <div class="scroll-bar"></div>
+              </div>
+            </div>
+          </div>
+          <div class="content-wrapper">
+            <aside class="right-fixed">
+              <div class="block relative">
+                <img class="main-img" src=".././assets/img/discover/daft-punk.svg" alt="Album img" />
+                <a class="add-symbol" href="#">
+                  <img src="../assets/img/icons/plus.svg" alt="Add" />
+                </a>
+                <span>8 M</span>
+              </div>
+              <div class="block">
+                <a href="#" class="icon-parent">
+                  <img src="../assets/img/icons/bookmark.svg" alt="Save" />
+                </a>
+                <span>500 K</span>
+              </div>
+              <div class="block">
+                <a href="#" class="icon-parent">
+                  <img src="../assets/img/icons/add.svg" alt="Add Music" />
+                </a>
+              </div>
+              <div class="block">
+                <a href="#" class="icon-parent">
+                  <img src="../assets/img/icons/upload.svg" alt="Upload" />
+                </a>
+              </div>
+              <div class="block">
+                <a href="#" class="icon-parent">
+                  <img src="../assets/img/icons/dots.svg" alt="See more" />
+                </a>
+              </div>
+            </aside>
+            <div class="bottom-container">
+              <div class="genre">
+                <span>Rock</span>
+                <span>Alt Rock</span>
+              </div>
+              <div class="music">
+                <a href="#">
+                  <img src="../assets/img/covers/cover_12.png" alt="Album" />
+                </a>
+                <div class="description">
+                  <h6>Duft Punk Mix</h6>
+                  <span>Spotify</span>
+                </div>
+              </div>
+              <div class="scrolls">
+                <div class="scroll-bar"></div>
+                <div class="scroll-bar"></div>
+                <div class="scroll-bar"></div>
+                <div class="scroll-bar"></div>
+              </div>
+            </div>
           </div>
           <div class="content-wrapper">
             <aside class="right-fixed">
@@ -305,9 +421,65 @@
                   <span>Spotify</span>
                 </div>
               </div>
+              <div class="scrolls">
+                <div class="scroll-bar"></div>
+                <div class="scroll-bar"></div>
+              </div>
             </div>
+          </div>
 
-            <div class="scrolls"></div>
+          <div class="content-wrapper">
+            <aside class="right-fixed">
+              <div class="block relative">
+                <img class="main-img" src=".././assets/img/discover/grn-img.svg" alt="Album img" />
+                <a class="add-symbol" href="#">
+                  <img src="../assets/img/icons/plus.svg" alt="Add" />
+                </a>
+                <span>8 M</span>
+              </div>
+              <div class="block">
+                <a href="#" class="icon-parent">
+                  <img src="../assets/img/icons/bookmark.svg" alt="Save" />
+                </a>
+                <span>500 K</span>
+              </div>
+              <div class="block">
+                <a href="#" class="icon-parent">
+                  <img src="../assets/img/icons/add.svg" alt="Add Music" />
+                </a>
+              </div>
+              <div class="block">
+                <a href="#" class="icon-parent">
+                  <img src="../assets/img/icons/upload.svg" alt="Upload" />
+                </a>
+              </div>
+              <div class="block">
+                <a href="#" class="icon-parent">
+                  <img src="../assets/img/icons/dots.svg" alt="See more" />
+                </a>
+              </div>
+            </aside>
+            <div class="bottom-container">
+              <div class="genre">
+                <span>Rock</span>
+                <span>Alt Rock</span>
+              </div>
+              <div class="music">
+                <a href="#">
+                  <img src="../assets/img/covers/cover_2.png" alt="Album" />
+                </a>
+                <div class="description">
+                  <h6>Linkin Park Mix</h6>
+                  <span>Spotify</span>
+                </div>
+              </div>
+              <div class="scrolls">
+                <div class="scroll-bar"></div>
+                <div class="scroll-bar"></div>
+                <div class="scroll-bar"></div>
+                <div class="scroll-bar"></div>
+              </div>
+            </div>
           </div>
           <div class="content-wrapper">
             <aside class="right-fixed">
@@ -354,73 +526,14 @@
                   <span>Spotify</span>
                 </div>
               </div>
-            </div>
-
-            <div class="scrolls"></div>
-          </div>
-          <div class="content-wrapper">
-            <aside class="right-fixed">
-              <div class="block relative">
-                <img class="main-img" src=".././assets/img/discover/grn-img.svg" alt="Album img" />
-                <a class="add-symbol" href="#">
-                  <img src="../assets/img/icons/plus.svg" alt="Add" />
-                </a>
-                <span>8 M</span>
-              </div>
-              <div class="block">
-                <a href="#" class="icon-parent">
-                  <img src="../assets/img/icons/bookmark.svg" alt="Save" />
-                </a>
-                <span>500 K</span>
-              </div>
-              <div class="block">
-                <a href="#" class="icon-parent">
-                  <img src="../assets/img/icons/add.svg" alt="Add Music" />
-                </a>
-              </div>
-              <div class="block">
-                <a href="#" class="icon-parent">
-                  <img src="../assets/img/icons/upload.svg" alt="Upload" />
-                </a>
-              </div>
-              <div class="block">
-                <a href="#" class="icon-parent">
-                  <img src="../assets/img/icons/dots.svg" alt="See more" />
-                </a>
-              </div>
-            </aside>
-            <div class="bottom-container">
-              <div class="genre">
-                <span>Rock</span>
-                <span>Alt Rock</span>
-              </div>
-              <div class="music">
-                <a href="#">
-                  <img src="../assets/img/covers/cover_2.png" alt="Album" />
-                </a>
-                <div class="description">
-                  <h6>Linkin Park Mix</h6>
-                  <span>Spotify</span>
-                </div>
+              <div class="scrolls">
+                <div class="scroll-bar"></div>
+                <div class="scroll-bar"></div>
+                <div class="scroll-bar"></div>
               </div>
             </div>
-
-            <div class="scrolls"></div>
           </div>
         </section>
-        <!-- <section class="section-wrapper">
-          <div class="content-wrapper">
-            <div class="section-title">
-              <h2>Made For You</h2>
-              <div class="slide-controls">
-                <a href="#"><img src="../assets/img/icons/arrows/arrow-left-big.svg" alt="" /></a>
-                <a href="#"><img src="../assets/img/icons/arrows/arrow-right-big.svg" alt="" /></a>
-                <a href="#"><img src="../assets/img/icons/dots.svg" alt="" /></a>
-              </div>
-            </div>
-            <div class="section-content"></div>
-          </div>
-        </section> -->
       </div>
     </main>
     <aside class="activity">
@@ -432,19 +545,6 @@
               <div class="slide-controls">
                 <a href="#"><img src="./assets/img/icons/add_friend.svg" alt="" /></a>
                 <a href="#"><img src="./assets/img/icons/close.svg" alt="" /></a>
-              </div>
-            </div>
-            <div class="section-content">
-              <div class="activity-details">
-                <div class="activity-icon">asd</div>
-                <div class="activity-summary">
-                  <span class="title"></span>
-                  <div class="description">
-                    <span>equalizer</span>
-                    <span>asd </span>
-                    <span>zxc</span>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
@@ -468,7 +568,7 @@
 
       <div class="music-progress-bar"></div>
 
-      <div class="advanced-player">
+      <div class="advanced-player hide-mob">
         <div class="advanced-player-wrapper">
           <div class="stop-button-wrapper">
             <img src="../assets/img/icons/player/pause.svg" alt="pause" class="pause" />
@@ -488,7 +588,7 @@
         <img src="../assets/img/icons/player/volume.svg" alt="volume" />
       </div>
 
-      <div class="advanced-player-icons">
+      <div class="advanced-player-icons hide-mob">
         <div class="wrapper-icons">
           <img src="../assets/img/icons/hearth.svg" alt="heart icon" />
           <img src="../assets/img/icons/player/add_playlist.svg" alt="add play list icon" />
@@ -501,5 +601,63 @@
         <img src="../assets/img/icons/player/order.svg" alt="order icon" />
       </div>
     </footer>
+    <script>
+      // ფუნქცია რომ ანიმაციები  ივსებოდეს ტანმიმდევრულად,
+      // მხოლოდ იმ  სექციაში, რომელიც ვიუპორტში ხვდება
+      const scrollSections = document.querySelectorAll(".scrolls");
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const bars = entry.target.querySelectorAll(".scroll-bar");
+
+              let index = 0;
+
+              function animateBars() {
+                bars[index].classList.add("active");
+
+                bars[index].addEventListener(
+                  "animationend",
+                  () => {
+                    index++;
+
+                    if (index < bars.length) {
+                      animateBars();
+                    }
+                  },
+                  { once: true },
+                );
+              }
+
+              animateBars();
+
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          threshold: 0.6,
+        },
+      );
+
+      scrollSections.forEach((section) => observer.observe(section));
+
+      //  Hide  fixed menu while scrolling down and  show it  when customer will scroll up
+      let lastScroll = 0;
+      const nav = document.querySelector(".mobile-filters nav");
+      const main = document.querySelector(".main");
+      main.addEventListener("scroll", () => {
+        const currentScroll = main.scrollTop;
+
+        if (currentScroll > lastScroll) {
+          nav.classList.add("hide");
+        } else {
+          nav.classList.remove("hide");
+        }
+
+        lastScroll = currentScroll;
+      });
+    </script>
   </body>
 </html>
