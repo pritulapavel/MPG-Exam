@@ -97,17 +97,19 @@ scrollSections.forEach((section) => observer.observe(section));
 
 //  Hide  fixed menu while scrolling down and  show it  when customer will scroll up
 let lastScroll = 0;
+
 const nav = document.querySelector(".mobile-filters nav");
-const main = document.querySelector(".main");
-main.addEventListener("scroll", () => {
-  const currentScroll = main.scrollTop;
+const main = document.querySelector(".main-discover");
+if (main && nav) {
+  main.addEventListener("scroll", () => {
+    const currentScroll = main.scrollTop;
 
-  if (currentScroll > lastScroll) {
-    nav.classList.add("hide");
-  } else {
-    nav.classList.remove("hide");
-  }
+    if (currentScroll > lastScroll) {
+      nav.classList.add("hide");
+    } else {
+      nav.classList.remove("hide");
+    }
 
-  lastScroll = currentScroll;
-});
-// Desktop Scroll bar
+    lastScroll = currentScroll;
+  });
+}
