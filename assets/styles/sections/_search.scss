@@ -2,7 +2,7 @@
 @use "../abstracts/mixins" as *;
 @use "../layouts/header" as *;
 
-.search-wrapper {
+.search-container {
     @include tablet {
         display: none;
     }
