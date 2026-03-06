@@ -14,6 +14,8 @@
 }
 .main {
   padding: 0;
+  // Scroll controller
+  scroll-snap-type: y mandatory;
 }
 .main-inner {
   padding: 0;
@@ -42,6 +44,11 @@
     right: 0;
     z-index: 20;
     background: linear-gradient(to right, rgba(17, 17, 17, 1) 0%, rgba(17, 17, 17, 0) 100%);
+    transition: transform 0.3s ease;
+
+    &.hide {
+      transform: translateY(-100%);
+    }
   }
   & ul {
     @include flex(center, flex-start, row, 4rem);
@@ -94,6 +101,10 @@
   background-color: $color-bg-main;
   .content-wrapper {
     background-color: $color-hover-bg;
+
+    // Scrolling type
+    scroll-snap-align: start;
+
     border-radius: 1rem;
     padding: 0 2.179rem 0 1.4rem;
     // სიგანე და სიმაღლე ჩავასწორო
