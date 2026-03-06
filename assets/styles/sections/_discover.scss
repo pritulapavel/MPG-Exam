@@ -11,14 +11,13 @@
 }
 .main {
   // overflow-y: auto;
-  padding: 0;
   // Scroll controller
   scroll-snap-type: y mandatory;
 }
-.main-inner {
+
+.no-pd {
   padding: 0;
 }
-
 // navigation bar mobile at the top of screen
 .mobile-filters {
   position: sticky;
