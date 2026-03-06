@@ -1,13 +1,99 @@
 @use '../abstracts/variables' as *;
 @use '../abstracts/mixins' as *;
 
+.library input[type="radio"] {
+  display: none;
+}
+
+.library {
+    gap: 1rem;
+}
+.tabs-section {
+    gap: 0.8rem; 
+    .tab {
+        input[type="radio"] {
+            display: none;
+        }
+        .tab-title {
+            @include flex(center, space-between, null, null);
+            padding: 1rem;
+            cursor: pointer;
+            font-weight: 600;
+            color: $color-hover-text;
+            transition: background-color 0.3s;
+            .arrow {
+                display: inline-block;
+                transition: transform 0.3s;
+            }
+        }
+        .tab-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            padding: 0 1rem;
+        }
+        input[type="radio"]:checked + .tab-title + .tab-content {
+            max-height: 200rem;
+            padding: 1rem;
+        }
+        input[type="radio"]:checked + .tab-title {
+            .arrow img {
+                transform: rotate(90deg); 
+                transition: transform 0.3s;
+            }
+        }
+    }
+    @include tablet {
+    .tab {
+      .tab-title {
+        cursor: default;
+
+        .arrow {
+          display: none;
+        }
+      }
+
+      .tab-content {
+        max-height: none;
+        overflow: visible;
+        padding: 1rem;
+      }
+    }
+  }
+}
+#list:checked ~ .filters-wrapper nav label[for="list"] img,
+#grid:checked ~ .filters-wrapper nav label[for="grid"] img {
+    filter: brightness(0) invert(1);
+    transition: filter 0.3s ease;
+}
+
+#grid:checked ~ .filters-wrapper {
+    flex-direction: row;
+    @include tablet {
+        flex-direction: row-reverse;
+    }
+}
+
+
 //Hiding unecessary icons for mobile
 .main.library-page {
     .filters-nav {
+        
+        nav {
+            padding: 0rem;
+        }
         ul {
+            li {
+                @include flex(center, center, null, null);
+                height: 4rem;
+            }
             // Mobile: Hide the icons
             li:nth-child(3),
-            li:nth-child(4),
+            li:nth-child(4) {
+                display: flex;
+                align-items: center; 
+                gap: 2rem;
+            }
             li:nth-child(5) {
                 display: none;
             }
@@ -25,6 +111,30 @@
         }
     }
 }
+
+.list-layout {
+  display: flex;          
+}
+
+.grid-layout {
+  display: none;          
+}
+#list:checked ~ .list-layout {
+  display: flex;
+}
+
+#list:checked ~ .grid-layout {
+  display: none;
+}
+
+#grid:checked ~ .list-layout {
+  display: none;
+}
+
+#grid:checked ~ .grid-layout {
+  display: flex;
+}
+
 
 .music-table {
     width: 100%;
