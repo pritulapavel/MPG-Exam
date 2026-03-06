@@ -60,7 +60,9 @@ function getAverageColor(img) {
 // <<<<<<<<<<<<<<<<<<<<<< Discover Page Scripts: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
 // ფუნქცია რომ ანიმაციები  ივსებოდეს ტანმიმდევრულად,
 // მხოლოდ იმ  სექციაში, რომელიც ვიუპორტში ხვდება
-const scrollSections = document.querySelectorAll(".scrolls");
+// ფუნქცია რომ ანიმაციები  ივსებოდეს ტანმიმდევრულად,
+// მხოლოდ იმ  სექციაში, რომელიც ვიუპორტში ხვდება
+const scrollSections = document.querySelectorAll(".scrolls, .scrolls-desktop");
 
 const observer = new IntersectionObserver(
   (entries) => {
@@ -77,40 +79,37 @@ const observer = new IntersectionObserver(
             "animationend",
             () => {
               index++;
-
-              if (index < bars.length) {
-                animateBars();
-              }
+              if (index < bars.length) animateBars();
             },
             { once: true },
           );
         }
 
         animateBars();
-
         observer.unobserve(entry.target);
       }
     });
   },
-  {
-    threshold: 0.6,
-  },
+  { threshold: 0.6 },
 );
 
 scrollSections.forEach((section) => observer.observe(section));
 
 //  Hide  fixed menu while scrolling down and  show it  when customer will scroll up
 let lastScroll = 0;
+
 const nav = document.querySelector(".mobile-filters nav");
 const main = document.querySelector(".main-discover");
-main.addEventListener("scroll", () => {
-  const currentScroll = main.scrollTop;
+if (main && nav) {
+  main.addEventListener("scroll", () => {
+    const currentScroll = main.scrollTop;
 
-  if (currentScroll > lastScroll) {
-    nav.classList.add("hide");
-  } else {
-    nav.classList.remove("hide");
-  }
+    if (currentScroll > lastScroll) {
+      nav.classList.add("hide");
+    } else {
+      nav.classList.remove("hide");
+    }
 
-  lastScroll = currentScroll;
-});
+    lastScroll = currentScroll;
+  });
+}

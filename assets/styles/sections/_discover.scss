@@ -1,11 +1,23 @@
 @use "../abstracts/variables" as *;
 @use "../abstracts/mixins" as *;
 
+.discover .player {
+    display: none;
+    @include laptop {
+      display: flex;
+    }
+}
+
 .main {
   // Scroll controller
   scroll-snap-type: y mandatory;
 }
-
+.hide-mob {
+  display: none;
+  @include laptop {
+    display: flex;
+  }
+}
 .no-pd {
   padding: 0;
 }
@@ -97,7 +109,7 @@
     overflow-y: auto;
   }
   .right-fixed {
-    bottom: 2rem;
+    bottom: 10rem;
     right: 0;
     @include flex(start, start, column, 2rem);
     position: absolute;
@@ -133,7 +145,7 @@
 }
 .bottom-container {
   position: absolute;
-  bottom: 0;
+  bottom: 7rem;
   @include flex(flex-start, flex-start, column, 1.1rem);
 
   .genre {
@@ -167,49 +179,50 @@
 }
 
 //  bottom lines for quantity of scrolling stories:
-.scrolls {
-  padding-bottom: 1.4rem;
-  @include flex(center, space-between, row, 0.7rem);
-  display: flex;
-  width: 95vw;
-  // padding: 10px 0;
-
-  .scroll-bar {
-    flex: 1;
-    height: 0.6rem;
-    background: rgba(219, 219, 219, 0.15);
-    border-radius: 1rem;
-    overflow: hidden;
-    position: relative;
-
-    &::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      width: 0%;
-      background: $color-primary;
+.mobile-wrapper {
+  .scrolls {
+    padding-bottom: 1.4rem;
+    @include flex(center, space-between, row, 0.7rem);
+    display: flex;
+    width: 95vw;
+    .scroll-bar {
+      flex: 1;
+      height: 0.6rem;
+      background: rgba(219, 219, 219, 0.15);
       border-radius: 1rem;
+      overflow: hidden;
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        width: 0%;
+        background: $color-primary;
+        border-radius: 1rem;
+      }
+      @include laptop {
+        display: none;
+      }
     }
     @include laptop {
       display: none;
     }
   }
-  @include laptop {
-    display: none;
-  }
-}
+  // Desktop Scrolls
 
-// Animation for filling the  story scroll
-.scroll-bar.active::after {
-  animation: fillBar 5s linear forwards;
-}
-
-@keyframes fillBar {
-  from {
-    width: 0%;
+  // Animation for filling the  story scroll
+  .scroll-bar.active::after {
+    animation: fillBar 5s linear forwards;
   }
-  to {
-    width: 100%;
+
+  @keyframes fillBar {
+    from {
+      width: 0%;
+    }
+    to {
+      width: 100%;
+    }
   }
 }
 // Desktop version of Discover page
@@ -246,10 +259,10 @@
       }
     }
   }
-  transition: transform 0.3s ease;
-  &.hide {
-    transform: translateY(-100%);
-  }
+  // transition: transform 0.3s ease;
+  // &.hide {
+  //   transform: translateY(-100%);
+  // }
 }
 
 // Desktop Navigation
@@ -258,7 +271,6 @@
   position: relative;
   background-color: rgba(223, 114, 47, 0.12);
   width: 100%;
-
   padding: 12.5rem 22.1rem;
 
   @include flex(center, center, column, 5rem);
@@ -269,72 +281,121 @@
 
     .song-container {
       border-radius: 1rem;
-      & img {
-        position: relative;
+      position: relative;
+      & .main-img {
+        // position: relative;
         border-radius: 1rem;
       }
-      & .scrolls {
-        position: absolute;
+      & .scroll-left {
+        padding: 0.5rem;
         // background-color: red;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        z-index: 15;
       }
-    }
-
-    .description-container {
-      @include flex(center, center, row, 1.8rem);
-
-      & img {
-        border-radius: 0.8rem;
+      & .scroll-right {
+        padding: 0.5rem;
+        // background-color: red;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        z-index: 15;
       }
+      .scrolls-desktop {
+        @include flex(center, space-between, row, 0.7rem);
+        position: absolute;
+        bottom: 2rem;
+        left: 0.5rem;
+        right: 0.5rem;
 
-      .description {
-        @include flex(flex-start, center, column, 2rem);
-        & h5 {
-          font-family: "Satoshi";
-          font-weight: bold;
-          font-size: 3rem;
-          color: $primary-navigation-hover;
-        }
-        p {
-          font-family: "Satoshi";
-          font-size: 1.4rem;
-          white-space: nowrap;
-          color: $color-primary;
-          & span {
-            color: $primary-navigation-hover;
+        .scroll-bar {
+          flex: 1;
+          height: 0.6rem;
+          background: rgba(219, 219, 219, 0.15);
+          border-radius: 1rem;
+          overflow: hidden;
+          position: relative;
+
+          &::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            width: 0%;
+            background: $color-primary;
+            border-radius: 1rem;
+          }
+
+          &.active::after {
+            animation: fillscroll 5s linear forwards;
           }
         }
       }
-    }
-  }
 
-  & .buttons {
-    @include flex(center, flex-start, row, 1.4rem);
-
-    & button {
-      border: none;
-      outline: none;
-      padding: 1.179rem;
-      background-color: $main-green-color;
-      border-radius: 5rem;
-    }
-    & a {
-      @include flex(center, center, row, 1.185rem);
-    }
-  }
-
-  & .genres {
-    @include flex(center, flex-start, row, 1rem);
-
-    & span {
-      padding: 0.8rem 1.3rem;
-      font-family: "Satoshi";
-      font-size: 1rem;
-      white-space: nowrap;
-      color: $color-primary;
-      border-radius: 4.4rem;
-      border: 2px solid rgba(137, 137, 137, 0.1);
-      background: transparent;
+      @keyframes fillscroll {
+        from {
+          width: 0%;
+        }
+        to {
+          width: 100%;
+        }
+      }
     }
   }
 }
-// Desktop container  Background
+.description-wrapper {
+  padding: 3rem;
+  .description-container {
+    @include flex(center, center, row, 1.8rem);
+    & .song-img {
+      border-radius: 0.8rem;
+      width: 18.4rem;
+      height: 19.8rem;
+    }
+
+    .description {
+      & h5 {
+        font-family: "Satoshi";
+        font-weight: bold;
+        font-size: 3rem;
+        color: $primary-navigation-hover;
+      }
+      p {
+        font-family: "Satoshi";
+        font-size: 1.4rem;
+        white-space: nowrap;
+        color: $color-primary;
+        & span {
+          color: $primary-navigation-hover;
+        }
+      }
+      & .buttons {
+        & button {
+          padding: 1.179rem;
+          border-radius: 5rem;
+          outline: none;
+          border: none;
+          background-color: $main-green-color;
+        }
+        @include flex(center, center, row, 1.8rem);
+        & a {
+          white-space: nowrap;
+          @include flex(center, center, row, 1.1rem);
+        }
+      }
+      @include flex(flex-start, center, column, 2rem);
+
+      & .genres {
+        @include flex(center, center, row, 1rem);
+        & .genre {
+          font-family: "Satoshi";
+          font-size: 1.2rem;
+          padding: 0.8rem 1.3rem;
+          outline: none;
+          border-radius: 4.4rem;
+          border: 2px solid rgba(137, 137, 137, 0.1);
+        }
+      }
+    }
+  }
+}
