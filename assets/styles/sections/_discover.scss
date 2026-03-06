@@ -229,3 +229,40 @@
   }
 }
 // Desktop version of Discover page
+
+// Desktop Navigation
+.filters-nav nav {
+  @include flex(center, flex-start, row, 1rem);
+  padding: 1.5rem 2.5rem;
+
+  & ul {
+    @include flex(center, flex-start, row, 1rem);
+    & a {
+      padding: 0.8rem 1.5rem;
+      border-radius: 0.8rem;
+      background-color: rgba(32, 32, 32, 0.5);
+      color: $primary-navigation-hover;
+      font-family: "Satoshi";
+      font-size: 1.4rem;
+      text-decoration: none;
+      text-transform: capitalize;
+      transition: 0.3s ease;
+      &:hover {
+        color: $color-bg-primary;
+        background-color: #e0e0e0;
+      }
+      &.active {
+        color: $color-bg-primary;
+        background-color: #e0e0e0;
+      }
+    }
+  }
+}
+.section-wrapper-discover {
+  width: 100%;
+  @include flex(center, center);
+
+  .content-container {
+    @include flex(center, space-between, row, 5rem);
+  }
+}
