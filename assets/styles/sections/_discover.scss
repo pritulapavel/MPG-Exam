@@ -1,6 +1,13 @@
 @use "../abstracts/variables" as *;
 @use "../abstracts/mixins" as *;
 
+.discover .player {
+    display: none;
+    @include laptop {
+      display: flex;
+    }
+}
+
 .main {
   // Scroll controller
   scroll-snap-type: y mandatory;

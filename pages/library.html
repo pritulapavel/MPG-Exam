@@ -172,21 +172,42 @@
     </aside>
     <main class="main library-page">
         <div class="main-inner library">
+            <input type="radio" class="layout-change" name="layout" id="list" checked>
+            <input type="radio" class="layout-change" name="layout" id="grid">
+            <section class="search-container">
+				<div class="content-wrapper">
+					<div class="search">
+						<div class="search-input">
+							<label for="search"><img class="search-icon" src="../assets/img/icons/search.svg" alt="search icon"></label>
+							<input id="search" type="text" name="search" placeholder="Search library">
+						</div>
+						<div class="search-upload"><img src="../assets/img/icons/add.svg" /></div>
+					</div>
+				</div>
+			</section>
             <header class="filters-wrapper">
-                <a href="#"><img src="../assets/img/icons/add.svg" alt="add icon" /></a>
+                <a href="#" class="hide-mob"><img src="../assets/img/icons/add.svg" alt="add icon" /></a>
                 <div class="filters-nav">
                     <nav>
                         <ul>
-                            <li class="active"><img src="../assets/img/icons/menu.svg" alt="list meny layout icon"></li>
-                            <li><img src="../assets/img/icons/layout_change.svg" alt="grid layout icon"></li>
-                            <li><img src="../assets/img/icons/arrows/arrow_sort.svg" alt="arrow sort icon">Recent</li>
-                            <li><img src="../assets/img/icons/group.svg" alt="group svg">Filter: All</li>
-                            <li><img src="../assets/img/icons/search.svg" alt="search icon"></li>
+                            <li>
+                                <label for="list">
+                                    <img src="../assets/img/icons/menu.svg" alt="list menu layout icon">
+                                </label>
+                            </li>
+                            <li>
+                                <label for="grid">
+                                    <img src="../assets/img/icons/layout_change.svg" alt="grid layout icon">
+                                </label>
+                            </li>
+                            <li><img src="../assets/img/icons/arrows/arrow_sort.svg" class="hide-mob" alt="arrow sort icon">Recent</li>
+                            <li><img src="../assets/img/icons/group.svg" class="hide-mob" alt="group svg">Filter: All</li>
+                            <li><img src="../assets/img/icons/search.svg" class="hide-mob" alt="search icon"></li>
                         </ul>
                     </nav>
                 </div>
             </header>
-            <section class="section-wrapper">
+            <section class="library-wrapper list-layout tabs-section">
                 <table class="table table-dark music-table">
                     <thead>
                         <tr>
@@ -197,11 +218,9 @@
                             <th></th>
                         </tr>
                     </thead>
-
                     <tbody>
                         <tr>
                             <td class="track-number">1</td>
-
                             <td class="track-info">
                                 <div class="info-wrapper">
                                     <img src="../assets/img/albums/album_1.png" alt="cover" class="cover" />
@@ -211,12 +230,10 @@
                                     </div>
                                 </div>
                             </td>
-
                             <td class="album">Random Access Memories</td>
                             <td class="duration">4:35</td>
                             <td><img src="../assets/img/icons/green-heart.svg" alt="green heart icon"></td>
                         </tr>
-
                         <tr>
                             <td class="track-number">2</td>
 
@@ -234,10 +251,8 @@
                             <td class="duration">5:37</td>
                             <td><img src="../assets/img/icons/green-heart.svg" alt="green heart icon"></td>
                         </tr>
-
                         <tr>
                             <td class="track-number">3</td>
-
                             <td class="track-info">
                                 <div class="info-wrapper">
                                     <img src="../assets/img/albums/on-melancholy-hill.png" alt="cover" class="cover" />
@@ -247,15 +262,12 @@
                                     </div>
                                 </div>
                             </td>
-
                             <td class="album">Plastic Beach</td>
                             <td class="duration">3:33</td>
                             <td><img src="../assets/img/icons/green-heart.svg" alt="green heart icon"></td>
                         </tr>
-
                         <tr>
                             <td class="track-number">4</td>
-
                             <td class="track-info">
                                 <div class="info-wrapper">
                                     <img src="../assets/img/albums/tainted-love.png" alt="cover" class="cover" />
@@ -265,15 +277,12 @@
                                     </div>
                                 </div>
                             </td>
-
                             <td class="album">Non-Stop Erotic Cabaret</td>
                             <td class="duration">2:33</td>
                             <td><img src="../assets/img/icons/green-heart.svg" alt="green heart icon"></td>
                         </tr>
-
                         <tr>
                             <td class="track-number">5</td>
-
                             <td class="track-info">
                                 <div class="info-wrapper">
                                     <img src="../assets/img/albums/one-more-time.png" alt="cover" class="cover" />
@@ -283,15 +292,12 @@
                                     </div>
                                 </div>
                             </td>
-
                             <td class="album">Discovery</td>
                             <td class="duration">5:20</td>
                             <td><img src="../assets/img/icons/green-heart.svg" alt="green heart icon"></td>
                         </tr>
-
                         <tr>
                             <td class="track-number">6</td>
-
                             <td class="track-info">
                                 <div class="info-wrapper">
                                     <img src="../assets/img/albums/electric-feel.png" alt="cover" class="cover" />
@@ -301,15 +307,12 @@
                                     </div>
                                 </div>
                             </td>
-
                             <td class="album">Oracular Spectacular</td>
                             <td class="duration">3:49</td>
                             <td><img src="../assets/img/icons/green-heart.svg" alt="green heart icon"></td>
                         </tr>
-
                         <tr>
                             <td class="track-number">7</td>
-
                             <td class="track-info">
                                 <div class="info-wrapper">
                                     <img src="../assets/img/albums/album_1.png" alt="cover" class="cover" />
@@ -319,13 +322,191 @@
                                     </div>
                                 </div>
                             </td>
-
                             <td class="album">Random Access Memories</td>
                             <td class="duration">4:35</td>
                             <td><img src="../assets/img/icons/green-heart.svg" alt="green heart icon"></td>
                         </tr>
                     </tbody>
                 </table>
+            </section>
+            <section class="library-wrapper grid-layout tabs-section">
+                <div class="content-wrapper">
+                    <div class="tab">
+                        <input type="radio" name="tabs" id="tab1" checked>
+                        <label for="tab1" class="tab-title">Playlists <span class="arrow"><img src="../assets/img/icons/arrows/arrow-right.svg" alt=""></span></label>
+                        <div class="tab-content">
+                            <div class="content-wrapper">
+                                <div class="section-content">
+                                    <article class="card stack">
+                                        <a href="#" class="pin"><img src="../assets/img/icons/pin-green.svg" alt=""></a>
+                                        <figure class="card__cover">
+                                            <img src="../assets/img/covers/cover_1.png" class="card-image" alt="Cover image 1" />
+                                        </figure>
+                                        <h3>Discover weekly <span class="red">50</span></h3>
+                                        <p>Your weekly mixtape of fresh music.</p>
+                                    </article>
+                                    <article class="card stack">
+                                        <a href="#" class="pin"><img src="../assets/img/icons/pin-green.svg" alt=""></a>
+                                        <figure class="card__cover">
+                                            <img src="../assets/img/covers/cover_2.png" class="card-image" alt="Cover image 1" />
+                                        </figure>
+                                        <h3>Discover weekly <span class="red">50</span></h3>
+                                        <p>Your weekly mixtape of fresh music.</p>
+                                    </article>
+                                    <article class="card stack">
+                                        <a href="#" class="pin"><img src="../assets/img/icons/pin-green.svg" alt=""></a>
+                                        <figure class="card__cover">
+                                            <img src="../assets/img/covers/cover_3.png" class="card-image" alt="Cover image 1" />
+                                        </figure>
+                                        <h3>Discover weekly <span class="red">50</span></h3>
+                                        <p>Your weekly mixtape of fresh music.</p>
+                                    </article>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab">
+                        <input type="radio" name="tabs" id="tab2">
+                        <label for="tab2" class="tab-title">Playlists by Spotify <span class="arrow"><img src="../assets/img/icons/arrows/arrow-right.svg" alt=""></span></label>
+                        <div class="tab-content">
+                            <div class="content-wrapper">
+                                <div class="section-content">
+                                    <article class="card stack">
+                                        <a href="#" class="pin"><img src="../assets/img/icons/pin-green.svg" alt=""></a>
+                                        <figure class="card__cover">
+                                            <img src="../assets/img/covers/cover_1.png" class="card-image" alt="Cover image 1" />
+                                        </figure>
+                                        <h3>Discover weekly <span class="red">50</span></h3>
+                                        <p>Your weekly mixtape of fresh music.</p>
+                                    </article>
+                                    <article class="card stack">
+                                        <a href="#" class="pin"><img src="../assets/img/icons/pin-green.svg" alt=""></a>
+                                        <figure class="card__cover">
+                                            <img src="../assets/img/covers/cover_2.png" class="card-image" alt="Cover image 1" />
+                                        </figure>
+                                        <h3>Discover weekly <span class="red">50</span></h3>
+                                        <p>Your weekly mixtape of fresh music.</p>
+                                    </article>
+                                    <article class="card stack">
+                                        <a href="#" class="pin"><img src="../assets/img/icons/pin-green.svg" alt=""></a>
+                                        <figure class="card__cover">
+                                            <img src="../assets/img/covers/cover_3.png" class="card-image" alt="Cover image 1" />
+                                        </figure>
+                                        <h3>Discover weekly <span class="red">50</span></h3>
+                                        <p>Your weekly mixtape of fresh music.</p>
+                                    </article>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab">
+                        <input type="radio" name="tabs" id="tab3">
+                        <label for="tab3" class="tab-title">Albums <span class="arrow"><img src="../assets/img/icons/arrows/arrow-right.svg" alt=""></span></label>
+                        <div class="tab-content">
+                            <div class="content-wrapper">
+                                <div class="section-content">
+                                    <article class="card albums">
+                                        <a href="#" class="pin"><img src="../assets/img/icons/pin-green.svg" alt=""></a>
+                                        <figure>
+                                            <img src="../assets/img/albums/album_1.png" class="card-image" alt="Cover image 6" />
+                                        </figure>
+                                        <h3>Meteora <span>13</span></h3>
+                                        <p>Linkin Park</p>
+                                    </article>
+                                    <article class="card albums">
+                                        <a href="#" class="pin"><img src="../assets/img/icons/pin-green.svg" alt=""></a>
+                                        <figure>
+                                            <img src="../assets/img/albums/album_2.png" class="card-image" alt="Cover image 7" />
+                                        </figure>
+                                        <h3>Random Access... <span>13</span></h3>
+                                        <p>Daft Punk</p>
+                                    </article>
+                                    <article class="card albums">
+                                        <a href="#" class="pin"><img src="../assets/img/icons/pin-green.svg" alt=""></a>
+                                        <figure>
+                                            <img src="../assets/img/albums/album_3.png" class="card-image" alt="Cover image 7" />
+                                        </figure>
+                                        <h3>Abbey Road <span>13</span></h3>
+                                        <p>The Beatles</p>
+                                    </article>
+                                    <article class="card albums">
+                                        <a href="#" class="pin"><img src="../assets/img/icons/pin-green.svg" alt=""></a>
+                                        <figure>
+                                            <img src="../assets/img/albums/album_4.png" class="card-image" alt="Cover image 7" />
+                                        </figure>
+                                        <h3>Black Holes and... <span>13</span></h3>
+                                        <p>Muse</p>
+                                    </article>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab">
+                        <input type="radio" name="tabs" id="tab4">
+                        <label for="tab4" class="tab-title">Folders <span class="arrow"><img src="../assets/img/icons/arrows/arrow-right.svg" alt=""></span></label>
+                        <div class="tab-content">
+                            <div class="content-wrapper">
+                                <div class="section-content">
+                                    <article class="card stack">
+                                        <a href="#" class="pin"><img src="../assets/img/icons/pin-green.svg" alt=""></a>
+                                        <figure class="card__cover">
+                                            <img src="../assets/img/covers/cover_1.png" class="card-image" alt="Cover image 1" />
+                                        </figure>
+                                        <h3>Discover weekly <span class="red">50</span></h3>
+                                        <p>Your weekly mixtape of fresh music.</p>
+                                    </article>
+                                    <article class="card stack">
+                                        <a href="#" class="pin"><img src="../assets/img/icons/pin-green.svg" alt=""></a>
+                                        <figure class="card__cover">
+                                            <img src="../assets/img/covers/cover_2.png" class="card-image" alt="Cover image 1" />
+                                        </figure>
+                                        <h3>Discover weekly <span class="red">50</span></h3>
+                                        <p>Your weekly mixtape of fresh music.</p>
+                                    </article>
+                                    <article class="card stack">
+                                        <a href="#" class="pin"><img src="../assets/img/icons/pin-green.svg" alt=""></a>
+                                        <figure class="card__cover">
+                                            <img src="../assets/img/covers/cover_3.png" class="card-image" alt="Cover image 1" />
+                                        </figure>
+                                        <h3>Discover weekly <span class="red">50</span></h3>
+                                        <p>Your weekly mixtape of fresh music.</p>
+                                    </article>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab">
+                        <input type="radio" name="tabs" id="tab5">
+                        <label for="tab5" class="tab-title">Artists <span class="arrow"><img src="../assets/img/icons/arrows/arrow-right.svg" alt=""></span></label>
+                        <div class="tab-content">
+                            <div class="content-wrapper">
+                                <div class="section-content">
+                                    <article class="card artists">
+                                        <a href="#" class="close"><img src="../assets/img/icons/pin-green.svg" alt=""></a>
+                                        <figure>
+                                            <img src="../assets/img/artists/artist_1.png" class="card-image circle" alt="Cover image 7" />
+                                        </figure>
+                                        <span class="artist-name">Guns N’ Roses</span>
+                                    </article>
+                                    <article class="card artists">
+                                        <a href="#" class="close"><img src="../assets/img/icons/pin-green.svg" alt=""></a>
+                                        <figure>
+                                            <img src="../assets/img/artists/artist_2.png" class="card-image circle" alt="Cover image 7" />
+                                        </figure>
+                                        <span class="artist-name">Guns N’ Roses</span>
+                                    </article>
+                                    <article class="card artists">
+                                        <a href="#" class="close"><img src="../assets/img/icons/pin-green.svg" alt=""></a>
+                                        <figure>
+                                            <img src="../assets/img/artists/artist_3.png" class="card-image circle" alt="Cover image 7" />
+                                        </figure>
+                                        <span class="artist-name">Guns N’ Roses</span>
+                                    </article>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
         </div>
     </main>
@@ -380,11 +561,6 @@
         </div>
     </footer>
 </body>
-<script>
-    document.querySelectorAll('.stack').forEach((card, i) => { //ვეძებთ კლასს .stack, ვანიჭებთ card ცვლადს და loop ში ვაგრძელებთ
-        const img = card.querySelector('.card-image').src; // ვპოულობთ .stack კონტეინერის შიგნით .card-image კლასს და ვწერთ ცვლადში img
-        card.style.setProperty('--img-stack', `url(${img})`); // ვიღებთ img დან src და setProperty-თ ქარდს style პარამეტრით ვუმატებთ css ცვლადს --img-stack
-    });
-</script>
+<script src="../assets/js/main.js"></script>
 
 </html>
