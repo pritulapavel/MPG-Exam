@@ -267,7 +267,7 @@
       }
       & .scrolls {
         position: absolute;
-        background-color: red;
+        // background-color: red;
       }
     }
 
@@ -280,10 +280,34 @@
 
       .description {
         @include flex(flex-start, center, column, 2rem);
+        & h5 {
+          font-family: "Satoshi";
+          font-weight: bold;
+          font-size: 3rem;
+          color: $primary-navigation-hover;
+        }
         p {
+          font-family: "Satoshi";
+          font-size: 1.4rem;
           white-space: nowrap;
+          color: $color-primary;
+          & span {
+            color: $primary-navigation-hover;
+          }
         }
       }
+    }
+  }
+
+  & .buttons {
+    @include flex(center, flex-start, row, 1.4rem);
+
+    & button {
+      border: none;
+      outline: none;
+      padding: 1.179rem;
+      background-color: $main-green-color;
+      border-radius: 5rem;
     }
   }
 }
