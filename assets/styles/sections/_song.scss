@@ -1,0 +1,107 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.section-wrapper-song {
+  width: 100%;
+  min-height: 100vh;
+  padding: 3.7rem 16.8rem 0 3.7rem;
+  background: url("../img/song/bg-img.jpg") center / cover no-repeat;
+}
+.wrapper {
+  @include flex(flex-start, flex-start, column, 4.1rem);
+  .song-container {
+    @include flex(center, space-evenly, row, 6.2rem);
+  }
+  & .img-container {
+    border-radius: 1rem;
+    & img {
+      border-radius: 1rem;
+    }
+  }
+}
+.description-wrapper {
+  @include flex(flex-start, flex-start, column, 2rem);
+  & h3 {
+    font-family: "Satoshi";
+    color: $primary-navigation-hover;
+    font-size: 3.6rem;
+  }
+  .descriptions {
+    @include flex(flex-start, flex-start, column, 1rem);
+    .song-info {
+      @include flex(center, flex-start, row, 1rem);
+      flex-wrap: wrap;
+      & span {
+        font-family: "Satoshi";
+        font-size: 1.4rem;
+      }
+      & .info {
+        @include flex(center, flex-start, row, 0.5rem);
+        & span {
+          white-space: nowrap;
+          font-family: "Satoshi";
+          font-size: 1.4rem;
+          color: $primary-navigation-hover;
+        }
+      }
+    }
+
+    @media (max-width: 1368px) {
+      & .info {
+        flex: 0 0 calc(50% - 1rem);
+      }
+      & .info:last-child {
+        flex-basis: 100%;
+      }
+      & .info:not(:first-child)::before {
+        margin-right: 0.5rem;
+      }
+    }
+  }
+
+  .button-wrapper {
+    @include flex(center, flex-start, row, 1.4rem);
+    flex-wrap: wrap;
+    & button {
+      @include flex(center, flex-start, row);
+      padding: 1.179rem;
+      border-radius: 5rem;
+      outline: none;
+      border: none;
+      background-color: $main-green-color;
+    }
+    & a {
+      @include flex(center, flex-start, row);
+      padding: 1rem;
+    }
+  }
+  & .genres-wrapper {
+    @include flex(center, flex-start, row, 1rem);
+    flex-wrap: wrap;
+    & span {
+      padding: 1rem 2rem;
+      white-space: nowrap;
+      border-radius: 4.4rem;
+      border: 2px solid rgba(137, 137, 137, 0.1);
+      font-family: "Satoshi";
+      font-size: 1.4rem;
+    }
+  }
+  & .musician-wrapper {
+    @include flex(center, flex-start, row, 2rem);
+    .texts-wrapper {
+      @include flex(flex-start, flex-start, column, 1rem);
+      & h6 {
+        font-family: "Satoshi";
+        font-size: 1.4rem;
+        color: $primary-navigation-hover;
+        text-wrap: wrap;
+      }
+      & span {
+        font-family: "Satoshi";
+        font-size: 1.4rem;
+        color: $color-primary;
+      }
+    }
+  }
+}
