@@ -2,7 +2,7 @@
 @use "../abstracts/mixins" as *;
 
 // Styles for  changing layout strusture (that aren't compatible for this page
-.player,
+.hide-player,
 .filters-nav {
   display: none;
   @include laptop {
