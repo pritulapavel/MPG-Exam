@@ -619,63 +619,6 @@
         <img src="../assets/img/icons/player/order.svg" alt="order icon" />
       </div>
     </footer>
-    <script>
-      // ფუნქცია რომ ანიმაციები  ივსებოდეს ტანმიმდევრულად,
-      // მხოლოდ იმ  სექციაში, რომელიც ვიუპორტში ხვდება
-      const scrollSections = document.querySelectorAll(".scrolls");
-
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              const bars = entry.target.querySelectorAll(".scroll-bar");
-
-              let index = 0;
-
-              function animateBars() {
-                bars[index].classList.add("active");
-
-                bars[index].addEventListener(
-                  "animationend",
-                  () => {
-                    index++;
-
-                    if (index < bars.length) {
-                      animateBars();
-                    }
-                  },
-                  { once: true },
-                );
-              }
-
-              animateBars();
-
-              observer.unobserve(entry.target);
-            }
-          });
-        },
-        {
-          threshold: 0.6,
-        },
-      );
-
-      scrollSections.forEach((section) => observer.observe(section));
-
-      //  Hide  fixed menu while scrolling down and  show it  when customer will scroll up
-      let lastScroll = 0;
-      const nav = document.querySelector(".mobile-filters nav");
-      const main = document.querySelector(".main-discover");
-      main.addEventListener("scroll", () => {
-        const currentScroll = main.scrollTop;
-
-        if (currentScroll > lastScroll) {
-          nav.classList.add("hide");
-        } else {
-          nav.classList.remove("hide");
-        }
-
-        lastScroll = currentScroll;
-      });
-    </script>
+    <script src="../assets/js/main.js"></script>
   </body>
 </html>
