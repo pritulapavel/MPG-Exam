@@ -60,7 +60,9 @@ function getAverageColor(img) {
 // <<<<<<<<<<<<<<<<<<<<<< Discover Page Scripts: >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
 // ფუნქცია რომ ანიმაციები  ივსებოდეს ტანმიმდევრულად,
 // მხოლოდ იმ  სექციაში, რომელიც ვიუპორტში ხვდება
-const scrollSections = document.querySelectorAll(".scrolls");
+// ფუნქცია რომ ანიმაციები  ივსებოდეს ტანმიმდევრულად,
+// მხოლოდ იმ  სექციაში, რომელიც ვიუპორტში ხვდება
+const scrollSections = document.querySelectorAll(".scrolls, .scrolls-desktop");
 
 const observer = new IntersectionObserver(
   (entries) => {
@@ -77,24 +79,18 @@ const observer = new IntersectionObserver(
             "animationend",
             () => {
               index++;
-
-              if (index < bars.length) {
-                animateBars();
-              }
+              if (index < bars.length) animateBars();
             },
             { once: true },
           );
         }
 
         animateBars();
-
         observer.unobserve(entry.target);
       }
     });
   },
-  {
-    threshold: 0.6,
-  },
+  { threshold: 0.6 },
 );
 
 scrollSections.forEach((section) => observer.observe(section));
