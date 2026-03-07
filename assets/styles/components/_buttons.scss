@@ -37,3 +37,26 @@
   height: 0.8rem;
   animation-delay: 0.4s;
 }
+
+.close, .pin {
+    @include flex(center, center, null, null);
+    position: absolute;
+    z-index: 99999999;
+    top: 1rem;
+    right: 1rem;
+    background-color: $color-bg-primary;
+    padding: 1rem;
+    border-radius: 50%;
+    &:hover img {
+      filter: brightness(0) invert(1); 
+    }
+}
+
+.follow {
+  padding: 10px 20px;
+  background: rgba(137, 137, 137, 0.25);
+  border: 2px solid rgba(137, 137, 137, 0.25);
+  border-radius: 44px;
+  cursor: pointer;
+  color: #E0E0E0;
+}
