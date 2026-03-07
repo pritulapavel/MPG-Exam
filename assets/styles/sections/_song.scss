@@ -7,7 +7,6 @@
   width: 100%;
   min-height: 100vh;
   @include flex(center, flex-start, column, 2.6rem);
-  padding: 3.7rem;
 
   &::before {
     content: "";
@@ -30,73 +29,92 @@
 .no-pd {
   padding: 0;
 }
-.wrapper {
-  // background-color: pink;
+.music-wrapper {
+  padding: 3.7rem 3.7rem 0 3.7rem;
   width: 100%;
   @include flex(center, center, column, 1.6rem);
   & .img-wrapper {
     border-radius: 1rem;
-    @include flex(center, center, column);
     & img {
       border-radius: 1rem;
-      width: clamp-calc(20rem, 40rem);
-      height: clamp-calc(20rem, 40rem);
+      width: clamp-calc(20rem, 50rem);
+      // height: clamp-calc(20rem, 40rem);
+      height: 100%;
     }
   }
 
-  .description-wrapper {
-    @include flex(center, center, column, 1.4rem);
-    h3 {
-      width: clamp-calc(20rem, 72.1rem);
-      font-size: clamp-calc(1.2rem, 3.6rem);
-      font-weight: bold;
-      text-align: center;
-      color: $primary-navigation-hover;
-    }
+  .descriptions-wrapper {
+    max-width: clamp-calc(20rem, 72.1rem);
+    width: 100%;
+    @include flex(center, center, column, 2rem);
+    .description {
+      @include flex(center, center, column, 1.4rem);
+      h3 {
+        font-size: clamp-calc(1.2rem, 3.6rem);
+        font-weight: bold;
+        text-align: center;
+        color: $primary-navigation-hover;
+        @include laptop {
+          text-align: left;
+        }
+      }
 
-    .song-info {
-      width: clamp-calc(20rem, 40rem);
-      @include flex(center, flex-start, column, 1rem);
-      white-space: nowrap;
-      & .info {
-        @include flex(center, center, row, 0.5rem);
-      }
-      & .flex {
-        @include flex(center, center, row, 0.5rem);
-      }
-      & span {
-        font-family: "Satoshi";
-        font-weight: 400;
-        font-size: 1rem;
-        color: $color-primary;
-        @include tablet {
-          font-size: 1.6rem;
+      .song-info {
+        // width: clamp-calc(20rem, 40rem);
+        @include flex(center, flex-start, column, 1rem);
+        flex-wrap: wrap;
+        white-space: nowrap;
+        & .info {
+          @include flex(center, center, row, 0.5rem);
+        }
+        & .flex {
+          @include flex(center, center, row, 0.5rem);
+        }
+        & span {
+          font-family: "Satoshi";
+          font-weight: 400;
+          font-size: 1rem;
+          color: $color-primary;
+          @include tablet {
+            font-size: 1.6rem;
+            @include flex(center, flex-start, row, 1rem);
+          }
+        }
+        @include laptop {
+          @include flex(center, flex-start, row, 1rem);
+          text-align: left;
+          align-self: flex-start;
         }
       }
     }
-  }
-  .buttons-wrapper {
-    @include flex(center, center, row, 0.5rem);
-    flex-wrap: wrap;
-    & button {
-      padding: 1.179rem;
-      background-color: $main-green-color;
-      border: none;
-      outline: none;
-      border-radius: 5rem;
-      @include flex(center, center, row);
+    .buttons-wrapper {
+      @include flex(center, center, row, 0.5rem);
+      flex-wrap: wrap;
+      & button {
+        padding: 1.179rem;
+        background-color: $main-green-color;
+        border: none;
+        outline: none;
+        border-radius: 5rem;
+        @include flex(center, center, row);
+      }
+      & a {
+        padding: 1.179rem;
+      }
     }
-    & a {
-      padding: 1.179rem;
-    }
-  }
-  .genres-wrapper {
-    @include flex(center, center, row, 0.5rem);
-    flex-wrap: wrap;
-    & span {
-      border-radius: 4.4rem;
-      padding: 1rem 2rem;
-      border: 2px solid rgba(137, 137, 137, 0.1);
+    .genres-wrapper {
+      @include flex(center, center, row, 0.5rem);
+      flex-wrap: wrap;
+      & span {
+        border-radius: 4.4rem;
+        padding: 1rem 2rem;
+        border: 2px solid rgba(137, 137, 137, 0.1);
+      }
+      @include laptop {
+        @include flex(center, flex-start, row, 1rem);
+        text-align: left;
+        // align-self: flex-start;
+      }
     }
   }
   .musicians-wrapper {
@@ -112,6 +130,11 @@
           color: $color-hover-text;
         }
       }
+    }
+    @include laptop {
+      @include flex(center, flex-start, column, 1rem);
+      text-align: left;
+      align-self: flex-start;
     }
   }
 }
@@ -177,6 +200,10 @@
           line-height: 1;
           margin-bottom: 1rem;
           overflow-wrap: break-word;
+          font-size: 1.4rem;
+          @include laptop {
+            font-size: 2.8rem;
+          }
         }
       }
 
@@ -187,7 +214,20 @@
         color: $button-dark-text;
         border: none;
         outline: none;
+        @include laptop {
+          display: none;
+        }
       }
+    }
+  }
+}
+
+@include laptop {
+  .music-wrapper {
+    @include flex(flex-start, center, row, 5rem);
+
+    & .descriptions-wrapper {
+      @include flex(flex-start, flex-start, column, 2rem);
     }
   }
 }
