@@ -5,8 +5,8 @@
   position: relative;
   z-index: 2;
   width: 100%;
-  height: 100vh;
-
+  min-height: 100vh;
+  @include flex(center, flex-start, column, 2.6rem);
   padding: 3.7rem;
 
   &::before {
@@ -23,6 +23,7 @@
     position: absolute;
     inset: 0;
     background: linear-gradient(180deg, rgba(7, 7, 7, 0) 0%, rgba(7, 7, 7, 0.8) 99.62%);
+    min-height: 100vh;
     z-index: -1;
   }
 }
@@ -51,12 +52,6 @@
       font-weight: bold;
       text-align: center;
       color: $primary-navigation-hover;
-      @include tablet {
-        font-size: 1.8rem;
-      }
-      @include laptop {
-        text-align: left;
-      }
     }
 
     .song-info {
@@ -78,12 +73,6 @@
           font-size: 1.6rem;
         }
       }
-      @include laptop {
-        @include flex(flex-start, flex-start, row);
-      }
-    }
-    @include laptop {
-      @include flex(flex-start, flex-start, column, 1rem);
     }
   }
   .buttons-wrapper {
@@ -125,17 +114,80 @@
       }
     }
   }
-
-  @include laptop {
-    @include flex(flex-start, flex-start, row, 6.2rem);
-  }
-
-  .details-wrapper {
+}
+.details-wrapper {
+  width: 100%;
+  height: 600px;
+  @include flex(flex-start, flex-start, column, 3.5rem);
+  .slider {
+    position: relative;
     width: 100%;
-    @include flex(flex-start, flex-start, column, 3.5rem);
-    .slider {
+    padding: 1.7rem 2rem;
+    border-bottom: 2px solid $color-bg-secondary;
+    @include flex(center, flex-start, row, 5rem);
+    & a {
+      font-family: "Satoshi";
+      text-wrap: nowrap;
+      font-size: 1.4rem;
+      color: $color-primary;
+      &.active {
+        color: $primary-navigation-hover;
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -2px;
+      left: 1.6rem;
+      height: 2px;
+      width: 4.5rem;
+      background: $main-green-color;
+    }
+  }
+  .wrapper-flex {
+    @include flex(flex-start, flex-start, row, 10rem);
+    & .icons {
+      @include flex(flex-satrt, flex-start, column, 1.2rem);
+      & a {
+        padding: 1.033rem 0.917rem;
+      }
+    }
+    .lyrics-wrapper {
+      @include flex(flex-start, flex-start, column, 3.5rem);
       width: 100%;
-      padding: 1.7rem 4.6rem;
+      padding: 0.5rem;
+      border-radius: 0.8rem;
+      & h6 {
+        font-family: "Satoshi";
+        color: $primary-navigation-hover;
+        font-size: clamp-calc(1.2rem, 1.8rem);
+        text-align: left;
+      }
+      & .lyrics {
+        & p:nth-child(-n + 5) {
+          color: white;
+        }
+        position: relative;
+        max-height: 14rem;
+        overflow: hidden;
+        & .lyric-text {
+          color: $color-primary;
+          max-width: 63ch;
+          line-height: 1;
+          margin-bottom: 1rem;
+          overflow-wrap: break-word;
+        }
+      }
+
+      & button {
+        padding: 1.2rem 2rem;
+        border-radius: 4.4rem;
+        background-color: $primary-navigation-hover;
+        color: $button-dark-text;
+        border: none;
+        outline: none;
+      }
     }
   }
 }
