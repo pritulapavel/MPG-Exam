@@ -6,6 +6,7 @@
   z-index: 2;
   width: 100%;
   min-height: 100vh;
+  padding: 3.7rem 3.7rem 0 3.7rem;
   @include flex(center, flex-start, column, 2.6rem);
 
   &::before {
@@ -30,26 +31,27 @@
   padding: 0;
 }
 .music-wrapper {
-  padding: 3.7rem 3.7rem 0 3.7rem;
   width: 100%;
   @include flex(center, center, column, 1.6rem);
   & .img-wrapper {
-    border-radius: 1rem;
+    flex: 0 0 auto;
     & img {
-      border-radius: 1rem;
       width: clamp-calc(20rem, 50rem);
-      // height: clamp-calc(20rem, 40rem);
-      height: 100%;
+      max-width: 100%;
+      height: auto;
     }
   }
 
   .descriptions-wrapper {
-    max-width: clamp-calc(20rem, 72.1rem);
+    // max-width: clamp-calc(20rem, 72.1rem);
     width: 100%;
-    @include flex(center, center, column, 2rem);
+    min-width: 0;
+    @include flex(center, center, column, 1rem);
     .description {
       @include flex(center, center, column, 1.4rem);
-      h3 {
+      & h3 {
+        max-width: clamp-calc(20rem, 72.1rem);
+        width: 100%;
         font-size: clamp-calc(1.2rem, 3.6rem);
         font-weight: bold;
         text-align: center;
@@ -76,11 +78,11 @@
           font-size: 1rem;
           color: $color-primary;
           @include tablet {
-            font-size: 1.6rem;
+            font-size: clamp-calc(1.6rem, 1.8rem);
             @include flex(center, flex-start, row, 1rem);
           }
         }
-        @include laptop {
+        @include desktop {
           @include flex(center, flex-start, row, 1rem);
           text-align: left;
           align-self: flex-start;
@@ -109,11 +111,11 @@
         border-radius: 4.4rem;
         padding: 1rem 2rem;
         border: 2px solid rgba(137, 137, 137, 0.1);
+        white-space: nowrap;
       }
-      @include laptop {
+      @include desktop {
         @include flex(center, flex-start, row, 1rem);
         text-align: left;
-        // align-self: flex-start;
       }
     }
   }
@@ -122,19 +124,37 @@
     flex-wrap: wrap;
     .musician {
       @include flex(flex-start, center, row, 2rem);
+      flex-wrap: wrap;
       .muscician-info {
-        @include flex(flex-start, center, column, 2rem);
+        @include flex(flex-start, center, column, 1rem);
         & h6 {
           font-family: "Satoshi";
           font-size: clamp-calc(1.6rem, 1.8rem);
           color: $color-hover-text;
         }
+        .hover-card {
+          display: none;
+        }
+        @media (max-width: 1577px) {
+          display: none;
+        }
+        @media (max-width: 1577px) {
+          &:hover {
+            .hover-card {
+              display: block;
+            }
+          }
+        }
       }
     }
-    @include laptop {
+    @include desktop {
       @include flex(center, flex-start, column, 1rem);
       text-align: left;
       align-self: flex-start;
+    }
+    @media (max-width: 1577px) {
+      flex-direction: row;
+      gap: 3rem;
     }
   }
 }
@@ -151,7 +171,7 @@
     & a {
       font-family: "Satoshi";
       text-wrap: nowrap;
-      font-size: 1.4rem;
+      font-size: clamp-calc(1.4rem, 1.6rem);
       color: $color-primary;
       &.active {
         color: $primary-navigation-hover;
@@ -169,6 +189,7 @@
     }
   }
   .wrapper-flex {
+    padding-left: 3.7rem;
     @include flex(flex-start, flex-start, row, 10rem);
     & .icons {
       @include flex(flex-satrt, flex-start, column, 1.2rem);
@@ -222,9 +243,9 @@
   }
 }
 
-@include laptop {
+@include desktop {
   .music-wrapper {
-    @include flex(flex-start, center, row, 5rem);
+    @include flex(flex-start, flex-start, row, clamp-calc(2rem, 5rem));
 
     & .descriptions-wrapper {
       @include flex(flex-start, flex-start, column, 2rem);
