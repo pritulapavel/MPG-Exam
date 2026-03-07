@@ -5,7 +5,7 @@
   position: relative;
   z-index: 2;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
 
   padding: 3.7rem;
 
@@ -18,13 +18,14 @@
     z-index: -1;
   }
 
-  &::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, rgba(7, 7, 7, 0) 0%, rgba(7, 7, 7, 0.8) 99.62%);
-    z-index: -1;
-  }
+  // &::after {
+  //   content: "";
+  //   position: absolute;
+  //   inset: 0;
+  //   background: linear-gradient(180deg, rgba(7, 7, 7, 0) 0%, rgba(7, 7, 7, 0.8) 99.62%);
+  //   min-height: 100vh;
+  //   z-index: -1;
+  // }
 }
 .no-pd {
   padding: 0;
@@ -136,6 +137,28 @@
     .slider {
       width: 100%;
       padding: 1.7rem 4.6rem;
+    }
+
+    .lyrics {
+      width: clamp-calc(20rem, 91.2rem);
+      padding: 0.5rem;
+      background-color: $color-primary;
+      border-radius: 0.8rem;
+      & h6 {
+        font-family: "Satoshi";
+        color: $primary-navigation-hover;
+        font-size: clamp-calc(1.2rem, 1.8rem);
+        text-align: left;
+      }
+      & p {
+      }
+
+      & button {
+        padding: 1.2rem 2rem;
+        border-radius: 4.4rem;
+        background-color: $primary-navigation-hover;
+        color: $button-dark-text;
+      }
     }
   }
 }
