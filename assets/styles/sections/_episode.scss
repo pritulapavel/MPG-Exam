@@ -6,7 +6,7 @@
 .section-wrapper-episode {
   width: 100%;
   min-height: 100vh;
-  background: linear-gradient(to bottom, #a5602a, #060606);
+  background: $podcast-episode-bg-color;
   padding: 1rem;
   @include laptop {
     padding: 2.2rem 5rem 0 3.7rem;
@@ -46,9 +46,9 @@
   }
   padding: 1rem;
   & h3 {
-    font-family: "Satoshi";
+    font-family: $font-satoshi;
     font-weight: bold;
-    color: $primary-navigation-hover;
+    color: $color-secondary;
     font-size: clamp-calc(1.6rem, 3.6rem);
   }
   & .cta-actions {
@@ -61,10 +61,10 @@
     }
     & .active {
       background-color: rgba(137, 137, 137, 0.25);
-      color: $primary-navigation-hover;
+      color: $color-secondary;
     }
     & a {
-      font-family: "Satoshi";
+      font-family: $font-satoshi;
       font-size: 1rem;
       color: $color-primary;
     }
@@ -85,14 +85,14 @@
       @include flex(flex-start, flex-start, column, 2rem);
     }
     & h4 {
-      font-family: "Satoshi";
+      font-family: $font-satoshi;
       font-weight: bold;
-      color: $primary-navigation-hover;
+      color: $color-secondary;
       font-size: clamp-calc(1.2rem, 2rem);
       text-align: center;
     }
     & p {
-      font-family: "Satoshi";
+      font-family: $font-satoshi;
       font-weight: bold;
       color: $color-primary;
       font-size: clamp-calc(1.2rem, 1.6rem);
@@ -129,7 +129,7 @@
       border-radius: 5rem;
       outline: none;
       border: none;
-      background-color: $primary-navigation-hover;
+      background-color: $light-button-bg-color;
       @include flex(center, center, row);
       position: absolute;
       left: 50%;
