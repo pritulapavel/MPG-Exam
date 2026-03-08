@@ -5,16 +5,17 @@
 // HEADER / SEARCH BAR
 // ============================================================
 
-.ram-header {
+.playlist-header {
   @include flex(center, space-between, row, 0.75rem);
   width: 100%;
   padding: 0.75rem 1rem;
+  background: linear-gradient(rgba(59, 79, 182, 0.47) 0%);
 
   form {
     flex-grow: 1;
     display: flex;
 
-    .search-wrapper {
+    .search-bar {
       @include flex(center, flex-start, row, 0.75rem);
       width: 100%;
 
@@ -49,11 +50,11 @@
 // MAIN LAYOUT
 // ============================================================
 
-.main-inner.album {
+.playlist-layout {
   display: flex;
   background: linear-gradient(
     180deg,
-    rgba(51, 56, 66, 0.47) 0%,
+    rgba(59, 79, 182, 0.47) 0%,
     rgba(6, 6, 6, 0.47) 100%
   );
   flex-direction: column-reverse;
@@ -88,7 +89,7 @@
 // LEFT COLUMN
 // ============================================================
 
-.album-content {
+.playlist-main-content {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -100,15 +101,15 @@
 }
 
 // ============================================================
-// ALBUM HERO
+// PLAYLIST HERO
 // ============================================================
 
-.random-access-memoriess {
+.playlist-hero {
   padding-left: 1rem;
   padding-right: 1rem;
 
-  // Mobile: cover scales with screen width, centered
-  .ram-tablet-img {
+  // Mobile: cover scales with screen, max 320px centered
+  .playlist-cover {
     display: block;
     width: 100%;
     padding-top: 1rem;
@@ -126,7 +127,6 @@
     }
   }
 
-  // Tablet: cover + meta side by side
   @include tablet {
     display: flex;
     flex-direction: row;
@@ -136,9 +136,9 @@
     padding-left: 0;
     padding-right: 0;
 
-    .ram-tablet-img {
+    .playlist-cover {
       width: auto;
-      padding-top: 0;
+      margin-bottom: 0;
       flex-shrink: 0;
 
       img {
@@ -150,26 +150,25 @@
       }
     }
 
-    .ram-wrapper {
+    .playlist-meta {
       flex: 1;
       min-width: 0;
     }
   }
 
-  // Laptop: hide cover (right sidebar takes over)
   @include laptop {
     padding-top: 0;
     padding-left: 0;
     padding-right: 0;
 
-    .ram-tablet-img {
+    .playlist-cover {
       display: none;
     }
   }
 
-  .ram-wrapper {
+  .playlist-meta {
     @include flex(left, flex-start, column, 1rem);
-    padding: 1rem 0;
+    padding: 2rem 1rem;
 
     @include tablet {
       gap: 1.25rem;
@@ -178,11 +177,10 @@
 
     @include laptop {
       gap: 1.25rem;
-      padding: 0;
     }
 
     // TITLE
-    .ram-title {
+    .playlist-title {
       font-size: 2rem;
       font-weight: 700;
       color: white;
@@ -203,8 +201,8 @@
       }
     }
 
-    // META ROW
-    .ram-info-wrapper {
+    // DETAILS ROW
+    .playlist-details {
       @include flex(center, flex-start, row, 0.4rem);
       flex-wrap: wrap;
 
@@ -230,22 +228,13 @@
         }
       }
 
-      img {
-        width: 1rem;
-        opacity: 0.7;
-
-        @include tablet {
-          width: 1.1rem;
-        }
-      }
-
       @include laptop {
         gap: 0.5rem;
       }
     }
 
     // DESKTOP CONTROLS
-    .ram-nav-icons {
+    .playlist-controls {
       display: none;
 
       @include laptop {
@@ -264,11 +253,11 @@
           }
         }
 
-        .left-icons {
+        .playlist-controls-left {
           @include flex(center, flex-start, row, 1.5rem);
           padding-left: 0.2rem;
 
-          .play-icon-background {
+          .play-button-bg {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -294,7 +283,7 @@
           }
         }
 
-        .right-icons {
+        .playlist-controls-right {
           img {
             width: 1.5rem;
             height: 1.5rem;
@@ -304,7 +293,7 @@
       }
 
       @include desktop {
-        .left-icons {
+        .playlist-controls-left {
           gap: 2rem;
 
           img {
@@ -312,7 +301,7 @@
             height: 2.5rem;
           }
 
-          .play-icon-background {
+          .play-button-bg {
             width: 4rem;
             height: 4rem;
 
@@ -326,7 +315,7 @@
     }
 
     // MOBILE CONTROLS
-    .mobile-ram-nav-icons {
+    .playlist-controls-mobile {
       @include flex(center, space-between, row);
       width: 100%;
       padding: 0.25rem 0;
@@ -344,7 +333,7 @@
         }
       }
 
-      .left-icons {
+      .playlist-mobile-left {
         @include flex(center, flex-start, row, 0.875rem);
 
         @include tablet {
@@ -352,11 +341,11 @@
         }
       }
 
-      .right-icons {
+      .playlist-mobile-right {
         @include flex(center, flex-end, row, 0.875rem);
       }
 
-      .play-btn-wrapper {
+      .mobile-play-button {
         width: 2.75rem;
         height: 2.75rem;
         border-radius: 50%;
@@ -373,7 +362,6 @@
           width: 1rem;
           height: 1rem;
           filter: brightness(0);
-          opacity: 1;
         }
 
         @include tablet {
@@ -398,8 +386,8 @@
 // TRACK TABLE
 // ============================================================
 
-.table-wrapper {
-  padding-top: 3rem;
+.tracklist-wrapper {
+  padding: 1rem;
 
   @include tablet {
     padding-top: 3.5rem;
@@ -415,7 +403,7 @@
     table-layout: fixed;
   }
 
-  // Hide thead on mobile
+  // Hide thead on mobile — no column labels needed
   thead {
     display: none;
 
@@ -447,7 +435,8 @@
     }
   }
 
-  // Column widths — th and td share nth-child so headers align perfectly above cells
+  // Column widths shared between th and td via nth-child
+  // so headers sit perfectly above their data cells
 
   // Col 1: # — hidden mobile, shown tablet+
   th:nth-child(1),
@@ -541,7 +530,7 @@
   }
 
   // Track number
-  .track-number {
+  .track-index {
     color: rgba(255, 255, 255, 0.5);
     text-align: center;
     font-size: 1rem;
@@ -557,13 +546,13 @@
   }
 
   // Track card
-  .track-info {
+  .track-data {
     overflow: hidden;
 
-    .info-wrapper {
+    .track-card {
       @include flex(center, flex-start, row, 0.75rem);
 
-      .cover {
+      .track-cover {
         width: 2.25rem;
         height: 2.25rem;
         flex-shrink: 0;
@@ -586,13 +575,13 @@
         }
       }
 
-      .text-wrapper {
+      .track-text {
         min-width: 0;
         display: flex;
         flex-direction: column;
         gap: 0.2rem;
 
-        .title {
+        .track-title {
           color: white;
           font-size: 1.1rem;
           font-weight: 500;
@@ -613,7 +602,7 @@
           }
         }
 
-        .artist {
+        .track-artist {
           font-size: 1rem;
           color: rgba(255, 255, 255, 0.5);
           white-space: nowrap;
@@ -637,7 +626,7 @@
   }
 
   // Album
-  .album {
+  .track-album {
     color: rgba(255, 255, 255, 0.6);
     font-size: 1.1rem;
     white-space: nowrap;
@@ -658,7 +647,7 @@
   }
 
   // Duration
-  .duration {
+  .track-time {
     color: rgba(255, 255, 255, 0.7);
     font-size: 1.1rem;
     text-align: right;
@@ -678,7 +667,7 @@
   }
 
   // Like icon
-  .heart-icon {
+  .track-like {
     display: none;
     width: 1.2rem;
     height: 1.2rem;
@@ -703,7 +692,7 @@
   }
 
   // Options dots
-  .dots-icon {
+  .track-options {
     width: 1.1rem;
     height: 1.1rem;
     opacity: 0.5;
@@ -721,14 +710,14 @@
 }
 
 // ============================================================
-// RIGHT COLUMN — BAND INFO
+// RIGHT COLUMN — ARTIST SIDEBAR
 // ============================================================
 
-.random-access-memories-band-info {
+.artist-sidebar {
   display: none;
 
-  .band-music-style-wrapper,
-  .band-colabs {
+  .artist-genres,
+  .artist-collaborators {
     display: none;
   }
 
@@ -749,14 +738,9 @@
       height: auto;
       border-radius: 0.5rem;
       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
-
-      @include desktop {
-        width: 25rem;
-        height: 25rem;
-      }
     }
 
-    .band-music-style-wrapper {
+    .artist-genres {
       display: flex;
       flex-wrap: wrap;
       gap: 0.5rem;
@@ -786,12 +770,12 @@
   @include desktop {
     gap: 3rem;
 
-    .band-colabs {
+    .artist-collaborators {
       display: flex;
       flex-direction: column;
       gap: 1rem;
 
-      .band-colab-wrapper {
+      .artist-card {
         @include flex(center, flex-start, row, 0.625rem);
         cursor: pointer;
         transition: opacity 0.2s;
@@ -801,8 +785,8 @@
         }
 
         img {
-          width: 5rem;
-          height: 5rem;
+          width: 2.25rem;
+          height: 2.25rem;
           border-radius: 50%;
           object-fit: cover;
         }
