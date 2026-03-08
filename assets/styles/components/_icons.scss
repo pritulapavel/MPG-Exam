@@ -1,0 +1,31 @@
+.icons {
+	display: inline-block;
+	width: 2.2rem;
+	height: 2.2rem;
+
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+}
+
+.icon-sm {
+    width: 1.6rem; height: 1.6rem;
+}
+.icon-md {
+    width: 2.4rem; height: 2.4rem;
+}
+.icon-lg {
+    width: 3.2rem; height: 3.2rem;
+}
+
+/* Our style.css is in styles folder, we need one time ../ for use icons in images folders */
+
+.icon-play {
+    background-image: url("../img/icons/play_bordered.svg");
+}
+.icon-pause {
+    background-image: url("../img/icons/player/pause.svg");
+}
+.icon-search {
+    background-image: url("../img/icons/search.svg");
+}
