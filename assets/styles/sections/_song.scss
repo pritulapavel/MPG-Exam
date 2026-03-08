@@ -3,19 +3,18 @@
 
 .section-wrapper-song {
   position: relative;
-  z-index: 5;
+  z-index: 2;
   width: 100%;
-  min-height: 100vh;
-  overflow: hidden;
+  height: 100vh;
+
+  padding: 3.7rem;
 
   &::before {
     content: "";
     position: absolute;
     inset: 0;
-
     background: url("../img/song/bg-img.jpg") center / cover no-repeat;
     filter: blur(100px);
-
     z-index: -1;
   }
 
@@ -23,102 +22,15 @@
     content: "";
     position: absolute;
     inset: 0;
-
     background: linear-gradient(180deg, rgba(7, 7, 7, 0) 0%, rgba(7, 7, 7, 0.8) 99.62%);
-
     z-index: -1;
   }
 }
-
-// .description-wrapper {
-//   @include flex(flex-start, flex-start, column, 2rem);
-//   & h3 {
-//     font-family: "Satoshi";
-//     color: $primary-navigation-hover;
-//     font-size: 3.6rem;
-//   }
-//   .descriptions {
-//     @include flex(flex-start, flex-start, column, 1rem);
-//     .song-info {
-//       @include flex(center, flex-start, row, 1rem);
-//       flex-wrap: wrap;
-//       & span {
-//         font-family: "Satoshi";
-//         font-size: 1.4rem;
-//       }
-//       & .info {
-//         @include flex(center, flex-start, row, 0.5rem);
-//         & span {
-//           white-space: nowrap;
-//           font-family: "Satoshi";
-//           font-size: 1.4rem;
-//           color: $primary-navigation-hover;
-//         }
-//       }
-//     }
-
-//     @media (max-width: 1368px) {
-//       & .info {
-//         flex: 0 0 calc(50% - 1rem);
-//       }
-//       & .info:last-child {
-//         flex-basis: 100%;
-//       }
-//       & .info:not(:first-child)::before {
-//         margin-right: 0.5rem;
-//       }
-//     }
-//   }
-
-//   .button-wrapper {
-//     @include flex(center, flex-start, row, 1.4rem);
-//     flex-wrap: wrap;
-//     & button {
-//       @include flex(center, flex-start, row);
-//       padding: 1.179rem;
-//       border-radius: 5rem;
-//       outline: none;
-//       border: none;
-//       background-color: $main-green-color;
-//     }
-//     & a {
-//       @include flex(center, flex-start, row);
-//       padding: 1rem;
-//     }
-//   }
-//   & .genres-wrapper {
-//     @include flex(center, flex-start, row, 1rem);
-//     flex-wrap: wrap;
-//     & span {
-//       padding: 1rem 2rem;
-//       white-space: nowrap;
-//       border-radius: 4.4rem;
-//       border: 2px solid rgba(137, 137, 137, 0.1);
-//       font-family: "Satoshi";
-//       font-size: 1.4rem;
-//     }
-//   }
-//   & .musician-wrapper {
-//     @include flex(center, flex-start, row, 2rem);
-//     .texts-wrapper {
-//       @include flex(flex-start, flex-start, column, 1rem);
-//       & h6 {
-//         font-family: "Satoshi";
-//         font-size: 1.4rem;
-//         color: $primary-navigation-hover;
-//         text-wrap: wrap;
-//       }
-//       & span {
-//         font-family: "Satoshi";
-//         font-size: 1.4rem;
-//         color: $color-primary;
-//       }
-//     }
-//   }
-// }
+.no-pd {
+  padding: 0;
+}
 .wrapper {
   // background-color: pink;
-  padding: 1rem;
   width: 100%;
   @include flex(center, center, column, 1.6rem);
   & .img-wrapper {
@@ -132,10 +44,10 @@
   }
 
   .description-wrapper {
-    @include flex(center, flex-start, column, 1.4rem);
+    @include flex(center, center, column, 1.4rem);
     h3 {
       width: clamp-calc(20rem, 72.1rem);
-      font-size: 1.2rem;
+      font-size: clamp-calc(1.2rem, 3.6rem);
       font-weight: bold;
       text-align: center;
       color: $primary-navigation-hover;
@@ -149,9 +61,12 @@
 
     .song-info {
       width: clamp-calc(20rem, 40rem);
-      @include flex(center, flex-start, column, 0.5rem);
+      @include flex(center, flex-start, column, 1rem);
       white-space: nowrap;
-      .flex {
+      & .info {
+        @include flex(center, center, row, 0.5rem);
+      }
+      & .flex {
         @include flex(center, center, row, 0.5rem);
       }
       & span {
@@ -168,11 +83,59 @@
       }
     }
     @include laptop {
-      @include flex(flex-start, flex-start, column);
+      @include flex(flex-start, flex-start, column, 1rem);
+    }
+  }
+  .buttons-wrapper {
+    @include flex(center, center, row, 0.5rem);
+    flex-wrap: wrap;
+    & button {
+      padding: 1.179rem;
+      background-color: $main-green-color;
+      border: none;
+      outline: none;
+      border-radius: 5rem;
+      @include flex(center, center, row);
+    }
+    & a {
+      padding: 1.179rem;
+    }
+  }
+  .genres-wrapper {
+    @include flex(center, center, row, 0.5rem);
+    flex-wrap: wrap;
+    & span {
+      border-radius: 4.4rem;
+      padding: 1rem 2rem;
+      border: 2px solid rgba(137, 137, 137, 0.1);
+    }
+  }
+  .musicians-wrapper {
+    @include flex(flex-start, center, row, 2rem);
+    flex-wrap: wrap;
+    .musician {
+      @include flex(flex-start, center, row, 2rem);
+      .muscician-info {
+        @include flex(flex-start, center, column, 2rem);
+        & h6 {
+          font-family: "Satoshi";
+          font-size: clamp-calc(1.6rem, 1.8rem);
+          color: $color-hover-text;
+        }
+      }
     }
   }
 
   @include laptop {
-    @include flex(flex-start, flex-start, row);
+    @include flex(flex-start, flex-start, row, 6.2rem);
+  }
+
+  .details-wrapper {
+    width: 100%;
+    @include flex(flex-start, flex-start, column, 3.5rem);
+    .slider {
+      width: 100%;
+      padding: 1.7rem 4.6rem;
+    }
   }
 }
