@@ -51,26 +51,40 @@
     color: $color-secondary;
     font-size: clamp-calc(1.6rem, 3.6rem);
   }
-  & .cta-actions {
+  & .subtitle {
     @include flex(center, center, row, 1rem);
     flex-wrap: wrap;
-    & a:not(:last-child) {
-      padding: 1rem 2rem;
-      border-radius: 4.4rem;
-      border: 2px solid $color-primary;
-    }
-    & .active {
-      background-color: rgba(137, 137, 137, 0.25);
+    & p {
+      font-family: $font-satoshi;
       color: $color-secondary;
+      font-size: 1.4rem;
+    }
+    & span {
+      font-family: $font-satoshi;
+      color: $color-primary;
+      font-size: 1.4rem;
+    }
+  }
+  .episode-buttons-wrapper {
+    @include flex(center, flex-start, row, 1rem);
+    & button {
+      @include flex(center, center, row);
+      padding: 1.179rem;
+      border-radius: 5rem;
+      outline: none;
+      border: none;
+      background-color: $main-green-color;
+      cursor: pointer;
     }
     & a {
-      font-family: $font-satoshi;
-      font-size: 1rem;
-      color: $color-primary;
-    }
-    &:last-child {
-      @include flex(center, center, row);
-      white-space: nowrap;
+      padding: 1rem;
+
+      &:hover {
+        & img {
+          filter: brightness(0) invert(1);
+          transition: 0.3s ease;
+        }
+      }
     }
   }
 }
@@ -126,10 +140,11 @@
 
     & button {
       padding: 2.1rem;
-      border-radius: 5rem;
+      border-radius: $border-radius-full-circle;
       outline: none;
       border: none;
       background-color: $light-button-bg-color;
+      cursor: pointer;
       @include flex(center, center, row);
       position: absolute;
       left: 50%;
