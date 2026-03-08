@@ -65,6 +65,28 @@
       font-size: 1.4rem;
     }
   }
+  .episode-buttons-wrapper {
+    @include flex(center, flex-start, row, 1rem);
+    & button {
+      @include flex(center, center, row);
+      padding: 1.179rem;
+      border-radius: 5rem;
+      outline: none;
+      border: none;
+      background-color: $main-green-color;
+      cursor: pointer;
+    }
+    & a {
+      padding: 1rem;
+
+      &:hover {
+        & img {
+          filter: brightness(0) invert(1);
+          transition: 0.3s ease;
+        }
+      }
+    }
+  }
 }
 .about-episode {
   @include flex(center, flex-start, column, 2rem);
@@ -122,6 +144,7 @@
       outline: none;
       border: none;
       background-color: $light-button-bg-color;
+      cursor: pointer;
       @include flex(center, center, row);
       position: absolute;
       left: 50%;
