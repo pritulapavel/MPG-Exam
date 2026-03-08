@@ -281,13 +281,13 @@
     width: 100%;
     padding-bottom: 3rem;
     border-bottom: 0.2rem solid $color-bg-primary;
-    @include tablet {
+    @include laptop {
         @include flex(flex-start, null, row, 1.8rem);
     }
     .card-details {
         @include flex(normal, null, column, 1rem);
         width: 100%;
-        @include tablet {
+        @include laptop {
             @include flex(flex-start, null, column, 1rem);
         }
     }
@@ -419,8 +419,11 @@
 	padding-bottom: 15rem;
 
 	@include laptop {
-		grid-template-columns: repeat(auto-fill, 17.1rem);
+        grid-template-columns:repeat(auto-fill, 16.1rem);
 	}
+    @include desktop {
+        grid-template-columns: repeat(auto-fill, 17.1rem);
+    }
 }
 
 #list:checked ~ .section-wrapper .list-content {
