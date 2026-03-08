@@ -17,15 +17,48 @@
 .icon-lg {
     width: 3.2rem; height: 3.2rem;
 }
+.icon-xl {
+    width: 4rem; height: 4rem;
+}
 
 /* Our style.css is in styles folder, we need one time ../ for use icons in images folders */
 
 .icon-play {
-    background-image: url("../img/icons/play_bordered.svg");
+    background-image: url("../img/icons/player/play.svg");
+}
+.icon-play-green {
+    background-image: url("../img/icons/play-icon-green.svg");
+}
+.icon-shuffle {
+    background-image: url("../img/icons/player/shuffle.svg");
 }
 .icon-pause {
     background-image: url("../img/icons/player/pause.svg");
 }
 .icon-search {
     background-image: url("../img/icons/search.svg");
+}
+.icon-sort-list {
+    background-image: url("../img/icons/list.svg");
+}
+.icon-sort-grid {
+    background-image: url("../img/icons/grid.svg");
+}
+.icon-arrow-right {
+    background-image: url("../img/icons/arrows/arrow-right.svg");
+}
+.icon-add-rounded {
+    background-image: url("../img/icons/plus-rounded.svg");
+}
+.icon-add-playlist {
+    background-image: url("../img/icons/add-to-playlist.svg");
+}
+.icon-download-rounded {
+    background-image: url("../img/icons/download.svg");
+}
+.icon-upload {
+    background-image: url("../img/icons/upload.svg");
+}
+.icon-dots {
+    background-image: url("../img/icons/dots.svg");
 }
