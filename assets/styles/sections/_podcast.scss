@@ -3,7 +3,7 @@
 .no-pd {
   padding: 0;
 }
-.section-wrapper-poadcast {
+.section-wrapper-podcast {
   width: 100%;
   min-height: 100vh;
   background: linear-gradient(to bottom, #a5602a, #060606);
@@ -11,9 +11,39 @@
   @include laptop {
     padding: 2.2rem 5rem 0 3.7rem;
   }
+  .podcast-wrapper {
+    @include grid(
+      $mobile-cols: 1,
+      $desktop-cols: 2,
+      $gap: 4rem,
+      $mobile-areas: "podcast-headings" "about-podcast" "episodes",
+      $desktop-areas: "podcast-headings about-podcast" "episodes about-podcast"
+    );
+
+    @media (min-width: 992px) {
+      grid-template-columns: 1fr 32rem;
+    }
+  }
 }
-.content-wrapper-podcast {
+// grid areas for each container
+.podcast-headings {
+  grid-area: podcast-headings;
+}
+
+.episodes-wrapper {
+  grid-area: episodes;
+}
+
+.about-podcast {
+  grid-area: about-podcast;
+  align-self: start;
+}
+//  Styles for  each container
+.podcast-headings {
   @include flex(center, flex-start, column, 1.4rem);
+  @include laptop {
+    @include flex(flex-start, flex-start, column, 1.4rem);
+  }
   padding: 1rem;
   & h3 {
     font-family: "Satoshi";
@@ -21,158 +51,158 @@
     color: $primary-navigation-hover;
     font-size: clamp-calc(1.6rem, 3.6rem);
   }
-  .right-content {
-    @include flex(flex-start, center, column, 2rem);
-    & img {
-      border-radius: $border-radius-default;
-      width: clamp-calc(17rem, 32rem);
-      height: clamp-calc(17rem, 32rem);
+  & .cta-actions {
+    @include flex(center, center, row, 1rem);
+    flex-wrap: wrap;
+    & a:not(:last-child) {
+      padding: 1rem 2rem;
+      border-radius: 4.4rem;
+      border: 2px solid $color-primary;
     }
+    & .active {
+      background-color: rgba(137, 137, 137, 0.25);
+      color: $primary-navigation-hover;
+    }
+    & a {
+      font-family: "Satoshi";
+      font-size: 1rem;
+      color: $color-primary;
+    }
+    &:last-child {
+      @include flex(center, center, row);
+      white-space: nowrap;
+    }
+  }
+}
+.about-podcast {
+  @include flex(center, flex-start, column, 2rem);
+  @include laptop {
+    @include flex(flex-start, flex-start, column, 2rem);
+  }
+  .podcast-info {
+    @include flex(center, flex-start, column, 2rem);
+    @include laptop {
+      @include flex(flex-start, flex-start, column, 2rem);
+    }
+    & h4 {
+      font-family: "Satoshi";
+      font-weight: bold;
+      color: $primary-navigation-hover;
+      font-size: clamp-calc(1.2rem, 2rem);
+      text-align: center;
+    }
+    & p {
+      font-family: "Satoshi";
+      font-weight: bold;
+      color: $color-primary;
+      font-size: clamp-calc(1.2rem, 1.6rem);
+    }
+  }
+  & img {
+    width: clamp-calc(17rem, 32rem);
+    height: clamp-calc(17rem, 32rem);
+    border-radius: $border-radius-default;
+  }
 
-    .about-podcast {
-      @include flex(flex-start, center, column, 2rem);
-      & h4 {
-        font-family: "Satoshi";
-        font-weight: bold;
-        color: $primary-navigation-hover;
-        font-size: clamp-calc(1.2rem, 2rem);
-      }
-      & p {
-        font-family: "Satoshi";
-        font-weight: bold;
-        color: $color-primary;
-        font-size: clamp-calc(1.2rem, 1.6rem);
-      }
-      .podcasts-genres {
-        @include flex(center, flex-start, row, 1rem);
-        & span {
-          padding: 1rem;
-          border-radius: 4.4rem;
-          border: 2px solid $color-primary;
-          font-family: "Satoshi";
-          font-weight: bold;
-          color: $color-primary;
-          font-size: 1rem;
+  .podcasts-genres {
+    @include flex(center, flex-start, row, 1rem);
+    & span {
+      padding: 1rem;
+      border-radius: 4.4rem;
+      border: 2px solid $color-primary;
+      font-family: "Satoshi";
+      font-weight: bold;
+      color: $color-primary;
+      font-size: 1rem;
+    }
+  }
+}
+.episodes-wrapper {
+  width: 100%;
+  @include flex(center, flex-start, column, 2rem);
+
+  .podcast-filter {
+    width: 100%;
+    @include laptop {
+      @include flex(cemter, space-between, row);
+    }
+    .filters {
+      display: none;
+
+      @include laptop {
+        @include flex(center, center, row, 1rem);
+
+        & a {
+          @include flex(center, center, row, 1rem);
+          padding: 1.3rem 1rem;
         }
       }
     }
-    @include tablet {
-      flex-direction: column;
-      justify-content: flex-end;
+    & h6 {
+      font-size: 2rem;
+      font-family: "Satoshi";
+      font-weight: bold;
+      color: $primary-navigation-hover;
     }
   }
-  .top-content-container {
+  .episodes {
     width: 100%;
-    @include flex(flex-start, center, row, 1.2rem);
+    @include flex(flex-start, center, column, 1rem);
+    @media (min-width: 768px) {
+      @include flex(flex-start, flex-start, column, 1rem);
+    }
 
-    .main-content {
+    .episode {
       width: 100%;
-      @include flex(flex-start, flex-start, column, 40rem);
-      .left-content {
-        @include flex(flex-start, flex-start, column, 1rem);
-        & h5 {
-          font-size: 1.4rem;
+      max-width: 102.7rem;
+      padding: 1rem;
+      background-color: transparent;
+      border-bottom: 2px solid rgba(137, 137, 137, 0.15);
+      @include flex(center, flex-start, column, 1rem);
+      @media (min-width: 992px) {
+        @include flex(flex-start, flex-start, row, 1rem);
+      }
+      & img {
+        border-radius: $border-radius-default;
+      }
+
+      .description-wrapper {
+        & h4 {
+          @include flex(center, flex-start, row, 1.5rem);
           font-family: "Satoshi";
           font-weight: bold;
           color: $primary-navigation-hover;
+          font-size: clamp-calc(1.2rem, 1.8rem);
+          text-align: center;
+        }
+        & p,
+        & span {
+          font-family: "Satoshi";
+          font-weight: bold;
+          color: $color-primary;
+          font-size: clamp-calc(1rem, 1.4rem);
+        }
+        @include flex(flex-start, flex-start, column, 2rem);
+        & span {
+          display: none;
         }
 
-        .cta-actions {
-          @include flex(center, center, row, 1rem);
-          flex-wrap: wrap;
-          & a:not(:last-child) {
-            padding: 1rem 2rem;
-            border-radius: 4.4rem;
-            border: 2px solid $color-primary;
-          }
-          & .active {
-            background-color: rgba(137, 137, 137, 0.25);
-            color: $primary-navigation-hover;
+        .button-wrapper {
+          @include flex(center, flex-start, row, 1rem);
+          & button {
+            padding: 1.2rem;
+            border-radius: 5rem;
+            outline: none;
+            border: none;
+            background-color: $main-green-color;
+            @include flex(center, center, row);
           }
           & a {
-            font-family: "Satoshi";
-            font-size: 1rem;
-            color: $color-primary;
-          }
-          &:last-child {
             @include flex(center, center, row);
-            white-space: nowrap;
+            padding: 1rem;
           }
         }
       }
-
-      .episodes-wrapper {
-        padding: 2.1rem;
-        width: 100%;
-        @include flex(flex-start, flex-start, column, 2rem);
-
-        .podcast-filter {
-          .filters {
-            display: none;
-          }
-          & h6 {
-            font-size: 2rem;
-            font-family: "Satoshi";
-            font-weight: bold;
-            color: $primary-navigation-hover;
-          }
-        }
-        .episodes {
-          width: 100%;
-          @include flex(flex-start, flex-start, column, 1rem);
-
-          .episode {
-            width: clamp-calc(30rem, 102.7rem);
-            background-color: rgba(255, 0, 0, 0.25);
-            @include flex(flex-start, flex-start, row, 1rem);
-            & img {
-              border-radius: 1rem;
-            }
-
-            .description-wrapper {
-              & h4 {
-                @include flex(center, flex-start, row, 1.5rem);
-                font-family: "Satoshi";
-                font-weight: bold;
-                color: $primary-navigation-hover;
-                font-size: clamp-calc(1.2rem, 1.8rem);
-              }
-              & p,
-              & span {
-                font-family: "Satoshi";
-                font-weight: bold;
-                color: $color-primary;
-                font-size: clamp-calc(1rem, 1.4rem);
-              }
-              @include flex(flex-start, flex-start, column, 2rem);
-              & span {
-                display: none;
-              }
-
-              .button-wrapper {
-                @include flex(center, flex-start, row, 1rem);
-                & button {
-                  padding: 1.2rem;
-                  border-radius: 5rem;
-                  outline: none;
-                  border: none;
-                  background-color: $main-green-color;
-                  @include flex(center, center, row);
-                }
-                & a {
-                  @include flex(center, center, row);
-                  padding: 1rem;
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-
-    @include tablet {
-      flex-direction: row;
-      justify-content: space-between;
     }
   }
 }
