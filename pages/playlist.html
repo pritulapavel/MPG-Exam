@@ -173,33 +173,37 @@
             </ul>
         </nav>
     </aside>
-    <main class="main playlist-page">
-        <header class="ram-header">
+    <main class="music-page playlist-view">
+
+        <header class="playlist-header">
             <form>
-                <div class="img-div search-wrapper">
-                    <input id="search" type="search" placeholder="Search PlayList">
+                <div class="search-bar">
+                    <input id="search" type="search" placeholder="Search Playlist">
                     <label for="search">
                         <img src="../assets/img/icons/search.svg" alt="Search">
                     </label>
                 </div>
             </form>
-            <img src="../assets/img/icons/arrows/arrow_sort.svg" alt="arrow-sort">
+            <img src="../assets/img/icons/arrows/arrow_sort.svg" alt="sort">
         </header>
 
-        <div class="main-inner playlist">
+
+        <div class="playlist-layout">
 
             <!-- LEFT COLUMN -->
-            <div class="playlist-content">
+            <div class="playlist-main-content">
 
-                <section class="random-access-memoriess">
-                    <div class="ram-tablet-img">
+                <section class="playlist-hero">
+
+                    <div class="playlist-cover">
                         <img src="../assets/img/albums/album_1.png" alt="Daft Punk">
                     </div>
-                    <div class="ram-wrapper">
 
-                        <h1 class="ram-title">Daft Punk Mix</h1>
+                    <div class="playlist-meta">
 
-                        <div class="ram-info-wrapper">
+                        <h1 class="playlist-title">Daft Punk Mix</h1>
+
+                        <div class="playlist-details">
                             <p>By</p>
                             <p>Spotify</p>
                             <p>•</p>
@@ -208,50 +212,58 @@
                             <p>3 hr 30 min</p>
                         </div>
 
-                        <div class="ram-nav-icons">
+                        <div class="playlist-controls">
 
-                            <div class="left-icons">
-                                <div class="play-icon-background">
+                            <div class="playlist-controls-left">
+
+                                <div class="play-button-bg">
                                     <img src="../assets/img/icons/player/play.svg">
                                 </div>
+
                                 <img src="../assets/img/icons/player/shuffle.svg">
                                 <img src="../assets/img/icons/add.svg" alt="add icon">
                                 <img src="../assets/img/icons/add-to-playlist.svg">
                                 <img src="../assets/img/icons/download.svg">
-                                <img src="../assets/img/icons/upload.svg" alt="dupload">
+                                <img src="../assets/img/icons/upload.svg" alt="upload">
                                 <img src="../assets/img/icons/dots.svg">
+
                             </div>
 
-                            <div class="right-icons">
+                            <div class="playlist-controls-right">
                                 <img src="../assets/img/icons/search.svg" alt="search icon">
                             </div>
 
                         </div>
 
-                        <div class="mobile-ram-nav-icons">
 
-                            <div class="left-icons">
+                        <div class="playlist-controls-mobile">
+
+                            <div class="playlist-mobile-left">
                                 <img src="../assets/img/icons/player/add_playlist.svg">
                                 <img src="../assets/img/icons/add-to-playlist.svg">
                                 <img src="../assets/img/icons/download.svg">
                                 <img src="../assets/img/icons/dots.svg">
                             </div>
 
-                            <div class="right-icons">
+                            <div class="playlist-mobile-right">
+
                                 <img src="../assets/img/icons/player/shuffle.svg">
 
-                                <div class="play-btn-wrapper">
+                                <div class="mobile-play-button">
                                     <img src="../assets/img/icons/player/play.svg">
                                 </div>
+
                             </div>
 
                         </div>
+
                 </section>
 
 
-                <!-- TABLE -->
-                <section class="table-wrapper">
-                    <table class="table table-dark music-table">
+                <!-- SONG TABLE -->
+                <section class="tracklist-wrapper">
+
+                    <table class="tracklist-table">
 
                         <thead>
                             <tr>
@@ -264,141 +276,216 @@
                         </thead>
 
                         <tbody>
-                            <tr>
-                                <td class="track-number">1</td>
 
-                                <td class="track-info">
-                                    <div class="info-wrapper">
-                                        <img src="../assets/img/albums/album_1.png" alt="cover" class="cover" />
-                                        <div class="text-wrapper">
-                                            <p class="title">Get Lucky</p>
-                                            <p class="artist">Daft Punk</p>
+                            <tr>
+
+                                <td class="track-index">1</td>
+
+                                <td class="track-data">
+
+                                    <div class="track-card">
+
+                                        <img src="../assets/img/albums/album_1.png" alt="cover" class="track-cover" />
+
+                                        <div class="track-text">
+                                            <p class="track-title">Get Lucky</p>
+                                            <p class="track-artist">Daft Punk</p>
                                         </div>
+
                                     </div>
+
                                 </td>
 
-                                <td class="playlist">Random Access Memories</td>
-                                <td class="duration">4:35</td>
-                                <td><img src="../assets/img/icons/hearth.svg" alt="heart icon" class="heart-icon"></td>
-                                <td><img src="../assets/img/icons/dots.svg" alt="dots icon" class="dots-icon"></td>
+                                <td class="track-album">Random Access Memories</td>
+
+                                <td class="track-time">4:35</td>
+
+                                <td>
+                                    <img src="../assets/img/icons/hearth.svg" alt="heart icon" class="track-like">
+                                </td>
+
+                                <td>
+                                    <img src="../assets/img/icons/dots.svg" alt="dots icon" class="track-options">
+                                </td>
+
                             </tr>
 
                             <tr>
-                                <td class="track-number">2</td>
 
-                                <td class="track-info">
-                                    <div class="info-wrapper">
-                                        <img src="../assets/img/albums/album_1.png" alt="cover" class="cover" />
-                                        <div class="text-wrapper">
-                                            <p class="title">Instant Crush</p>
-                                            <p class="artist">Daft Punk, Julian Casablancas</p>
+                                <td class="track-index">2</td>
+
+                                <td class="track-data">
+
+                                    <div class="track-card">
+
+                                        <img src="../assets/img/albums/album_1.png" alt="cover" class="track-cover" />
+
+                                        <div class="track-text">
+                                            <p class="track-title">Get Lucky</p>
+                                            <p class="track-artist">Daft Punk</p>
                                         </div>
+
                                     </div>
+
                                 </td>
 
-                                <td class="playlist">Random Access Memories</td>
-                                <td class="duration">5:37</td>
-                                <td><img src="../assets/img/icons/hearth.svg" alt="heart icon" class="heart-icon"></td>
-                                <td><img src="../assets/img/icons/dots.svg" alt="dots icon" class="dots-icon"></td>
+                                <td class="track-album">Random Access Memories</td>
+
+                                <td class="track-time">4:35</td>
+
+                                <td>
+                                    <img src="../assets/img/icons/hearth.svg" alt="heart icon" class="track-like">
+                                </td>
+
+                                <td>
+                                    <img src="../assets/img/icons/dots.svg" alt="dots icon" class="track-options">
+                                </td>
+
                             </tr>
 
                             <tr>
-                                <td class="track-number">3</td>
 
-                                <td class="track-info">
-                                    <div class="info-wrapper">
-                                        <img src="../assets/img/albums/on-melancholy-hill.png" alt="cover"
-                                            class="cover" />
-                                        <div class="text-wrapper">
-                                            <p class="title">on-melancholy-hill</p>
-                                            <p class="artist">Gorilaz</p>
+                                <td class="track-index">3</td>
+
+                                <td class="track-data">
+
+                                    <div class="track-card">
+
+                                        <img src="../assets/img/albums/album_1.png" alt="cover" class="track-cover" />
+
+                                        <div class="track-text">
+                                            <p class="track-title">Get Lucky</p>
+                                            <p class="track-artist">Daft Punk</p>
                                         </div>
+
                                     </div>
+
                                 </td>
 
-                                <td class="playlist">Plastic Beach</td>
-                                <td class="duration">3:33</td>
-                                <td><img src="../assets/img/icons/hearth.svg" alt="heart icon" class="heart-icon"></td>
-                                <td><img src="../assets/img/icons/dots.svg" alt="dots icon" class="dots-icon"></td>
+                                <td class="track-album">Random Access Memories</td>
+
+                                <td class="track-time">4:35</td>
+
+                                <td>
+                                    <img src="../assets/img/icons/hearth.svg" alt="heart icon" class="track-like">
+                                </td>
+
+                                <td>
+                                    <img src="../assets/img/icons/dots.svg" alt="dots icon" class="track-options">
+                                </td>
+
                             </tr>
 
                             <tr>
-                                <td class="track-number">4</td>
 
-                                <td class="track-info">
-                                    <div class="info-wrapper">
-                                        <img src="../assets/img/albums/tainted-love.png" alt="cover" class="cover" />
-                                        <div class="text-wrapper">
-                                            <p class="title">tainted-love</p>
-                                            <p class="artist">Soft Cell</p>
+                                <td class="track-index">4</td>
+
+                                <td class="track-data">
+
+                                    <div class="track-card">
+
+                                        <img src="../assets/img/albums/album_1.png" alt="cover" class="track-cover" />
+
+                                        <div class="track-text">
+                                            <p class="track-title">Get Lucky</p>
+                                            <p class="track-artist">Daft Punk</p>
                                         </div>
+
                                     </div>
+
                                 </td>
 
-                                <td class="playlist">Non-Stop Erotic Cabaret</td>
-                                <td class="duration">2:33</td>
-                                <td><img src="../assets/img/icons/hearth.svg" alt="heart icon" class="heart-icon"></td>
-                                <td><img src="../assets/img/icons/dots.svg" alt="dots icon" class="dots-icon"></td>
+                                <td class="track-album">Random Access Memories</td>
+
+                                <td class="track-time">4:35</td>
+
+                                <td>
+                                    <img src="../assets/img/icons/hearth.svg" alt="heart icon" class="track-like">
+                                </td>
+
+                                <td>
+                                    <img src="../assets/img/icons/dots.svg" alt="dots icon" class="track-options">
+                                </td>
+
                             </tr>
 
                             <tr>
-                                <td class="track-number">5</td>
 
-                                <td class="track-info">
-                                    <div class="info-wrapper">
-                                        <img src="../assets/img/albums/one-more-time.png" alt="cover" class="cover" />
-                                        <div class="text-wrapper">
-                                            <p class="title">one-more-time</p>
-                                            <p class="artist">Daft Punk</p>
+                                <td class="track-index">5</td>
+
+                                <td class="track-data">
+
+                                    <div class="track-card">
+
+                                        <img src="../assets/img/albums/album_1.png" alt="cover" class="track-cover" />
+
+                                        <div class="track-text">
+                                            <p class="track-title">Get Lucky</p>
+                                            <p class="track-artist">Daft Punk</p>
                                         </div>
+
                                     </div>
+
                                 </td>
 
-                                <td class="playlist">Discovery</td>
-                                <td class="duration">5:20</td>
-                                <td><img src="../assets/img/icons/hearth.svg" alt="heart icon" class="heart-icon"></td>
-                                <td><img src="../assets/img/icons/dots.svg" alt="dots icon" class="dots-icon"></td>
+                                <td class="track-album">Random Access Memories</td>
+
+                                <td class="track-time">4:35</td>
+
+                                <td>
+                                    <img src="../assets/img/icons/hearth.svg" alt="heart icon" class="track-like">
+                                </td>
+
+                                <td>
+                                    <img src="../assets/img/icons/dots.svg" alt="dots icon" class="track-options">
+                                </td>
+
                             </tr>
 
                             <tr>
-                                <td class="track-number">6</td>
-
-                                <td class="track-info">
-                                    <div class="info-wrapper">
-                                        <img src="../assets/img/albums/electric-feel.png" alt="cover" class="cover" />
-                                        <div class="text-wrapper">
-                                            <p class="title">electric-feel</p>
-                                            <p class="artist">MGMT</p>
+                                <td class="track-index">6</td>
+                                <td class="track-data">
+                                    <div class="track-card">
+                                        <img src="../assets/img/albums/album_1.png" alt="cover" class="track-cover" />
+                                        <div class="track-text">
+                                            <p class="track-title">Get Lucky</p>
+                                            <p class="track-artist">Daft Punk</p>
                                         </div>
                                     </div>
                                 </td>
-
-                                <td class="playlist">Oracular Spectacular</td>
-                                <td class="duration">3:49</td>
-                                <td><img src="../assets/img/icons/hearth.svg" alt="heart icon" class="heart-icon"></td>
-                                <td><img src="../assets/img/icons/dots.svg" alt="dots icon" class="dots-icon"></td>
+                                <td class="track-album">Random Access Memories</td>
+                                <td class="track-time">4:35</td>
+                                <td>
+                                    <img src="../assets/img/icons/hearth.svg" alt="heart icon" class="track-like">
+                                </td>
+                                <td>
+                                    <img src="../assets/img/icons/dots.svg" alt="dots icon" class="track-options">
+                                </td>
                             </tr>
 
                             <tr>
-                                <td class="track-number">7</td>
+                                <td class="track-index">7</td>
+                                <td class="track-data">
+                                    <div class="track-card">
 
-                                <td class="track-info">
-                                    <div class="info-wrapper">
-                                        <img src="../assets/img/albums/album_1.png" alt="cover" class="cover" />
-                                        <div class="text-wrapper">
-                                            <p class="title">Give Life Back to Music</p>
-                                            <p class="artist">Daft Punk</p>
+                                        <img src="../assets/img/albums/album_1.png" alt="cover" class="track-cover" />
+
+                                        <div class="track-text">
+                                            <p class="track-title">Get Lucky</p>
+                                            <p class="track-artist">Daft Punk</p>
                                         </div>
                                     </div>
                                 </td>
-
-                                <td class="playlist">Random Access Memories</td>
-                                <td class="duration">4:35</td>
-                                <td><img src="../assets/img/icons/hearth.svg" alt="heart icon" class="heart-icon"></td>
-                                <td><img src="../assets/img/icons/dots.svg" alt="dots icon" class="dots-icon"></td>
+                                <td class="track-album">Random Access Memories</td>
+                                <td class="track-time">4:35</td>
+                                <td>
+                                    <img src="../assets/img/icons/hearth.svg" alt="heart icon" class="track-like">
+                                </td>
+                                <td>
+                                    <img src="../assets/img/icons/dots.svg" alt="dots icon" class="track-options">
+                                </td>
                             </tr>
                         </tbody>
-
                     </table>
                 </section>
 
@@ -406,11 +493,11 @@
 
 
             <!-- RIGHT COLUMN -->
-            <section class="random-access-memories-band-info">
+            <section class="artist-sidebar">
 
                 <img src="../assets/img/albums/album_2.png" alt="Daft Punk">
 
-                <div class="band-music-style-wrapper">
+                <div class="artist-genres">
                     <p>Funk</p>
                     <p>Electronic Music</p>
                     <p>Disco</p>
@@ -418,19 +505,19 @@
                     <p>Progressive Pop</p>
                 </div>
 
-                <div class="band-colabs">
+                <div class="artist-collaborators">
 
-                    <div class="band-colab-wrapper">
+                    <div class="artist-card">
                         <img src="../assets/img/artists/artist_2.png">
                         <p>Daft Punk</p>
                     </div>
 
-                    <div class="band-colab-wrapper">
+                    <div class="artist-card">
                         <img src="../assets/img/artists/pharrell-williams.png">
                         <p>Pharrell Williams</p>
                     </div>
 
-                    <div class="band-colab-wrapper">
+                    <div class="artist-card">
                         <img src="../assets/img/artists/nile-rodgers.png">
                         <p>Nile Rodgers</p>
                     </div>
