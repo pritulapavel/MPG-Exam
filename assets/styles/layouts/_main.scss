@@ -164,6 +164,7 @@
   }
 }
 
+// hiding unnecessary elements on mobile  responsive
 .hide-mob {
   display: none;
   @include laptop {

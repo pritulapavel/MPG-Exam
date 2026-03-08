@@ -5,9 +5,9 @@
   position: relative;
   z-index: 2;
   width: 100%;
-  height: 100vh;
-
-  padding: 3.7rem;
+  min-height: 100vh;
+  padding: 3.7rem 3.7rem 0 3.7rem;
+  @include flex(center, flex-start, column, 2.6rem);
 
   &::before {
     content: "";
@@ -23,91 +23,100 @@
     position: absolute;
     inset: 0;
     background: linear-gradient(180deg, rgba(7, 7, 7, 0) 0%, rgba(7, 7, 7, 0.8) 99.62%);
+    min-height: 100vh;
     z-index: -1;
   }
 }
 .no-pd {
   padding: 0;
 }
-.wrapper {
-  // background-color: pink;
+.music-wrapper {
   width: 100%;
   @include flex(center, center, column, 1.6rem);
   & .img-wrapper {
-    border-radius: 1rem;
-    @include flex(center, center, column);
+    flex: 0 0 auto;
     & img {
-      border-radius: 1rem;
-      width: clamp-calc(20rem, 40rem);
-      height: clamp-calc(20rem, 40rem);
+      width: clamp-calc(20rem, 50rem);
+      max-width: 100%;
+      height: auto;
     }
   }
 
-  .description-wrapper {
-    @include flex(center, center, column, 1.4rem);
-    h3 {
-      width: clamp-calc(20rem, 72.1rem);
-      font-size: clamp-calc(1.2rem, 3.6rem);
-      font-weight: bold;
-      text-align: center;
-      color: $primary-navigation-hover;
-      @include tablet {
-        font-size: 1.8rem;
-      }
-      @include laptop {
-        text-align: left;
-      }
-    }
-
-    .song-info {
-      width: clamp-calc(20rem, 40rem);
-      @include flex(center, flex-start, column, 1rem);
-      white-space: nowrap;
-      & .info {
-        @include flex(center, center, row, 0.5rem);
-      }
-      & .flex {
-        @include flex(center, center, row, 0.5rem);
-      }
-      & span {
-        font-family: "Satoshi";
-        font-weight: 400;
-        font-size: 1rem;
-        color: $color-primary;
-        @include tablet {
-          font-size: 1.6rem;
+  .descriptions-wrapper {
+    // max-width: clamp-calc(20rem, 72.1rem);
+    width: 100%;
+    min-width: 0;
+    @include flex(center, center, column, 1rem);
+    .description {
+      @include flex(center, center, column, 1.4rem);
+      & h3 {
+        max-width: clamp-calc(20rem, 72.1rem);
+        width: 100%;
+        font-size: clamp-calc(1.2rem, 3.6rem);
+        font-weight: bold;
+        text-align: center;
+        color: $primary-navigation-hover;
+        @include laptop {
+          text-align: left;
         }
       }
-      @include laptop {
-        @include flex(flex-start, flex-start, row);
+
+      .song-info {
+        // width: clamp-calc(20rem, 40rem);
+        @include flex(center, flex-start, column, 1rem);
+        flex-wrap: wrap;
+        white-space: nowrap;
+        & .info {
+          @include flex(center, center, row, 0.5rem);
+        }
+        & .flex {
+          @include flex(center, center, row, 0.5rem);
+        }
+        & span {
+          font-family: "Satoshi";
+          font-weight: 400;
+          font-size: 1rem;
+          color: $color-primary;
+          @include tablet {
+            font-size: clamp-calc(1.6rem, 1.8rem);
+            @include flex(center, flex-start, row, 1rem);
+          }
+        }
+        @include desktop {
+          @include flex(center, flex-start, row, 1rem);
+          text-align: left;
+          align-self: flex-start;
+        }
       }
     }
-    @include laptop {
-      @include flex(flex-start, flex-start, column, 1rem);
+    .buttons-wrapper {
+      @include flex(center, center, row, 0.5rem);
+      flex-wrap: wrap;
+      & button {
+        padding: 1.179rem;
+        background-color: $main-green-color;
+        border: none;
+        outline: none;
+        border-radius: 5rem;
+        @include flex(center, center, row);
+      }
+      & a {
+        padding: 1.179rem;
+      }
     }
-  }
-  .buttons-wrapper {
-    @include flex(center, center, row, 0.5rem);
-    flex-wrap: wrap;
-    & button {
-      padding: 1.179rem;
-      background-color: $main-green-color;
-      border: none;
-      outline: none;
-      border-radius: 5rem;
-      @include flex(center, center, row);
-    }
-    & a {
-      padding: 1.179rem;
-    }
-  }
-  .genres-wrapper {
-    @include flex(center, center, row, 0.5rem);
-    flex-wrap: wrap;
-    & span {
-      border-radius: 4.4rem;
-      padding: 1rem 2rem;
-      border: 2px solid rgba(137, 137, 137, 0.1);
+    .genres-wrapper {
+      @include flex(center, center, row, 0.5rem);
+      flex-wrap: wrap;
+      & span {
+        border-radius: 4.4rem;
+        padding: 1rem 2rem;
+        border: 2px solid rgba(137, 137, 137, 0.1);
+        white-space: nowrap;
+      }
+      @include desktop {
+        @include flex(center, flex-start, row, 1rem);
+        text-align: left;
+      }
     }
   }
   .musicians-wrapper {
@@ -115,27 +124,131 @@
     flex-wrap: wrap;
     .musician {
       @include flex(flex-start, center, row, 2rem);
+      flex-wrap: wrap;
       .muscician-info {
-        @include flex(flex-start, center, column, 2rem);
+        @include flex(flex-start, center, column, 1rem);
         & h6 {
           font-family: "Satoshi";
           font-size: clamp-calc(1.6rem, 1.8rem);
           color: $color-hover-text;
         }
+        .hover-card {
+          display: none;
+        }
+        @media (max-width: 1577px) {
+          display: none;
+        }
+        @media (max-width: 1577px) {
+          &:hover {
+            .hover-card {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+    @include desktop {
+      @include flex(center, flex-start, column, 1rem);
+      text-align: left;
+      align-self: flex-start;
+    }
+    @media (max-width: 1577px) {
+      flex-direction: row;
+      gap: 3rem;
+    }
+  }
+}
+.details-wrapper {
+  width: 100%;
+  height: 600px;
+  @include flex(flex-start, flex-start, column, 3.5rem);
+  .slider {
+    position: relative;
+    width: 100%;
+    padding: 1.7rem 2rem;
+    border-bottom: 2px solid $color-bg-secondary;
+    @include flex(center, flex-start, row, 5rem);
+    & a {
+      font-family: "Satoshi";
+      text-wrap: nowrap;
+      font-size: clamp-calc(1.4rem, 1.6rem);
+      color: $color-primary;
+      &.active {
+        color: $primary-navigation-hover;
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -2px;
+      left: 1.6rem;
+      height: 2px;
+      width: 4.5rem;
+      background: $main-green-color;
+    }
+  }
+  .wrapper-flex {
+    padding-left: 3.7rem;
+    @include flex(flex-start, flex-start, row, 10rem);
+    & .icons {
+      @include flex(flex-satrt, flex-start, column, 1.2rem);
+      & a {
+        padding: 1.033rem 0.917rem;
+      }
+    }
+    .lyrics-wrapper {
+      @include flex(flex-start, flex-start, column, 3.5rem);
+      width: 100%;
+      padding: 0.5rem;
+      border-radius: 0.8rem;
+      & h6 {
+        font-family: "Satoshi";
+        color: $primary-navigation-hover;
+        font-size: clamp-calc(1.2rem, 1.8rem);
+        text-align: left;
+      }
+      & .lyrics {
+        & p:nth-child(-n + 5) {
+          color: white;
+        }
+        position: relative;
+        max-height: 14rem;
+        overflow: hidden;
+        & .lyric-text {
+          color: $color-primary;
+          max-width: 63ch;
+          line-height: 1;
+          margin-bottom: 1rem;
+          overflow-wrap: break-word;
+          font-size: 1.4rem;
+          @include laptop {
+            font-size: 2.8rem;
+          }
+        }
+      }
+
+      & button {
+        padding: 1.2rem 2rem;
+        border-radius: 4.4rem;
+        background-color: $primary-navigation-hover;
+        color: $button-dark-text;
+        border: none;
+        outline: none;
+        @include laptop {
+          display: none;
+        }
       }
     }
   }
+}
 
-  @include laptop {
-    @include flex(flex-start, flex-start, row, 6.2rem);
-  }
+@include desktop {
+  .music-wrapper {
+    @include flex(flex-start, flex-start, row, clamp-calc(2rem, 5rem));
 
-  .details-wrapper {
-    width: 100%;
-    @include flex(flex-start, flex-start, column, 3.5rem);
-    .slider {
-      width: 100%;
-      padding: 1.7rem 4.6rem;
+    & .descriptions-wrapper {
+      @include flex(flex-start, flex-start, column, 2rem);
     }
   }
 }

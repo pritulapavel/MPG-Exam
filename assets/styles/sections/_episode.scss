@@ -1,0 +1,139 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+.no-pd {
+  padding: 0;
+}
+.section-wrapper-episode {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #a5602a, #060606);
+  padding: 1rem;
+  @include laptop {
+    padding: 2.2rem 5rem 0 3.7rem;
+  }
+  .episode-wrapper {
+    @include grid(
+      $mobile-cols: 1,
+      $desktop-cols: 2,
+      $gap: 4rem,
+      $mobile-areas: "podcast-headings" "about-podcast" "episodes",
+      $desktop-areas: "podcast-headings about-podcast" "episodes about-podcast"
+    );
+
+    @media (min-width: 992px) {
+      grid-template-columns: minmax(0, 1fr) clamp(26rem, 30vw, 32rem);
+    }
+  }
+}
+// grid areas for each container
+.episode-headings {
+  grid-area: podcast-headings;
+}
+
+.episodes-wrapper {
+  grid-area: episodes;
+}
+
+.about-episode {
+  grid-area: about-podcast;
+  align-self: start;
+}
+//  Styles for  each container
+.episode-headings {
+  @include flex(center, flex-start, column, 1.4rem);
+  @include laptop {
+    @include flex(flex-start, flex-start, column, 1.4rem);
+  }
+  padding: 1rem;
+  & h3 {
+    font-family: "Satoshi";
+    font-weight: bold;
+    color: $primary-navigation-hover;
+    font-size: clamp-calc(1.6rem, 3.6rem);
+  }
+  & .cta-actions {
+    @include flex(center, center, row, 1rem);
+    flex-wrap: wrap;
+    & a:not(:last-child) {
+      padding: 1rem 2rem;
+      border-radius: 4.4rem;
+      border: 2px solid $color-primary;
+    }
+    & .active {
+      background-color: rgba(137, 137, 137, 0.25);
+      color: $primary-navigation-hover;
+    }
+    & a {
+      font-family: "Satoshi";
+      font-size: 1rem;
+      color: $color-primary;
+    }
+    &:last-child {
+      @include flex(center, center, row);
+      white-space: nowrap;
+    }
+  }
+}
+.about-episode {
+  @include flex(center, flex-start, column, 2rem);
+  @include laptop {
+    @include flex(flex-start, flex-start, column, 2rem);
+  }
+  .episode-info {
+    @include flex(center, flex-start, column, 2rem);
+    @include laptop {
+      @include flex(flex-start, flex-start, column, 2rem);
+    }
+    & h4 {
+      font-family: "Satoshi";
+      font-weight: bold;
+      color: $primary-navigation-hover;
+      font-size: clamp-calc(1.2rem, 2rem);
+      text-align: center;
+    }
+    & p {
+      font-family: "Satoshi";
+      font-weight: bold;
+      color: $color-primary;
+      font-size: clamp-calc(1.2rem, 1.6rem);
+      max-width: clamp-calc(40rem, 65rem);
+      text-align: center;
+      @include laptop {
+        text-align: left;
+      }
+    }
+  }
+  & img {
+    width: clamp-calc(17rem, 32rem);
+    height: clamp-calc(17rem, 32rem);
+    border-radius: $border-radius-default;
+  }
+}
+.episodes-wrapper {
+  width: 100%;
+  max-width: 80rem;
+  margin: 0 auto;
+  & .episode-video {
+    position: relative;
+    border-radius: $border-radius-default;
+    width: 100%;
+    max-width: 96.9rem;
+    aspect-ratio: 16 / 9;
+    margin-left: 0;
+    margin-right: auto;
+    border-radius: $border-radius-default;
+    background: url("../img/podcasts/podcast-video-cover.jpg") center/cover no-repeat;
+
+    & button {
+      padding: 2.1rem;
+      border-radius: 5rem;
+      outline: none;
+      border: none;
+      background-color: $primary-navigation-hover;
+      @include flex(center, center, row);
+      position: absolute;
+      left: 50%;
+      top: 50%;
+    }
+  }
+}
