@@ -103,7 +103,7 @@ const observer = new IntersectionObserver(
 
 scrollSections.forEach((section) => observer.observe(section));
 
-//  Hide  fixed menu while scrolling down and  show it  when customer will scroll up
+//  Discover გვერდზე, მობილურის ვერსიაზე დაიმალოს ჰიდერ ნავიგაცია სროლვისას და  ზემოტ ასქროლვისას გამოჩნდეს
 let lastScroll = 0;
 
 const nav = document.querySelector(".mobile-filters nav");
@@ -121,3 +121,15 @@ if (main && nav) {
     lastScroll = currentScroll;
   });
 }
+
+// Discover გვერდზე აქტიურ  ენქორ ტეგს კლიკზე გაუჩნდეს  მწვანე  ქვედა ზოლი:
+
+const filterLinks = document.querySelectorAll(".mobile-filters a");
+
+filterLinks.forEach((link) => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+    filterLinks.forEach((l) => l.classList.remove("active-underlined"));
+    link.classList.add("active-underlined");
+  });
+});
