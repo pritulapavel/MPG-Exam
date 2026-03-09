@@ -46,7 +46,7 @@
 
         &:hover {
           background-color: $color-bg-primary;
-          border-radius: 1rem;
+          border-radius: $border-radius-default;
           transition: 0.3s ease;
           & img {
             filter: brightness(0) invert(1);
@@ -75,7 +75,7 @@
         outline: none;
         background: transparent;
         padding: 0 1rem 0 4rem;
-        border-radius: 1rem;
+        border-radius: $border-radius-default;
         font-family: $font-satoshi, sans-serif;
         font-size: 1.4rem;
         font-weight: 500;
@@ -115,7 +115,7 @@
   .navigation {
     & a:hover {
       background-color: $color-bg-primary;
-      border-radius: 1rem;
+      border-radius: $border-radius-default;
       transition: 0.3s ease;
       & img {
         filter: brightness(0) invert(1);
