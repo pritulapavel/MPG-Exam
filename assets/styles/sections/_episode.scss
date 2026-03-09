@@ -6,7 +6,7 @@
 .section-wrapper-episode {
   width: 100%;
   min-height: 100vh;
-  background: linear-gradient(to bottom, #a5602a, #060606);
+  background: $podcast-episode-bg-color;
   padding: 1rem;
   @include laptop {
     padding: 2.2rem 5rem 0 3.7rem;
@@ -46,31 +46,45 @@
   }
   padding: 1rem;
   & h3 {
-    font-family: "Satoshi";
+    font-family: $font-satoshi;
     font-weight: bold;
-    color: $primary-navigation-hover;
+    color: $color-secondary;
     font-size: clamp-calc(1.6rem, 3.6rem);
   }
-  & .cta-actions {
+  & .subtitle {
     @include flex(center, center, row, 1rem);
     flex-wrap: wrap;
-    & a:not(:last-child) {
-      padding: 1rem 2rem;
-      border-radius: 4.4rem;
-      border: 2px solid $color-primary;
+    & p {
+      font-family: $font-satoshi;
+      color: $color-secondary;
+      font-size: 1.4rem;
     }
-    & .active {
-      background-color: rgba(137, 137, 137, 0.25);
-      color: $primary-navigation-hover;
+    & span {
+      font-family: $font-satoshi;
+      color: $color-primary;
+      font-size: 1.4rem;
+    }
+  }
+  .episode-buttons-wrapper {
+    @include flex(center, flex-start, row, 1rem);
+    & button {
+      @include flex(center, center, row);
+      padding: 1.179rem;
+      border-radius: 5rem;
+      outline: none;
+      border: none;
+      background-color: $main-green-color;
+      cursor: pointer;
     }
     & a {
-      font-family: "Satoshi";
-      font-size: 1rem;
-      color: $color-primary;
-    }
-    &:last-child {
-      @include flex(center, center, row);
-      white-space: nowrap;
+      padding: 1rem;
+
+      &:hover {
+        & img {
+          filter: brightness(0) invert(1);
+          transition: 0.3s ease;
+        }
+      }
     }
   }
 }
@@ -85,14 +99,14 @@
       @include flex(flex-start, flex-start, column, 2rem);
     }
     & h4 {
-      font-family: "Satoshi";
+      font-family: $font-satoshi;
       font-weight: bold;
-      color: $primary-navigation-hover;
+      color: $color-secondary;
       font-size: clamp-calc(1.2rem, 2rem);
       text-align: center;
     }
     & p {
-      font-family: "Satoshi";
+      font-family: $font-satoshi;
       font-weight: bold;
       color: $color-primary;
       font-size: clamp-calc(1.2rem, 1.6rem);
@@ -126,10 +140,11 @@
 
     & button {
       padding: 2.1rem;
-      border-radius: 5rem;
+      border-radius: $border-radius-full-circle;
       outline: none;
       border: none;
-      background-color: $primary-navigation-hover;
+      background-color: $light-button-bg-color;
+      cursor: pointer;
       @include flex(center, center, row);
       position: absolute;
       left: 50%;
