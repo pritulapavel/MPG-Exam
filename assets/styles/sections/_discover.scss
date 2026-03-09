@@ -102,7 +102,7 @@
     scroll-snap-align: start;
     border-radius: $border-radius-default;
     padding: 0 2.179rem 0 1.4rem;
-    // სიგანე და სიმაღლე ჩავასწორო
+    // სიგანე და სიმაღლე ჩავასწორო?
     width: 100%;
     position: relative;
     height: 100vh;
@@ -110,7 +110,7 @@
   }
   .right-fixed {
     bottom: 10rem;
-    right: 0;
+    right: 2rem;
     @include flex(start, start, column, 2rem);
     position: absolute;
     // padding: 0 2.159rem 0 1.4rem;
@@ -189,7 +189,7 @@
     .scroll-bar {
       flex: 1;
       height: 0.6rem;
-      background: rgba(219, 219, 219, 0.15);
+      background: $scrollbar-bg-color;
       border-radius: $border-radius-default;
       overflow: hidden;
       position: relative;
@@ -210,7 +210,6 @@
       display: none;
     }
   }
-  // Desktop Scrolls
 
   // Animation for filling the  story scroll
   .scroll-bar.active::after {
@@ -228,9 +227,9 @@
 }
 // Desktop version of Discover page
 .discover .filters-nav nav {
-  width: 86vw;
+  width: calc(100vw - 31.5rem);
   position: fixed;
-  left: 28.9rem;
+  left: 28.5rem;
   top: 7rem;
   z-index: 25;
   @include flex(center, flex-start, row, 1rem);
@@ -260,115 +259,115 @@
       }
     }
   }
-  // transition: transform 0.3s ease;
-  // &.hide {
-  //   transform: translateY(-100%);
-  // }
 }
 
 // Desktop Navigation
 
-.discover .section-wrapper-discover {
-  position: relative;
-  background-color: $discover-main-bg-color;
-  width: 100%;
-  padding: 12.5rem 22.1rem;
-
-  @include flex(center, center, column, 5rem);
-
-  .content-container {
+.section-wrapper-discover {
+  display: none;
+  @include laptop {
+    position: relative;
+    background-color: $discover-main-bg-color;
     width: 100%;
-    @include flex(center, center, row, 8rem);
+    padding: 12.5rem 22.1rem;
 
-    .song-container {
-      border-radius: $border-radius-default;
-      position: relative;
-      .main-img {
-        opacity: 0.5;
-        transition: opacity 0.8s ease;
-        &.visible {
-          opacity: 1;
-        }
-        // position: relative;
+    @include flex(center, center, column, 5rem);
+
+    .content-container {
+      width: 100%;
+      @include flex(center, center, row, 8rem);
+
+      .song-container {
         border-radius: $border-radius-default;
-      }
-      & .scroll-left {
-        padding: 0.5rem;
-        // background-color: red;
-        position: absolute;
-        left: 0;
-        top: 50%;
-        z-index: 15;
-        &:hover {
-          background-color: $scrollbar-bg;
-          padding: 1rem;
-          border-radius: $border-radius-full-circle;
-          & img {
-            filter: brightness(0) invert(1);
-            transition: 0.3s ease;
+        position: relative;
+        .main-img {
+          opacity: 0.5;
+          transition: opacity 0.8s ease;
+          &.visible {
+            opacity: 1;
           }
-          transition: 0.3s ease;
-        }
-      }
-      & .scroll-right {
-        &:hover {
-          background-color: $scrollbar-bg;
-          padding: 1rem;
-          border-radius: $border-radius-full-circle;
-          & img {
-            filter: brightness(0) invert(1);
-            transition: 0.3s ease;
-          }
-          transition: 0.3s ease;
-        }
-        padding: 0.5rem;
-        position: absolute;
-        right: 0;
-        top: 50%;
-        z-index: 15;
-      }
-      .scrolls-desktop {
-        @include flex(center, space-between, row, 0.7rem);
-        position: absolute;
-        bottom: 2rem;
-        left: 0.5rem;
-        right: 0.5rem;
-
-        .scroll-bar {
-          flex: 1;
-          height: 0.6rem;
-          background: rgba(219, 219, 219, 0.15);
+          // position: relative;
           border-radius: $border-radius-default;
-          overflow: hidden;
-          position: relative;
+        }
+        & .scroll-left {
+          padding: 0.5rem;
+          // background-color: red;
+          position: absolute;
+          left: 1rem;
+          top: 50%;
+          z-index: 15;
+          &:hover {
+            transform: scale(1.1);
+            padding: 1rem;
+            border-radius: $border-radius-full-circle;
+            & img {
+              filter: brightness(0) invert(1);
+              transition: 0.3s ease;
+            }
+            transition: 0.3s ease;
+          }
+        }
+        & .scroll-right {
+          &:hover {
+            transform: scale(1.1);
+            padding: 1rem;
+            border-radius: $border-radius-full-circle;
+            & img {
+              filter: brightness(0) invert(1);
+              transition: 0.3s ease;
+            }
+            transition: 0.3s ease;
+          }
+          padding: 0.5rem;
+          position: absolute;
+          right: 1rem;
+          top: 50%;
+          z-index: 15;
+        }
+        // Desktop Scrolls
+        .scrolls-desktop {
+          @include flex(center, space-between, row, 0.7rem);
+          position: absolute;
+          bottom: 2rem;
+          left: 0.5rem;
+          right: 0.5rem;
 
-          &::after {
-            content: "";
-            position: absolute;
-            inset: 0;
-            width: 0%;
-            background: $color-primary;
+          .scroll-bar {
+            flex: 1;
+            height: 0.6rem;
+            background: $scrollbar-bg-color;
             border-radius: $border-radius-default;
-          }
+            overflow: hidden;
+            position: relative;
 
-          &.active::after {
-            animation: fillscroll 5s linear forwards;
+            &::after {
+              content: "";
+              position: absolute;
+              inset: 0;
+              width: 0%;
+              background: $color-primary;
+              border-radius: $border-radius-default;
+            }
+
+            &.active::after {
+              animation: fillscroll 5s linear forwards;
+            }
           }
         }
-      }
 
-      @keyframes fillscroll {
-        from {
-          width: 0%;
-        }
-        to {
-          width: 100%;
+        @keyframes fillscroll {
+          from {
+            width: 0%;
+          }
+          to {
+            width: 100%;
+          }
         }
       }
     }
   }
 }
-.discover .description-wrapper {
+.description-wrapper {
   padding: 3rem;
   .description-container {
     @include flex(center, center, row, 1.8rem);
