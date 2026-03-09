@@ -46,7 +46,7 @@
 
         &:hover {
           background-color: $color-bg-primary;
-          border-radius: 1rem;
+          border-radius: $border-radius-default;
           transition: 0.3s ease;
           & img {
             filter: brightness(0) invert(1);
@@ -75,17 +75,17 @@
         outline: none;
         background: transparent;
         padding: 0 1rem 0 4rem;
-        border-radius: 1rem;
-        font-family: "Satoshi", sans-serif;
+        border-radius: $border-radius-default;
+        font-family: $font-satoshi, sans-serif;
         font-size: 1.4rem;
         font-weight: 500;
-        color: #898989;
+        color: $color-primary;
         // placeholder customization
         &::placeholder {
-          font-family: "Satoshi", sans-serif;
+          font-family: $font-satoshi, sans-serif;
           font-size: 14px;
           font-weight: 500;
-          color: #898989;
+          color: $color-primary;
         }
         // closing icon customization
         &::-webkit-search-cancel-button {
@@ -94,20 +94,8 @@
           height: 1rem;
           cursor: pointer;
           background:
-            linear-gradient(
-              45deg,
-              transparent 45%,
-              $color-primary 45%,
-              $color-primary 55%,
-              transparent 55%
-            ),
-            linear-gradient(
-              -45deg,
-              transparent 45%,
-              $color-primary 45%,
-              $color-primary 55%,
-              transparent 55%
-            );
+            linear-gradient(45deg, transparent 45%, $color-primary 45%, $color-primary 55%, transparent 55%),
+            linear-gradient(-45deg, transparent 45%, $color-primary 45%, $color-primary 55%, transparent 55%);
           background-size: 100% 100%;
         }
       }
@@ -126,8 +114,8 @@
   // top-left-navigation hover:
   .navigation {
     & a:hover {
-      background-color: #111111;
-      border-radius: 1rem;
+      background-color: $color-bg-primary;
+      border-radius: $border-radius-default;
       transition: 0.3s ease;
       & img {
         filter: brightness(0) invert(1);
@@ -135,7 +123,7 @@
       }
 
       & span {
-        color: $primary-navigation-hover;
+        color: $color-secondary;
         transition: 0.3s ease;
       }
     }
@@ -180,7 +168,7 @@
       filter: brightness(0) invert(1);
     }
     & span {
-      color: $primary-navigation-hover;
+      color: $color-secondary;
       // transition: 0.3s ease;
     }
   }
