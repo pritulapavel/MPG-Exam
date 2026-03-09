@@ -17,6 +17,12 @@ $artist-cover-bg-mob: linear-gradient(180deg, rgba(7, 7, 7, 0.3) 0%, rgba(7, 7, 
 $podcast-episode-bg-color: linear-gradient(to bottom, #a5602a, #060606); //მარიამის დამატებული
 $color-card-browse-heading: #ffffff;
 $light-button-bg-color: #e0e0e0; //მარიამის დამატებული
+$discover-filters-bg-color: linear-gradient(
+  to right,
+  rgba(17, 17, 17, 1) 0%,
+  rgba(17, 17, 17, 0) 100%
+); //მარიამის დამატებული
+$discover-main-bg-color: rgba(223, 114, 47, 0.12); //მარიამის დამატებული
 
 $color-card-browse-heading: #ffffff;
 $border-menu-color: rgba(137, 137, 137, 0.2);
@@ -37,7 +43,7 @@ $border-radius-default: 1rem;
 $border-radius-btn-mob: 0.8rem;
 $border-radius-crd: 0.5rem;
 $border-radius-full-circle: 5rem;
-
+$border-radius-oval: 4.4rem; //მარიამის დამატებული
 /* Hover effect colors: */
 $primary-navigation-hover: #e0e0e0;
 $color-hover-bg: #202020;

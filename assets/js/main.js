@@ -62,12 +62,20 @@ function getAverageColor(img) {
 // მხოლოდ იმ  სექციაში, რომელიც ვიუპორტში ხვდება
 // ფუნქცია რომ ანიმაციები  ივსებოდეს ტანმიმდევრულად,
 // მხოლოდ იმ  სექციაში, რომელიც ვიუპორტში ხვდება
+
 const scrollSections = document.querySelectorAll(".scrolls, .scrolls-desktop");
 
 const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
+      // visibility changer for image
+      const container = entry.target.closest(".song-container");
+      const img = container?.querySelector(".main-img");
+
       if (entry.isIntersecting) {
+        img?.classList.add("visible");
+
+        // scrollbar annimation
         const bars = entry.target.querySelectorAll(".scroll-bar");
 
         let index = 0;
