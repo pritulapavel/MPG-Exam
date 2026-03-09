@@ -2,10 +2,10 @@
 @use "../abstracts/mixins" as *;
 
 .discover .player {
-    display: none;
-    @include laptop {
-      display: flex;
-    }
+  display: none;
+  @include laptop {
+    display: flex;
+  }
 }
 
 .discover .main {
@@ -26,8 +26,8 @@
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: linear-gradient(to right, rgba(17, 17, 17, 1) 0%, rgba(17, 17, 17, 0) 100%);
-  border-radius: 0 0 1rem 1rem;
+  background: $discover-filters-bg-color;
+  border-radius: 0 0 $border-radius-default $border-radius-default;
   @include flex(center, flex-start, row);
 
   & nav {
@@ -40,7 +40,7 @@
     left: 0;
     right: 0;
     z-index: 20;
-    background: linear-gradient(to right, rgba(17, 17, 17, 1) 0%, rgba(17, 17, 17, 0) 100%);
+    background: $discover-filters-bg-color;
     transition: transform 0.3s ease;
 
     &.hide {
@@ -59,12 +59,12 @@
 
     &::-webkit-scrollbar-thumb {
       background-color: $scrollbar-bg;
-      border-radius: 3px;
+      border-radius: 0.3rem;
     }
   }
 
   & a {
-    font-family: "Satoshi";
+    font-family: $font-satoshi;
     font-size: 1.4rem;
     color: $color-primary;
     white-space: nowrap;
@@ -100,7 +100,7 @@
     background-color: $color-hover-bg;
     // Scrolling type
     scroll-snap-align: start;
-    border-radius: 1rem;
+    border-radius: $border-radius-default;
     padding: 0 2.179rem 0 1.4rem;
     // სიგანე და სიმაღლე ჩავასწორო
     width: 100%;
@@ -121,7 +121,7 @@
         background: transparent;
 
         span {
-          font-family: "Satoshi";
+          font-family: $font-satoshi;
           font-size: clamp-calc(1.2rem, 1.6rem);
           color: $color-primary;
         }
@@ -134,7 +134,7 @@
         @include flex(center, center, row);
         position: absolute;
         background-color: $primary-navigation-hover;
-        border-radius: 5rem;
+        border-radius: $border-radius-full-circle;
         bottom: 2.3rem;
       }
     }
@@ -161,13 +161,14 @@
     }
     .description {
       @include flex(flex-start, center, column, 0.3rem);
+
       & h6 {
-        font-family: "Satoshi";
+        font-family: $font-satoshi;
         font-size: clamp-calc(1.4rem, 1.8rem);
         color: $primary-navigation-hover;
       }
       & span {
-        font-family: "Satoshi";
+        font-family: $font-satoshi;
         font-size: clamp-calc(1.4rem, 1.8rem);
         color: $color-primary;
       }
@@ -189,7 +190,7 @@
       flex: 1;
       height: 0.6rem;
       background: rgba(219, 219, 219, 0.15);
-      border-radius: 1rem;
+      border-radius: $border-radius-default;
       overflow: hidden;
       position: relative;
 
@@ -199,7 +200,7 @@
         inset: 0;
         width: 0%;
         background: $color-primary;
-        border-radius: 1rem;
+        border-radius: $border-radius-default;
       }
       @include laptop {
         display: none;
@@ -235,7 +236,7 @@
   @include flex(center, flex-start, row, 1rem);
   padding: 1.5rem 0;
   background-color: $color-bg-main;
-  border-radius: 1rem 1rem 0 0;
+  border-radius: $border-radius-default $border-radius-default 0 0;
   & ul {
     padding: 0 2.5rem;
     @include flex(center, flex-start, row, 1rem);
@@ -244,18 +245,18 @@
       border-radius: 0.8rem;
       background-color: rgba(32, 32, 32, 0.5);
       color: $primary-navigation-hover;
-      font-family: "Satoshi";
+      font-family: $font-satoshi;
       font-size: 1.4rem;
       text-decoration: none;
       text-transform: capitalize;
       transition: 0.3s ease;
       &:hover {
         color: $color-bg-primary;
-        background-color: #e0e0e0;
+        background-color: $light-button-bg-color;
       }
       &.active {
         color: $color-bg-primary;
-        background-color: #e0e0e0;
+        background-color: $light-button-bg-color;
       }
     }
   }
@@ -269,7 +270,7 @@
 
 .discover .section-wrapper-discover {
   position: relative;
-  background-color: rgba(223, 114, 47, 0.12);
+  background-color: $discover-main-bg-color;
   width: 100%;
   padding: 12.5rem 22.1rem;
 
@@ -280,11 +281,16 @@
     @include flex(center, center, row, 8rem);
 
     .song-container {
-      border-radius: 1rem;
+      border-radius: $border-radius-default;
       position: relative;
-      & .main-img {
+      .main-img {
+        opacity: 0.5;
+        transition: opacity 0.8s ease;
+        &.visible {
+          opacity: 1;
+        }
         // position: relative;
-        border-radius: 1rem;
+        border-radius: $border-radius-default;
       }
       & .scroll-left {
         padding: 0.5rem;
@@ -293,10 +299,29 @@
         left: 0;
         top: 50%;
         z-index: 15;
+        &:hover {
+          background-color: $scrollbar-bg;
+          padding: 1rem;
+          border-radius: $border-radius-full-circle;
+          & img {
+            filter: brightness(0) invert(1);
+            transition: 0.3s ease;
+          }
+          transition: 0.3s ease;
+        }
       }
       & .scroll-right {
+        &:hover {
+          background-color: $scrollbar-bg;
+          padding: 1rem;
+          border-radius: $border-radius-full-circle;
+          & img {
+            filter: brightness(0) invert(1);
+            transition: 0.3s ease;
+          }
+          transition: 0.3s ease;
+        }
         padding: 0.5rem;
-        // background-color: red;
         position: absolute;
         right: 0;
         top: 50%;
@@ -313,7 +338,7 @@
           flex: 1;
           height: 0.6rem;
           background: rgba(219, 219, 219, 0.15);
-          border-radius: 1rem;
+          border-radius: $border-radius-default;
           overflow: hidden;
           position: relative;
 
@@ -323,7 +348,7 @@
             inset: 0;
             width: 0%;
             background: $color-primary;
-            border-radius: 1rem;
+            border-radius: $border-radius-default;
           }
 
           &.active::after {
@@ -354,14 +379,14 @@
     }
 
     .description {
-      & h5 {
-        font-family: "Satoshi";
+      & h2 {
+        font-family: $font-satoshi;
         font-weight: bold;
         font-size: 3rem;
         color: $primary-navigation-hover;
       }
       p {
-        font-family: "Satoshi";
+        font-family: $font-satoshi;
         font-size: 1.4rem;
         white-space: nowrap;
         color: $color-primary;
@@ -370,30 +395,49 @@
         }
       }
       & .buttons {
-        & button {
+        & .play-btn {
+          @include flex(center, center, row);
           padding: 1.179rem;
-          border-radius: 5rem;
+          border-radius: $border-radius-full-circle;
           outline: none;
           border: none;
           background-color: $main-green-color;
+          cursor: pointer;
         }
         @include flex(center, center, row, 1.8rem);
-        & a {
+        & .icon-btn {
           white-space: nowrap;
           @include flex(center, center, row, 1.1rem);
+          border: none;
+          outline: none;
+          background: transparent;
+          cursor: pointer;
+
+          // fonts for texts
+          font-family: $font-satoshi;
+          font-size: 1.2rem;
+          color: $color-primary;
+
+          &:hover {
+            & img {
+              filter: brightness(0) invert(1);
+              transition: 0.3s ease;
+            }
+          }
         }
       }
       @include flex(flex-start, center, column, 2rem);
 
       & .genres {
         @include flex(center, center, row, 1rem);
-        & .genre {
-          font-family: "Satoshi";
+        & li {
+          font-family: $font-satoshi;
+          color: $color-primary;
           font-size: 1.2rem;
           padding: 0.8rem 1.3rem;
           outline: none;
-          border-radius: 4.4rem;
-          border: 2px solid rgba(137, 137, 137, 0.1);
+          border-radius: $border-radius-oval;
+          border: 2px solid $border-menu-color;
         }
       }
     }
