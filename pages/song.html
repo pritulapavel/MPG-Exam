@@ -263,24 +263,32 @@
           </div>
           <div class="details-wrapper">
             <div class="slider">
-              <a href="#" class="active"> Lyrics </a>
-              <a href="#"> Credits </a>
-              <a href="#"> More like this </a>
+              <input type="radio" id="lyrics" name="info-tabs" checked />
+              <label for="lyrics">Lyrics</label>
+
+              <input type="radio" id="credits" name="info-tabs" />
+              <label for="credits">Credits</label>
+
+              <input type="radio" id="more" name="info-tabs" />
+              <label for="more">More Like This</label>
             </div>
             <div class="wrapper-flex">
               <div class="icons">
-                <a href="#">
+                <input type="radio" name="option" id="nowPlaying" checked />
+                <label for="nowPlaying">
                   <img src="../assets/img/song/now-playin.svg" alt="Now playing" />
-                </a>
-                <a href="#">
-                  <img src="../assets/img/song/language.svg" alt="Change language" />
-                </a>
-                <a href="#">
+                </label>
+
+                <input type="radio" name="option" id="language" />
+                <label for="language"><img src="../assets/img/song/language.svg" alt="Change language" /></label>
+                <input type="radio" name="option" id="leaveComment" />
+                <label for="leaveComment">
                   <img src="../assets/img/song/comment.svg" alt="Leave comment" />
-                </a>
-                <a href="#">
+                </label>
+                <input type="radio" name="option" id="fontSize" />
+                <label for="fontSize">
                   <img src="../assets/img/song/font-size.svg" alt="Change font size" />
-                </a>
+                </label>
               </div>
               <div class="lyrics-wrapper">
                 <h6>Lyrics Preview</h6>
