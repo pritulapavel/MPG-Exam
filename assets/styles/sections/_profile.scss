@@ -1,0 +1,275 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+.profile-wrapper {
+  padding: 1.5rem 1.5rem 15rem 1.5rem;
+  @media (min-width: 768px) {
+    padding-bottom: 0;
+  }
+}
+
+// layout
+.content-wrapper {
+  @include grid(1);
+  justify-items: center;
+
+  @media (min-width: 768px) {
+    @include grid(
+      2,
+      null,
+      auto,
+      2rem,
+      "my-profile my-profile" "friends spotify-plan" "profile-details profile-details"
+    );
+
+    .my-profile {
+      grid-area: my-profile;
+      justify-self: stretch;
+    }
+
+    .friends {
+      grid-area: friends;
+    }
+
+    .spotify-plan {
+      grid-area: spotify-plan;
+    }
+
+    .profile-details {
+      grid-area: profile-details;
+      justify-self: center;
+    }
+  }
+}
+.content-wrapper {
+  //   main styles
+
+  .profile-content {
+    width: clamp-calc(32rem, 36.1rem);
+    border-radius: 1.2rem;
+    padding: 1.7rem 1.9rem;
+    border: 0.2rem solid #2c191d;
+    // first container  profile block
+    &.my-profile {
+      background: linear-gradient(to bottom, #8a354a, #2c191d, #111111);
+      position: relative;
+
+      & article {
+        width: 100%;
+        @include flex(center, center, row, 1.6rem);
+        & figure img {
+          width: clamp-calc(8rem, 9.5rem);
+          height: 100%;
+        }
+
+        & .profile-actions {
+          @include flex(center, center, row, 0.759rem);
+          position: absolute;
+          right: 0;
+          top: 0;
+
+          & button {
+            border: none;
+            outline: none;
+            background: transparent;
+            padding: 0.734rem 0.762rem 0.734rem 0.762rem;
+            cursor: pointer;
+            &:hover {
+              & img {
+                filter: brightness(0) invert(1);
+                transition: 0.3s ease;
+              }
+            }
+          }
+        }
+
+        .profile-info {
+          @include flex(flex-start, flex-start, column, 1.3rem);
+          & h3 {
+            font-family: $font-satoshi;
+            color: $color-secondary;
+            font-size: 2rem;
+          }
+          .profile-stats {
+            @include flex(center, flex-start, row, 1rem);
+            & span {
+              font-family: $font-satoshi;
+              color: $color-secondary;
+              font-size: 1.4rem;
+            }
+            & a,
+            & p {
+              font-family: $font-satoshi;
+              color: $color-primary;
+              font-size: 1.4rem;
+            }
+          }
+        }
+      }
+      @media (min-width: 768px) {
+        width: 100%;
+      }
+    }
+    // Second container  My friends block
+    &.friends {
+      @include flex(flex-start, flex-start, column, 1rem);
+      & .profile-headings {
+        @include flex(flex-start, space-between, row);
+        width: 100%;
+        & h2 {
+          font-family: $font-satoshi;
+          color: $color-secondary;
+          font-size: 1.4rem;
+        }
+        & button {
+          border: none;
+          outline: none;
+          background: transparent;
+          padding: 0.734rem 0.762rem 0.734rem 0.762rem;
+          cursor: pointer;
+          &:hover {
+            & img {
+              filter: brightness(0) invert(1);
+              transition: 0.3s ease;
+            }
+          }
+        }
+      }
+
+      & .my-friends {
+        @include flex(flex-start, flex-start, column, 0.5rem);
+
+        & article {
+          @include flex(center, flex-start, row, 1rem);
+          & .friend-info {
+            @include flex(flex-start, flex-start, column, 0.2rem);
+            & .listener {
+              @include flex(center, flex-start, row);
+              & p {
+                font-family: $font-satoshi;
+                color: $color-primary;
+                font-size: 1.4rem;
+                & span {
+                  color: $color-secondary;
+                }
+              }
+            }
+            & h3 {
+              font-family: $font-satoshi;
+              color: $color-secondary;
+              font-size: 1.2rem;
+            }
+          }
+        }
+      }
+      @media (min-width: 768px) {
+        width: 100%;
+      }
+    }
+    // Third container My Spotify plan block
+    &.spotify-plan {
+      @include flex(flex-start, flex-start, column, 2.2rem);
+      .plan-header {
+        @include flex(center, flex-start, row, 1.3rem);
+        & h4 {
+          font-family: $font-satoshi;
+          color: $color-secondary;
+          font-size: 1.4rem;
+          text-transform: capitalize;
+        }
+      }
+      .plan-info {
+        @include flex(flex-start, flex-start, column, 0.5rem);
+        & h3 {
+          font-family: $font-satoshi;
+          font-size: 1.8rem;
+          color: $main-green-color;
+        }
+        & span {
+          font-family: $font-satoshi;
+          color: $color-secondary;
+          font-size: 1.4rem;
+        }
+      }
+      @media (min-width: 768px) {
+        width: 100%;
+      }
+    }
+
+    // Fourth container  Profile information  block
+
+    &.profile-details {
+      @include flex(flex-start, flex-start, column, 1.5rem);
+
+      & .details {
+        width: 100%;
+
+        & summary {
+          list-style: none;
+          @include flex(center, flex-start, row, 1rem);
+
+          font-family: $font-satoshi;
+          color: $color-secondary;
+          font-size: 1.6rem;
+          text-transform: capitalize;
+          position: relative;
+
+          &::after {
+            content: "›";
+            position: absolute;
+            top: 50%;
+            right: 1rem;
+            transform: translateY(-50%);
+            font-size: 3rem;
+            color: $color-primary;
+            font-weight: 800;
+            transition: 0.3s;
+            cursor: pointer;
+          }
+          & ul {
+            display: none;
+          }
+          &:hover::after {
+            color: $primary-navigation-hover;
+            transition: 0.3s ease;
+          }
+        }
+
+        &[open] summary::after {
+          transform: translateY(-50%) rotate(90deg);
+        }
+        &[open] {
+          & ul {
+            @include flex(flex-start, center, column, 1rem);
+            margin-top: 1rem;
+            padding: 1.5rem;
+            background: linear-gradient(
+              to bottom,
+              rgba(138, 53, 74, 0.5),
+              rgba(44, 25, 29, 0.5),
+              rgba(17, 17, 17, 0.5)
+            );
+            border-radius: $border-radius-default;
+            transition: 0.2s ease;
+
+            & li {
+              font-family: $font-satoshi;
+              color: $color-secondary;
+              font-size: 1.6rem;
+              @include flex(center, center, row, 1.5rem);
+            }
+          }
+          & img {
+            border-radius: $border-radius-default;
+          }
+          & .friend-suggestion {
+            width: 2rem;
+            height: 2rem;
+          }
+        }
+      }
+      @media (min-width: 768px) {
+        width: 100%;
+      }
+    }
+  }
+}
