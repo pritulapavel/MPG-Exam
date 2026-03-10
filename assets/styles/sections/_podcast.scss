@@ -8,6 +8,7 @@
   min-height: 100vh;
   background: linear-gradient(to bottom, #a5602a, #060606);
   padding: 1rem;
+  padding-bottom: 15rem;
   @include laptop {
     padding: 2.2rem 5rem 0 3.7rem;
   }
@@ -37,7 +38,7 @@
 
 .about-podcast {
   grid-area: about-podcast;
-  // align-self: start;
+  align-self: flex-start;
 }
 //  Styles for  each container
 .podcast-headings {
@@ -57,7 +58,7 @@
     flex-wrap: wrap;
     & a:not(:last-child) {
       padding: 1rem 2rem;
-      border-radius: 4.4rem;
+      border-radius: $border-radius-oval;
       border: 2px solid $color-primary;
     }
     & .active {
@@ -80,6 +81,7 @@
 
   @include laptop {
     @include flex(flex-start, flex-start, column, 2rem);
+    justify-self: flex-end;
   }
   .podcast-info {
     max-width: 32rem;
@@ -116,7 +118,7 @@
     flex-wrap: wrap;
     & span {
       padding: 1rem;
-      border-radius: 4.4rem;
+      border-radius: $border-radius-oval;
       border: 2px solid $color-primary;
       font-family: $font-satoshi;
       font-weight: bold;
@@ -132,8 +134,11 @@
 
   .podcast-filter {
     width: 100%;
-    @include laptop {
-      @include flex(center, space-between, row);
+    & h6 {
+      font-size: 2rem;
+      font-family: $font-satoshi;
+      font-weight: bold;
+      color: $primary-navigation-hover;
     }
     .filters {
       display: none;
@@ -141,17 +146,23 @@
       @include laptop {
         @include flex(center, center, row, 1rem);
 
-        & a {
-          @include flex(center, center, row, 1rem);
-          padding: 1.3rem 1rem;
+        & .filter {
+          & a {
+            @include flex(center, center, row, 1rem);
+            padding: 1.3rem 1rem;
+            &:hover {
+              & img {
+                filter: brightness(0) invert(1);
+                transition: 0.3s ease;
+              }
+            }
+          }
         }
       }
     }
-    & h6 {
-      font-size: 2rem;
-      font-family: $font-satoshi;
-      font-weight: bold;
-      color: $primary-navigation-hover;
+
+    @include laptop {
+      @include flex(center, space-between, row);
     }
   }
   .episodes {
@@ -200,15 +211,22 @@
           @include flex(center, flex-start, row, 1rem);
           & button {
             padding: 1.2rem;
-            border-radius: 5rem;
+            border-radius: $border-radius-full-circle;
             outline: none;
             border: none;
             background-color: $main-green-color;
+            cursor: pointer;
             @include flex(center, center, row);
           }
           & a {
             @include flex(center, center, row);
             padding: 1rem;
+            &:hover {
+              & img {
+                filter: brightness(0) invert(1);
+                transition: 0.3s ease;
+              }
+            }
           }
         }
       }
