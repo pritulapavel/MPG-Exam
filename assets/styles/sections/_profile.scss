@@ -5,10 +5,13 @@
   @media (min-width: 768px) {
     padding-bottom: 0;
   }
+
+
+
 }
 
 // layout
-.content-wrapper {
+.profile-wrapper.content-wrapper {
   @include grid(1);
   justify-items: center;
 
@@ -40,7 +43,7 @@
     }
   }
 }
-.content-wrapper {
+.profile-wrapper.content-wrapper {
   //   main styles
 
   .profile-content {
