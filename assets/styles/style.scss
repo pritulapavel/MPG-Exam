@@ -20,3 +20,6 @@
 @use "./sections/artists";
 @use "./sections/podcast";
 @use "./sections/episode";
+@use "./layouts/now-playing";
+@use "./layouts/now-playing-text";
+@use "./layouts/now-playing-music-section";

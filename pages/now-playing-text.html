@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../assets/styles/style.css" />
+</head>
+
+<body>
+    <main class="main now-playing">
+        <section class="navigation-title">
+            <div class="icon-title-wrapper">
+                <div class="now-playing-bars">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="title-marquee">
+                    <p>Get Lucky (feat. Pharrell Williams and Nile Rodgers)</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="main-content">
+            <div class="main-text-wrapper">
+                <p>
+                    Like the legend of the Phoenix
+                    All ends with beginnings
+                    What keeps the planets spinning
+                    The force from the beginning
+                </p>
+
+                <p>
+                    We've come too far
+                    To give up who we are
+                    So let's raise the bar
+                    And our cups to the stars
+                </p>
+
+                <p>
+                    She's up all night till the sun
+                    I'm up all night to get some
+                    She's up all night for good fun
+                    I'm up all night to get lucky
+                    We're up all night till the sun
+                    We're up all night to get some
+                    We're up all night for good fun
+                    We're up all night to get lucky
+                </p>
+
+                <p>
+                    We're up all night to get lucky
+                    We're up all night to get lucky
+                    We're up all night to get lucky
+                    We're up all night to get lucky
+                    The present has no ribbon
+                    Your gift keeps on giving
+                    What is this I'm feeling?
+                    If you want to leave, I'm with it
+                </p>
+
+                <p>
+                    We're up all night to get...
+                    We're up all night to get...
+                    We're up all night to get...
+                    We're up all night to get...
+                    We're up all night to get
+                    We're up all night (let's get back again)
+                    We're up all night to get lucky
+                    We're up all night to get luck
+                    We're up all night to get lucky
+                    We're up all night to get lucky
+                    We're up all night to get lucky
+                    We're up all night to get lucky
+                    We're up all night to get lucky
+                    We're up all night to get lucky
+                    We're up all night to get lucky
+                    We're up all night to get lucky
+                </p>
+            </div>
+        </section>
+
+        <!-- PLAYER SECTION -->
+        <section class="music-player">
+            <div class="progress-container">
+                <div class="progress-bar-bg">
+                    <div class="progress-bar-fill">
+                        <div class="progress-dot"></div>
+                    </div>
+                </div>
+                <div class="time-labels">
+                    <p>2:23</p>
+                    <p>-0:45</p>
+                </div>
+            </div>
+
+            <div class="music-navigation">
+                <img src="../assets/img/icons/player/shuffle.svg" alt="shuffle icon">
+                <div class="main-music-navigation">
+                    <img src="../assets/img/icons/player/prev.svg" alt="prev icon">
+                    <div class="pause-wrapper">
+                        <img src="../assets/img/icons/player/pause.svg" alt="pause icon">
+                    </div>
+                    <img src="../assets/img/icons/player/next.svg" alt="next icon">
+                </div>
+                <img src="../assets/img/icons/player/repeat.svg" alt="repeat icon">
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-icon-wrapper">
+            <div class="nav-icon">
+                <a href="now-playing.html"><img src="../assets/img/icons/player/devices.svg" alt="devices icon"></a>
+            </div>
+            <div class="nav-icon">
+                <img src="../assets/img/icons/upload.svg" alt="upload icon">
+            </div>
+            <div class="nav-icon active">
+                <a href="now-playing-text.html">
+                    <img src="../assets/img/icons/list.svg" alt="list icon">
+                </a>
+            </div>
+            <div class="nav-icon">
+                <a href="now-playing-music-section.html">
+                    <img src="../assets/img/icons/player/order.svg" alt="order icon">
+                </a>
+            </div>
+            <div class="nav-icon">
+                <img src="../assets/img/icons/dots.svg" alt="dots icon">
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const verses = document.querySelectorAll('.main-text-wrapper p');
+        let currentIndex = 0;
+
+        verses[0].classList.add('active');
+
+        setInterval(() => {
+            verses[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + 1) % verses.length;
+            verses[currentIndex].classList.add('active');
+            verses[currentIndex].scrollIntoView({
+                behavior: 'smooth',
+                block: 'center'
+            });
+        }, 5000);
+    </script>
+</body>
+
+</html>
