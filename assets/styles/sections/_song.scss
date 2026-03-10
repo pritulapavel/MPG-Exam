@@ -6,7 +6,7 @@
   z-index: 2;
   width: 100%;
   min-height: 100vh;
-  padding: 3.7rem 3.7rem 0 3.7rem;
+  padding: 3.7rem 2.6rem 10rem 3.7rem;
   @include flex(center, flex-start, column, 2.6rem);
 
   &::before {
@@ -14,7 +14,7 @@
     position: absolute;
     inset: 0;
     background: url("../img/song/bg-img.jpg") center / cover no-repeat;
-    filter: blur(150px);
+    filter: blur(100px) brightness(0.5);
     z-index: -1;
   }
 
@@ -59,7 +59,7 @@
         font-weight: bold;
         text-align: center;
         color: $primary-navigation-hover;
-        @include laptop {
+        @include desktop {
           text-align: left;
         }
       }
@@ -188,7 +188,7 @@
       position: relative;
       font-family: $font-satoshi;
       color: $color-primary;
-      font-size: clamp-calc(1.4rem, 1.6rem);
+      font-size: clamp-calc(1.4rem, 1rem);
       cursor: pointer;
     }
     & input {
@@ -206,7 +206,6 @@
     }
   }
   .wrapper-flex {
-    padding-left: 3.7rem;
     @include flex(flex-start, flex-start, row, 10rem);
     & .icons {
       @include flex(flex-satrt, flex-start, column, 1.2rem);
@@ -263,6 +262,7 @@
       color: $button-dark-text;
       border: none;
       outline: none;
+      cursor: pointer;
       @include laptop {
         display: none;
       }
