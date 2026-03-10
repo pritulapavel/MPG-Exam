@@ -215,7 +215,7 @@
 // Desktop version of Discover page
 .filters-nav {
   & .radio-nav-desk {
-    width: calc(100vw - 31.5rem);
+    width: calc(100vw - 31.7rem);
     position: fixed;
     left: 28.5rem;
     top: 7rem;
@@ -227,28 +227,29 @@
     padding: 0 2.5rem;
 
     & ul {
-      padding: 0 2.5rem;
+      padding: 1.2rem 2.5rem;
       @include flex(center, flex-start, row, 1rem);
       & li {
-        padding: 0.8rem 1.5rem;
-        border-radius: 0.8rem;
-        background-color: $discover-filters-bg-color;
-        text-decoration: none;
-        text-transform: capitalize;
-        transition: 0.3s ease;
         cursor: pointer;
         & a {
+          padding: 0.8rem 1.5rem;
+          border-radius: 0.8rem;
+          background-color: $discover-filters-bg-color;
+          text-decoration: none;
+          text-transform: capitalize;
           font-family: $font-satoshi;
-          font-size: 1.4rem;
+          font-size: clamp-calc(1.4rem, 1.8rem);
           color: $color-secondary;
-        }
-        &:hover {
-          color: $color-dark-hover;
-          background-color: $primary-navigation-hover;
-        }
-        &.active {
-          color: $color-dark-hover;
-          background-color: $primary-navigation-hover;
+          transition: 0.3s ease;
+          &.active {
+            color: $color-dark-hover;
+            background-color: $primary-navigation-hover;
+          }
+
+          &:hover {
+            color: $color-dark-hover;
+            background-color: $primary-navigation-hover;
+          }
         }
       }
     }
