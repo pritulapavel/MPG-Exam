@@ -72,14 +72,6 @@
     & input {
       display: none;
     }
-
-    &.hide {
-      transform: translateY(-100%);
-    }
-  }
-
-  .active-underlined {
-    color: $primary-navigation-hover;
   }
   @include laptop {
     display: none;
@@ -234,30 +226,31 @@
     border-radius: $border-radius-default $border-radius-default 0 0;
     padding: 0 2.5rem;
 
-    & label {
-      padding: 0.8rem 1.5rem;
-      border-radius: 0.8rem;
-      background-color: rgba(32, 32, 32, 0.5);
-      color: $primary-navigation-hover;
-      font-family: $font-satoshi;
-      font-size: 1.4rem;
-      text-decoration: none;
-      text-transform: capitalize;
-      transition: 0.3s ease;
-      cursor: pointer;
-      &:hover {
-        color: $color-bg-primary;
-        background-color: $light-button-bg-color;
+    & ul {
+      padding: 0 2.5rem;
+      @include flex(center, flex-start, row, 1rem);
+      & li {
+        padding: 0.8rem 1.5rem;
+        border-radius: 0.8rem;
+        background-color: $discover-filters-bg-color;
+        text-decoration: none;
+        text-transform: capitalize;
         transition: 0.3s ease;
+        cursor: pointer;
+        & a {
+          font-family: $font-satoshi;
+          font-size: 1.4rem;
+          color: $color-secondary;
+        }
+        &:hover {
+          color: $color-dark-hover;
+          background-color: $primary-navigation-hover;
+        }
+        &.active {
+          color: $color-dark-hover;
+          background-color: $primary-navigation-hover;
+        }
       }
-      &.active {
-        color: $color-bg-primary;
-        background-color: $light-button-bg-color;
-      }
-    }
-
-    & input {
-      display: none;
     }
   }
 }
