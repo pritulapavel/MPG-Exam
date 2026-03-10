@@ -146,11 +146,28 @@
   padding: 1.6rem;
   background: $mobile-nav-bg-color;
   @include flex(center, space-around, row, 3.1rem);
-  & a {
-    @include flex(center, center, column, 0.2rem);
+  & label {
+    @include flex(center, center, column, 1rem);
     font-family: $font-satoshi;
     font-size: 1.4rem;
     color: $color-primary;
+    &:hover {
+      color: $color-secondary;
+      transition: 0.3s ease;
+      & img {
+        filter: brightness(0) invert(1);
+      }
+    }
+  }
+  & input[type="radio"]:checked + label {
+    color: $main-green-color;
+    & img {
+      filter: brightness(0) saturate(100%) invert(56%) sepia(83%) saturate(600%) hue-rotate(95deg);
+      fill: $main-green-color;
+    }
+  }
+  & input {
+    display: none;
   }
   @include laptop {
     display: none;
@@ -158,18 +175,5 @@
   & .img-div {
     padding: 1rem;
     @include flex(center, flex-start, row);
-  }
-}
-// Mobile navigation hovers
-.mobile-nav {
-  & a:hover {
-    transition: 0.3s ease;
-    & img {
-      filter: brightness(0) invert(1);
-    }
-    & span {
-      color: $color-secondary;
-      // transition: 0.3s ease;
-    }
   }
 }
