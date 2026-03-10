@@ -121,15 +121,3 @@ if (main && nav) {
     lastScroll = currentScroll;
   });
 }
-
-// Discover გვერდზე აქტიურ  ენქორ ტეგს კლიკზე გაუჩნდეს  მწვანე  ქვედა ზოლი:
-
-const filterLinks = document.querySelectorAll(".mobile-filters a");
-
-filterLinks.forEach((link) => {
-  link.addEventListener("click", (e) => {
-    e.preventDefault();
-    filterLinks.forEach((l) => l.classList.remove("active-underlined"));
-    link.classList.add("active-underlined");
-  });
-});
