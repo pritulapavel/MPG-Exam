@@ -1,7 +1,7 @@
 @use "../abstracts/variables" as *;
 @use "../abstracts/mixins" as *;
 
-.player {
+.discovery-footer.player {
   display: none;
   @include laptop {
     display: flex;
@@ -19,7 +19,7 @@
   }
 }
 .no-pd {
-  padding: 0;
+  padding: 0; 
 }
 // navigation bar mobile at the top of screen
 .mobile-filters {
