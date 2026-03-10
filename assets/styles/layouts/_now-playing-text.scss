@@ -1,0 +1,326 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+
+.main.now-playing {
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 6rem;
+  display: flex;
+  flex-direction: column;
+
+  /* TITLE */
+
+  .navigation-title {
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+
+    .icon-title-wrapper {
+      display: flex;
+      align-items: center;
+      gap: .8rem;
+      max-width: 28rem;
+
+      .now-playing-bars {
+        display: flex;
+        align-items: flex-end;
+        gap: 0.3rem;
+        height: 1.6rem;
+        flex-shrink: 0;
+
+        span {
+          width: 0.3rem;
+          background: $main-green-color;
+          border-radius: 0.2rem;
+          animation: nowBounce 0.6s ease-in-out infinite;
+
+          &:nth-child(1) {
+            animation-delay: 0s;
+          }
+
+          &:nth-child(2) {
+            animation-delay: 0.2s;
+          }
+
+          &:nth-child(3) {
+            animation-delay: 0.4s;
+          }
+        }
+      }
+
+      .title-marquee {
+        overflow: hidden;
+        white-space: nowrap;
+        flex: 1;
+
+        mask-image: linear-gradient(90deg, transparent, white 5%, white 95%, transparent);
+        -webkit-mask-image: linear-gradient(90deg, transparent, white 5%, white 95%, transparent);
+
+        p {
+          display: inline-block;
+          font-size: 1.2rem;
+          letter-spacing: .1rem;
+          font-family: $font-satoshi;
+          padding-right: 4rem;
+
+          animation: marquee 10s linear infinite;
+        }
+      }
+    }
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  @keyframes nowBounce {
+
+    0%,
+    100% {
+      height: 0.4rem;
+    }
+
+    50% {
+      height: 1.4rem;
+    }
+  }
+
+  /* ALBUM */
+
+  .main-content {
+    @include flex(center, flex-start, column, 2rem);
+    padding: 2rem 2.4rem;
+    flex: 1;
+    overflow-y: auto;
+
+    .main-text-wrapper {
+      width: 100%;
+      max-width: 40rem;
+      margin: 0 auto;
+
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+
+      text-align: center;
+
+      p {
+        font-family: $font-satoshi;
+        font-size: 1.8rem;
+        line-height: 2.8rem;
+        white-space: pre-line;
+
+        color: rgba(255, 255, 255, 0.4);
+
+        margin: 0;
+
+        transition: color 0.3s ease;
+        cursor: pointer;
+
+        &:hover {
+          color: rgba(255, 255, 255, 0.7);
+        }
+
+        &.active {
+          color: rgba(255, 255, 255, 1);
+
+          &:hover {
+            color: rgba(255, 255, 255, 1);
+          }
+        }
+      }
+    }
+  }
+
+  /* PLAYER */
+
+  .music-player {
+    padding: 2rem;
+
+    .progress-container {
+
+      .progress-bar-bg {
+        width: 100%;
+        height: .4rem;
+        background: rgba(255, 255, 255, .2);
+        border-radius: 1rem;
+        position: relative;
+        cursor: pointer;
+        transition: height 0.15s ease;
+
+        &:hover {
+          height: 0.6rem;
+
+          .progress-bar-fill {
+            background: $main-green-color;
+
+            .progress-dot {
+              opacity: 1;
+              width: 1.4rem;
+              height: 1.4rem;
+            }
+          }
+        }
+
+        .progress-bar-fill {
+          width: 45%;
+          height: 100%;
+          background: white;
+          border-radius: 1rem;
+          position: relative;
+          transition: background 0.2s ease;
+
+          .progress-dot {
+            width: 1.2rem;
+            height: 1.2rem;
+            background: white;
+            border-radius: 50%;
+            position: absolute;
+            right: -0.6rem;
+            top: 50%;
+            transform: translateY(-50%);
+            box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
+            transition: width 0.15s ease, height 0.15s ease, opacity 0.15s ease;
+          }
+        }
+      }
+
+      .time-labels {
+        display: flex;
+        justify-content: space-between;
+        margin-top: .6rem;
+        font-size: 1.2rem;
+        color: rgba(255, 255, 255, 0.6);
+      }
+    }
+
+    .music-navigation {
+      margin-top: 2rem;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      >img {
+        width: 2rem;
+        cursor: pointer;
+        opacity: 0.6;
+        transition: opacity 0.2s, filter 0.2s, transform 0.2s;
+
+        &:hover {
+          opacity: 1;
+          filter: brightness(2);
+          transform: scale(1.1);
+        }
+
+        &.active {
+          opacity: 1;
+          filter: brightness(0) saturate(100%) invert(65%) sepia(52%) saturate(5504%) hue-rotate(103deg) brightness(96%) contrast(89%);
+        }
+      }
+
+      .main-music-navigation {
+        display: flex;
+        align-items: center;
+        gap: 3rem;
+
+        >img {
+          width: 2.4rem;
+          cursor: pointer;
+          transition: transform 0.2s, filter 0.2s;
+
+          &:hover {
+            transform: scale(1.15);
+            filter: brightness(1.5);
+          }
+        }
+
+        .pause-wrapper {
+          width: 5rem;
+          height: 5rem;
+
+          background: white;
+          border-radius: 50%;
+
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          cursor: pointer;
+          transition: transform 0.15s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+
+          &:hover {
+            transform: scale(1.08);
+            background-color: $main-green-color;
+            box-shadow: 0 0 2rem rgba(30, 215, 96, 0.4);
+          }
+
+          &:active {
+            transform: scale(0.98);
+          }
+
+          img {
+            width: 2rem;
+            filter: invert(1);
+            transition: filter 0.2s;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+/* FOOTER */
+
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+  height: 6rem;
+
+  padding: 0 2rem;
+
+  display: flex;
+  align-items: center;
+  backdrop-filter: blur(20px);
+
+  z-index: 100;
+
+  .footer-icon-wrapper {
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .nav-icon {
+      position: relative;
+      cursor: pointer;
+
+      a {
+        display: block;
+      }
+
+      img {
+        width: 2.2rem;
+        opacity: .6;
+        transition: opacity 0.2s, filter 0.2s, transform 0.2s;
+
+        &:hover {
+          opacity: 1;
+          filter: brightness(100) saturate(50%);
+        }
+      }
+    }
+  }
+}

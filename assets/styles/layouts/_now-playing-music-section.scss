@@ -1,0 +1,576 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.main.next-up {
+    position: relative;
+    min-height: 100vh;
+    padding-bottom: 18rem;
+    @include flex(stretch, flex-start, column);
+    background: $color-bg-secondary;
+
+    @include tablet {
+        padding-bottom: 20rem;
+    }
+
+    @include laptop {
+        padding-bottom: 22rem;
+    }
+
+    /* NAVIGATION TITLE */
+
+    .navigation-title {
+        @include flex(center, center, row);
+        padding: 2rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+        @include tablet {
+            padding: 2.5rem 4rem;
+        }
+
+        @include laptop {
+            padding: 3rem 8rem;
+        }
+
+        .now-playing-indicator {
+            @include flex(center, center, row, 1rem);
+
+            @include tablet {
+                gap: 1.2rem;
+            }
+
+            .now-playing-bars {
+                display: flex;
+                align-items: flex-end;
+                gap: 0.3rem;
+                height: 1.6rem;
+
+                @include tablet {
+                    height: 1.8rem;
+                    gap: 0.4rem;
+                }
+
+                span {
+                    width: 0.3rem;
+                    background: #1ed760;
+                    border-radius: 0.2rem;
+                    animation: nowBounce 0.6s ease-in-out infinite;
+
+                    @include tablet {
+                        width: 0.4rem;
+                    }
+
+                    &:nth-child(1) {
+                        animation-delay: 0s;
+                    }
+
+                    &:nth-child(2) {
+                        animation-delay: 0.2s;
+                    }
+
+                    &:nth-child(3) {
+                        animation-delay: 0.4s;
+                    }
+                }
+            }
+
+            p {
+                font-size: 1.2rem;
+                color: #fff;
+                font-family: $font-satoshi;
+                letter-spacing: 0.05rem;
+
+                @include tablet {
+                    font-size: 1.4rem;
+                }
+
+                @include laptop {
+                    font-size: 1.6rem;
+                }
+            }
+        }
+    }
+
+    @keyframes nowBounce {
+
+        0%,
+        100% {
+            height: 0.4rem;
+        }
+
+        50% {
+            height: 1.4rem;
+        }
+    }
+
+    /* QUEUE CONTENT */
+
+    .queue-content {
+        flex: 1;
+        overflow-y: auto;
+        padding: 2rem;
+
+        @include tablet {
+            padding: 2.5rem 4rem;
+        }
+
+        @include laptop {
+            padding: 3rem 8rem;
+            max-width: 90rem;
+            margin: 0 auto;
+        }
+
+        @include desktop {
+            max-width: 100rem;
+            padding: 4rem 10rem;
+        }
+
+        .queue-section {
+            margin-bottom: 3rem;
+
+            @include tablet {
+                margin-bottom: 4rem;
+            }
+
+            .queue-header {
+                @include flex(center, flex-start, row, 1.5rem);
+                margin-bottom: 1.5rem;
+                flex-wrap: wrap;
+
+                @include tablet {
+                    gap: 2rem;
+                    margin-bottom: 2rem;
+                }
+
+                h2 {
+                    font-size: 1.6rem;
+                    font-weight: 700;
+                    color: #fff;
+                    font-family: $font-satoshi;
+
+                    @include tablet {
+                        font-size: 1.8rem;
+                    }
+
+                    @include laptop {
+                        font-size: 2rem;
+                    }
+                }
+
+                .queue-album-info {
+                    @include flex(center, flex-start, row, 0.8rem);
+
+                    @include tablet {
+                        gap: 1rem;
+                    }
+
+                    img {
+                        width: 1.6rem;
+                        height: 1.6rem;
+                        opacity: 0.7;
+                        transition: opacity 0.2s, filter 0.2s;
+
+                        @include tablet {
+                            width: 1.8rem;
+                            height: 1.8rem;
+                        }
+
+                        &:hover {
+                            opacity: 1;
+                            filter: brightness(2);
+                            transform: scale(1.1);
+                        }
+                    }
+
+                    p {
+                        font-size: 1.3rem;
+                        color: rgba(255, 255, 255, 0.7);
+                        font-family: $font-satoshi;
+
+                        @include tablet {
+                            font-size: 1.4rem;
+                        }
+
+                        @include laptop {
+                            font-size: 1.5rem;
+                        }
+                    }
+                }
+
+                .queue-controls {
+                    @include flex(center, flex-end, row, 1.5rem);
+                    margin-left: auto;
+
+                    @include tablet {
+                        gap: 2rem;
+                    }
+
+                    img {
+                        width: 2rem;
+                        height: 2rem;
+                        opacity: 0.6;
+                        cursor: pointer;
+                        transition: opacity 0.2s, filter 0.2s, transform 0.2s;
+
+                        @include tablet {
+                            width: 2.2rem;
+                            height: 2.2rem;
+                        }
+
+                        &:hover {
+                            opacity: 1;
+                            filter: brightness(2);
+                            transform: scale(1.1);
+                        }
+
+                        &.active {
+                            opacity: 1;
+                            filter: brightness(0) saturate(100%) invert(65%) sepia(52%) saturate(5504%) hue-rotate(103deg) brightness(96%) contrast(89%);
+                        }
+                    }
+                }
+            }
+
+            .queue-list {
+                list-style: none;
+                @include flex(stretch, flex-start, column, 0.5rem);
+
+                @include tablet {
+                    gap: 0.8rem;
+                }
+
+                .queue-item {
+                    @include flex(center, flex-start, row, 1.2rem);
+                    padding: 1rem;
+                    border-radius: 0.8rem;
+                    cursor: pointer;
+                    transition: background 0.2s;
+
+                    @include tablet {
+                        padding: 1.2rem;
+                        gap: 1.5rem;
+                        border-radius: 1rem;
+                    }
+
+                    @include laptop {
+                        padding: 1.4rem;
+                        gap: 1.8rem;
+                    }
+
+                    &:hover {
+                        background: rgba(255, 255, 255, 0.1);
+                    }
+
+                    &.playing {
+                        background: rgba(255, 255, 255, 0.15);
+
+                        .queue-item-title {
+                            color: #1ed760;
+                        }
+                    }
+
+                    .queue-item-cover {
+                        width: 4.5rem;
+                        height: 4.5rem;
+                        border-radius: 0.4rem;
+                        object-fit: cover;
+
+                        @include tablet {
+                            width: 5rem;
+                            height: 5rem;
+                            border-radius: 0.5rem;
+                        }
+
+                        @include laptop {
+                            width: 5.5rem;
+                            height: 5.5rem;
+                            border-radius: 0.6rem;
+                        }
+                    }
+
+                    .queue-item-info {
+                        flex: 1;
+                        min-width: 0;
+                        @include flex(flex-start, center, column, 0.3rem);
+
+                        @include tablet {
+                            gap: 0.4rem;
+                        }
+
+                        .queue-item-title {
+                            font-size: 1.4rem;
+                            font-weight: 500;
+                            color: #fff;
+                            font-family: $font-satoshi;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            max-width: 100%;
+
+                            @include tablet {
+                                font-size: 1.5rem;
+                            }
+
+                            @include laptop {
+                                font-size: 1.6rem;
+                            }
+                        }
+
+                        .queue-item-artist {
+                            font-size: 1.2rem;
+                            color: rgba(255, 255, 255, 0.6);
+                            font-family: $font-satoshi;
+
+                            @include tablet {
+                                font-size: 1.3rem;
+                            }
+
+                            @include laptop {
+                                font-size: 1.4rem;
+                            }
+                        }
+                    }
+
+                    .queue-item-drag {
+                        width: 2rem;
+                        height: 2rem;
+                        opacity: 0.4;
+                        cursor: grab;
+                        transition: opacity 0.2s, filter 0.2s;
+
+                        @include tablet {
+                            width: 2.2rem;
+                            height: 2.2rem;
+                        }
+
+                        &:hover {
+                            opacity: 1;
+                            filter: brightness(2);
+                        }
+
+                        &:active {
+                            cursor: grabbing;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /* MUSIC PLAYER */
+
+    .music-player {
+        position: fixed;
+        bottom: 6.5rem;
+        left: 0;
+        width: 100%;
+        @include flex(center, space-around, column);
+        padding: 1.5rem 2rem;
+        backdrop-filter: blur(20px);
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        z-index: 50;
+
+        @include tablet {
+            padding: 2rem 4rem;
+            bottom: 7rem;
+        }
+
+        @include laptop {
+            padding: 2rem 8rem;
+            bottom: 7rem;
+        }
+
+        .progress-container {
+            width: 100%;
+            max-width: 60rem;
+
+            @include laptop {
+                max-width: 70rem;
+            }
+
+            .progress-bar-bg {
+                width: 100%;
+                height: 0.4rem;
+                background-color: rgba(255, 255, 255, 0.1);
+                border-radius: 1rem;
+                position: relative;
+                cursor: pointer;
+                transition: height 0.15s ease;
+
+                @include laptop {
+                    &:hover {
+                        height: 0.6rem;
+
+                        .progress-bar-fill {
+                            background: #1ed760;
+
+                            .progress-dot {
+                                opacity: 1;
+                            }
+                        }
+                    }
+                }
+
+                .progress-bar-fill {
+                    width: 45%;
+                    height: 100%;
+                    background-color: #ffffff;
+                    border-radius: 1rem;
+                    position: relative;
+                    transition: background 0.2s ease;
+
+                    .progress-dot {
+                        width: 1.2rem;
+                        height: 1.2rem;
+                        background-color: #ffffff;
+                        border-radius: 50%;
+                        position: absolute;
+                        right: -0.6rem;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+
+                        @include laptop {
+                            opacity: 0;
+                            transition: opacity 0.15s ease;
+                        }
+                    }
+                }
+            }
+
+            .time-labels {
+                @include flex(center, space-between, row);
+                margin-top: 0.6rem;
+
+                p {
+                    font-size: 1.1rem;
+                    color: rgba(255, 255, 255, 0.6);
+                    font-family: $font-satoshi;
+
+                    @include tablet {
+                        font-size: 1.2rem;
+                    }
+                }
+            }
+        }
+
+        .music-navigation {
+            @include flex(center, space-between, row);
+            width: 100%;
+            max-width: 35rem;
+            margin-top: 1.5rem;
+
+            @include tablet {
+                max-width: 40rem;
+                margin-top: 2rem;
+            }
+
+            @include laptop {
+                max-width: 45rem;
+            }
+
+            >img {
+                width: 2rem;
+                height: 2rem;
+                cursor: pointer;
+                opacity: 0.6;
+                transition: opacity 0.2s, filter 0.2s, transform 0.2s;
+
+                @include tablet {
+                    width: 2.2rem;
+                    height: 2.2rem;
+                }
+
+                &:hover {
+                    opacity: 1;
+                    filter: brightness(2);
+                    transform: scale(1.1);
+                }
+            }
+
+            .main-music-navigation {
+                @include flex(center, center, row, 3rem);
+
+                @include tablet {
+                    gap: 3.5rem;
+                }
+
+                >img {
+                    width: 2.2rem;
+                    height: 2.2rem;
+                    cursor: pointer;
+                    transition: transform 0.2s, filter 0.2s;
+
+                    @include tablet {
+                        width: 2.6rem;
+                        height: 2.6rem;
+                    }
+
+                    &:hover {
+                        transform: scale(1.1);
+                        filter: brightness(1.5);
+                    }
+                }
+
+                .pause-wrapper {
+                    width: 4.5rem;
+                    height: 4.5rem;
+                    background-color: #fff;
+                    border-radius: 50%;
+
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    cursor: pointer;
+                    transition: transform 0.15s, background-color 0.2s;
+
+                    @include tablet {
+                        width: 5rem;
+                        height: 5rem;
+                    }
+
+                    &:hover {
+                        transform: scale(1.06);
+                        background-color: #1ed760;
+                    }
+
+                    &:active {
+                        transform: scale(0.98);
+                    }
+
+                    img {
+                        width: 1.8rem;
+                        height: 1.8rem;
+                        filter: invert(1);
+
+                        @include tablet {
+                            width: 2rem;
+                            height: 2rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* FOOTER - Reuse from now-playing but adjust z-index */
+
+.main.next-up+footer {
+    z-index: 100;
+    backdrop-filter: blur(20px);
+
+    .footer-icon-wrapper {
+        .nav-icon {
+            img {
+                transition: opacity 0.2s, filter 0.2s, transform 0.2s;
+
+                &:hover {
+                    opacity: 1;
+                    filter: brightness(2);
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+}
