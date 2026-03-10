@@ -87,20 +87,20 @@
           & h3 {
             font-family: $font-satoshi;
             color: $color-secondary;
-            font-size: 2rem;
+            font-size: clamp-calc(2rem, 2.8rem);
           }
           .profile-stats {
             @include flex(center, flex-start, row, 1rem);
             & span {
               font-family: $font-satoshi;
               color: $color-secondary;
-              font-size: 1.4rem;
+              font-size: clamp-calc(1.4rem, 1.8rem);
             }
             & a,
             & p {
               font-family: $font-satoshi;
               color: $color-primary;
-              font-size: 1.4rem;
+              font-size: clamp-calc(1.4rem, 1.8rem);
             }
           }
         }
@@ -118,7 +118,7 @@
         & h2 {
           font-family: $font-satoshi;
           color: $color-secondary;
-          font-size: 1.4rem;
+          font-size: clamp-calc(1.4rem, 1.8rem);
         }
         & button {
           border: none;
@@ -147,7 +147,7 @@
               & p {
                 font-family: $font-satoshi;
                 color: $color-primary;
-                font-size: 1.4rem;
+                font-size: clamp-calc(1.4rem, 1.8rem);
                 & span {
                   color: $color-secondary;
                 }
@@ -156,7 +156,7 @@
             & h3 {
               font-family: $font-satoshi;
               color: $color-secondary;
-              font-size: 1.2rem;
+              font-size: clamp-calc(1.2rem, 1.6rem);
             }
           }
         }
@@ -173,7 +173,7 @@
         & h4 {
           font-family: $font-satoshi;
           color: $color-secondary;
-          font-size: 1.4rem;
+          font-size: clamp-calc(1.4rem, 1.8rem);
           text-transform: capitalize;
         }
       }
@@ -181,13 +181,13 @@
         @include flex(flex-start, flex-start, column, 0.5rem);
         & h3 {
           font-family: $font-satoshi;
-          font-size: 1.8rem;
+          font-size: clamp-calc(1.8rem, 2.2rem);
           color: $main-green-color;
         }
         & span {
           font-family: $font-satoshi;
           color: $color-secondary;
-          font-size: 1.4rem;
+          font-size: clamp-calc(1.4rem, 1.8rem);
         }
       }
       @media (min-width: 768px) {
@@ -209,7 +209,7 @@
 
           font-family: $font-satoshi;
           color: $color-secondary;
-          font-size: 1.6rem;
+          font-size: clamp-calc(1.6rem, 2rem);
           text-transform: capitalize;
           position: relative;
 
@@ -254,7 +254,7 @@
             & li {
               font-family: $font-satoshi;
               color: $color-secondary;
-              font-size: 1.6rem;
+              font-size: clamp-calc(1.6rem, 2rem);
               @include flex(center, center, row, 1.5rem);
             }
           }
