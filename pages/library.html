@@ -14,163 +14,162 @@
         <div class="header-wrapper">
             <!-- desktop -->
             <nav class="navigation">
-                <ul class="top-nav-ul left-ul">
-                    <li>
-                        <a href="#">
-                            <div class="img-div">
-                                <img src="../assets/img/icons/home-inactive.svg" alt="Home page" />
-                            </div>
-                            Home
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <div class="img-div">
-                                <img src="../assets/img/icons/discover.svg" alt="Discover" />
-                            </div>
+          <ul class="top-nav-ul left-ul">
+            <li>
+              <a href="#">
+                <div class="img-div">
+                  <i class="icons icon-home"></i>
+                </div>
+                Home
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <div class="img-div">
+                  <i class="icons icon-discover"></i>
+                </div>
 
-                            <span>Discover</span>
-                        </a>
-                    </li>
-                    <li>
-                        <form action="">
-                            <div class="img-div search-wrapper">
-                                <label for="search">
-                                    <img src="../assets/img/icons/search.svg" alt="Search" />
-                                </label>
-                                <input id="search" type="search" placeholder="Search" />
-                            </div>
-                        </form>
-                    </li>
-                </ul>
-            </nav>
-            <nav class="side-nav top-nav">
-                <ul class="top-nav-ul">
-                    <li>
-                        <a href="#">
-                            <img src="../assets/img/icons/notification.svg" alt="Notifications" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="../assets/img/icons/lock.svg" alt="Lock" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="../assets/img/icons/users.svg" alt="Profile" />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="../assets/img/icons/settings.svg" alt="Settings" />
-                        </a>
-                    </li>
-                    <li class="no-hover">
-                        <a href="#">
-                            <img src="../assets/img/icons/user.svg" alt="Profile" />
-                        </a>
-                    </li>
-                </ul>
-            </nav>
+                <span>Discover</span>
+              </a>
+            </li>
+            <li>
+              <form action="">
+                <div class="img-div search-wrapper">
+                  <label for="search">
+                    <i class="icons icon-search"></i>
+                  </label>
+                  <input id="search" type="search" placeholder="Search" />
+                </div>
+              </form>
+            </li>
+          </ul>
+        </nav>
+        <nav class="side-nav top-nav">
+          <ul class="top-nav-ul">
+            <li>
+              <a href="#">
+                <i class="icons icon-notification"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="icons icon-lock"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="icons icon-users"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="icons icon-settings"></i>
+              </a>
+            </li>
+            <li class="no-hover">
+              <a href="#">
+                <img src="../assets/img/icons/user.svg" alt="Profile" />
+              </a>
+            </li>
+          </ul>
+        </nav>
         </div>
         <!-- Mobile navigation -->
         <nav class="mobile-nav">
-            <a href="#" class="nav-item">
-                <div class="img-div">
-                    <img src="../assets/img/icons/home-inactive.svg" alt="Home" />
-                </div>
-                Home
-            </a>
-            <a href="#" class="nav-item">
-                <div class="img-div">
-                    <img src="../assets/img/icons/discover.svg" alt="Discover" />
-                </div>
-                Discover
-            </a>
-            <a href="#" class="nav-item">
-                <div class="img-div">
-                    <img src="../assets/img/icons/search.svg" alt="Search" />
-                </div>
-                Search
-            </a>
-            <a href="#" class="nav-item">
-                <div class="img-div">
-                    <img src="../assets/img/icons/library.svg" alt="Library" />
-                </div>
-                Library
-            </a>
-            <a href="#" class="nav-item">
-                <div class="img-div">
-                    <img src="../assets/img/icons/me.svg" alt="My Profile" />
-                </div>
-                Me
-            </a>
-        </nav>
+        <input type="radio" name="mobile-nav" id="homeNav" />
+        <label for="homeNav">
+          <i class="icons icon-home-inactive icon-green"></i>
+          Home
+        </label>
+
+        <input type="radio" name="mobile-nav" id="discoverNav" />
+
+        <label for="discoverNav">
+          <i class="icons icon-discover icon-green"></i>
+          Discover
+        </label>
+
+        <input type="radio" name="mobile-nav" id="searchNav" />
+        <label for="searchNav">
+          <i class="icons icon-search icon-green"></i>
+          Search
+        </label>
+
+        <input type="radio" name="mobile-nav" id="libraryNav" />
+        <label for="libraryNav">
+          <i class="icons icon-library icon-green"></i>
+          Library
+        </label>
+
+        <input type="radio" name="mobile-nav" id="myProfileNav" />
+        <label for="myProfileNav">
+          <i class="icons icon-me icon-green"></i>
+          Me
+        </label>
+      </nav>
     </header>
     <aside class="sidebar">
-        <div class="sidebar-heading">
-            <a href="#"><img src="../assets/img/icons/library.svg" class="icon library" alt="Library icon" />
-                My Library</a>
-        </div>
-        <nav class="sidebar-menu">
-            <ul>
-                <li>
-                    <details class="nav__dropdown">
-                        <summary class="nav__link">
-                            <img src="../assets/img/icons/pin.svg" class="icon" alt="Library icon" />
-                            Pins
-                        </summary>
-                        <ul class="nav__sub">
-                            <li><a href="#">Albums</a></li>
-                            <li><a href="#">Artists</a></li>
-                            <li><a href="#">Playlists</a></li>
-                        </ul>
-                    </details>
-                </li>
-                <li>
-                    <details class="nav__dropdown">
-                        <summary class="nav__link">
-                            <img src="../assets/img/icons/playlist.svg" class="icon" alt="Library icon" />
-                            Playlists
-                        </summary>
-                        <ul class="nav__sub">
-                            <li><a href="#">Albums</a></li>
-                            <li><a href="#">Artists</a></li>
-                            <li><a href="#">Playlists</a></li>
-                        </ul>
-                    </details>
-                </li>
-                <li>
-                    <img src="../assets/img/icons/hearth.svg" class="icon" alt="Library icon" />
-                    <span>Liked Songs</span>
-                </li>
-                <li>
-                    <img src="../assets/img/icons/bookmark.svg" class="icon" alt="Library icon" />
-                    <span>Saves</span>
-                </li>
-                <li>
-                    <img src="../assets/img/icons/albom.svg" class="icon" alt="Library icon" />
-                    <span>Albums</span>
-                </li>
-                <li>
-                    <img src="../assets/img/icons/folder.svg" class="icon" alt="Library icon" />
-                    <span>Folders</span>
-                </li>
-                <li>
-                    <img src="../assets/img/icons/podcast.svg" class="icon" alt="Library icon" />
-                    <span>Podcasts</span>
-                </li>
-                <li>
-                    <img src="../assets/img/icons/audiobook.svg" class="icon" alt="Library icon" />
-                    <span>Audiobooks</span>
-                </li>
-                <li>
-                    <img src="../assets/img/icons/artists.svg" class="icon" alt="Library icon" />
-                    <span>Artists</span>
-                </li>
-            </ul>
-        </nav>
+      <div class="sidebar-heading">
+        <a href="#"><i class="icons icon-library"></i> My Library</a>
+      </div>
+      <nav class="sidebar-menu">
+        <ul>
+          <li>
+            <details class="nav__dropdown">
+              <summary class="nav__link">
+                <i class="icons icon-pin"></i>
+                Pins
+              </summary>
+              <ul class="nav__sub">
+                <li><a href="#">Albums</a></li>
+                <li><a href="#">Artists</a></li>
+                <li><a href="#">Playlists</a></li>
+              </ul>
+            </details>
+          </li>
+          <li>
+            <details class="nav__dropdown">
+              <summary class="nav__link">
+                <i class="icons icon-playlist"></i>
+                Playlists
+              </summary>
+              <ul class="nav__sub">
+                <li><a href="#">Albums</a></li>
+                <li><a href="#">Artists</a></li>
+                <li><a href="#">Playlists</a></li>
+              </ul>
+            </details>
+          </li>
+          <li>
+            <i class="icons icon-hearth"></i>
+            <span>Liked Songs</span>
+          </li>
+          <li>
+            <i class="icons icon-bookmark"></i>
+            <span>Saves</span>
+          </li>
+          <li>
+            <i class="icons icon-album"></i>
+            <span>Albums</span>
+          </li>
+          <li>
+            <i class="icons icon-folder"></i>
+            <span>Folders</span>
+          </li>
+          <li>
+            <i class="icons icon-podcast"></i>
+            <span>Podcasts</span>
+          </li>
+          <li>
+            <i class="icons icon-audiobook"></i>
+            <span>Audiobooks</span>
+          </li>
+          <li>
+            <i class="icons icon-artists"></i>
+            <span>Artists</span>
+          </li>
+        </ul>
+      </nav>
     </aside>
     <main class="main library-page">
         <div class="main-inner library">
@@ -180,31 +179,31 @@
 				<div class="content-wrapper">
 					<div class="search">
 						<div class="search-input">
-							<label for="search"><img class="search-icon" src="../assets/img/icons/search.svg" alt="search icon"></label>
+							<label for="search"><i class="icons icon-search"></i></label>
 							<input id="search" type="text" name="search" placeholder="Search library">
 						</div>
-						<div class="search-upload"><img src="../assets/img/icons/add.svg" /></div>
+						<div class="search-upload"><i class="icons icon-add-playlist icon-white"></i></div>
 					</div>
 				</div>
 			</section>
             <header class="filters-wrapper">
-                <a href="#" class="hide-mob"><img src="../assets/img/icons/add.svg" alt="add icon" /></a>
+                <a href="#" class="hide-mob"><i class="icons icon-add-playlist icon-white icon-md"></i></a>
                 <div class="filters-nav">
                     <nav>
                         <ul>
                             <li>
                                 <label for="list">
-                                    <img src="../assets/img/icons/menu.svg" alt="list menu layout icon">
+                                    <i class="icons icon-menu icon-white"></i>
                                 </label>
                             </li>
                             <li>
                                 <label for="grid">
-                                    <img src="../assets/img/icons/layout_change.svg" alt="grid layout icon">
+                                    <i class="icons icon-layout_change icon-white"></i>
                                 </label>
                             </li>
-                            <li><img src="../assets/img/icons/arrows/arrow_sort.svg" class="hide-mob" alt="arrow sort icon">Recent</li>
-                            <li><img src="../assets/img/icons/group.svg" class="hide-mob" alt="group svg">Filter: All</li>
-                            <li><img src="../assets/img/icons/search.svg" class="hide-mob" alt="search icon"></li>
+                            <li><i class="icons icon-arrow_sort hide-mob"></i>Recent</li>
+                            <li><i class="icons icon-group hide-mob"></i>Filter: All</li>
+                            <li><i class="icons icon-search hide-mob"></i></li>
                         </ul>
                     </nav>
                 </div>
@@ -234,7 +233,7 @@
                             </td>
                             <td class="album">Random Access Memories</td>
                             <td class="duration">4:35</td>
-                            <td><img src="../assets/img/icons/green-heart.svg" alt="green heart icon"></td>
+                            <td><i class="icons icon-green-heart"></i></td>
                         </tr>
                         <tr>
                             <td class="track-number">2</td>
@@ -251,7 +250,7 @@
 
                             <td class="album">Random Access Memories</td>
                             <td class="duration">5:37</td>
-                            <td><img src="../assets/img/icons/green-heart.svg" alt="green heart icon"></td>
+                            <td><i class="icons icon-green-heart"></i></td>
                         </tr>
                         <tr>
                             <td class="track-number">3</td>
@@ -266,7 +265,7 @@
                             </td>
                             <td class="album">Plastic Beach</td>
                             <td class="duration">3:33</td>
-                            <td><img src="../assets/img/icons/green-heart.svg" alt="green heart icon"></td>
+                            <td><i class="icons icon-green-heart"></i></td>
                         </tr>
                         <tr>
                             <td class="track-number">4</td>
@@ -281,7 +280,7 @@
                             </td>
                             <td class="album">Non-Stop Erotic Cabaret</td>
                             <td class="duration">2:33</td>
-                            <td><img src="../assets/img/icons/green-heart.svg" alt="green heart icon"></td>
+                            <td><i class="icons icon-green-heart"></i></td>
                         </tr>
                         <tr>
                             <td class="track-number">5</td>
@@ -296,7 +295,7 @@
                             </td>
                             <td class="album">Discovery</td>
                             <td class="duration">5:20</td>
-                            <td><img src="../assets/img/icons/green-heart.svg" alt="green heart icon"></td>
+                            <td><i class="icons icon-green-heart"></i></td>
                         </tr>
                         <tr>
                             <td class="track-number">6</td>
@@ -311,7 +310,7 @@
                             </td>
                             <td class="album">Oracular Spectacular</td>
                             <td class="duration">3:49</td>
-                            <td><img src="../assets/img/icons/green-heart.svg" alt="green heart icon"></td>
+                            <td><i class="icons icon-green-heart"></i></td>
                         </tr>
                         <tr>
                             <td class="track-number">7</td>
@@ -326,7 +325,7 @@
                             </td>
                             <td class="album">Random Access Memories</td>
                             <td class="duration">4:35</td>
-                            <td><img src="../assets/img/icons/green-heart.svg" alt="green heart icon"></td>
+                            <td><i class="icons icon-green-heart"></i></td>
                         </tr>
                     </tbody>
                 </table>
@@ -335,12 +334,12 @@
                 <div class="content-wrapper">
                     <div class="tab">
                         <input type="radio" name="tabs" id="tab1" checked>
-                        <label for="tab1" class="tab-title">Playlists <span class="arrow"><img src="../assets/img/icons/arrows/arrow-right.svg" alt=""></span></label>
+                        <label for="tab1" class="tab-title">Playlists <span class="arrow"><i class="icons icon-arrow-right"></i></span></label>
                         <div class="tab-content">
                             <div class="content-wrapper">
                                 <div class="section-content">
                                     <article class="card stack">
-                                        <a href="#" class="pin"><img src="../assets/img/icons/pin-green.svg" alt=""></a>
+                                        <a href="#" class="pin"><i class="icons icon-pin-green"></i></a>
                                         <figure class="card__cover">
                                             <img src="../assets/img/covers/cover_1.png" class="card-image" alt="Cover image 1" />
                                         </figure>
@@ -348,7 +347,7 @@
                                         <p>Your weekly mixtape of fresh music.</p>
                                     </article>
                                     <article class="card stack">
-                                        <a href="#" class="pin"><img src="../assets/img/icons/pin-green.svg" alt=""></a>
+                                        <a href="#" class="pin"><i class="icons icon-pin-green"></i></a>
                                         <figure class="card__cover">
                                             <img src="../assets/img/covers/cover_2.png" class="card-image" alt="Cover image 1" />
                                         </figure>
@@ -356,7 +355,7 @@
                                         <p>Your weekly mixtape of fresh music.</p>
                                     </article>
                                     <article class="card stack">
-                                        <a href="#" class="pin"><img src="../assets/img/icons/pin-green.svg" alt=""></a>
+                                        <a href="#" class="pin"><i class="icons icon-pin-green"></i></a>
                                         <figure class="card__cover">
                                             <img src="../assets/img/covers/cover_3.png" class="card-image" alt="Cover image 1" />
                                         </figure>
@@ -369,12 +368,12 @@
                     </div>
                     <div class="tab">
                         <input type="radio" name="tabs" id="tab2">
-                        <label for="tab2" class="tab-title">Playlists by Spotify <span class="arrow"><img src="../assets/img/icons/arrows/arrow-right.svg" alt=""></span></label>
+                        <label for="tab2" class="tab-title">Playlists by Spotify <span class="arrow"><i class="icons icon-arrow-right"></i></span></label>
                         <div class="tab-content">
                             <div class="content-wrapper">
                                 <div class="section-content">
                                     <article class="card stack">
-                                        <a href="#" class="pin"><img src="../assets/img/icons/pin-green.svg" alt=""></a>
+                                        <a href="#" class="pin"><i class="icons icon-pin-green"></i></a>
                                         <figure class="card__cover">
                                             <img src="../assets/img/covers/cover_1.png" class="card-image" alt="Cover image 1" />
                                         </figure>
@@ -382,7 +381,7 @@
                                         <p>Your weekly mixtape of fresh music.</p>
                                     </article>
                                     <article class="card stack">
-                                        <a href="#" class="pin"><img src="../assets/img/icons/pin-green.svg" alt=""></a>
+                                        <a href="#" class="pin"><i class="icons icon-pin-green"></i></a>
                                         <figure class="card__cover">
                                             <img src="../assets/img/covers/cover_2.png" class="card-image" alt="Cover image 1" />
                                         </figure>
@@ -390,7 +389,7 @@
                                         <p>Your weekly mixtape of fresh music.</p>
                                     </article>
                                     <article class="card stack">
-                                        <a href="#" class="pin"><img src="../assets/img/icons/pin-green.svg" alt=""></a>
+                                        <a href="#" class="pin"><i class="icons icon-pin-green"></i></a>
                                         <figure class="card__cover">
                                             <img src="../assets/img/covers/cover_3.png" class="card-image" alt="Cover image 1" />
                                         </figure>
@@ -403,12 +402,12 @@
                     </div>
                     <div class="tab">
                         <input type="radio" name="tabs" id="tab3">
-                        <label for="tab3" class="tab-title">Albums <span class="arrow"><img src="../assets/img/icons/arrows/arrow-right.svg" alt=""></span></label>
+                        <label for="tab3" class="tab-title">Albums <span class="arrow"><i class="icons icon-arrow-right"></i></span></label>
                         <div class="tab-content">
                             <div class="content-wrapper">
                                 <div class="section-content">
                                     <article class="card albums">
-                                        <a href="#" class="pin"><img src="../assets/img/icons/pin-green.svg" alt=""></a>
+                                        <a href="#" class="pin"><i class="icons icon-pin-green"></i></a>
                                         <figure>
                                             <img src="../assets/img/albums/album_1.png" class="card-image" alt="Cover image 6" />
                                         </figure>
@@ -416,7 +415,7 @@
                                         <p>Linkin Park</p>
                                     </article>
                                     <article class="card albums">
-                                        <a href="#" class="pin"><img src="../assets/img/icons/pin-green.svg" alt=""></a>
+                                        <a href="#" class="pin"><i class="icons icon-pin-green"></i></a>
                                         <figure>
                                             <img src="../assets/img/albums/album_2.png" class="card-image" alt="Cover image 7" />
                                         </figure>
@@ -424,7 +423,7 @@
                                         <p>Daft Punk</p>
                                     </article>
                                     <article class="card albums">
-                                        <a href="#" class="pin"><img src="../assets/img/icons/pin-green.svg" alt=""></a>
+                                        <a href="#" class="pin"><i class="icons icon-pin-green"></i></a>
                                         <figure>
                                             <img src="../assets/img/albums/album_3.png" class="card-image" alt="Cover image 7" />
                                         </figure>
@@ -432,7 +431,7 @@
                                         <p>The Beatles</p>
                                     </article>
                                     <article class="card albums">
-                                        <a href="#" class="pin"><img src="../assets/img/icons/pin-green.svg" alt=""></a>
+                                        <a href="#" class="pin"><i class="icons icon-pin-green"></i></a>
                                         <figure>
                                             <img src="../assets/img/albums/album_4.png" class="card-image" alt="Cover image 7" />
                                         </figure>
@@ -445,12 +444,12 @@
                     </div>
                     <div class="tab">
                         <input type="radio" name="tabs" id="tab4">
-                        <label for="tab4" class="tab-title">Folders <span class="arrow"><img src="../assets/img/icons/arrows/arrow-right.svg" alt=""></span></label>
+                        <label for="tab4" class="tab-title">Folders <span class="arrow"><i class="icons icon-arrow-right"></i></span></label>
                         <div class="tab-content">
                             <div class="content-wrapper">
                                 <div class="section-content">
                                     <article class="card stack">
-                                        <a href="#" class="pin"><img src="../assets/img/icons/pin-green.svg" alt=""></a>
+                                        <a href="#" class="pin"><i class="icons icon-pin-green"></i></a>
                                         <figure class="card__cover">
                                             <img src="../assets/img/covers/cover_1.png" class="card-image" alt="Cover image 1" />
                                         </figure>
@@ -458,7 +457,7 @@
                                         <p>Your weekly mixtape of fresh music.</p>
                                     </article>
                                     <article class="card stack">
-                                        <a href="#" class="pin"><img src="../assets/img/icons/pin-green.svg" alt=""></a>
+                                        <a href="#" class="pin"><i class="icons icon-pin-green"></i></a>
                                         <figure class="card__cover">
                                             <img src="../assets/img/covers/cover_2.png" class="card-image" alt="Cover image 1" />
                                         </figure>
@@ -466,7 +465,7 @@
                                         <p>Your weekly mixtape of fresh music.</p>
                                     </article>
                                     <article class="card stack">
-                                        <a href="#" class="pin"><img src="../assets/img/icons/pin-green.svg" alt=""></a>
+                                        <a href="#" class="pin"><i class="icons icon-pin-green"></i></a>
                                         <figure class="card__cover">
                                             <img src="../assets/img/covers/cover_3.png" class="card-image" alt="Cover image 1" />
                                         </figure>
@@ -479,26 +478,26 @@
                     </div>
                     <div class="tab">
                         <input type="radio" name="tabs" id="tab5">
-                        <label for="tab5" class="tab-title">Artists <span class="arrow"><img src="../assets/img/icons/arrows/arrow-right.svg" alt=""></span></label>
+                        <label for="tab5" class="tab-title">Artists <span class="arrow"><i class="icons icon-arrow-right"></i></span></label>
                         <div class="tab-content">
                             <div class="content-wrapper">
                                 <div class="section-content">
                                     <article class="card artists">
-                                        <a href="#" class="close"><img src="../assets/img/icons/pin-green.svg" alt=""></a>
+                                        <a href="#" class="close"><i class="icons icon-pin-green"></i></a>
                                         <figure>
                                             <img src="../assets/img/artists/artist_1.png" class="card-image circle" alt="Cover image 7" />
                                         </figure>
                                         <span class="artist-name">Guns N’ Roses</span>
                                     </article>
                                     <article class="card artists">
-                                        <a href="#" class="close"><img src="../assets/img/icons/pin-green.svg" alt=""></a>
+                                        <a href="#" class="close"><i class="icons icon-pin-green"></i></a>
                                         <figure>
                                             <img src="../assets/img/artists/artist_2.png" class="card-image circle" alt="Cover image 7" />
                                         </figure>
                                         <span class="artist-name">Guns N’ Roses</span>
                                     </article>
                                     <article class="card artists">
-                                        <a href="#" class="close"><img src="../assets/img/icons/pin-green.svg" alt=""></a>
+                                        <a href="#" class="close"><i class="icons icon-pin-green"></i></a>
                                         <figure>
                                             <img src="../assets/img/artists/artist_3.png" class="card-image circle" alt="Cover image 7" />
                                         </figure>
@@ -513,173 +512,145 @@
         </div>
     </main>
     <aside class="activity">
-        <div class="main-inner">
-            <section class="section-wrapper">
-                <div class="content-wrapper">
-                    <div class="section-title">
-                        <h4>Made For You</h4>
-                        <div class="slide-controls">
-                            <a href="#"
-                                ><img
-                                    src="./assets/img/icons/add_friend.svg"
-                                    alt=""
-                            /></a>
-                            <a href="#"
-                                ><img
-                                    src="./assets/img/icons/close.svg"
-                                    alt=""
-                            /></a>
-                        </div>
-                    </div>
-                    <div class="activity-content">
-                        <div class="activity-details">
-                            <div class="activity-icon">
-                                <img
-                                    src="./assets/img/users/user_1.png"
-                                    alt=""
-                                />
-                            </div>
-                            <div class="activity-summary">
-                                <span class="title"
-                                    >FriendlyMusicListener</span
-                                >
-                                <div class="description">
-                                    <div class="activity-time now">
-                                        <span class="now-bar"></span>
-                                    </div>
-                                    <div class="artist-information">
-                                        <span class="album"
-                                            >Goosebumps
-                                        </span>
-                                        <span class="artist"
-                                            >Travis Scott</span
-                                        >
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="activity-details">
-                            <div class="activity-icon">
-                                <img
-                                    src="./assets/img/users/user_2.png"
-                                    alt=""
-                                />
-                            </div>
-                            <div class="activity-summary">
-                                <span class="title"
-                                    >AverageMusicEnjoyer</span
-                                >
-                                <div class="description">
-                                    <div class="activity-time now">
-                                        <span class="now-bar"></span>
-                                    </div>
-                                    <div class="artist-information">
-                                        <span class="album"
-                                            >Get Lucky
-                                        </span>
-                                        <span class="artist"
-                                            >Daft Punk</span
-                                        >
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="activity-details">
-                            <div class="activity-icon">
-                                <img
-                                    src="./assets/img/users/user_3.png"
-                                    alt=""
-                                />
-                            </div>
-                            <div class="activity-summary">
-                                <span class="title">MusicEnthusiast</span>
-                                <div class="description">
-                                    <div class="activity-time">
-                                        <span>1h</span>
-                                    </div>
-                                    <div class="artist-information">
-                                        <span class="album">would he </span>
-                                        <span class="artist">joji</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="activity-details">
-                            <div class="activity-icon">
-                                <img
-                                    src="./assets/img/users/user_4.png"
-                                    alt=""
-                                />
-                            </div>
-                            <div class="activity-summary">
-                                <span class="title">IListenToMusic56</span>
-                                <div class="description">
-                                    <div class="activity-time">
-                                        <span>6h</span>
-                                    </div>
-                                    <div class="artist-information">
-                                        <span class="album">Rockstar </span>
-                                        <span class="artist"
-                                            >Post Malone</span
-                                        >
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+      <div class="main-inner">
+        <section class="section-wrapper">
+          <div class="content-wrapper">
+            <div class="section-title">
+              <h4>Friends Activity</h4>
+              <div class="slide-controls">
+                <a href="#"><i class="icons icon-add-friend"></i></a>
+                <a href="#"><i class="icons icon-close"></i></a>
+              </div>
+            </div>
+            <div class="activity-content">
+              <div class="activity-details">
+                <div class="activity-icon">
+                  <img src="./assets/img/users/user_1.png" alt="" />
                 </div>
-            </section>
-        </div>
+                <div class="activity-summary">
+                  <span class="title">FriendlyMusicListener</span>
+                  <div class="description">
+                    <div class="activity-time now">
+                      <span class="now-bar"></span>
+                    </div>
+                    <div class="artist-information">
+                      <span class="album">Goosebumps </span>
+                      <span class="artist">Travis Scott</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="activity-details">
+                <div class="activity-icon">
+                  <img src="./assets/img/users/user_2.png" alt="" />
+                </div>
+                <div class="activity-summary">
+                  <span class="title">AverageMusicEnjoyer</span>
+                  <div class="description">
+                    <div class="activity-time now">
+                      <span class="now-bar"></span>
+                    </div>
+                    <div class="artist-information">
+                      <span class="album">Get Lucky </span>
+                      <span class="artist">Daft Punk</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="activity-details">
+                <div class="activity-icon">
+                  <img src="./assets/img/users/user_3.png" alt="" />
+                </div>
+                <div class="activity-summary">
+                  <span class="title">MusicEnthusiast</span>
+                  <div class="description">
+                    <div class="activity-time">
+                      <span>1h</span>
+                    </div>
+                    <div class="artist-information">
+                      <span class="album">would he </span>
+                      <span class="artist">joji</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="activity-details">
+                <div class="activity-icon">
+                  <img src="./assets/img/users/user_4.png" alt="" />
+                </div>
+                <div class="activity-summary">
+                  <span class="title">IListenToMusic56</span>
+                  <div class="description">
+                    <div class="activity-time">
+                      <span>6h</span>
+                    </div>
+                    <div class="artist-information">
+                      <span class="album">Rockstar </span>
+                      <span class="artist">Post Malone</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
     </aside>
     <footer class="player">
-        <div class="player-wrapper">
-            <img src="../assets/img/albums/album_1.png" alt="Draft Punk" />
+      <div class="player-wrapper">
+        <img src="../assets/img/albums/album_1.png" alt="Draft Punk" />
 
-            <div class="music-title-author-wrapper">
-                <a href="#" class="scrolling-text">Get Lucky (feat. Pharrell Williams and Nile Rodgers)</a>
-                <a href="#" class="scrolling-text-band">Draft Punk</a>
-            </div>
+        <div class="music-title-author-wrapper">
+          <a href="#" class="scrolling-text"
+            >Get Lucky (feat. Pharrell Williams and Nile Rodgers)</a
+          >
+          <a href="#" class="scrolling-text-band">Draft Punk</a>
+        </div>
+      </div>
+
+      <div class="player-icons">
+        <i class="icons icon-add-playlist icon-sm"></i>
+        <img src="../assets/img/icons/player/play.svg" alt="play" class="play" />
+      </div>
+
+      <div class="music-progress-bar"></div>
+
+      <div class="advanced-player">
+        <div class="advanced-player-wrapper">
+          <div class="stop-button-wrapper">
+            <img
+              src="../assets/img/icons/player/pause.svg"
+              alt="pause"
+              class="pause"
+            />
+          </div>
+          <i class="icons icon-prev icon-sm"></i>
+          <i class="icons icon-next icon-sm"></i>
+          <i class="icons icon-shuffle icon-sm"></i>
+          <i class="icons icon-repeat icon-sm"></i>
         </div>
 
-        <div class="player-icons">
-            <img src="../assets/img/icons/player/add_playlist.svg" alt="add_playlist" class="add_playlist" />
-            <img src="../assets/img/icons/player/play.svg" alt="play" class="play" />
+        <div class="advanced-player-music-time-line">
+          <p>2:23</p>
+          <div class="advanced-music-progress-bar"></div>
+          <p>4:46</p>
         </div>
 
-        <div class="music-progress-bar"></div>
+        <i class="icons icon-volume"></i>
+      </div>
 
-        <div class="advanced-player">
-            <div class="advanced-player-wrapper">
-                <div class="stop-button-wrapper">
-                    <img src="../assets/img/icons/player/pause.svg" alt="pause" class="pause" />
-                </div>
-                <img src="../assets/img/icons/player/prev.svg" alt="prev" />
-                <img src="../assets/img/icons/player/next.svg" alt="next" />
-                <img src="../assets/img/icons/player/shuffle.svg" alt="shuffle" />
-                <img src="../assets/img/icons/player/repeat.svg" alt="repeat" />
-            </div>
-
-            <div class="advanced-player-music-time-line">
-                <p>2:23</p>
-                <div class="advanced-music-progress-bar"></div>
-                <p>4:46</p>
-            </div>
-
-            <img src="../assets/img/icons/player/volume.svg" alt="volume" />
+      <div class="advanced-player-icons">
+        <div class="wrapper-icons">
+          <i class="icons icon-hearth"></i>
+          <i class="icons icon-add-playlist"></i>
         </div>
-
-        <div class="advanced-player-icons">
-            <div class="wrapper-icons">
-                <img src="../assets/img/icons/hearth.svg" alt="heart icon" />
-                <img src="../assets/img/icons/player/add_playlist.svg" alt="add play list icon" />
-            </div>
-            <img src="../assets/img/icons/player/list.svg" alt="list icon" />
-            <img src="../assets/img/icons/player/devices.svg" alt="devices icon" />
-            <img src="../assets/img/icons/dots.svg" alt="dots icon" />
-            <hr />
-            <img src="../assets/img/icons/player/player_blue_icon.svg" alt="blue icon" />
-            <img src="../assets/img/icons/player/order.svg" alt="order icon" />
-        </div>
+        <i class="icons icon-list"></i>
+        <i class="icons icon-devices"></i>
+        <i class="icons icon-dots"></i>
+        <hr />
+        <i class="icons icon-player_blue_icon icon-md"></i>
+        <i class="icons icon-order icon-sm"></i>
+      </div>
     </footer>
 </body>
 <script src="../assets/js/main.js"></script>

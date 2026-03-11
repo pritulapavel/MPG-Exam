@@ -6,7 +6,7 @@
   z-index: 2;
   width: 100%;
   min-height: 100vh;
-  padding: 3.7rem 2.6rem 10rem 3.7rem;
+  padding: 3rem 1rem 10rem 1rem;
   @include flex(center, flex-start, column, 2.6rem);
 
   &::before {
@@ -36,8 +36,10 @@
   & .img-wrapper {
     flex: 0 0 auto;
     & img {
-      width: clamp-calc(20rem, 50rem);
       max-width: 100%;
+      @include tablet {
+        width: clamp-calc(20rem, 50rem);
+      }
       height: auto;
     }
   }
@@ -53,14 +55,14 @@
     .description {
       @include flex(center, center, column, 1.4rem);
       & h3 {
-        max-width: clamp-calc(20rem, 72.1rem);
         width: 100%;
-        font-size: clamp-calc(1.2rem, 3.6rem);
+        font-size: clamp-calc(1.6rem, 3.6rem);
         font-weight: bold;
         text-align: center;
         color: $primary-navigation-hover;
         @include desktop {
           text-align: left;
+          max-width: clamp-calc(20rem, 72.1rem);
         }
       }
 
@@ -82,7 +84,7 @@
         & span {
           font-family: $font-satoshi;
           font-weight: 400;
-          font-size: 1rem;
+          font-size: 1.3rem;
           color: $color-primary;
           @include tablet {
             font-size: clamp-calc(1.6rem, 1.8rem);
@@ -122,9 +124,17 @@
       flex-wrap: wrap;
       & span {
         border-radius: 4.4rem;
-        padding: 1rem 2rem;
+        padding: 0.5rem 1rem;
         border: 2px solid rgba(137, 137, 137, 0.1);
         white-space: nowrap;
+        @include laptop {
+          padding: 1rem 2rem;
+        }
+        &:hover {
+          color: $color-hover-text;
+          border: 2px solid $color-hover-text;
+          cursor: pointer;
+        }
       }
       @include desktop {
         @include flex(center, flex-start, row, 1rem);
@@ -207,8 +217,8 @@
   }
   .wrapper-flex {
     @include flex(flex-start, flex-start, row, 10rem);
-    & .icons {
-      @include flex(flex-satrt, flex-start, column, 1.2rem);
+    & .icons-wrapper {
+      @include flex(flex-start, flex-start, column, 1.2rem);
       & label {
         padding: 1.033rem 0.917rem;
         cursor: pointer;

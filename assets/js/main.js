@@ -121,3 +121,18 @@ if (main && nav) {
     lastScroll = currentScroll;
   });
 }
+
+const verses = document.querySelectorAll('.main-text-wrapper p');
+let currentIndex = 0;
+
+verses[0].classList.add('active');
+
+setInterval(() => {
+    verses[currentIndex].classList.remove('active');
+    currentIndex = (currentIndex + 1) % verses.length;
+    verses[currentIndex].classList.add('active');
+    verses[currentIndex].scrollIntoView({
+        behavior: 'smooth',
+        block: 'center'
+    });
+}, 5000);

@@ -13,16 +13,33 @@
 		filter: brightness(0) invert(1);
 	}
 
+	&.icon-xxxs { width: 0.7rem; height: 0.7rem; }
 	&.icon-sm { width: 1.6rem; height: 1.6rem; }
 	&.icon-md { width: 2.4rem; height: 2.4rem; }
 	&.icon-lg { width: 3.2rem; height: 3.2rem; }
 	&.icon-xl { width: 4rem; height: 4rem; }
+    &.icon-green:hover {
+        filter: brightness(0) saturate(100%) invert(56%) sepia(83%) saturate(600%) hue-rotate(95deg);
+        fill: #1ed760;
+    }
+    &.icon-white {
+        filter: brightness(0) invert(1);
+        &:hover {
+            filter: brightness(1) invert(0);
+        }
+    }
 }
 
 /* Our style.css is in styles folder, we need one time ../ for use icons in images folders */
 
 .icon-play {
     background-image: url("../img/icons/player/play.svg");
+    &:hover {
+		filter: brightness(1) invert(0);
+	}
+}
+.icon-play-black {
+    background-image: url("../img/icons/player/play-black.svg");
 }
 .icon-play-green {
     background-image: url("../img/icons/play-icon-green.svg");
@@ -75,6 +92,9 @@
 .icon-order {
     background-image: url("../img/icons/player/order.svg");
 }
+.icon-order-burger {
+    background-image: url("../img/icons/order.svg");
+}
 .icon-pause {
     background-image: url("../img/icons/player/pause.svg");
 }
@@ -100,6 +120,9 @@
     background-image: url("../img/icons/plus-rounded.svg");
 }
 .icon-add-playlist {
+    background-image: url("../img/icons/player/add_playlist.svg");
+}
+.icon-add-album {
     background-image: url("../img/icons/add-to-playlist.svg");
 }
 .icon-add-friend {
@@ -111,6 +134,12 @@
 .icon-library {
     background-image: url("../img/icons/library.svg");
 }
+.icon-font-size {
+    background-image: url("../img/icons/font-size.svg");
+}
+.icon-language {
+    background-image: url("../img/icons/language.svg");
+}
 .icon-add-music {
     background-image: url("../img/icons/add_music.svg");
 }
@@ -118,7 +147,7 @@
     background-image: url("../img/icons/add-big.svg");
 }
 .icon-album {
-    background-image: url("../img/icons/album.svg");
+    background-image: url("../img/icons/albom.svg");
 }
 .icon-artist {
     background-image: url("../img/icons/artist.svg");
@@ -205,7 +234,7 @@
     background-image: url("../img/icons/hidden.svg");
 }
 .icon-history {
-    background-image: url("../img/icons/history.svg");
+    background-image: url("../img/icons/listening-history.svg");
 }
 .icon-home {
     background-image: url("../img/icons/home.svg");
@@ -221,6 +250,9 @@
 }
 .icon-list_microphone {
     background-image: url("../img/icons/list_microphone.svg");
+}
+.icon-list_microphone-small {
+    background-image: url("../img/icons/mic.svg");
 }
 .icon-lock {
     background-image: url("../img/icons/lock.svg");
@@ -243,6 +275,9 @@
 .icon-notification {
     background-image: url("../img/icons/notification.svg");
 }
+.icon-now-playing {
+    background-image: url("../img/icons/now-playing.svg");
+}
 .icon-pin {
     background-image: url("../img/icons/pin.svg");
 }
@@ -260,6 +295,9 @@
 }
 .icon-plus {
     background-image: url("../img/icons/plus.svg");
+    &:hover {
+		filter: brightness(1) invert(0);
+	}
 }
 .icon-podcast {
     background-image: url("../img/icons/podcast.svg");
@@ -297,6 +335,11 @@
 .icon-sort {
     background-image: url("../img/icons/sort.svg");
 }
+.icon-spotify {
+    background-image: url("../img/icons/spotify_small.svg");
+    filter: brightness(0) saturate(100%) invert(56%) sepia(83%) saturate(600%) hue-rotate(95deg);
+    fill: #1ed760;
+}
 .icon-spotify_small {
     background-image: url("../img/icons/spotify_small.svg");
 }
@@ -323,6 +366,9 @@
 }
 .icon-views {
     background-image: url("../img/icons/views.svg");
+}
+.icon-download {
+    background-image: url("../img/icons/download.svg");
 }
 .icon-upload {
     background-image: url("../img/icons/upload.svg");

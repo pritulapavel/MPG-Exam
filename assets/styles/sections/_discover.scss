@@ -88,7 +88,7 @@
     // Scrolling type
     scroll-snap-align: start;
     border-radius: $border-radius-default;
-    padding: 0 2.179rem 0 1.4rem;
+    padding: 0 1.4rem 0 1.4rem;
     // სიგანე და სიმაღლე ჩავასწორო?
     width: 100%;
     position: relative;
@@ -98,6 +98,7 @@
   .right-fixed {
     bottom: 10rem;
     right: 2rem;
+    z-index: 1;
     @include flex(start, start, column, 2rem);
     position: absolute;
     // padding: 0 2.159rem 0 1.4rem;
@@ -132,7 +133,7 @@
 }
 .discover .bottom-container {
   position: absolute;
-  bottom: 7rem;
+  bottom: 7.7rem;
   @include flex(flex-start, flex-start, column, 1.1rem);
 
   .genre {
@@ -237,8 +238,7 @@
           background-color: $discover-filters-bg-color;
           text-decoration: none;
           text-transform: capitalize;
-          font-family: $font-satoshi;
-          font-size: clamp-calc(1.4rem, 1.8rem);
+          font-size: clamp-calc(1.4rem, 1.6rem);
           color: $color-secondary;
           transition: 0.3s ease;
           &.active {
@@ -292,8 +292,7 @@
           top: 50%;
           z-index: 15;
           &:hover {
-            transform: scale(1.1);
-            padding: 1rem;
+            transform: scale(1.01);
             border-radius: $border-radius-full-circle;
             & img {
               filter: brightness(0) invert(1);
@@ -304,8 +303,7 @@
         }
         & .scroll-right {
           &:hover {
-            transform: scale(1.1);
-            padding: 1rem;
+            transform: scale(1.01);
             border-radius: $border-radius-full-circle;
             & img {
               filter: brightness(0) invert(1);

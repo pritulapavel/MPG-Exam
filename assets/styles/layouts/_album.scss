@@ -18,12 +18,15 @@
       @include flex(center, flex-start, row, 0.75rem);
       width: 100%;
 
+      label {
+        @include flex(center,null,null,null);
+      }
+
       #search {
         width: 100%;
         max-width: 18rem;
-        height: 3rem;
         border-radius: 0.9rem;
-        padding: 0 0.75rem;
+        padding: 0.90rem 0.75rem;
         font-size: 1.2rem;
         font-family: $font-satoshi;
         background: rgba(255, 255, 255, 0.08);
@@ -231,6 +234,7 @@
       p {
         font-size: 1rem;
         color: rgba(255, 255, 255, 0.7);
+        font-size: 1.3rem;
 
         &:nth-child(2) {
           color: white;
@@ -549,7 +553,7 @@
   th:nth-child(4),
   td:nth-child(4) {
     display: none;
-    width: 2.5rem;
+    width: 4.5rem;
     text-align: center;
 
     @include tablet {
@@ -686,7 +690,7 @@
         }
 
         .artist {
-          font-size: 1.2rem;
+          font-size: 1.3rem;
           color: rgba(255, 255, 255, 0.5);
           white-space: nowrap;
           overflow: hidden;
@@ -844,7 +848,7 @@
       gap: 0.5rem;
 
       p {
-        padding: 0.35rem 0.8rem;
+        padding: 1rem 1rem;
         border-radius: 1.25rem;
         background: rgba(255, 255, 255, 0.08);
         border: 1px solid rgba(255, 255, 255, 0.1);
@@ -894,7 +898,7 @@
         }
 
         p {
-          font-size: 1.1rem;
+          font-size: 1.4rem;
           color: rgba(255, 255, 255, 0.9);
         }
       }

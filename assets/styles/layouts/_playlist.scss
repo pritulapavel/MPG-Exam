@@ -30,7 +30,7 @@
     padding: 0 3rem 0 1.2rem;
     background: rgba(255, 255, 255, 0.08);
     color: white;
-    font-size: 1rem;
+    font-size: 1.3rem;
   }
 
   #search::placeholder {
@@ -89,7 +89,7 @@
       rgba(6, 6, 6, 0.47) 100%);
   flex-direction: column-reverse;
   width: 100%;
-  padding: 0.75rem;
+  // padding: 0.75rem;
   gap: 1.25rem;
 
   @include tablet {
@@ -135,8 +135,8 @@
 // ============================================================
 
 .playlist-hero {
-  padding-left: 1rem;
-  padding-right: 1rem;
+  // padding-left: 1rem;
+  // padding-right: 1rem;
 
   // Mobile: cover scales with screen, max 320px centered
   .playlist-cover {
@@ -242,7 +242,7 @@
       flex-wrap: wrap;
 
       p {
-        font-size: 1rem;
+        font-size: 1.3rem;
         color: rgba(255, 255, 255, 0.7);
 
         &:nth-child(2) {
@@ -572,7 +572,7 @@
     width: 3rem;
     height: 3rem;
     text-align: center;
-    padding-right: 3rem;
+    // padding-right: 3rem;
 
     @include tablet {
       display: none;
@@ -660,14 +660,14 @@
 
         .track-title {
           color: white;
-          font-size: 1.1rem;
+          font-size: 1.4rem;
           font-weight: 500;
           white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;
 
           @include tablet {
-            font-size: 2rem;
+            font-size: 1.7rem;
           }
 
           @include laptop {
@@ -675,12 +675,12 @@
           }
 
           @include desktop {
-            font-size: 2rem;
+            font-size: 1.7rem;
           }
         }
 
         .track-artist {
-          font-size: 1rem;
+          font-size: 1.2rem;
           color: rgba(255, 255, 255, 0.5);
           white-space: nowrap;
           overflow: hidden;
@@ -695,7 +695,7 @@
           }
 
           @include desktop {
-            font-size: 2rem;
+            font-size: 1.4rem;
           }
         }
       }
@@ -719,7 +719,7 @@
     }
 
     @include desktop {
-      font-size: 2rem;
+      font-size: 1.7rem;
     }
   }
 
@@ -825,7 +825,7 @@
       gap: 1rem;
 
       p {
-        padding: 0.35rem 0.8rem;
+        padding: 1rem 1rem;
         border-radius: 1.25rem;
         background: rgba(255, 255, 255, 0.08);
         border: 1px solid rgba(255, 255, 255, 0.1);
