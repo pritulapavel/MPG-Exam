@@ -18,9 +18,15 @@
 	&.icon-md { width: 2.4rem; height: 2.4rem; }
 	&.icon-lg { width: 3.2rem; height: 3.2rem; }
 	&.icon-xl { width: 4rem; height: 4rem; }
-    &.icon-green:hover {
-        filter: brightness(0) saturate(100%) invert(56%) sepia(83%) saturate(600%) hue-rotate(95deg);
-        fill: #1ed760;
+    &.icon-green {
+        &:hover {
+            filter: brightness(0) saturate(100%) invert(56%) sepia(83%) saturate(600%) hue-rotate(95deg);
+            fill: #1ed760;
+        }
+        &:active {
+            filter: brightness(0) saturate(100%) invert(56%) sepia(83%) saturate(600%) hue-rotate(95deg);
+            fill: #1ed760;
+        }
     }
     &.icon-white {
         filter: brightness(0) invert(1);
