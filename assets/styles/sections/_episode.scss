@@ -68,6 +68,7 @@
   }
   .episode-buttons-wrapper {
     @include flex(center, center, row, 1rem);
+    flex-wrap: wrap;
     & button {
       @include flex(center, center, row);
       padding: 1.179rem;
