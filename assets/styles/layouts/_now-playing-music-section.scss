@@ -30,10 +30,10 @@
   background: $color-bg-secondary;
 
   @include tablet {
-    padding-bottom: 20rem;
+    padding-bottom: 5rem;
   }
   @include laptop {
-    padding-bottom: 22rem;
+    padding-bottom: 2rem;
   }
 
   /* HEADER TITLE */
@@ -43,10 +43,10 @@
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 
     @include tablet {
-      padding: 2.5rem 4rem;
+      padding: 2.5rem 2rem;
     }
     @include laptop {
-      padding: 3rem 8rem;
+      padding: 3rem 2rem;
     }
 
     .pnt-header-wrapper {
@@ -145,12 +145,11 @@
     @include laptop {
       padding: 3rem 8rem;
       max-width: 90rem;
-      margin: 0 auto;
     }
 
     @include desktop {
-      max-width: 100rem;
-      padding: 4rem 10rem;
+      max-width: 100%;
+      padding: 4rem 2rem;
     }
 
     .queue-section {
