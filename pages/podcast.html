@@ -171,7 +171,7 @@
       </nav>
     </aside>
     <main class="main no-pd">
-      <div class="main-inner no-pd">
+      <div class="main-inner main-podcast no-pd">
         <!-- Desktop wrapper -->
         <section class="section-wrapper-podcast">
           <div class="podcast-wrapper">
@@ -179,12 +179,14 @@
               <h3>The Joe Rogan Experience</h3>
               <h6>Joe Rogan</h6>
               <div class="cta-actions">
-                <a href="#" class="active">Follow</a>
-                <a href="#">
+                <input type="radio" name="podcast-cta" id="podcastFollow" checked />
+                <label for="podcastFollow"> Follow </label>
+                <input type="radio" name="podcast-cta" id="podcastRatings" />
+                <label for="podcastRatings">
                   4.8
                   <img src="../assets/img/icons/star_small.svg" alt="Ratings" />
                   816K
-                </a>
+                </label>
                 <a href="#">
                   <img src="../assets/img/discover/more.svg" alt="See more" />
                 </a>

@@ -56,23 +56,34 @@
   & .cta-actions {
     @include flex(center, center, row, 1rem);
     flex-wrap: wrap;
-    & a:not(:last-child) {
+    & input {
+      display: none;
+    }
+    & input[type="radio"]:checked + label {
+      background-color: rgba(137, 137, 137, 0.25);
+      color: $color-secondary;
+      & img {
+        filter: brightness(0) invert(1);
+      }
+    }
+    & label {
+      @include flex(center, center, row, 0.5rem);
       padding: 1rem 2rem;
       border-radius: $border-radius-oval;
       border: 2px solid $color-primary;
-    }
-    & .active {
-      background-color: rgba(137, 137, 137, 0.25);
-      color: $primary-navigation-hover;
-    }
-    & a {
       font-family: $font-satoshi;
       font-size: 1rem;
       color: $color-primary;
+      cursor: pointer;
     }
-    &:last-child {
+    & a {
       @include flex(center, center, row);
       white-space: nowrap;
+      &:hover {
+        & img {
+          filter: brightness(0) invert(1);
+        }
+      }
     }
   }
 }
@@ -139,6 +150,7 @@
       font-family: $font-satoshi;
       font-weight: bold;
       color: $primary-navigation-hover;
+      text-align: center;
     }
     .filters {
       display: none;
