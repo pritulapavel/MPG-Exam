@@ -145,7 +145,7 @@
   bottom: 0;
   padding: 1.6rem;
   background: $mobile-nav-bg-color;
-  @include flex(center, space-around, row, 3.1rem);
+  @include flex(center, space-around, row, 2.1rem);
   & label {
     @include flex(center, center, column, 1rem);
     font-family: $font-satoshi;
