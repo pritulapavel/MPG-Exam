@@ -227,7 +227,7 @@
         display: none;
       }
       & input[type="radio"]:checked + label {
-        & img {
+        & i {
           filter: brightness(0) saturate(100%) invert(59%) sepia(86%) saturate(464%) hue-rotate(88deg) brightness(95%)
             contrast(92%);
         }
