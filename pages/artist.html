@@ -75,36 +75,36 @@
       </div>
       <!-- Mobile navigation -->
       <nav class="mobile-nav">
-        <a href="#" class="nav-item">
-          <div class="img-div">
-            <i class="icons icon-home-inactive"></i>
-          </div>
+        <input type="radio" name="mobile-nav" id="homeNav" />
+        <label for="homeNav">
+          <i class="icons icon-home-inactive icon-green"></i>
           Home
-        </a>
-        <a href="#" class="nav-item">
-          <div class="img-div">
-            <i class="icons icon-discover"></i>
-          </div>
+        </label>
+
+        <input type="radio" name="mobile-nav" id="discoverNav" />
+
+        <label for="discoverNav">
+          <i class="icons icon-discover icon-green"></i>
           Discover
-        </a>
-        <a href="#" class="nav-item">
-          <div class="img-div">
-            <i class="icons icon-search"></i>
-          </div>
+        </label>
+
+        <input type="radio" name="mobile-nav" id="searchNav" />
+        <label for="searchNav">
+          <i class="icons icon-search icon-green"></i>
           Search
-        </a>
-        <a href="#" class="nav-item">
-          <div class="img-div">
-            <i class="icons icon-library"></i>
-          </div>
+        </label>
+
+        <input type="radio" name="mobile-nav" id="libraryNav" />
+        <label for="libraryNav">
+          <i class="icons icon-library icon-green"></i>
           Library
-        </a>
-        <a href="#" class="nav-item">
-          <div class="img-div">
-            <i class="icons icon-me"></i>
-          </div>
+        </label>
+
+        <input type="radio" name="mobile-nav" id="myProfileNav" />
+        <label for="myProfileNav">
+          <i class="icons icon-me icon-green"></i>
           Me
-        </a>
+        </label>
       </nav>
     </header>
     <aside class="sidebar">
@@ -190,11 +190,13 @@
                         <span class="artist-listeners">20,795,080 monthly listeners</span>
                     </div>
                     <div class="artist-options">
-                        <span class="btn"><i class="icons icon-play-icon-green"></i></span>
+                        <span class="btn-green">
+                          <i class="icons icon-play-black icon-sm"></i>
+                        </span>
                         <span class="btn follow">Follow</span>
-                        <span class="btn"><i class="icons icon-add-big"></i></span>
-                        <span class="btn"><i class="icons icon-queue"></i></span>
-                        <span class="btn"><i class="icons icon-dots"></i></span>
+                        <span class="btn"><i class="icons icon-add-playlist icon-white"></i></span>
+                        <span class="btn"><i class="icons icon-queue icon-white"></i></span>
+                        <span class="btn"><i class="icons icon-dots icon-white"></i></span>
                     </div>
                 </div>
       </header>
@@ -683,118 +685,90 @@
 		</div>
 	</main>
 	<aside class="activity">
-			<div class="main-inner">
-				<section class="section-wrapper">
-					<div class="content-wrapper">
-						<div class="section-title">
-							<h4>Made For You</h4>
-							<div class="slide-controls">
-								<a href="#"
-									><i class="icons icon-add-friend"></i></a>
-								<a href="#"
-									><i class="icons icon-close"></i></a>
-							</div>
-						</div>
-						<div class="activity-content">
-							<div class="activity-details">
-								<div class="activity-icon">
-									<img
-										src="../assets/img/users/user_1.png"
-										alt=""
-									/>
-								</div>
-								<div class="activity-summary">
-									<span class="title"
-										>FriendlyMusicListener</span
-									>
-									<div class="description">
-										<div class="activity-time now">
-											<span class="now-bar"></span>
-										</div>
-										<div class="artist-information">
-											<span class="album"
-												>Goosebumps
-											</span>
-											<span class="artist"
-												>Travis Scott</span
-											>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="activity-details">
-								<div class="activity-icon">
-									<img
-										src="../assets/img/users/user_2.png"
-										alt=""
-									/>
-								</div>
-								<div class="activity-summary">
-									<span class="title"
-										>AverageMusicEnjoyer</span
-									>
-									<div class="description">
-										<div class="activity-time now">
-											<span class="now-bar"></span>
-										</div>
-										<div class="artist-information">
-											<span class="album"
-												>Get Lucky
-											</span>
-											<span class="artist"
-												>Daft Punk</span
-											>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="activity-details">
-								<div class="activity-icon">
-									<img
-										src="../assets/img/users/user_3.png"
-										alt=""
-									/>
-								</div>
-								<div class="activity-summary">
-									<span class="title">MusicEnthusiast</span>
-									<div class="description">
-										<div class="activity-time">
-											<span>1h</span>
-										</div>
-										<div class="artist-information">
-											<span class="album">would he </span>
-											<span class="artist">joji</span>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="activity-details">
-								<div class="activity-icon">
-									<img
-										src="../assets/img/users/user_4.png"
-										alt=""
-									/>
-								</div>
-								<div class="activity-summary">
-									<span class="title">IListenToMusic56</span>
-									<div class="description">
-										<div class="activity-time">
-											<span>6h</span>
-										</div>
-										<div class="artist-information">
-											<span class="album">Rockstar </span>
-											<span class="artist"
-												>Post Malone</span
-											>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</section>
-			</div>
-		</aside>
+      <div class="main-inner">
+        <section class="section-wrapper">
+          <div class="content-wrapper">
+            <div class="section-title">
+              <h4>Friends Activity</h4>
+              <div class="slide-controls">
+                <a href="#"><i class="icons icon-add-friend"></i></a>
+                <a href="#"><i class="icons icon-close"></i></a>
+              </div>
+            </div>
+            <div class="activity-content">
+              <div class="activity-details">
+                <div class="activity-icon">
+                  <img src="./assets/img/users/user_1.png" alt="" />
+                </div>
+                <div class="activity-summary">
+                  <span class="title">FriendlyMusicListener</span>
+                  <div class="description">
+                    <div class="activity-time now">
+                      <span class="now-bar"></span>
+                    </div>
+                    <div class="artist-information">
+                      <span class="album">Goosebumps </span>
+                      <span class="artist">Travis Scott</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="activity-details">
+                <div class="activity-icon">
+                  <img src="./assets/img/users/user_2.png" alt="" />
+                </div>
+                <div class="activity-summary">
+                  <span class="title">AverageMusicEnjoyer</span>
+                  <div class="description">
+                    <div class="activity-time now">
+                      <span class="now-bar"></span>
+                    </div>
+                    <div class="artist-information">
+                      <span class="album">Get Lucky </span>
+                      <span class="artist">Daft Punk</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="activity-details">
+                <div class="activity-icon">
+                  <img src="./assets/img/users/user_3.png" alt="" />
+                </div>
+                <div class="activity-summary">
+                  <span class="title">MusicEnthusiast</span>
+                  <div class="description">
+                    <div class="activity-time">
+                      <span>1h</span>
+                    </div>
+                    <div class="artist-information">
+                      <span class="album">would he </span>
+                      <span class="artist">joji</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="activity-details">
+                <div class="activity-icon">
+                  <img src="./assets/img/users/user_4.png" alt="" />
+                </div>
+                <div class="activity-summary">
+                  <span class="title">IListenToMusic56</span>
+                  <div class="description">
+                    <div class="activity-time">
+                      <span>6h</span>
+                    </div>
+                    <div class="artist-information">
+                      <span class="album">Rockstar </span>
+                      <span class="artist">Post Malone</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </aside>
     <footer class="player">
       <div class="player-wrapper">
         <img src="../assets/img/albums/album_1.png" alt="Draft Punk" />
@@ -817,7 +791,11 @@
       <div class="advanced-player">
         <div class="advanced-player-wrapper">
           <div class="stop-button-wrapper">
-            <i class="icons icon-pause icon-sm"></i>
+            <img
+              src="../assets/img/icons/player/pause.svg"
+              alt="pause"
+              class="pause"
+            />
           </div>
           <i class="icons icon-prev icon-sm"></i>
           <i class="icons icon-next icon-sm"></i>
@@ -831,17 +809,17 @@
           <p>4:46</p>
         </div>
 
-        <i class="icons icon-volume icon-sm"></i>
+        <i class="icons icon-volume"></i>
       </div>
 
       <div class="advanced-player-icons">
         <div class="wrapper-icons">
-          <i class="icons icon-hearth icon-sm"></i>
-          <i class="icons icon-add-playlist icon-sm"></i>
+          <i class="icons icon-hearth"></i>
+          <i class="icons icon-add-playlist"></i>
         </div>
-        <i class="icons icon-list icon-sm"></i>
-        <i class="icons icon-devices icon-sm"></i>
-        <i class="icons icon-dots icon-sm"></i>
+        <i class="icons icon-list"></i>
+        <i class="icons icon-devices"></i>
+        <i class="icons icon-dots"></i>
         <hr />
         <i class="icons icon-player_blue_icon icon-md"></i>
         <i class="icons icon-order icon-sm"></i>

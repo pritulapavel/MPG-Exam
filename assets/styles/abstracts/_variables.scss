@@ -33,7 +33,8 @@ $scrollbar-bg-color: rgba(219, 219, 219, 0.15); //მარიამის დ�
 $color-card-browse-heading: #ffffff;
 $border-menu-color: rgba(137, 137, 137, 0.2);
 $artist-album-cover-bg: rgba(24, 25, 30, 0.3);
-$album-tag-border: 0.2rem solid rgba(137, 137, 137, 0.25);
+$color-album-border: rgba(137, 137, 137, 0.25);
+$album-tag-border: 0.2rem solid $color-album-border;
 $song-main-bg-overlay:
   linear-gradient(
     90deg,
@@ -65,3 +66,8 @@ $border-radius-oval: 4.4rem; //მარიამის დამატებუ
 $primary-navigation-hover: #e0e0e0;
 $color-hover-bg: #202020;
 $color-hover-text: #e0e0e0;
+$podcast-gradient: linear-gradient(to bottom, #7a471f, #060606);
+$podcast-secondary-color: #d9d9d9;
+$podcast-primary-color: #e5e5e5;
+$podcast-third-color: #e99d52;
+$podcast-border-color: rgba(137, 137, 137, 0.15);

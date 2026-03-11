@@ -45,6 +45,15 @@
 			max-height: 42.6rem;
 			height: 100%;
 		}
+		.btn-green {
+			width: 4rem;
+			height: 4rem;
+			border-radius: 50%;
+			background-color: #1ed760;
+			@include flex(center,center,row,null);
+			cursor: pointer;
+			transition: transform 0.2s ease;
+		}
 	}
 	.artist-cover {
 		width: 100%;
