@@ -6,19 +6,17 @@
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: contain;
-}
 
-.icon-sm {
-    width: 1.6rem; height: 1.6rem;
-}
-.icon-md {
-    width: 2.4rem; height: 2.4rem;
-}
-.icon-lg {
-    width: 3.2rem; height: 3.2rem;
-}
-.icon-xl {
-    width: 4rem; height: 4rem;
+	transition: filter 0.2s ease;
+
+	&:hover {
+		filter: brightness(0) invert(1);
+	}
+
+	&.icon-sm { width: 1.6rem; height: 1.6rem; }
+	&.icon-md { width: 2.4rem; height: 2.4rem; }
+	&.icon-lg { width: 3.2rem; height: 3.2rem; }
+	&.icon-xl { width: 4rem; height: 4rem; }
 }
 
 /* Our style.css is in styles folder, we need one time ../ for use icons in images folders */
@@ -34,6 +32,9 @@
 }
 .icon-pause {
     background-image: url("../img/icons/player/pause.svg");
+}
+.icon-list {
+    background-image: url("../img/icons/player/list.svg");
 }
 .icon-search {
     background-image: url("../img/icons/search.svg");
@@ -107,8 +108,14 @@
 .icon-add-library {
     background-image: url("../img/icons/add_library.svg");
 }
+.icon-library {
+    background-image: url("../img/icons/library.svg");
+}
 .icon-add-music {
     background-image: url("../img/icons/add_music.svg");
+}
+.icon-add-big {
+    background-image: url("../img/icons/add-big.svg");
 }
 .icon-album {
     background-image: url("../img/icons/album.svg");
