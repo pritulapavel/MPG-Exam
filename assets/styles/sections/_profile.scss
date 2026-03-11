@@ -1,17 +1,15 @@
 @use "../abstracts/variables" as *;
 @use "../abstracts/mixins" as *;
-.profile-wrapper {
+
+.profile-section-wrapper {
   padding: 1.5rem 1.5rem 15rem 1.5rem;
   @media (min-width: 768px) {
     padding-bottom: 0;
   }
-
-
-
 }
 
 // layout
-.profile-wrapper.content-wrapper {
+.profile-page-content-wrapper {
   @include grid(1);
   justify-items: center;
 
@@ -43,7 +41,7 @@
     }
   }
 }
-.profile-wrapper.content-wrapper {
+.profile-page-content-wrapper {
   //   main styles
 
   .profile-content {
