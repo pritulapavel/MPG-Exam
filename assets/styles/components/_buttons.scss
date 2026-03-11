@@ -53,10 +53,14 @@
 }
 
 .follow {
-  padding: 10px 20px;
-  background: rgba(137, 137, 137, 0.25);
-  border: 2px solid rgba(137, 137, 137, 0.25);
+  padding: 1rem 2rem;
+  background: $color-album-border;
+  border: 2px solid $color-album-border;
   border-radius: 44px;
   cursor: pointer;
-  color: #E0E0E0;
+  color: $color-secondary;
+  &:hover {
+    color: $color-card-browse-heading;
+    border: 0.2rem solid $color-card-browse-heading;
+  }
 }
