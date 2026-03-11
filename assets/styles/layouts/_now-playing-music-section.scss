@@ -21,9 +21,10 @@
   }
 }
 
-.main.next-up {
+/* MAIN PAGE */
+.main.playing-now-text {
   position: relative;
-  min-height: 100vh;
+  min-height: 100%;
   padding-bottom: 18rem;
   @include flex(stretch, flex-start, column);
   background: $color-bg-secondary;
@@ -35,9 +36,8 @@
     padding-bottom: 22rem;
   }
 
-  /* NAVIGATION TITLE */
-  .navigation-title {
-    /* Centering the whole component in the header */
+  /* HEADER TITLE */
+  header {
     @include flex(center, center, row);
     padding: 2rem;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -49,11 +49,9 @@
       padding: 3rem 8rem;
     }
 
-    .now-playing-indicator {
-      /* Anchors bars and text together */
+    .pnt-header-wrapper {
       @include flex(center, flex-start, row, 1rem);
       width: 100%;
-      max-width: 35rem; /* Prevents text from stretching too wide on laptop */
       overflow: hidden;
 
       @include tablet {
@@ -61,7 +59,7 @@
       }
 
       .now-playing-bars {
-        flex: 0 0 auto; /* Prevent bars from shrinking */
+        flex: 0 0 auto;
         display: flex;
         align-items: flex-end;
         gap: 0.3rem;
@@ -75,7 +73,7 @@
         }
 
         span {
-          display: block; /* Required for height animation */
+          display: block;
           width: 0.3rem;
           background: #1ed760;
           border-radius: 0.2rem;
@@ -97,12 +95,12 @@
         }
       }
 
-      .title-ticker {
+      .title-marquee {
         flex: 1;
-        min-width: 0; /* Essential for marquee containment */
+        min-width: 0;
         overflow: hidden;
         white-space: nowrap;
-        /* Fades text edges */
+
         mask-image: linear-gradient(
           90deg,
           transparent,
@@ -118,12 +116,12 @@
           transparent
         );
 
-        .music-playing {
+        p {
           display: inline-block;
           font-size: 1.4rem;
           font-weight: 700;
           color: #fff;
-          padding-right: 5rem; /* Gap before the loop repeats */
+          padding-right: 5rem;
           animation: marquee 12s linear infinite;
 
           @include tablet {
@@ -143,6 +141,7 @@
     @include tablet {
       padding: 2.5rem 4rem;
     }
+
     @include laptop {
       padding: 3rem 8rem;
       max-width: 90rem;
@@ -156,6 +155,7 @@
 
     .queue-section {
       margin-bottom: 3rem;
+
       @include tablet {
         margin-bottom: 4rem;
       }
@@ -186,9 +186,6 @@
 
         .queue-album-info {
           @include flex(center, flex-start, row, 0.8rem);
-          @include tablet {
-            gap: 1rem;
-          }
 
           img {
             width: 1.6rem;
@@ -196,17 +193,10 @@
             opacity: 0.7;
             transition:
               opacity 0.2s,
-              filter 0.2s,
               transform 0.2s;
-
-            @include tablet {
-              width: 1.8rem;
-              height: 1.8rem;
-            }
 
             &:hover {
               opacity: 1;
-              filter: brightness(2);
               transform: scale(1.1);
             }
           }
@@ -215,23 +205,12 @@
             font-size: 1.3rem;
             color: rgba(255, 255, 255, 0.7);
             font-family: $font-satoshi;
-
-            @include tablet {
-              font-size: 1.4rem;
-            }
-            @include laptop {
-              font-size: 1.5rem;
-            }
           }
         }
 
         .queue-controls {
           @include flex(center, flex-end, row, 1.5rem);
           margin-left: auto;
-
-          @include tablet {
-            gap: 2rem;
-          }
 
           img {
             width: 2rem;
@@ -240,24 +219,11 @@
             cursor: pointer;
             transition:
               opacity 0.2s,
-              filter 0.2s,
               transform 0.2s;
-
-            @include tablet {
-              width: 2.2rem;
-              height: 2.2rem;
-            }
 
             &:hover {
               opacity: 1;
-              filter: brightness(2);
               transform: scale(1.1);
-            }
-
-            &.active {
-              opacity: 1;
-              filter: brightness(0) saturate(100%) invert(65%) sepia(52%)
-                saturate(5504%) hue-rotate(103deg) brightness(96%) contrast(89%);
             }
           }
         }
@@ -267,10 +233,6 @@
         list-style: none;
         @include flex(stretch, flex-start, column, 0.5rem);
 
-        @include tablet {
-          gap: 0.8rem;
-        }
-
         .queue-item {
           @include flex(center, flex-start, row, 1.2rem);
           padding: 1rem;
@@ -278,23 +240,13 @@
           cursor: pointer;
           transition: background 0.2s;
 
-          @include tablet {
-            padding: 1.2rem;
-            gap: 1.5rem;
-            border-radius: 1rem;
-          }
-
-          @include laptop {
-            padding: 1.4rem;
-            gap: 1.8rem;
-          }
-
           &:hover {
             background: rgba(255, 255, 255, 0.1);
           }
 
           &.playing {
             background: rgba(255, 255, 255, 0.15);
+
             .queue-item-title {
               color: #1ed760;
             }
@@ -305,18 +257,6 @@
             height: 4.5rem;
             border-radius: 0.4rem;
             object-fit: cover;
-
-            @include tablet {
-              width: 5rem;
-              height: 5rem;
-              border-radius: 0.5rem;
-            }
-
-            @include laptop {
-              width: 5.5rem;
-              height: 5.5rem;
-              border-radius: 0.6rem;
-            }
           }
 
           .queue-item-info {
@@ -326,60 +266,27 @@
             white-space: nowrap;
             overflow: hidden;
 
-            @include tablet {
-              gap: 0.4rem;
-            }
-
             .queue-item-title {
-              display: inline-block;
               font-size: 1.5rem;
               font-weight: 700;
               color: #fff;
-
-              /* Note: marquee here should only trigger if text is too long */
-              @include tablet {
-                font-size: 1.5rem;
-              }
-              @include laptop {
-                font-size: 1.6rem;
-              }
             }
 
             .queue-item-artist {
               font-size: 1.2rem;
               color: rgba(255, 255, 255, 0.6);
               font-family: $font-satoshi;
-
-              @include tablet {
-                font-size: 1.3rem;
-              }
-              @include laptop {
-                font-size: 1.4rem;
-              }
             }
           }
 
-          .queue-item-drag {
+          .burger.item {
             width: 2rem;
             height: 2rem;
             opacity: 0.4;
             cursor: grab;
-            transition:
-              opacity 0.2s,
-              filter 0.2s;
-
-            @include tablet {
-              width: 2.2rem;
-              height: 2.2rem;
-            }
 
             &:hover {
               opacity: 1;
-              filter: brightness(2);
-            }
-
-            &:active {
-              cursor: grabbing;
             }
           }
         }
@@ -387,200 +294,18 @@
     }
   }
 
-  /* MUSIC PLAYER */
-  .music-player {
+  /* MOBILE PLAYER */
+  .mobile-controls-wrapper {
     position: fixed;
-    bottom: 6.5rem;
+    bottom: 0;
     left: 0;
     width: 100%;
-    @include flex(center, space-around, column);
-    padding: 1.5rem 2rem;
+    padding: 1rem 2.5rem 3.5rem;
     backdrop-filter: blur(20px);
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
     z-index: 50;
 
-    @include tablet {
-      padding: 2rem 4rem;
-      bottom: 7rem;
-    }
-
     @include laptop {
-      padding: 2rem 8rem;
-      bottom: 7rem;
-    }
-
-    .progress-container {
-      width: 100%;
-      max-width: 60rem;
-
-      @include laptop {
-        max-width: 70rem;
-      }
-
-      .progress-bar-bg {
-        width: 100%;
-        height: 0.4rem;
-        background-color: rgba(255, 255, 255, 0.1);
-        border-radius: 1rem;
-        position: relative;
-        cursor: pointer;
-        transition: height 0.15s ease;
-
-        @include laptop {
-          &:hover {
-            height: 0.6rem;
-            .progress-bar-fill {
-              background: #1ed760;
-              .progress-dot {
-                opacity: 1;
-              }
-            }
-          }
-        }
-
-        .progress-bar-fill {
-          width: 45%;
-          height: 100%;
-          background-color: #ffffff;
-          border-radius: 1rem;
-          position: relative;
-          transition: background 0.2s ease;
-
-          .progress-dot {
-            width: 1.2rem;
-            height: 1.2rem;
-            background-color: #ffffff;
-            border-radius: 50%;
-            position: absolute;
-            right: -0.6rem;
-            top: 50%;
-            transform: translateY(-50%);
-            box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
-
-            @include laptop {
-              opacity: 0;
-              transition: opacity 0.15s ease;
-            }
-          }
-        }
-      }
-
-      .time-labels {
-        @include flex(center, space-between, row);
-        margin-top: 0.6rem;
-
-        p {
-          font-size: 1.1rem;
-          color: rgba(255, 255, 255, 0.6);
-          font-family: $font-satoshi;
-
-          @include tablet {
-            font-size: 1.2rem;
-          }
-        }
-      }
-    }
-
-    .music-navigation {
-      @include flex(center, space-between, row);
-      width: 100%;
-      max-width: 35rem;
-      margin-top: 1.5rem;
-
-      @include tablet {
-        max-width: 40rem;
-        margin-top: 2rem;
-      }
-
-      @include laptop {
-        max-width: 45rem;
-      }
-
-      > img {
-        width: 2rem;
-        height: 2rem;
-        cursor: pointer;
-        opacity: 0.6;
-        transition:
-          opacity 0.2s,
-          filter 0.2s,
-          transform 0.2s;
-
-        @include tablet {
-          width: 2.2rem;
-          height: 2.2rem;
-        }
-
-        &:hover {
-          opacity: 1;
-          filter: brightness(2);
-          transform: scale(1.1);
-        }
-      }
-
-      .main-music-navigation {
-        @include flex(center, center, row, 3rem);
-
-        @include tablet {
-          gap: 3.5rem;
-        }
-
-        > img {
-          width: 2.2rem;
-          height: 2.2rem;
-          cursor: pointer;
-          transition:
-            transform 0.2s,
-            filter 0.2s;
-
-          @include tablet {
-            width: 2.6rem;
-            height: 2.6rem;
-          }
-
-          &:hover {
-            transform: scale(1.1);
-            filter: brightness(1.5);
-          }
-        }
-
-        .pause-wrapper {
-          width: 4.5rem;
-          height: 4.5rem;
-          background-color: #fff;
-          border-radius: 50%;
-          @include flex(center, center);
-          cursor: pointer;
-          transition:
-            transform 0.15s,
-            background-color 0.2s;
-
-          @include tablet {
-            width: 5rem;
-            height: 5rem;
-          }
-
-          &:hover {
-            transform: scale(1.06);
-            background-color: #1ed760;
-          }
-
-          &:active {
-            transform: scale(0.98);
-          }
-
-          img {
-            width: 1.8rem;
-            height: 1.8rem;
-            filter: invert(1);
-
-            @include tablet {
-              width: 2rem;
-              height: 2rem;
-            }
-          }
-        }
-      }
+      display: none;
     }
   }
 }
