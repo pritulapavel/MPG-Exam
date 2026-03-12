@@ -23,7 +23,7 @@ close_button.addEventListener("click", (e) => {
 
 // Light mode logic here
 const changeTheme = document.getElementById("theme-toggle");
-toggleButton.addEventListener("click", () => {
+changeTheme.addEventListener("click", () => {
   document.body.classList.toggle("light-mode");
   changeTheme.classList.toggle("dark");
 });
