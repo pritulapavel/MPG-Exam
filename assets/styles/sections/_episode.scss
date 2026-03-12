@@ -78,6 +78,14 @@
       background-color: $main-green-color;
       cursor: pointer;
     }
+    & .playing-now {
+        padding: 1.179rem;
+        background-color: $main-green-color;
+        border: none;
+        outline: none;
+        border-radius: 5rem;
+        @include flex(center, center, row);
+      }
     & a {
       @include flex(center, center, row);
       padding: 1.2rem;
@@ -98,7 +106,7 @@
     @include flex(flex-start, flex-start, column, 2rem);
   }
   .episode-info {
-    max-width: 32rem;
+    // max-width: 32rem;
     width: 100%;
     @include flex(center, flex-start, column, 2rem);
     @include laptop {
@@ -124,9 +132,13 @@
     }
   }
   & img {
-    width: clamp-calc(17rem, 32rem);
-    height: clamp-calc(17rem, 32rem);
     border-radius: $border-radius-default;
+    max-width: 50rem;
+    width: 100%;
+    @include laptop {
+      width: clamp-calc(17rem, 32rem);
+      height: clamp-calc(17rem, 32rem);
+    }
   }
   @include laptop {
     align-items: flex-end;
@@ -139,9 +151,14 @@
     position: relative;
     border-radius: $border-radius-default;
     width: 100%;
+    max-width: 50rem;
     aspect-ratio: 16 / 9;
     border-radius: $border-radius-default;
     background: url("../img/podcasts/podcast-video-cover.jpg") center/cover no-repeat;
+
+    @include laptop {
+      max-width: 97rem;
+    }
 
     & button {
       padding: 2.1rem;

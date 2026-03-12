@@ -12,8 +12,7 @@
 @media (min-width: 992px) {
   .header {
     grid-template-columns: 1fr;
-    grid-template-areas: "header";
-    grid-column: span 2;
+    // grid-column: span 2;
   }
 }
 
@@ -24,13 +23,17 @@
     @include flex(center, space-between, row);
     .navigation {
       & .top-nav-ul {
-        @include flex(center, flex-start, row, 2rem);
+        @include flex(center, flex-start, row, 1rem);
+        @include desktop {
+          @include flex(center, flex-start, row, 2rem);
+        }
       }
       & .img-div {
         padding: 1rem;
       }
       & a {
-        padding: 0 10rem 0 1rem;
+        padding: 0 2rem 0 1rem;
+        @include desktop { padding: 0 10rem 0 1rem; }
         font-family: $font-satoshi;
         font-size: 1.4rem;
         color: $color-primary;
@@ -48,7 +51,7 @@
           background-color: $color-bg-primary;
           border-radius: $border-radius-default;
           transition: 0.3s ease;
-          & img {
+          & i {
             filter: brightness(0) invert(1);
             transition: 0.3s ease;
           }
@@ -61,7 +64,7 @@
         position: relative;
 
         & label,
-        & img {
+        & i {
           position: absolute;
           left: 1rem;
           top: 50%;
@@ -117,7 +120,21 @@
       background-color: $color-bg-primary;
       border-radius: $border-radius-default;
       transition: 0.3s ease;
-      & img {
+      & i {
+        filter: brightness(0) invert(1);
+        transition: 0.3s ease;
+      }
+
+      & span {
+        color: $color-secondary;
+        transition: 0.3s ease;
+      }
+    }
+    & a.active {
+      background-color: $color-bg-primary;
+      border-radius: $border-radius-default;
+      transition: 0.3s ease;
+      & i {
         filter: brightness(0) invert(1);
         transition: 0.3s ease;
       }
@@ -130,7 +147,7 @@
   }
   //  right navigation hover
   .side-nav {
-    & li:not(:last-child) a:hover img {
+    & li:not(:last-child) a:hover i {
       filter: brightness(0) invert(1);
       transition: 0.3s ease;
     }
@@ -146,6 +163,12 @@
   padding: 1.6rem;
   background: $mobile-nav-bg-color;
   @include flex(center, space-around, row, 2.1rem);
+  & a {
+    @include flex(center, center, column, 0.8rem);
+    &:hover {
+      color: $main-green-color;
+    }
+  }
   & label {
     @include flex(center, center, column, 1rem);
     font-family: $font-satoshi;
@@ -154,14 +177,14 @@
     &:hover {
       color: $color-secondary;
       transition: 0.3s ease;
-      & img {
+      & i {
         filter: brightness(0) invert(1);
       }
     }
   }
   & input[type="radio"]:checked + label {
     color: $main-green-color;
-    & img {
+    & i {
       filter: brightness(0) saturate(100%) invert(56%) sepia(83%) saturate(600%) hue-rotate(95deg);
       fill: $main-green-color;
     }

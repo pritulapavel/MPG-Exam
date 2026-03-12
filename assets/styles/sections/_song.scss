@@ -46,7 +46,7 @@
 
   .descriptions-wrapper {
     // max-width: clamp-calc(20rem, 72.1rem);
-    width: 100%;
+    // width: 100%;
     min-width: 0;
     @include flex(center, center, column, 1rem);
     @include desktop {
@@ -182,6 +182,14 @@
   }
   @include desktop {
     @include flex(center, flex-start, row, 6.2rem);
+  }
+}
+.app:has(.activity.open) {
+  .music-wrapper {
+    flex-wrap: nowrap;
+    @include desktop {
+      flex-wrap: wrap;
+    }
   }
 }
 .details-wrapper {

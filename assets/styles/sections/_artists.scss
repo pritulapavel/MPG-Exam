@@ -393,14 +393,15 @@
 		li {
 			padding: 0.7rem 0;
 			cursor: pointer;
-			border-bottom: 0rem solid transparent;
+			border-bottom: 0.2rem solid transparent;
 			font-size: 1.4rem;
 			white-space: nowrap;
 		}
 		li:hover,
 		li:active {
-			padding: 0.7rem 0;
+			padding: 1rem 0;
 			color: $color-hover-text;
+			border-bottom: 0.2rem solid #1ed760;
 		}
 		li label {
 			cursor: pointer;

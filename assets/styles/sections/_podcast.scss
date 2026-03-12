@@ -143,6 +143,7 @@
   & img {
     width: 100%;
     border-radius: $border-radius-default;
+    max-width: 34rem;
     @include laptop {
       align-items: flex-end;
     }
@@ -220,7 +221,7 @@
       padding: 1rem;
       background-color: transparent;
       border-bottom: 2px solid $podcast-border-color;
-      @include flex(flex-start, flex-start, row-reverse, 1rem);
+      @include flex(flex-start, flex-end, row-reverse, 1rem);
       @media (min-width: 992px) {
         @include flex(flex-start, flex-start, row, 1rem);
       }
@@ -230,7 +231,7 @@
 
       .description-wrapper {
         @include flex(flex-start, flex-start, column, 2rem);
-        max-width: 21rem;
+        // max-width: 21rem;
         padding: 0rem;
         @include tablet {
           max-width: 100%;
@@ -256,9 +257,16 @@
         }
 
         .button-wrapper {
-          @include flex(center, flex-start, row, 1rem);
+          @include flex(center, flex-start, row, 0.3rem);
+          @include tablet {
+            gap: 1rem;
+          }
+          flex-wrap: wrap;
           & button {
-            padding: 1.2rem;
+            padding: 0.8rem;
+            @include tablet {
+              padding: 1.2rem;
+            }
             border-radius: $border-radius-full-circle;
             outline: none;
             border: none;
@@ -268,7 +276,10 @@
           }
           & a {
             @include flex(center, center, row);
-            padding: 1rem;
+            padding: 0.3rem;
+            @include tablet {
+              padding: 1rem;
+            }
             &:hover {
               & img {
                 filter: brightness(0) invert(1);
