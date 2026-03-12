@@ -50,7 +50,7 @@
 			height: 4rem;
 			border-radius: 50%;
 			background-color: #1ed760;
-			@include flex(center,center,row,null);
+			@include flex(center, center, row, null);
 			cursor: pointer;
 			transition: transform 0.2s ease;
 		}
@@ -285,65 +285,93 @@
 	}
 }
 
-.artist-item {
-    @include flex(flex-start, null, column, 1.8rem);
-    width: 100%;
-    padding-bottom: 3rem;
-    border-bottom: 0.2rem solid $color-bg-primary;
-    @include laptop {
-        @include flex(flex-start, null, row, 1.8rem);
-    }
-    .card-details {
-        @include flex(normal, null, column, 1rem);
-        width: 100%;
-        @include laptop {
-            @include flex(flex-start, null, column, 1rem);
-        }
-    }
-    .details-heading {
-        @include flex(center, space-between, null, null);
-        width: 100%;
-        h2 {
-            font-weight: 700;
-            font-size: 2rem;
-            line-height: 2.7rem;
-            letter-spacing: 0.03em;
-            color: $color-secondary;
-        }
-        & i:hover {
-            filter: brightness(0) invert(1);
-            transition: 0.3s ease;
-            cursor: pointer;
-        }
-    }
-    .details-timing {
-        @include flex(center, null, null, null);
-        .songs-year, .songs-count, .songs-duration {
-            font-weight: 400;
-            font-size: 1.4rem;
-            line-height: 1.9rem;
-            letter-spacing: 0.03em;
-            color: $color-primary;
-        }
-        .songs-count::before, .songs-duration::before {
-            content: "•";
-            padding: 1rem;
-        }
-    }
-    .details-actions {
-        @include flex(center, center, row, 3.1rem);
+.theme-toggle {
+	position: relative;
+	width: 5rem;
+	height: 2.6rem;
+	background-color: $color-hover-bg;
+	border-radius: 5rem;
+	cursor: pointer;
+	transition: background-color 0.3s;
+	&::after {
+		content: "";
+		position: absolute;
+		top: 0.2rem;
+		left: 0.2rem;
+		width: 2.2rem;
+		height: 2.2rem;
+		background-color: $main-green-color;
+		border-radius: 50%;
+		transition: left 0.3s;
+	}
 
-        & i:not(:first-child):hover {
-            filter: brightness(0) invert(1);
-            transition: 0.3s ease;
-            cursor: pointer;
-        }
-        .active {
-            @include flex(center, center, null, null);
-            background-color: $main-green-color;
-            padding: 1rem;
-        }
-    }
+	&.dark::after {
+		left: 2.6rem;
+	}
+}
+
+.artist-item {
+	@include flex(flex-start, null, column, 1.8rem);
+	width: 100%;
+	padding-bottom: 3rem;
+	border-bottom: 0.2rem solid $color-bg-primary;
+	@include laptop {
+		@include flex(flex-start, null, row, 1.8rem);
+	}
+	.card-details {
+		@include flex(normal, null, column, 1rem);
+		width: 100%;
+		@include laptop {
+			@include flex(flex-start, null, column, 1rem);
+		}
+	}
+	.details-heading {
+		@include flex(center, space-between, null, null);
+		width: 100%;
+		h2 {
+			font-weight: 700;
+			font-size: 2rem;
+			line-height: 2.7rem;
+			letter-spacing: 0.03em;
+			color: $color-secondary;
+		}
+		& i:hover {
+			filter: brightness(0) invert(1);
+			transition: 0.3s ease;
+			cursor: pointer;
+		}
+	}
+	.details-timing {
+		@include flex(center, null, null, null);
+		.songs-year,
+		.songs-count,
+		.songs-duration {
+			font-weight: 400;
+			font-size: 1.4rem;
+			line-height: 1.9rem;
+			letter-spacing: 0.03em;
+			color: $color-primary;
+		}
+		.songs-count::before,
+		.songs-duration::before {
+			content: "•";
+			padding: 1rem;
+		}
+	}
+	.details-actions {
+		@include flex(center, center, row, 3.1rem);
+
+		& i:not(:first-child):hover {
+			filter: brightness(0) invert(1);
+			transition: 0.3s ease;
+			cursor: pointer;
+		}
+		.active {
+			@include flex(center, center, null, null);
+			background-color: $main-green-color;
+			padding: 1rem;
+		}
+	}
 }
 
 .artist-navigation {
@@ -413,8 +441,8 @@
 }
 #grid:checked ~ .artist-navigation label[for="grid"] .icon-sort-grid,
 #list:checked ~ .artist-navigation label[for="list"] .icon-sort-list {
-  filter: brightness(0) invert(1);
-  transition: 0.3s ease;
+	filter: brightness(0) invert(1);
+	transition: 0.3s ease;
 }
 
 #albums:checked ~ .artist-navigation .layout {
@@ -428,11 +456,11 @@
 	padding-bottom: 15rem;
 
 	@include laptop {
-        grid-template-columns:repeat(auto-fill, 16.1rem);
+		grid-template-columns: repeat(auto-fill, 16.1rem);
 	}
-    @include desktop {
-        grid-template-columns: repeat(auto-fill, 17.1rem);
-    }
+	@include desktop {
+		grid-template-columns: repeat(auto-fill, 17.1rem);
+	}
 }
 
 #list:checked ~ .section-wrapper .list-content {
