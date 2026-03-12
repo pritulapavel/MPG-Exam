@@ -39,6 +39,17 @@
 				border-radius: $border-radius-default;
 				color: $color-hover-text;
 			}
+			&.active {
+				background-color: $color-hover-bg;
+				border-radius: $border-radius-default;
+				color: $color-hover-text;
+				& span {
+					color: $color-hover-text;
+				}
+				& i {
+					filter: brightness(0) invert(1);
+				}
+			}
 		}
 
         .nav__dropdown {
@@ -80,6 +91,8 @@
             transform: translateY(-10px);
             transition: 0.3s ease;
             pointer-events: none;
+			display: flex;
+    		gap: 0rem;
         }
 
         .nav__dropdown[open] .nav__sub {

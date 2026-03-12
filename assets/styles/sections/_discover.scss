@@ -8,6 +8,10 @@
   }
 }
 
+.discover .activity.open {
+  margin-top: 40px;
+}
+
 .main {
   // Scroll controller
   scroll-snap-type: y mandatory;
@@ -226,6 +230,12 @@
     background-color: $color-bg-main;
     border-radius: $border-radius-default $border-radius-default 0 0;
     padding: 0 2.5rem;
+    overflow-y: auto;
+
+    @include laptop {
+      width: calc(100vw - 29.7rem);
+      left: 27.5rem;
+    }
 
     & ul {
       padding: 1.2rem 2.5rem;
@@ -241,6 +251,7 @@
           font-size: clamp-calc(1.4rem, 1.6rem);
           color: $color-secondary;
           transition: 0.3s ease;
+          white-space: nowrap;
           &.active {
             color: $color-dark-hover;
             background-color: $primary-navigation-hover;
@@ -261,16 +272,26 @@
 .section-wrapper-discover {
   display: none;
   @include laptop {
+    @include flex(center, center, column, 5rem);
     position: relative;
     background-color: $discover-main-bg-color;
     width: 100%;
-    padding: 12.5rem 22.1rem;
+    padding: 2.5rem 0rem;
 
-    @include flex(center, center, column, 5rem);
+    @include desktop {
+      padding: 12.5rem 22.1rem;
+    }
 
     .content-container {
       width: 100%;
       @include flex(center, center, row, 8rem);
+      
+      @include laptop {
+        @include flex(center, center, row, 2rem);
+      }
+      @include desktop {
+        @include flex(center, center, row, 8rem);
+      }
 
       .song-container {
         border-radius: $border-radius-default;
@@ -305,7 +326,7 @@
           &:hover {
             transform: scale(1.01);
             border-radius: $border-radius-full-circle;
-            & img {
+            & i {
               filter: brightness(0) invert(1);
               transition: 0.3s ease;
             }
@@ -364,6 +385,13 @@
   // padding: 3rem;
   .description-container {
     @include flex(center, center, row, 1.8rem);
+    @include laptop {
+      flex-wrap: wrap;
+      justify-content: flex-start;
+    }
+    @include desktop {
+      flex-wrap: nowrap;
+    }
     & .song-img {
       border-radius: 0.8rem;
       width: 18.4rem;
