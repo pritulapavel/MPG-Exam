@@ -20,6 +20,14 @@ close_button.addEventListener("click", (e) => {
   activity_sidebar.classList.remove("open");
 });
 
+
+// Light mode logic here
+const changeTheme = document.getElementById("theme-toggle");
+toggleButton.addEventListener("click", () => {
+  document.body.classList.toggle("light-mode");
+  changeTheme.classList.toggle("dark");
+});
+
 const images = document.querySelectorAll(".card-image"); //ეძებს ყველა კლასს რომელსაც ააქვს სახელი .card-image
 images.forEach((img) => {
   // ციკლი სადაც დანარჩენ ლოგიკას ასრულებს
