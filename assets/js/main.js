@@ -4,6 +4,22 @@ document.querySelectorAll(".stack").forEach((card, i) => {
   card.style.setProperty("--img-stack", `url(${img})`); // ვიღებთ img დან src და setProperty-თ ქარდს style პარამეტრით ვუმატებთ css ცვლადს --img-stack
 });
 
+
+//ვეძებთ კლასით გამხსნელ ღილაკს და ასევე დამხურავ ღილაკს და ვუმატებთ კლასს
+const activity_button = document.querySelector(".top-nav .icon-users").closest("a");
+const close_button = document.querySelector(".slide-controls .icon-close").closest("a");
+const activity_sidebar = document.querySelector(".activity");
+
+activity_button.addEventListener("click", (e) => {
+  e.preventDefault();
+  activity_sidebar.classList.toggle("open");
+});
+
+close_button.addEventListener("click", (e) => {
+  e.preventDefault();
+  activity_sidebar.classList.remove("open");
+});
+
 const images = document.querySelectorAll(".card-image"); //ეძებს ყველა კლასს რომელსაც ააქვს სახელი .card-image
 images.forEach((img) => {
   // ციკლი სადაც დანარჩენ ლოგიკას ასრულებს

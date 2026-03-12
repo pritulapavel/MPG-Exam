@@ -132,7 +132,7 @@
       }
 
       .time-labels {
-        @include flex(center, space-around, row, 1rem);
+        @include flex(center, space-between, row, 1rem);
         margin-top: 1rem;
 
         p {

@@ -181,6 +181,9 @@
       }
     }
   }
+  &.open {
+    display: flex;
+  }
 }
 
 // hiding unnecessary elements on mobile  responsive

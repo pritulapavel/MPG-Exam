@@ -16,65 +16,65 @@
         <div class="header-wrapper">
             <!-- desktop -->
             <nav class="navigation">
-                <ul class="top-nav-ul left-ul">
-                    <li>
-                    <a href="#">
-                        <div class="img-div">
-                        <i class="icons icon-home"></i>
-                        </div>
-                        Home
-                    </a>
-                    </li>
-                    <li>
-                    <a href="#">
-                        <div class="img-div">
-                        <i class="icons icon-discover"></i>
-                        </div>
+              <ul class="top-nav-ul left-ul">
+                <li>
+                  <a href="/index.html">
+                    <div class="img-div">
+                      <i class="icons icon-home"></i>
+                    </div>
+                    Home
+                  </a>
+                </li>
+                <li>
+                  <a href="/pages/discover.html">
+                    <div class="img-div">
+                      <i class="icons icon-discover"></i>
+                    </div>
 
-                        <span>Discover</span>
-                    </a>
-                    </li>
-                    <li>
-                    <form action="">
-                        <div class="img-div search-wrapper">
-                        <label for="search">
-                            <i class="icons icon-search"></i>
-                        </label>
-                        <input id="search" type="search" placeholder="Search" />
-                        </div>
-                    </form>
-                    </li>
-                </ul>
-                </nav>
-                <nav class="side-nav top-nav">
-                <ul class="top-nav-ul">
-                    <li>
-                    <a href="#">
-                        <i class="icons icon-notification"></i>
-                    </a>
-                    </li>
-                    <li>
-                    <a href="#">
-                        <i class="icons icon-lock"></i>
-                    </a>
-                    </li>
-                    <li>
-                    <a href="#">
-                        <i class="icons icon-users"></i>
-                    </a>
-                    </li>
-                    <li>
-                    <a href="#">
-                        <i class="icons icon-settings"></i>
-                    </a>
-                    </li>
-                    <li class="no-hover">
-                    <a href="#">
-                        <img src="../assets/img/icons/user.svg" alt="Profile" />
-                    </a>
-                    </li>
-                </ul>
+                    <span>Discover</span>
+                  </a>
+                </li>
+                <li>
+                  <form action="/pages/search.html">
+                    <div class="img-div search-wrapper">
+                      <label for="search">
+                        <i class="icons icon-search"></i>
+                      </label>
+                      <input id="search" type="search" placeholder="Search" />
+                    </div>
+                  </form>
+                </li>
+              </ul>
             </nav>
+            <nav class="side-nav top-nav">
+              <ul class="top-nav-ul">
+                <li>
+                  <a href="#">
+                    <i class="icons icon-notification"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="icons icon-lock"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="icons icon-users"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="icons icon-settings"></i>
+                  </a>
+                </li>
+                <li class="no-hover">
+                  <a href="/pages/profile.html">
+                    <img src="../assets/img/icons/user.svg" alt="Profile" />
+                  </a>
+                </li>
+              </ul>
+          </nav>
         </div>
         <!-- Mobile navigation -->
         <nav class="mobile-nav">
@@ -112,7 +112,7 @@
     </header>
     <aside class="sidebar">
       <div class="sidebar-heading">
-        <a href="#"><i class="icons icon-library"></i> My Library</a>
+        <a href="/pages/library.html"><i class="icons icon-library"></i> My Library</a>
       </div>
       <nav class="sidebar-menu">
         <ul>
@@ -123,9 +123,9 @@
                 Pins
               </summary>
               <ul class="nav__sub">
-                <li><a href="#">Albums</a></li>
-                <li><a href="#">Artists</a></li>
-                <li><a href="#">Playlists</a></li>
+                <li><a href="/pages/album.html">Albums</a></li>
+                <li><a href="/pages/artist.html">Artists</a></li>
+                <li><a href="/pages/playlist.html">Playlists</a></li>
               </ul>
             </details>
           </li>
@@ -136,39 +136,53 @@
                 Playlists
               </summary>
               <ul class="nav__sub">
-                <li><a href="#">Albums</a></li>
-                <li><a href="#">Artists</a></li>
-                <li><a href="#">Playlists</a></li>
+                <li><a href="/pages/album.html">Albums</a></li>
+                <li><a href="/pages/artist.html">Artists</a></li>
+                <li><a href="/pages/playlist.html">Playlists</a></li>
               </ul>
             </details>
           </li>
           <li>
-            <i class="icons icon-hearth"></i>
-            <span>Liked Songs</span>
+            <a href="/pages/song.html">
+              <i class="icons icon-hearth"></i>
+              <span>Liked Songs</span>
+            </a>
           </li>
           <li>
-            <i class="icons icon-bookmark"></i>
-            <span>Saves</span>
+            <a href="#">
+              <i class="icons icon-bookmark"></i>
+              <span>Saves</span>
+            </a>
           </li>
           <li>
-            <i class="icons icon-album"></i>
-            <span>Albums</span>
+            <a href="/pages/album.html">
+              <i class="icons icon-album"></i>
+              <span>Albums</span>
+            </a>
           </li>
           <li>
-            <i class="icons icon-folder"></i>
-            <span>Folders</span>
+            <a href="#">
+              <i class="icons icon-folder"></i>
+              <span>Folders</span>
+            </a>
           </li>
           <li>
-            <i class="icons icon-podcast"></i>
-            <span>Podcasts</span>
+            <a href="/pages/podcast.html">
+              <i class="icons icon-podcast"></i>
+              <span>Podcasts</span>
+            </a>
           </li>
           <li>
-            <i class="icons icon-audiobook"></i>
-            <span>Audiobooks</span>
+            <a href="#">
+              <i class="icons icon-audiobook"></i>
+              <span>Audiobooks</span>
+            </a>
           </li>
           <li>
-            <i class="icons icon-artists"></i>
-            <span>Artists</span>
+            <a href="/pages/artist.html">
+              <i class="icons icon-artists"></i>
+              <span>Artists</span>
+            </a>
           </li>
         </ul>
       </nav>

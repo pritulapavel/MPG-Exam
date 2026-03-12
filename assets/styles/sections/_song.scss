@@ -101,7 +101,7 @@
     .buttons-wrapper {
       @include flex(center, center, row, 0.5rem);
       flex-wrap: wrap;
-      & button {
+      & .playing-now {
         padding: 1.179rem;
         background-color: $main-green-color;
         border: none;
