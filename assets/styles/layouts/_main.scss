@@ -9,6 +9,10 @@
       "sidebar main aside"
       "sidebar player player";
   }
+  .header {
+    grid-column: span 2;
+    padding-right: 1rem;
+  }
 }
 .app.light-mode {
   & a {
@@ -98,6 +102,34 @@
     color: $light-color-primary;
   }
   .artist-item .details-heading h2 {
+    color: $light-color-primary;
+  }
+  .description-wrapper .description-container .description h2 {
+    color: $light-color-primary;
+  }
+  .description-wrapper .description-container .description p span {
+    color: $light-color-primary;
+  }
+  .description-wrapper .description-container .description .genres li {
+    color: $light-color-primary;
+    border-color: $light-color-secondary;
+  }
+  .description-wrapper .description-container .description .buttons .icon-btn {
+    color: $light-color-primary;
+  }
+  .tabs-section .tab .tab-title {
+    color: $light-color-primary;
+  }
+  .artist .artist-heading .album-description {
+    color: $light-color-primary;
+  }
+  .activity h4 {
+    color: $light-color-primary;
+  }
+  .activity .activity-details .activity-summary .artist-information .album {
+    color: $light-color-primary;
+  }
+  .artists {
     color: $light-color-primary;
   }
   .artist-item {
@@ -191,7 +223,7 @@
     }
   }
   &::-webkit-scrollbar {
-    width: 6px;
+    width: 0;
   }
   &::-webkit-scrollbar-track {
     background: transparent;

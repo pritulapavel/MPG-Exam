@@ -23,27 +23,27 @@ close_button.addEventListener("click", (e) => {
 	activity_sidebar.classList.remove("open");
 });
 
-// Light mode logic here
+// Light mode logic here, added save in browser local storage
 const changeTheme = document.getElementById("theme-toggle");
 function toggleTheme() {
   const isLight = document.body.classList.toggle("light-mode");
   if (isLight) {
     changeTheme.classList.remove("dark");
-    localStorage.setItem("theme", "light");
+    localStorage.setItem("theme", "light"); //set value for key theme (light)
   } else {
     changeTheme.classList.add("dark");
-    localStorage.setItem("theme", "default");
+    localStorage.setItem("theme", "default"); //set value for key theme (default for default dark theme)
   }
 }
 
-changeTheme.addEventListener("click", toggleTheme);
-const savedTheme = localStorage.getItem("theme");
-if (savedTheme === "light") {
-  document.body.classList.add("light-mode");
-  changeTheme.classList.remove("dark");
+changeTheme.addEventListener("click", toggleTheme); //get toggle bar by click event
+const savedTheme = localStorage.getItem("theme"); //get key from local storage
+if (savedTheme === "light") { //check if value of theme is light
+  document.body.classList.add("light-mode"); //add class light-mode for body
+  changeTheme.classList.remove("dark"); //remove dark class
 } else {
-  document.body.classList.remove("light-mode");
-  changeTheme.classList.add("dark");
+  document.body.classList.remove("light-mode"); // if choosen or local storage is empty, remove light-mode
+  changeTheme.classList.add("dark"); // and add dark class to toggle bar
 }
 
 const images = document.querySelectorAll(".card-image"); //ეძებს ყველა კლასს რომელსაც ააქვს სახელი .card-image
