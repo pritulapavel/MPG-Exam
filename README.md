@@ -1,393 +1,190 @@
-# 🚀 MPG Examination Project
+# 🎵 Spotify UI Layout Clone — MPG Examination Project
 
-This is a Mentoring UI web project built using **HTML** and **SCSS**.
-The project is designed for team collaboration using Git.
+A **modern, high-fidelity Spotify-inspired user interface** built with a focus on **scalable architecture, responsive patterns, and professional front-end workflows**.
 
-**Team Members:** Mariam Tchelidze, Pavle Pritula, Giorgi Kravchenko
+This project demonstrates the power of **SCSS modular architecture** and **Semantic HTML** within a **collaborative team development environment**.
 
----
-
-## 🛠 Technologies Used
-
-| Technology | Description                                                   |
-| ---------- | ------------------------------------------------------------- |
-| HTML       | Structure of the web pages                                    |
-| SCSS       | Style management, better organization, and reusable variables |
-| Git        | Version control and team collaboration                        |
+🔗 **Live Demo:** _(add link)_  
+🎨 The design for this project is available on Figma: [Open Design in Figma](<[https://www.figma.com/design/K0iHmiSiMJuKxr5duOKvIC/CareerPath-Mentoring-task?node-id=1-323&t=35CZZs2a1AoqnHdG-0](https://www.figma.com/design/jrlUWJdbxTc2bKd5dpRa5r/10X-markup-exam-project---Spotify?node-id=3-2&t=a62aCfDedWMpgRI0-1)>)
+👩‍💻 The Workflow file for managing tasks and fixes between team members: [Open file in google sheet] (<https://docs.google.com/spreadsheets/d/1wMH_dYq1dPgVQjJyiAfwWoSGGpkVa_W-45_PLzcczfQ/edit?gid=0#gid=0>)
 
 ---
 
+# 🚀 Project Overview
 
-## 🎨 Design
+This project is a deep dive into recreating **complex UI patterns used in modern streaming platforms** like Spotify.
 
-The design for this project is available on Figma: [Open Design in Figma]([https://www.figma.com/design/K0iHmiSiMJuKxr5duOKvIC/CareerPath-Mentoring-task?node-id=1-323&t=35CZZs2a1AoqnHdG-0](https://www.figma.com/design/jrlUWJdbxTc2bKd5dpRa5r/10X-markup-exam-project---Spotify?node-id=3-2&t=a62aCfDedWMpgRI0-1))
+### Key Goals
 
----
+- 📱 **Responsive Multi-View Support**  
+  Seamless experience across **Mobile, Tablet, and Desktop** including a **3-column desktop layout**
 
-## ⚡ Quick Start
+- 🎨 **Advanced Styling Architecture**  
+  Implementation of the **7-1 SCSS pattern** for maintainable and scalable styling
 
-### 1️⃣ Clone the Project
-
-```bash
-git clone https://github.com/pritulapavel/MPG-Exam.git
-cd JustTrinity-Template
-```
-
-### 2️⃣ Create a New Branch
-
-All new features should be developed in a **new branch**, not directly on `main`:
-
-```bash
-git checkout -b feature/your-feature-name (For example: header, navigation or another feature)
-```
-
-### 3️⃣ Save Changes (Commit)
-
-```bash
-git add .
-git commit -m "Description: what has changed"
-```
-
-### 4️⃣ Push Your Branch
-
-```bash
-git push origin feature/your-feature-name
-```
-
-### 5️⃣ Pull Request (PR)
-
-1. Open a Pull Request on GitHub against `main`
-2. Team members will review the code
-3. After approval, the branch will be merged into `main` ✅
-
-### 6️⃣ Update Project
-
-To get the latest changes from the main branch:
-
-```bash
-git checkout main
-git pull origin main
-```
+- ⚡ **Dynamic UI Interactions**  
+  Built with **Vanilla JavaScript** to manage UI states, animations, and color effects
 
 ---
 
-## 🎨 SCSS Tips
+# 🛠 Tech Stack
 
-* Use **mixins** and **variables** to avoid repeating code
-* Create **separate files** for different components and then import them into `styles.scss`
-* Always use Mobile first then check that styles are responsive across different screen sizes (Tablet, PC)
-
----
-
-## ⚠️ Git Team Guidelines
-
-* Never make changes directly on the `main` branch
-* Regularly **pull** updates from other team members
-* Write detailed commit messages describing what changed
-* Branch names should be clear: `feature/comment`, `feature/navigation`
+| Category          | Technology                     |
+| ----------------- | ------------------------------ |
+| **Structure**     | HTML5 (Semantic Markup)        |
+| **Styling**       | SCSS (Sass), CSS Grid, Flexbox |
+| **Logic**         | Vanilla JavaScript (ES6+)      |
+| **Collaboration** | Git, GitHub, Google Sheets     |
 
 ---
 
-## 💡 Pro Tip
+# 👥 Team & Workflow
 
-> “Code is like humor. When you have to explain it, it’s bad.” – Keep your code functional but understandable for the team.
+This project was developed by **Team MPG** using a **feature-branch Git workflow** to maintain stability and clean integration.
 
----
+| Member                   | Primary Responsibilities                                                              |
+| ------------------------ | ------------------------------------------------------------------------------------- |
+| **Pavle Pritula (Lead)** | Aside sections (Left/Right), Home (v1/v2), Search, Library Grid, Artist & Album pages |
+| **Mariam Tchelidze**     | Header, Discover Page (Scrolling sections), Song/Podcast views, Profile page          |
+| **Giorgi Kravchenko**    | Player section, Library List view, Album/Playlist logic, Now Playing HTML components  |
 
-
-NEW README FILE CONTENT BELOW ↓
-
-
----
-
-
-# Spotify UI Layout Clone
-
-A modern, responsive **Spotify-inspired user interface layout** built with **HTML, SCSS, and vanilla JavaScript**. This project focuses on clean architecture, scalable styling, and responsive UI patterns commonly used in professional front‑end development.
+📋 **Workflow Documentation:**  
+View the detailed **Task Management Sheet** _(add link)_
 
 ---
 
-# Preview
+# 📂 Project Structure
 
-Add a screenshot or GIF of the project here.
- 
-```
-/assets/preview.png
-```
+We follow a **modular directory architecture** to ensure scalability and maintainability.
 
----
-
-# Live Demo
-
-If deployed, add a link here.
-
-```
-•LINK_HERE_AFTER_FINISH•
-```
-
----
-
-# Features
-
-• Fully responsive layout
-
-• Sidebar, header and music player layout
-
-• Grid and flexbox based UI architecture
-
-• Interactive UI components
-
-• Dynamic UI effects using JavaScript
-
-• SCSS architecture using partials
-
-• Modern CSS practices
-
-• Clean semantic HTML
-
----
-
-# Tech Stack
-
-| Technology  | Purpose                            |
-| ----------- | ---------------------------------- |
-| HTML5       | Semantic structure                 |
-| SCSS (Sass) | Scalable styling architecture      |
-| JavaScript  | UI interaction and dynamic styling |
-| CSS Grid    | Page layout                        |
-| Flexbox     | Component layout                   |
-
----
-
-# Project Structure
-
-```
+```plaintext
 project
+├── assets
+│   ├── img              # Optimized covers and icons
+│   └── styles
+│       ├── abstracts    # _variables.scss, _mixins.scss
+│       ├── base         # _reset.scss, _typography.scss
+│       ├── components   # _card.scss, _buttons.scss, _player.scss
+│       ├── layout       # _header.scss, _sidebar.scss, _grid.scss
+│       └── styles.scss  # Main SCSS entry point
 │
-├─ assets
-│   ├─ img
-│   │   ├─ covers
-│   │   └─ icons
-│   │
-│   └─ styles
-│       ├─ abstracts
-│       │   ├─ _variables.scss
-│       │   └─ _mixins.scss
-│       │   └─ ...
-│       │
-│       ├─ base
-│       │   └─ _reset.scss
-│       │   └─ ...
-│       │
-│       ├─ components
-│       │   ├─ _card.scss
-│       │   └─ _buttons.scss
-│       │   └─ ...
-│       │
-│       ├─ layout
-│       │   ├─ _header.scss
-│       │   ├─ _sidebar.scss
-│       │   └─ _main.scss
-│       │   └─ ...
-│       │
-│       └─ styles.scss
-│
-│
-├─ index.html
-└─ README.md
+├── index.html
+└── script.js
 ```
 
 ---
 
-# SCSS Architecture
+# ✨ Key Features & Technical Implementation
 
-The styling system follows a modular **SCSS architecture** inspired by the **7‑1 pattern**.
+## 1️⃣ Modular SCSS Architecture
 
-### abstracts
+The project follows a **Mobile-First approach** with reusable breakpoint mixins.
 
-Contains project variables and mixins.
-
-```
-_variables.scss
-_mixins.scss
-```
-
-### base
-
-Global styles such as reset, typography and base rules.
-
-### components
-
-Reusable UI components.
-
-Examples:
-
-• cards
-
-• buttons
-
-• player controls
-
-### layout
-
-Major layout sections.
-
-Examples:
-
-• header
-
-• sidebar
-
-• main content
-
----
-
-# Responsive Design
-
-The layout adapts across multiple breakpoints using SCSS mixins.
-
-Example:
-
-```
+```scss
 @include tablet {
-  // tablet styles
+  /* Tablet-specific adjustments */
 }
 
 @include laptop {
-  // desktop styles
+  /* Desktop 3-column layout */
 }
 ```
 
-Mobile‑first strategy is used throughout the project.
+Benefits:
+
+- Scalable styling structure
+- Easier collaboration
+- Cleaner component isolation
 
 ---
 
-# JavaScript Functionality
+## 2️⃣ Dynamic Card Stack Effect
 
-JavaScript is used for lightweight UI enhancements.
+To replicate Spotify’s **card stacking UI effect**, we combined **CSS pseudo-elements** with **JavaScript-driven variables**.
 
-Examples include:
+**Implementation**
 
-• Dynamic styling
+- `::before` and `::after` create depth layers
+- JavaScript dynamically extracts **image sources**
+- CSS custom properties generate background effects
 
-• Image‑based color extraction
-
-• UI state toggling
-
-Example snippet:
-
-```
-document.querySelectorAll('.stack').forEach((card) => {
-  const img = card.querySelector('.card-image').src;
-  card.style.setProperty('--img-stack', `url(${img})`);
-});
-```
-
-This allows cards to dynamically reuse their cover image in CSS effects.
+Result: A **layered visual card stack** similar to Spotify’s UI.
 
 ---
 
-# CSS Techniques Used
+## 3️⃣ Responsive Layout Grid
 
-The project demonstrates several advanced CSS techniques:
+The layout adapts across three major breakpoints.
 
-• CSS custom properties
+| Device     | Layout                                   |
+| ---------- | ---------------------------------------- |
+| 📱 Mobile  | Single-column scrolling layout           |
+| 📱 Tablet  | Dual-section layout with floating player |
+| 💻 Desktop | Full **3-column architecture**           |
 
-• pseudo‑elements
-
-• responsive grid layout
-
-• flexbox alignment patterns
-
-• dynamic hover effects
-
-• CSS animations
-
-• reusable utility mixins
+```
+Sidebar | Main Content | Activity Feed
+```
 
 ---
 
-# Example Component
+# ⚙️ Setup & Development
 
-### Card Stack Effect
-
-A visual stack effect is created using pseudo‑elements.
-
-```
-.card.stack::before
-.card.stack::after
-```
-
-These layers simulate stacked album covers while keeping the main image interactive.
-
----
-
-# Development Setup
+## 1️⃣ Installation
 
 Clone the repository:
 
-```
+```bash
 git clone https://github.com/pritulapavel/MPG-Exam.git
+cd MPG-Exam
 ```
 
-Open the project folder:
+---
 
+## 2️⃣ Development Workflow
+
+### Create Feature Branch
+
+```bash
+git checkout -b feature/your-feature-name
 ```
-cd project-name
+
+### Commit Changes
+
+```bash
+git commit -m "feat: add responsive player controls"
 ```
 
-Compile SCSS if needed using your preferred tool (Sass CLI, Vite, etc).
+### Sync Before Push
+
+```bash
+git pull origin main
+```
+
+This helps prevent **merge conflicts** and keeps the repository stable.
 
 ---
 
-# Best Practices Used
+# 🔮 Future Roadmap
 
-• semantic HTML
+Planned improvements for future versions:
 
-• scalable SCSS architecture
-
-• reusable mixins
-
-• component‑based styling
-
-• responsive layout strategy
-
-• clean and maintainable code
+- [ ] 🎧 Integration with the **Spotify Web API**
+- [ ] 🔊 Real-time audio playback using the **Web Audio API**
+- [x] 🌙 **Dark / Light mode** theme switcher
+- [ ] 🎬 Advanced animations using **Framer Motion or GSAP**
 
 ---
 
-# Future Improvements
+# 📜 License & Acknowledgements
 
-Potential improvements for the project:
+**License:**  
+This project was created for **educational purposes only**.
 
-• add real audio player functionality
-
-• integrate Spotify API
-
-• implement theme switching
-
-• add playlist management
-
-• add animations for player interactions
+**Acknowledgements:**  
+UI design inspired by **Spotify**.  
+This project is **not affiliated with Spotify AB**.
 
 ---
 
-# Authors
-
-Developed by:
-
-**Mariam Tchelidze** **Giorgi Kravchenko** **Pavle Pritula**
-
----
-
-# License
-
-This project is created for **educational and portfolio purposes**.
-
----
-
-# Acknowledgements
-
-Design inspiration comes from the Spotify interface.
-
-This project is not affiliated with Spotify.
+⭐ If you found this project interesting, consider **starring the repository**.
