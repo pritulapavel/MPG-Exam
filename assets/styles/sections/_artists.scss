@@ -431,6 +431,10 @@
 	gap: 1.1rem;
 	padding-bottom: 15rem;
 
+	@include tablet {
+		grid-template-columns: repeat(auto-fill, 16.1rem);
+	}
+
 	@include laptop {
 		grid-template-columns: repeat(auto-fill, 16.1rem);
 	}

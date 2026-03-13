@@ -58,6 +58,21 @@
 		color: $light-color-primary;
 	}
 
+	.recent-wrapper .content-wrapper .section-content .artists .close i {
+		filter: none;
+	}
+	.library-wrapper .content-wrapper .tab .tab-content .content-wrapper .section-content .card .pin i {
+		filter: none;
+	}
+	.library-page .filters-wrapper .filters-nav i {
+		filter: brightness(0) saturate(100%) invert(42%) sepia(0%) saturate(0%)
+			hue-rotate(0deg) brightness(43%) contrast(100%);
+		&.icon-white {
+			filter: brightness(0) saturate(100%) invert(42%) sepia(0%) saturate(0%)
+			hue-rotate(0deg) brightness(43%) contrast(100%);
+		}
+	}
+
 	.card p,
 	.player .player-wrapper .music-title-author-wrapper .scrolling-text-band {
 		color: $light-color-secondary;
@@ -207,6 +222,20 @@
 	}
 	.activity .activity-details .activity-summary .artist-information .album {
 		color: $light-color-primary;
+	}
+	.profile-page-content-wrapper .profile-content.my-profile article .profile-info p {
+		color: $light-color-secondary;
+	}
+	
+	.main-discover .main-inner .mobile-wrapper .content-wrapper .bottom-container .genre span {
+		color: $light-color-third;
+	}
+	
+	.main-discover .main-inner .mobile-wrapper .content-wrapper .right-fixed {
+		color: $light-color-third;
+		& i {
+			filter: none;
+		}
 	}
 }
 .app {
