@@ -285,31 +285,6 @@
 	}
 }
 
-.theme-toggle {
-	position: relative;
-	width: 5rem;
-	height: 2.6rem;
-	background-color: $color-hover-bg;
-	border-radius: 5rem;
-	cursor: pointer;
-	transition: background-color 0.3s;
-	&::after {
-		content: "";
-		position: absolute;
-		top: 0.2rem;
-		left: 0.2rem;
-		width: 2.2rem;
-		height: 2.2rem;
-		background-color: $main-green-color;
-		border-radius: 50%;
-		transition: left 0.3s;
-	}
-
-	&.dark::after {
-		left: 2.6rem;
-	}
-}
-
 .artist-item {
 	@include flex(flex-start, null, column, 1.8rem);
 	width: 100%;
@@ -391,7 +366,7 @@
 		@include flex(center, null, row, 5rem);
 		flex-wrap: nowrap;
 		li {
-			padding: 0.7rem 0;
+			padding: 0.5rem 0;
 			cursor: pointer;
 			border-bottom: 0.2rem solid transparent;
 			font-size: 1.4rem;
@@ -399,7 +374,7 @@
 		}
 		li:hover,
 		li:active {
-			padding: 1rem 0;
+			padding: 0.8rem 0;
 			color: $color-hover-text;
 			border-bottom: 0.2rem solid #1ed760;
 		}
