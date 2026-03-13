@@ -44,7 +44,7 @@
 		&::after {
 			content: "";
 			position: absolute;
-			top: 0.02rem;
+			top: 0.15rem;
 			left: 0;
 			width: 100%;
 			height: 70%;
@@ -67,7 +67,7 @@
 		}
 	}
 	&:hover {
-		transform: scale(1.03);
+		transform: scale(1.01);
 		transition: transform 0.3s;
 	}
 }
@@ -75,11 +75,13 @@
 .artists {
 	text-align: center;
 	color: $color-hover-text;
+	position: relative;
 	& .circle {
 		border-radius: 50%;
 	}
 }
 .albums {
+	position: relative;
 	& h3 {
 		@include flex(null, space-between, null, null);
 		font-size: 1.4rem;
@@ -91,12 +93,14 @@
 	}
 }
 .audiobooks {
+	position: relative;
 	& figure {
 		max-height: 22rem;
 	}
 }
 
 .podcasts {
+	position: relative;
 	& .podcasts-title {
 		border-left: 0.3rem solid $color-hover-text;
 		border-radius: 0.3rem;
@@ -119,6 +123,7 @@
 }
 
 .episodes {
+	position: relative;
 	& .episodes-title {
 		border-radius: 0.3rem;
 		background-color: $episodes-title-bg;
@@ -137,5 +142,90 @@
 			font-size: 1.3rem;
 			color: $color-primary;
 		}
+	}
+}
+
+.browse-card {
+	@include flex(null, null, column, 1rem);
+	width: 17rem;
+	height: 10rem;
+	position: relative;
+	overflow: hidden;
+	padding: 1rem;
+	border-radius: $border-radius-default;
+	color: $color-card-browse-heading;
+
+	@include tablet {
+		height: 17rem;
+	}
+
+	.browse-name {
+		padding: 0.5rem;
+		z-index: 1;
+		font-size: 2rem;
+		line-height: 2.7rem;
+		letter-spacing: 0.03em;
+	}
+	& figure {
+		position: absolute;
+		width: 10.4rem;
+		height: 10.4rem;
+		transform: rotate(30deg);
+		left: 8rem;
+		top: 3rem;
+		border-radius: $border-radius-crd;
+		@include tablet {
+			top: 8rem;
+		}
+
+		& img {
+			object-fit: cover;
+			width: 100%;
+			height: 100%;
+		}
+	}
+}
+
+.card-wide {
+	@include flex(null, center, null, 0.8rem);
+	position: relative;
+	border-radius: $border-radius-btn-mob;
+	flex-shrink: 0;
+	cursor: pointer;
+	figure {
+		max-height: 12rem;
+		max-width: 12rem;
+		height: 100%;
+		width: 100%;
+		&::before {
+			content: "";
+			position: absolute;
+			inset: 0;
+			background: #18191e;
+			border-radius: 0.8rem;
+			transform: translateY(-0.6rem);
+			left: 0.6rem;
+			z-index: 1;
+			width: 11rem;
+		}
+	}
+	.card-image {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		border-radius: 0.8rem;
+		position: relative;
+		z-index: 3;
+	}
+	h3 {
+		font-weight: 500;
+		font-size: 1.4rem;
+		line-height: 1.9rem;
+		letter-spacing: 0.03em;
+		color: $color-hover-text;
+	}
+	&:hover {
+		transform: scale(1.01);
+		transition: transform 0.3s;
 	}
 }
