@@ -164,6 +164,9 @@
   .artist-navigation ul li:hover, .artist-navigation ul li:active {
     color: $light-color-primary;
   }
+  .activity .activity-details .activity-summary .artist-information .album {
+    color: $light-color-primary;
+  }
 }
 .app {
   height: 100dvh;
