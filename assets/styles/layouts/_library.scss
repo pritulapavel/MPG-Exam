@@ -68,8 +68,8 @@
     }
   }
 }
-#list:checked ~ .filters-wrapper nav label[for="list"] img,
-#grid:checked ~ .filters-wrapper nav label[for="grid"] img {
+#list:checked ~ .filters-wrapper nav label[for="list"] i,
+#grid:checked ~ .filters-wrapper nav label[for="grid"] i {
     filter: brightness(0) invert(1);
     transition: filter 0.3s ease;
 }

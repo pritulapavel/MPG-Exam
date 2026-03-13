@@ -317,7 +317,7 @@
 }
 .filters-wrapper {
   @include flex(center, space-between, null, null);
-  & a img:hover {
+  & a i:hover {
     filter: brightness(0) invert(1);
     transition: 0.3s ease;
     cursor: pointer;

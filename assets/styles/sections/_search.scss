@@ -18,7 +18,7 @@
     .search-input {
         width: 100%;
         position: relative;
-        img:hover {
+        i:hover {
             filter: brightness(0) invert(1);
             transition: 0.3s ease;
             cursor: pointer;
@@ -48,7 +48,7 @@
         transform: translateY(-50%);
     }
     .search-upload {
-        img:hover {
+        i:hover {
             filter: brightness(0) invert(1);
             transition: 0.3s ease;
             cursor: pointer;
