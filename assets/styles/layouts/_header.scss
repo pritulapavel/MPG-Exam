@@ -168,6 +168,13 @@
     &:hover {
       color: $main-green-color;
     }
+    &.active {
+      font-weight: bold;
+      color: $main-green-color;
+      & i {
+        filter: brightness(0) saturate(100%) invert(56%) sepia(83%) saturate(600%) hue-rotate(95deg);
+      }
+    }
   }
   & label {
     @include flex(center, center, column, 1rem);
