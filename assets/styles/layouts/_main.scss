@@ -14,209 +14,155 @@
   }
 }
 .app.light-mode {
-  & a {
-    color: $light-color-primary;
-  }
   background-color: $light-bg-main-color;
   color: $light-color-primary;
-  .sidebar {
-    background-color: $light-bg-main-color;
-    color: $light-color-primary;
-  }
+
+  a { color: $light-color-primary; }
+
+  .sidebar,
   .header {
     background-color: $light-bg-main-color;
   }
-  .header-wrapper .navigation a {
-    &:hover {
-      background-color: $light-buttons-hover-color;
-      color: $light-color-primary;
-      & span {
-        color: $light-color-primary;
-      }
-    }
-    &.active {
-      background-color: $light-buttons-hover-color;
-      color: $light-color-primary;
-    }
-    & span {
-      color: $light-color-primary;
-    }
+
+  .player { background-color: $light-player-bg-color; }
+  .theme-toggle { background-color: $light-buttons-hover-color; }
+
+  .main,
+  .artist-item {
+    border-color: $light-buttons-hover-color;
   }
+
+  .section-title h2,
+  .card h3,
+  .activity h4,
+  .artists,
+  .artist-item .details-heading h2,
+  .description-wrapper .description-container .description h2,
+  .artist .about-description,
+  .artist .about-statistics .statistics-head,
+  .artist .about-statistics .statistics-text,
+  .artist .songs-history .song-author .song-name,
+  .artist .artist-heading .album-description,
+  .player .advanced-player .advanced-player-music-time-line p,
+  .player .player-wrapper .music-title-author-wrapper .scrolling-text,
+  .profile-page-content-wrapper .profile-content.profile-details .details summary {
+    color: $light-color-primary;
+  }
+
+  .card p,
+  .player .player-wrapper .music-title-author-wrapper .scrolling-text-band {
+    color: $light-color-secondary;
+  }
+
+  .filters-wrapper .filters-nav ul li,
+  .sidebar .sidebar-menu li:hover,
+  .sidebar .sidebar-menu li.active,
+  .header-wrapper .navigation a:hover,
+  .header-wrapper .navigation a.active,
   .header-wrapper .navigation form:hover {
     background-color: $light-buttons-hover-color;
     color: $light-color-primary;
   }
-  .main {
-    border-color: $light-buttons-hover-color;
+
+  .header-wrapper .navigation {
+    a span { color: $light-color-primary; }
   }
-  .filters-wrapper .filters-nav ul li {
-    background-color: $light-buttons-hover-color;
-    color: $light-color-primary;
+
+  .sidebar {
+    .sidebar-menu li.active {
+      span { color: $light-color-primary; }
+      i { filter: brightness(1) invert(0); }
+    }
   }
-  .section-title h2 {
-    color: $light-color-primary;
-  }
-  .sidebar .sidebar-menu li:hover {
-    background-color: $light-buttons-hover-color;
-    color: $light-color-primary;
-  }
-  .sidebar .sidebar-menu li.active {
-    & span {
+
+  .description-wrapper .description-container .description {
+    p span { color: $light-color-primary; }
+
+    .genres li {
       color: $light-color-primary;
+      border-color: $light-color-secondary;
     }
-    & i {
-      filter: brightness(1) invert(0);
-    }
-    background-color: $light-buttons-hover-color;
-    color: $light-color-primary;
+
+    .buttons .icon-btn { color: $light-color-primary; }
   }
-  .sidebar a:hover {
-    color: $light-color-primary;
-  }
-  .card h3 {
-    color: $light-color-primary;
-  }
-  .card p {
-    color: $light-color-secondary;
-  }
-  .player {
-    background-color: $light-player-bg-color;
-  }
-  .theme-toggle {
-    background-color: $light-buttons-hover-color;
-  }
-  #home:checked ~ .artist-navigation label[for=home], #about:checked ~ .artist-navigation label[for=about], #albums:checked ~ .artist-navigation label[for=albums] {
-    color: $light-color-primary;
-  }
-  .artist-navigation ul li:hover, .artist-navigation ul li:active {
-    color: $light-color-primary;
-  }
-  .artist .about-description {
-    color: $light-color-primary;
-  }
-  .artist .about-statistics .statistics-head, .artist .about-statistics .statistics-text {
-    color: $light-color-primary;
-  }
-  .artist .songs-history .song-author .song-name {
-    color: $light-color-primary;
-  }
-  .artist-item .details-heading h2 {
-    color: $light-color-primary;
-  }
-  .description-wrapper .description-container .description h2 {
-    color: $light-color-primary;
-  }
-  .description-wrapper .description-container .description p span {
-    color: $light-color-primary;
-  }
-  .description-wrapper .description-container .description .genres li {
-    color: $light-color-primary;
-    border-color: $light-color-secondary;
-  }
-  .description-wrapper .description-container .description .buttons .icon-btn {
-    color: $light-color-primary;
-  }
-  .tabs-section .tab .tab-title {
-    color: $light-color-primary;
-  }
-  .artist .artist-heading .album-description {
-    color: $light-color-primary;
-  }
-  .activity h4 {
-    color: $light-color-primary;
-  }
-  .activity .activity-details .activity-summary .artist-information .album {
-    color: $light-color-primary;
-  }
-  .artists {
-    color: $light-color-primary;
-  }
-  .artist-item {
-    border-color: $light-buttons-hover-color;
-  }
-  i {
-    filter: brightness(0) saturate(100%) invert(42%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(43%) contrast(100%);
-    &:hover {
-      filter: brightness(0) saturate(100%) invert(58%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(58%) contrast(100%);
-    }
-  }
-  .icon-play-icon-green {
-    filter: none;
-    &:hover {
-      filter: none;
-    }
-  }
-  .header-wrapper .navigation a:hover i {
-    filter: brightness(0) saturate(100%) invert(58%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(58%) contrast(100%);
-  }
-  .header-wrapper .navigation a.active i {
-    filter: brightness(0) saturate(100%) invert(58%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(58%) contrast(100%);
-  }
-  .header-wrapper .navigation form:hover i {
-    filter: brightness(0) saturate(100%) invert(58%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(58%) contrast(100%);
-  }
-  .player .advanced-player .advanced-player-music-time-line p {
-    color: $light-color-primary;
-  }
-  .player .player-wrapper .music-title-author-wrapper .scrolling-text-band {
-    color: $light-color-secondary;
-  }
-  .player .player-wrapper .music-title-author-wrapper .scrolling-text {
-    color: $light-color-primary;
-  }
-  .header-wrapper .side-nav li:not(:last-child) a:hover i {
-    filter: brightness(0) saturate(100%) invert(58%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(58%) contrast(100%);
-  }
-  .icon-player_blue_icon {
-    filter: none;
-    &:hover {
-      filter: none;
-    }
-  }
-  .icon-green-heart:hover {
-    filter: brightness(0) saturate(100%) invert(56%) sepia(83%) saturate(600%) hue-rotate(95deg);
-  }
+
+  .tabs-section .tab .tab-title { color: $light-color-primary; }
+
   .filters-nav .radio-nav-desk {
     background-color: $light-bg-main-color;
+
+    ul li a { color: $light-color-primary; }
   }
-  .filters-nav .radio-nav-desk ul li a {
-    color: $light-color-primary;
-  }
-  .music-wrapper .descriptions-wrapper .genres-wrapper span {
-    color: $light-color-third;
-    &:hover {
-      color: $light-buttons-hover-color;
+
+  .music-wrapper {
+    .descriptions-wrapper {
+      .genres-wrapper span,
+      .description .song-info .info {
+        color: $light-color-third;
+
+        &:hover { color: $light-buttons-hover-color; }
+      }
+    }
+
+    .musicians-wrapper .musician .muscician-info span {
+      color: $light-color-third;
     }
   }
-  .music-wrapper .musicians-wrapper .musician .muscician-info span {
-    color: $light-color-third;
+
+  .details-wrapper .slider label { color: $light-color-third; }
+
+  .profile-page-content-wrapper {
+    .profile-content {
+      &.friends,
+      &.profile-details .details[open] ul {
+        background: linear-gradient(to bottom, #8a354a, #2c191d, #111111);
+      }
+    }
   }
-  .music-wrapper .descriptions-wrapper .description .song-info .info {
-    color: $light-color-third;
+
+  .mobile-nav { background: $light-header-bg-color; }
+
+  /* icons */
+
+  i {
+    filter: brightness(0) saturate(100%) invert(42%) sepia(0%) saturate(0%)
+      hue-rotate(0deg) brightness(43%) contrast(100%);
+
+    &:hover {
+      filter: brightness(0) saturate(100%) invert(58%) sepia(0%) saturate(0%)
+        hue-rotate(0deg) brightness(58%) contrast(100%);
+    }
   }
-  .details-wrapper .slider label {
-    color: $light-color-third;
-  }
-  .profile-page-content-wrapper .profile-content.friends {
-    background: linear-gradient(to bottom, #8a354a, #2c191d, #111111);
-  }
-  .profile-page-content-wrapper .profile-content.profile-details .details[open] ul {
-    background: linear-gradient(to bottom, #8a354a, #2c191d, #111111);
-  }
-  .profile-page-content-wrapper .profile-content.profile-details .details summary {
-    color: $light-color-primary;
-  }
-  .mobile-nav {
-    background: $light-header-bg-color;
-  }
+
+  .icon-play-icon-green,
+  .icon-player_blue_icon,
   .main-podcast i {
     filter: none;
+
+    &:hover { filter: none; }
   }
+
+  .icon-green-heart:hover {
+    filter: brightness(0) saturate(100%) invert(56%) sepia(83%) saturate(600%)
+      hue-rotate(95deg);
+  }
+
+  .header-wrapper .navigation a:hover i,
+  .header-wrapper .navigation a.active i,
+  .header-wrapper .navigation form:hover i,
+  .header-wrapper .side-nav li:not(:last-child) a:hover i {
+    filter: brightness(0) saturate(100%) invert(58%) sepia(0%) saturate(0%)
+      hue-rotate(0deg) brightness(58%) contrast(100%);
+  }
+
   .episodes-wrapper .podcast-filter .filters .filter a {
     color: $light-color-third;
-    &:hover {
-      color: $light-buttons-hover-color;
-    }
+
+    &:hover { color: $light-buttons-hover-color; }
+  }
+  #home:checked ~ .artist-navigation label[for=home], #about:checked ~ .artist-navigation label[for=about], #albums:checked ~ .artist-navigation label[for=albums],
+  .artist-navigation ul li:hover, .artist-navigation ul li:active {
+    color: $light-color-primary;
   }
 }
 .app {
