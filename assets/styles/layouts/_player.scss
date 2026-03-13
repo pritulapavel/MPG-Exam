@@ -286,6 +286,11 @@
       flex: 1;
       justify-content: flex-end;
 
+      a {
+        display: flex;
+        text-decoration: none;
+      }
+
       img {
         width: 2rem;
         height: 2rem;
