@@ -171,7 +171,7 @@ Planned improvements for future versions:
 
 - [ ] 🎧 Integration with the **Spotify Web API**
 - [ ] 🔊 Real-time audio playback using the **Web Audio API**
-- [ ] 🌙 **Dark / Light mode** theme switcher
+- [x] 🌙 **Dark / Light mode** theme switcher
 - [ ] 🎬 Advanced animations using **Framer Motion or GSAP**
 
 ---
