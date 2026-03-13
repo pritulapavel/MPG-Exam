@@ -69,7 +69,7 @@
     & input[type="radio"]:checked + label {
       background-color: $color-album-border;
       color: $color-secondary;
-      & img {
+      & i {
         filter: brightness(0) invert(1);
       }
     }
@@ -95,7 +95,7 @@
       @include flex(center, center, row);
       white-space: nowrap;
       &:hover {
-        & img {
+        & i {
           filter: brightness(0) invert(1);
         }
       }
@@ -194,7 +194,7 @@
             padding: 1.3rem 1rem;
             &:hover {
               color: $color-secondary;
-              & img {
+              & i {
                 filter: brightness(0) invert(1);
                 transition: 0.3s ease;
               }
@@ -281,7 +281,7 @@
               padding: 1rem;
             }
             &:hover {
-              & img {
+              & i {
                 filter: brightness(0) invert(1);
                 transition: 0.3s ease;
               }

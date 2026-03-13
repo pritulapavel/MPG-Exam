@@ -77,7 +77,7 @@
             padding: 0.734rem 0.762rem 0.734rem 0.762rem;
             cursor: pointer;
             &:hover {
-              & img {
+              & i {
                 filter: brightness(0) invert(1);
                 transition: 0.3s ease;
               }
@@ -135,7 +135,7 @@
           padding: 0.734rem 0.762rem 0.734rem 0.762rem;
           cursor: pointer;
           &:hover {
-            & img {
+            & i {
               filter: brightness(0) invert(1);
               transition: 0.3s ease;
             }

@@ -318,7 +318,7 @@
           &:hover {
             transform: scale(1.01);
             border-radius: $border-radius-full-circle;
-            & img {
+            & i {
               filter: brightness(0) invert(1);
               transition: 0.3s ease;
             }
@@ -444,7 +444,7 @@
           color: $color-primary;
 
           &:hover {
-            & img {
+            & i {
               filter: brightness(0) invert(1);
               transition: 0.3s ease;
             }

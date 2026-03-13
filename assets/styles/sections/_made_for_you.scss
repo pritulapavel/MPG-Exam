@@ -22,7 +22,7 @@
   @include flex(center, center, null, 2rem);
   & a {
     @include flex(center, center, null, null);
-    & img:hover {
+    & i:hover {
       filter: brightness(0) invert(1);
       transition: 0.3s ease;
       cursor: pointer;
