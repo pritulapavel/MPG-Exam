@@ -7,9 +7,12 @@
     display: flex;
   }
 }
+.discover {
+  column-gap: 0rem;
+}
 
 .discover .activity.open {
-  margin-top: 40px;
+  margin-top: 48px;
 }
 
 .main {
@@ -233,7 +236,8 @@
     overflow-y: auto;
 
     @include laptop {
-      width: calc(100vw - 31rem);
+      width: calc(100vw - 29.2rem);
+      left: 27.6rem;
     }
 
     & ul {
