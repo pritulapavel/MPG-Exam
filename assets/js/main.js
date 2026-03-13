@@ -144,38 +144,3 @@ const observer = new IntersectionObserver(
 );
 
 scrollSections.forEach((section) => observer.observe(section));
-
-//  Discover გვერდზე, მობილურის ვერსიაზე დაიმალოს ჰიდერ ნავიგაცია სროლვისას და  ზემოტ ასქროლვისას გამოჩნდეს
-let lastScroll = 0;
-
-const nav = document.querySelector(".mobile-filters nav");
-const main = document.querySelector(".main-discover");
-if (main && nav) {
-	main.addEventListener("scroll", () => {
-		const currentScroll = main.scrollTop;
-
-		if (currentScroll > lastScroll) {
-			nav.classList.add("hide");
-		} else {
-			nav.classList.remove("hide");
-		}
-
-		lastScroll = currentScroll;
-	});
-}
-
-const verses = document.querySelectorAll(".main-text-wrapper p");
-if (verses.length) {
-	let currentIndex = 0;
-	verses[0].classList.add("active");
-	setInterval(() => {
-		verses[currentIndex].classList.remove("active");
-		currentIndex = (currentIndex + 1) % verses.length;
-		verses[currentIndex].classList.add("active");
-
-		verses[currentIndex].scrollIntoView({
-			behavior: "smooth",
-			block: "center",
-		});
-	}, 5000);
-}
