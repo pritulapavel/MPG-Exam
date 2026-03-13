@@ -1,29 +1,5 @@
 @use "../abstracts/variables" as *;
 @use "../abstracts/mixins" as *;
-
-.app {
-  height: 100dvh;
-  display: grid;
-  grid-template-rows: auto 1fr;
-  grid-template-columns: 1fr;
-  background-color: $color-bg-main;
-  overflow: hidden;
-  @include laptop {
-    grid-template-columns: 26rem 1fr;
-    grid-template-rows: 5.4rem 1fr 8.1rem;
-    padding: 1.5rem;
-    column-gap: 0rem;
-    row-gap: 1rem;
-
-    grid-template-areas:
-      "sidebar header header"
-      "sidebar main aside"
-      "sidebar player player";
-  }
-  @include desktop {
-    column-gap: 1rem;
-  }
-}
 .app:has(.activity.open) {
   @include laptop {
     grid-template-columns: 26rem 1fr minmax(30rem, 35.8rem);
@@ -106,7 +82,88 @@
   .theme-toggle {
     background-color: $light-buttons-hover-color;
   }
+  #home:checked ~ .artist-navigation label[for=home], #about:checked ~ .artist-navigation label[for=about], #albums:checked ~ .artist-navigation label[for=albums] {
+    color: $light-color-primary;
+  }
+  .artist-navigation ul li:hover, .artist-navigation ul li:active {
+    color: $light-color-primary;
+  }
+  .artist .about-description {
+    color: $light-color-primary;
+  }
+  .artist .about-statistics .statistics-head, .artist .about-statistics .statistics-text {
+    color: $light-color-primary;
+  }
+  .artist .songs-history .song-author .song-name {
+    color: $light-color-primary;
+  }
+  .artist-item .details-heading h2 {
+    color: $light-color-primary;
+  }
+  .artist-item {
+    border-color: $light-buttons-hover-color;
+  }
+  i {
+    filter: brightness(0) saturate(100%) invert(42%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(43%) contrast(100%);
+    &:hover {
+      filter: brightness(0) saturate(100%) invert(58%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(58%) contrast(100%);
+    }
+  }
+  .header-wrapper .navigation a:hover i {
+    filter: brightness(0) saturate(100%) invert(58%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(58%) contrast(100%);
+  }
+  .header-wrapper .navigation a.active i {
+    filter: brightness(0) saturate(100%) invert(58%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(58%) contrast(100%);
+  }
+  .header-wrapper .navigation form:hover i {
+    filter: brightness(0) saturate(100%) invert(58%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(58%) contrast(100%);
+  }
+  .player .advanced-player .advanced-player-music-time-line p {
+    color: $light-color-primary;
+  }
+  .player .player-wrapper .music-title-author-wrapper .scrolling-text-band {
+    color: $light-color-secondary;
+  }
+  .player .player-wrapper .music-title-author-wrapper .scrolling-text {
+    color: $light-color-primary;
+  }
+  .header-wrapper .side-nav li:not(:last-child) a:hover i {
+    filter: brightness(0) saturate(100%) invert(58%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(58%) contrast(100%);
+  }
+  .icon-player_blue_icon {
+    filter: none;
+    &:hover {
+      filter: none;
+    }
+  }
+  .icon-green-heart:hover {
+    filter: brightness(0) saturate(100%) invert(56%) sepia(83%) saturate(600%) hue-rotate(95deg);
+  }
 }
+.app {
+  height: 100dvh;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  grid-template-columns: 1fr;
+  background-color: $color-bg-main;
+  overflow: hidden;
+  @include laptop {
+    grid-template-columns: 26rem 1fr;
+    grid-template-rows: 5.4rem 1fr 8.1rem;
+    padding: 1.5rem;
+    column-gap: 0rem;
+    row-gap: 1rem;
+
+    grid-template-areas:
+      "sidebar header header"
+      "sidebar main aside"
+      "sidebar player player";
+  }
+  @include desktop {
+    column-gap: 1rem;
+  }
+}
+
 // .app:has(.light-mode) {
 //   background-color: $light-bg-main-color;
 // }
@@ -271,4 +328,29 @@
   @include laptop {
     display: flex;
   }
+}
+
+.theme-toggle {
+	position: relative;
+	width: 5rem;
+	height: 2.6rem;
+	background-color: $color-hover-bg;
+	border-radius: 5rem;
+	cursor: pointer;
+	transition: background-color 0.3s;
+	&::after {
+		content: "";
+		position: absolute;
+		top: 0.2rem;
+		left: 0.2rem;
+		width: 2.2rem;
+		height: 2.2rem;
+		background-color: $main-green-color;
+		border-radius: 50%;
+		transition: left 0.3s;
+	}
+
+	&.dark::after {
+		left: 2.6rem;
+	}
 }
