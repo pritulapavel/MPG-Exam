@@ -2,8 +2,7 @@
 @use "../abstracts/mixins" as *;
 .app:has(.activity.open) {
   @include laptop {
-    grid-template-columns: 26rem 1fr minmax(30rem, 35.8rem);
-
+    grid-template-columns: 26rem 1fr minmax(30rem, 34.8rem);
     grid-template-areas:
       "sidebar header header"
       "sidebar main aside"
@@ -141,6 +140,12 @@
       filter: brightness(0) saturate(100%) invert(58%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(58%) contrast(100%);
     }
   }
+  .icon-play-icon-green {
+    filter: none;
+    &:hover {
+      filter: none;
+    }
+  }
   .header-wrapper .navigation a:hover i {
     filter: brightness(0) saturate(100%) invert(58%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(58%) contrast(100%);
   }
@@ -170,6 +175,48 @@
   }
   .icon-green-heart:hover {
     filter: brightness(0) saturate(100%) invert(56%) sepia(83%) saturate(600%) hue-rotate(95deg);
+  }
+  .filters-nav .radio-nav-desk {
+    background-color: $light-bg-main-color;
+  }
+  .filters-nav .radio-nav-desk ul li a {
+    color: $light-color-primary;
+  }
+  .music-wrapper .descriptions-wrapper .genres-wrapper span {
+    color: $light-color-third;
+    &:hover {
+      color: $light-buttons-hover-color;
+    }
+  }
+  .music-wrapper .musicians-wrapper .musician .muscician-info span {
+    color: $light-color-third;
+  }
+  .music-wrapper .descriptions-wrapper .description .song-info .info {
+    color: $light-color-third;
+  }
+  .details-wrapper .slider label {
+    color: $light-color-third;
+  }
+  .profile-page-content-wrapper .profile-content.friends {
+    background: linear-gradient(to bottom, #8a354a, #2c191d, #111111);
+  }
+  .profile-page-content-wrapper .profile-content.profile-details .details[open] ul {
+    background: linear-gradient(to bottom, #8a354a, #2c191d, #111111);
+  }
+  .profile-page-content-wrapper .profile-content.profile-details .details summary {
+    color: $light-color-primary;
+  }
+  .mobile-nav {
+    background: $light-header-bg-color;
+  }
+  .main-podcast i {
+    filter: none;
+  }
+  .episodes-wrapper .podcast-filter .filters .filter a {
+    color: $light-color-third;
+    &:hover {
+      color: $light-buttons-hover-color;
+    }
   }
 }
 .app {
@@ -312,7 +359,7 @@
     display: none;
     //@include flex(null, null, row, 1rem);
     min-width: 30rem;
-    max-width: 35.8rem;
+    max-width: 34.8rem;
     width: 100%;
   }
 

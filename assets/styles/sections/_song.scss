@@ -26,6 +26,9 @@
     min-height: 100vh;
     z-index: -1;
   }
+  & i {
+    filter: none;
+  }
 }
 .no-pd {
   padding: 0;
@@ -140,6 +143,9 @@
         @include flex(center, flex-start, row, 1rem);
         text-align: left;
       }
+    }
+    i {
+      filter: none;
     }
   }
   .musicians-wrapper {
