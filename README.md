@@ -4,7 +4,7 @@ A **modern, high-fidelity Spotify-inspired user interface** built with a focus o
 
 This project demonstrates the power of **SCSS modular architecture** and **Semantic HTML** within a **collaborative team development environment**.
 
-🔗 **Live Demo:** _(add link)_  
+🔗 **Live Demo:** [Open demo page](https://pritulapavel.github.io/MPG-Exam/)  
 🎨 The design for this project is available on Figma: [Open Design in Figma](https://www.figma.com/design/K0iHmiSiMJuKxr5duOKvIC/CareerPath-Mentoring-task?node-id=1-323&t=35CZZs2a1AoqnHdG-0)
 👩‍💻 The Workflow file for managing tasks and fixes between team members: [Open file in google sheet] (<https://docs.google.com/spreadsheets/d/1wMH_dYq1dPgVQjJyiAfwWoSGGpkVa_W-45_PLzcczfQ/edit?gid=0#gid=0>)
 
