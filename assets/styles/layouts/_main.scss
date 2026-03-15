@@ -237,6 +237,9 @@
 			filter: none;
 		}
 	}
+	.sidebar:hover {
+		color: $light-color-primary;
+	}
 }
 .app {
 	height: 100dvh;
