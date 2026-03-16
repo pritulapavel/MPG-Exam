@@ -1428,6 +1428,9 @@ a {
 .app.light-mode .main-discover .main-inner .mobile-wrapper .content-wrapper .right-fixed i {
   filter: none;
 }
+.app.light-mode .sidebar:hover {
+  color: #1a1a1a;
+}
 
 .app {
   height: 100dvh;
@@ -5591,7 +5594,7 @@ a {
 }
 .artist-navigation ul li:hover,
 .artist-navigation ul li:active {
-  padding: 0.8rem 0;
+  padding: 0.7rem 0;
   color: #e0e0e0;
   border-bottom: 0.2rem solid #1ed760;
 }
